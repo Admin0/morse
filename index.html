@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="/appspresso/appspresso.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery_touchswipe.js"></script>
+		<script type="text/javascript" src="js/translate.js"></script>
+		<script type="text/javascript" src="js/analyze.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<link rel="stylesheet" media="screen" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div id="notice">
+			<img class="notice" id="notice0" style="top: 0em;" src="image/notice0.png">
+			<img class="notice" id="notice1" style="top: 11em;" src="image/notice1.png">
+			<img class="notice" id="notice2" style="top: 10em; left:170px;" src="image/notice2.png">
+			<img class="notice" id="notice3" style="top: 13em;" src="image/notice3.png">
+			<img class="notice" id="notice4" style="top: 21em;" src="image/notice4.png">
+			<label class="notice" style="display: block; bottom:0; padding:1ex 0; background:#555; width:100%;">&nbsp;<input type="checkbox" id="notice_check"> 안내 화면을 더 이상 보지 않습니다.</label>
+		</div>
+		<form id="input">
+			<input id="input_textarea" type="text" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();"></input>
+			<input type="button" class="input_toggle" style="" value="☎">
+			<div style="width:100%; overflow: hidden; margin: 1em 0 .5em; background:#ccc;">
+				<div id="imgs">
+					<div class="imgs">
+						<div id="translate">translate</div>
+					</div>
+					<div class="imgs">
+						<div id="analyze">analyze</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<form id="option">
+			<div style="display: inline-block;">
+		    	<div class="button button_first"><label><input type="radio" name="type" id="radio_kr" value="kr" checked><span class="radio_span">한글</span></label></div>
+		        <div class="button button_between"><label><input type="radio" name="type" id="radio_en" value="en"><span class="radio_span">영어</span></label></div>
+		        <div class="button button_last"><label><input type="radio" name="type" id="radio_nm" value="nm"><span class="radio_span">숫자</span></label></div>
+	        </div>
+	        <div style="display: inline-block;">
+		        <div class="button"><label><input id="assemble" type="checkbox" checked /><span class="radio_span">음소조합(KR)</span></label></div>
+		        <div class="button"><label><input id="capital" type="checkbox" /><span class="radio_span">대문자(EN)</span></label></div>
+		    </div>	
+		    <div style="display: inline-block;">
+		        <div class="button button_first">
+		        	<label><input type="radio" name="space">긴공백: <input id="space_string" type="text" style="width:1em;" value="9" onclick="select()"></label>
+					<label><input type="radio" name="space">짧은공백: <input id="space_char" type="text" style="width:1em;" value=" " onclick="select()"></label>
+				</div>
+		        <div class="button button_between" onclick="$('#space_char').val('　');$('#space_string').val('　　　');"><label><input type="radio" name="space">JinH</label></div>
+		       	<div class="button button_last" onclick="$('#space_char').val(' ');$('#space_string').val('9');" ><label><input type="radio" name="space" checked>모바일</label></div>
+		    </div>
+		</form>
+		<textarea id="output" rows="1" cols="10" onclick="select()"> · · · ·　 ·　 · – · ·　 · – · ·　 – – –　　　 · – –　 – – –　 · – ·　 · – · ·　 – · ·　 – · – · – –</textarea>
+		<footer>
+			<div class="menu" id="menu_toggle">
+				<img src="image/menu_forward.png">
+				<div>해석기</div>
+			</div>
+			<div class="menu" id="menu_share">
+				<img src="image/menu_share.png">
+				<div>공유</div></div>
+			<div class="menu" id="menu_setting">
+				<img src="image/menu_setting.png">
+				<div>설정</div></div>
+			<div id="footer_output">
+				<div class="footer_output" id="footer_output_share">
+					<div>kakaotalk</div>
+					<div>facebook</div>
+					<div>twitter</div>
+				</div>
+				<div class="footer_output" id="footer_output_setting">test2<b><br><br>test2</b><br><br>test2<br><br>test2</div>
+			</div>
+		</footer>
+		<div id="ad">
+			<script type="text/javascript">
+				var daum_adam_vars = {
+					client : adam['client'],
+					position : 'MIDDLE',	// TOP (화면상단) | BOTTOM (화면 하단) | MIDDLE (화면 중간 삽입. bannerDivId 지정 필요)
+					bannerDivId : 'ad',	// position : 'MIDDLE' 인 경우, 광고를 삽입할 DIV 태그의 ID 값.
+					test : false	// 테스트 모드 여부 설정  (실서비스시에는 false 로 설정 필요)
+				};
+			</script>
+			<script type="text/javascript" src="http://m.adtc.daum.net/js/mobilead.js"></script>
+			<script type="text/javascript">//google analytics		
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-38781161-1']);
+			  _gaq.push(['_trackPageview']);
+			
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+			</script>
+		</div>
+	</body>
+</html>
