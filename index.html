@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="/appspresso/appspresso.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery_touchswipe.js"></script>
+		<script type="text/javascript" src="js/kakaolink.js"></script>
 		<script type="text/javascript" src="js/translate.js"></script>
 		<script type="text/javascript" src="js/analyze.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
@@ -18,7 +19,7 @@
 			<img class="notice" id="notice2" style="top: 10em; left:170px;" src="image/notice2.png">
 			<img class="notice" id="notice3" style="top: 13em;" src="image/notice3.png">
 			<img class="notice" id="notice4" style="top: 21em;" src="image/notice4.png">
-			<label class="notice" style="display: block; bottom:0; padding:1ex 0; background:#555; width:100%;">&nbsp;<input type="checkbox" id="notice_check"> 안내 화면을 더 이상 보지 않습니다.</label>
+			<label class="notice" style="display: block; bottom:0; padding:1em 0; background:#555; width:100%;">&nbsp;<input type="checkbox" id="notice_check"> 안내 화면을 더 이상 보지 않습니다.</label>
 		</div>
 		<form id="input">
 			<input id="input_textarea" type="text" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();"></input>
@@ -61,17 +62,30 @@
 			</div>
 			<div class="menu" id="menu_share">
 				<img src="image/menu_share.png">
-				<div>공유</div></div>
+				<div>공유</div>
+			</div>
+			<div class="menu" id="menu_review">
+				<img src="image/menu_review.png">
+				<div>리뷰</div>
+			</div>
 			<div class="menu" id="menu_setting">
 				<img src="image/menu_setting.png">
-				<div>설정</div></div>
+				<div>설정</div>
+			</div>
 			<div id="footer_output">
 				<div class="footer_output" id="footer_output_share">
-					<div>kakaotalk</div>
-					<div>facebook</div>
-					<div>twitter</div>
+					<div class="share_button"><div class="share_icon" id="share_facebook"></div>facebook</div>
+					<div class="share_button"><div class="share_icon" id="share_google"></div>google+</div>
+					<div class="share_button"><div class="share_icon" id="share_kakaotalk"></div>kakaotalk</div>
+					<div class="share_button"><div class="share_icon" id="share_mail"></div>mail</div>
+					<div class="share_button"><div class="share_icon" id="share_twitter"></div>twitter</div>
 				</div>
-				<div class="footer_output" id="footer_output_setting">test2<b><br><br>test2</b><br><br>test2<br><br>test2</div>
+				<div class="footer_output" id="footer_output_setting">
+					<div class="setting" onclick="localStorage.clear()">실행 화면 안내 애니메이션 다시 보기</div>
+					<div class="setting" onclick="window.location = 'license.html'">오픈 소스 라이센스</div>
+					<div class="setting" onclick="window.location = 'info.html'">정보</div>
+					<div class="setting" onclick="ax.ext.android.finish()">종료</div>
+				</div>
 			</div>
 		</footer>
 		<div id="ad">
@@ -84,17 +98,6 @@
 				};
 			</script>
 			<script type="text/javascript" src="http://m.adtc.daum.net/js/mobilead.js"></script>
-			<script type="text/javascript">//google analytics		
-			  var _gaq = _gaq || [];
-			  _gaq.push(['_setAccount', 'UA-38781161-1']);
-			  _gaq.push(['_trackPageview']);
-			
-			  (function() {
-			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			  })();
-			</script>
 		</div>
 	</body>
 </html>

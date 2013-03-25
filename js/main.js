@@ -135,12 +135,15 @@ function button_swipe() {
 			$('#option').slideUp();
 			$('.input_toggle').hide();
 			$('#menu_toggle div').text('해석기');
+			$('#menu_toggle img').attr('src','image/menu_forward.png');
 		} else if (currentImg == 1) {
 			$('#input_textarea').attr('placeholder','모스 부호를 입력하세요. (type: tel)').attr('type','tel');
 			$('#option').slideDown();
 			$('.input_toggle').show().attr('value',input_type['tel']);
 			$('#menu_toggle div').text('변환기');
+			$('#menu_toggle img').attr('src','image/menu_back.png');
 		}
+		$('.footer_output').slideUp();
 	}
 	$('#menu_toggle').click(function(){ //menu toggle translator <-> analyzer 1.6.0
 		if (currentImg==0) {
@@ -223,19 +226,51 @@ function button_click() {
 	});
 	
 	$('#menu_share').click(function(){
-		$('.footer_output').hide();
+		$('.footer_output').slideUp();
 		$('#footer_output_share').slideDown();
 		//$('footer').css('margin-bottom','0');
 		$('footer').mouseleave(function() {
-			$('footer').css('margin-bottom', -$('#footer_output').height());
+			$('.footer_output').slideUp();
 		});
 	});
+	$('#share_facebook').click(function(){
+		window.location = "http://www.facebook.com/sharer/sharer.php?u=http://market.android.com/details?id=com.morsecode.translator.jinh";
+	});
+	$('#share_google').click(function(){
+		window.location = "https://plus.google.com/share?url=http://market.android.com/details?id=com.morsecode.translator.jinh";
+	});
+	$('#share_kakaotalk').click(function(){
+		kakao.link("talk").send({
+	        msg : $('#output').val(),
+	        url : "market://details?id=com.morsecode.translator.jinh",
+	        appid : "com.morsecode.translator.jinh",
+	        appver : "2.0",
+	        appname : "모스 부호",
+	        metainfo : JSON.stringify({metainfo : [ {os:"android", devicetype: "phone",installurl:"market://details?id=com.morsecode.translator.jinh", executeurl : "market://details?id=com.morsecode.translator.jinh"},{os:"ios", devicetype:"pad",installurl:"market://details?id=com.morsecode.translator.jinh",executeurl : "market://details?id=com.morsecode.translator.jinh"}]}),
+	        type : "app"
+		});
+	});
+	$('#share_mail').click(function(){
+		window.location = "mailto:?subject=[모스 부호] 앱으로 만든 부호를 보냅니다.&body=" + $('#output').val() + " \r\n Play 스토어에서 보기: http://goo.gl/FW2hA";
+	});
+	$('#share_twitter').click(function(){
+		window.location = "https://twitter.com/share?url=http://goo.gl/FW2hA%C2%A0@Bloger_JinH&text=" + $('#output').val();
+	});
+	
+	$('#menu_review').click(function(){
+		ax.ext.ui.confirm(function(r){
+			if (r==true) {
+				ax.ext.ui.open('http://market.android.com/details?id=com.morsecode.translator.jinh');
+			}
+		}, '별점과 리뷰를 남깁니다.');
+	});
+	
 	$('#menu_setting').click(function(){
-		$('.footer_output').hide();
+		$('.footer_output').slideUp();
 		$('#footer_output_setting').slideDown();
 		//$('footer').css('margin-bottom','0');
 		$('footer').mouseleave(function() {
-			$('footer').css('margin-bottom', -$('#footer_output').height());
+			$('.footer_output').slideUp();
 		});
 	});
 }
@@ -291,7 +326,7 @@ function notice() {
 	    } else if (s === 2) {
 	    	window.location = "info.html";
 	    } else if (s === 3) {
-        ax.ext.android.finish();
+	    	ax.ext.android.finish();
 	    };
 	});
 	ax.ext.android.setOptionsItems(['초기 화면','오픈 소스 라이센스','정보','종료']);

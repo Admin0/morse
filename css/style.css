@@ -118,7 +118,7 @@ footer {
 	-webkit-transition: 0.5s;
 }
 .menu	{
-	width:30%;
+	width:24%;
 	height:50px;
 	display:inline-block;
 }
@@ -127,18 +127,51 @@ footer {
 	height:32px;
 }
 .menu:active	{
-	background:#ffa;
+	background:#bce;
 }
 .footer_output	{
 	display:none;
 }
-footer a {
-	text-decoration: none;
-	color: inherit;	
+.share_button	{
+	width: 19%;
+	display:inline-block;
+	padding:2em 0;
 }
-footer a:active {
-	color: #4787ed;	
+.share_icon	{
+	width:32px;
+	height:32px;
+	margin:auto;
 }
+.share_icon:active	{
+	box-shadow:#3079ed 0 0 16px;
+}
+#share_facebook	{
+	background:#3b5998;
+}
+#share_google	{
+	background:#c00;
+}
+#share_kakaotalk	{
+	background:#F9E81F;
+}
+#share_mail	{
+	background:silver;
+}
+#share_twitter	{
+	background:#9AE4E8;
+}
+.setting	{
+	text-align:left;
+	padding:1em;
+	font-size:12px;
+	border-color:silver;
+	border-width:1px 0 0 0;
+	border-style:solid;
+}
+.setting:active	{
+	background:#bce;
+}
+
 #ad {
 	position: fixed;
 	width:100%;
