@@ -308,11 +308,9 @@ function notice() {
 }
 
 $(function() {
-	if (location.pathname == "/index.html") {
-		output_resize();
-		button_swipe();
-		button_click();
-	}
+	output_resize();
+	button_swipe();
+	button_click();
 	notice();
 }); 
 
