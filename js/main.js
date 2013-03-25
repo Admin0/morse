@@ -163,11 +163,11 @@ function output_resize() {
 function button_click() {
 	$('#translate').swipe({
 		click:function() {
-			//$('#output').val('Translating...');
-			ax.ext.ui.showProgress('Translating...');
+			$('#output').val('Translating...');
+			//ax.ext.ui.showProgress('Translating...');
 			translate();
 			setTimeout('output_resize()');
-			ax.ext.ui.hideProgress();
+			//ax.ext.ui.hideProgress();
 		},
 		swipe:function(){
 			//스와이프에는 출력 방지
@@ -175,11 +175,11 @@ function button_click() {
 	});
 	$('#analyze').swipe({
 		click:function() {
-			//$('#output').val('Analyzing...');
-			ax.ext.ui.showProgress('Analyzing...');
+			$('#output').val('Analyzing...');
+			//ax.ext.ui.showProgress('Analyzing...');
 			analyze();
 			setTimeout('output_resize()');
-			ax.ext.ui.hideProgress();
+			//ax.ext.ui.hideProgress();
 		},
 		swipe:function(){
 			//스와이프에는 출력 방지
