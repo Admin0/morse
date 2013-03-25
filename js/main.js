@@ -276,12 +276,14 @@ function notice() {
 	});
 }
 
+function initialize() {
+	$('body').css({"min-height":window.document.height});
+}
+
 $(function() {
+	initialize()
 	output_resize();
 	button_swipe();
 	button_click();
 	notice();
 }); 
-
-
-

@@ -8,6 +8,8 @@ body	{
 	background: #f5f5f5;
 	color:#444;
 	width: 725px;
+	border: 1px solid #aaa;
+	box-shadow: #aaa 0 0 1em;
 }
 
 #notice	{
