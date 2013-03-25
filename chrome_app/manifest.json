@@ -1,0 +1,21 @@
+﻿ {
+  "manifest_version": 2,
+  "name": "모스 부호(Morse code)",
+  "description": "모스 부호 변환기 테스트 중...",
+  "version": "1.6.0.1",
+  "app": {
+    "urls": [
+      "http://admin0.github.com/morse/"
+    ],
+    "launch": {
+      "web_url": "http://admin0.github.com/morse/index.html"
+    }
+  },
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "notifications"
+  ]
+}

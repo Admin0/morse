@@ -1,4 +1,4 @@
-var adam = {
+﻿var adam = {
 		'client':'4788Z1TT13d4f4235a3',
 		'position' : 'MIDDLE',
 		'bannerDivId' : 'ad',
@@ -258,7 +258,7 @@ function button_click() {
 	});
 	
 	$('#menu_review').click(function(){
-		window.open("https://www.facebook.com/Sample.by.JinH", "_blank"); 
+		window.open("https://chrome.google.com/webstore/detail/cobccnllippnmgibbgdnkdaljjpcppjl/reviews", "_blank"); 
 	});
 	
 	$('#menu_setting').click(function(){
