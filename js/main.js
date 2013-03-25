@@ -18,42 +18,11 @@ var color = {
 		'toggle_color1':'#ffffff',
 		'toogle_border1':'#3079ed'
 	};
-var currentImg=0;
-
-function button_swipe() {
-	var IMG_WIDTH = $(window).width();
-
-	var slope = 0; //for orientate start
-	var supportsOrientationChange = "onorientationchange" in window,    
-	orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";  
-	window.addEventListener(orientationEvent, function() {
-	    if (slope!=window.orientation){ 
-	        slope = window.orientation; 
-	        if(slope == 90 || slope == -90) {// 가로상태 
-	        	IMG_WIDTH = $(window).height() + margin['n_b'];
-				if (currentImg == 0) {
-					previousImage();
-				} else if (currentImg == 1) {
-		        	nextImage();
-				}
-				setTimeout('output_resize()'); //textarea resise
-				$('#ad').css('top',0); //ad show
-				$('footer').css('bottom',0);
-	        } 
-	        else {// 세로상태 
-	        	IMG_WIDTH = $(window).height() + margin['n_b'];
-				if (currentImg == 0) {
-					previousImage();
-				} else if (currentImg == 1) {
-		        	nextImage();
-				}
-				setTimeout('output_resize()'); //textarea resise
-				$('#ad').css('top',0); //ad show
-				$('footer').css('bottom',0);
-	        } 
-	    } 
-	}, false);// for orientate end
 	
+var currentImg=0;
+function button_swipe() {
+	var IMG_WIDTH = 725;
+
 	//var currentImg=0;
 	var maxImages=2;
 	var speed=500;
