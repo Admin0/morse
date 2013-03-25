@@ -239,7 +239,7 @@ function button_click() {
 	$('#share_google').click(function(){
 		window.location = "https://plus.google.com/share?url=http://admin0.github.com/morse/";
 	});
-	/*$('#share_kakaotalk').click(function(){
+	$('#share_kakaotalk').click(function(){
 		kakao.link("talk").send({
 	        msg : $('#output').val(),
 	        url : "market://details?id=com.morsecode.translator.jinh",
@@ -249,7 +249,7 @@ function button_click() {
 	        metainfo : JSON.stringify({metainfo : [ {os:"android", devicetype: "phone",installurl:"market://details?id=com.morsecode.translator.jinh", executeurl : "market://details?id=com.morsecode.translator.jinh"},{os:"ios", devicetype:"pad",installurl:"market://details?id=com.morsecode.translator.jinh",executeurl : "market://details?id=com.morsecode.translator.jinh"}]}),
 	        type : "app"
 		});
-	});*/
+	});
 	$('#share_mail').click(function(){
 		window.location = "mailto:?subject=[모스 부호] 앱으로 만든 부호를 보냅니다.&body=" + $('#output').val() + " http://admin0.github.com/morse/";
 	});
@@ -305,48 +305,7 @@ function notice() {
 	$('#notice').click(function(){
 		$(this).fadeOut();
 	});
-	
-	/*ax.ext.android.setOnOptionsItemSelected(function(s){ //android menu
-		if (s === 0) {
-		    window.location = "index.html";
-		} else if (s === 1) {
-	    	window.location = "license.html";
-	    } else if (s === 2) {
-	    	window.location = "info.html";
-	    } else if (s === 3) {
-	    	ax.ext.android.finish();
-	    };
-	});
-	ax.ext.android.setOptionsItems(['초기 화면','오픈 소스 라이센스','정보','종료']);*/
 }
-
-var position_top = 0;
-$(window).scroll(function() {
-	/*if (document.height == null) { // this is for old IE
-		pageYOffset = document.documentElement.scrollTop;
-	}*/
-	if (position_top - pageYOffset < 0) {
-		if ($(document).height() - pageYOffset - $(window).height() < 50) {
-			$('footer').css('bottom',0);
-		} else {
-			$('#ad').css('top',-$('#ad').height());
-			$('footer').css('bottom',-margin['footer']);
-		}
-	} else if (position_top - pageYOffset > 0) {
-		if (pageYOffset < 25) {
-			$('#ad').css('top',0);
-			//$('footer').css('bottom',-margin['footer']);
-		} else {
-			$('#ad').css('top',0);
-			$('footer').css('bottom',0);
-		}
-	}
-	position_top = pageYOffset;
-	
-	if(pageYOffset >= 1000) { //scroll side ad
-		$('#sidead').css({'top':$(document).height() - 675});
-	} else if(pageYOffset >=1850) {	}
-});
 
 $(function() {
 	if (location.pathname == "/index.html") {
