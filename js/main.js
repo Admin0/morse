@@ -234,12 +234,12 @@ function button_click() {
 		});
 	});
 	$('#share_facebook').click(function(){
-		window.location = "http://www.facebook.com/sharer/sharer.php?u=http://market.android.com/details?id=com.morsecode.translator.jinh";
+		window.open("http://www.facebook.com/sharer/sharer.php?u=http://admin0.github.com/morse/",'','height=260,width=550').focus(); return false;
 	});
 	$('#share_google').click(function(){
-		window.location = "https://plus.google.com/share?url=http://market.android.com/details?id=com.morsecode.translator.jinh";
+		window.location = "https://plus.google.com/share?url=http://admin0.github.com/morse/";
 	});
-	$('#share_kakaotalk').click(function(){
+	/*$('#share_kakaotalk').click(function(){
 		kakao.link("talk").send({
 	        msg : $('#output').val(),
 	        url : "market://details?id=com.morsecode.translator.jinh",
@@ -249,20 +249,16 @@ function button_click() {
 	        metainfo : JSON.stringify({metainfo : [ {os:"android", devicetype: "phone",installurl:"market://details?id=com.morsecode.translator.jinh", executeurl : "market://details?id=com.morsecode.translator.jinh"},{os:"ios", devicetype:"pad",installurl:"market://details?id=com.morsecode.translator.jinh",executeurl : "market://details?id=com.morsecode.translator.jinh"}]}),
 	        type : "app"
 		});
-	});
+	});*/
 	$('#share_mail').click(function(){
-		window.location = "mailto:?subject=[모스 부호] 앱으로 만든 부호를 보냅니다.&body=" + $('#output').val() + " \r\n Play 스토어에서 보기: http://goo.gl/FW2hA";
+		window.location = "mailto:?subject=[모스 부호] 앱으로 만든 부호를 보냅니다.&body=" + $('#output').val() + " http://admin0.github.com/morse/";
 	});
 	$('#share_twitter').click(function(){
-		window.location = "https://twitter.com/share?url=http://goo.gl/FW2hA%C2%A0@Bloger_JinH&text=" + $('#output').val();
+		window.open("https://twitter.com/share?url=http://admin0.github.com/morse/%C2%A0@Bloger_JinH&text=" + $('#output').val(),'','height=260,width=550').focus(); return false;
 	});
 	
 	$('#menu_review').click(function(){
-		ax.ext.ui.confirm(function(r){
-			if (r==true) {
-				ax.ext.ui.open('http://market.android.com/details?id=com.morsecode.translator.jinh');
-			}
-		}, '별점과 리뷰를 남깁니다.');
+		window.open("https://www.facebook.com/Sample.by.JinH", "_blank"); 
 	});
 	
 	$('#menu_setting').click(function(){
@@ -309,16 +305,8 @@ function notice() {
 	$('#notice').click(function(){
 		$(this).fadeOut();
 	});
-			
-	$('footer a').click(function(){
-		ax.ext.ui.confirm(function(r){
-			if (r==true) {
-				ax.ext.ui.open('http://jinh.tistory.com/m');
-			}
-		}, '블로그로 이동합니다.');
-	});
 	
-	ax.ext.android.setOnOptionsItemSelected(function(s){ //android menu
+	/*ax.ext.android.setOnOptionsItemSelected(function(s){ //android menu
 		if (s === 0) {
 		    window.location = "index.html";
 		} else if (s === 1) {
@@ -329,7 +317,7 @@ function notice() {
 	    	ax.ext.android.finish();
 	    };
 	});
-	ax.ext.android.setOptionsItems(['초기 화면','오픈 소스 라이센스','정보','종료']);
+	ax.ext.android.setOptionsItems(['초기 화면','오픈 소스 라이센스','정보','종료']);*/
 }
 
 var position_top = 0;
