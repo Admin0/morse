@@ -1,14 +1,9 @@
-﻿var adam = {
-		'client':'4788Z1TT13d4f4235a3',
-		'position' : 'MIDDLE',
-		'bannerDivId' : 'ad',
-		'test' : false
-};
-var input_type = {'tel':'Tel','text':'Aa'}; //input type value
+﻿var input_type = {'tel':'Tel','text':'Aa'}; //input type value
 var margin = {
-	'ad':48,
-	'footer':50,
-	'n_b':25//notification_bar
+	"ad":48,
+	"footer":50,
+	"n_b":25,//notification_bar
+	"body":100
 };
 var color = {
 		'toggle_bg0':'#ffffff',
@@ -277,7 +272,7 @@ function notice() {
 }
 
 function initialize() {
-	$('body').css({"min-height":window.document.height});
+	$('body').css({"min-height":window.document.height - margin["body"]});
 }
 
 $(function() {
