@@ -118,18 +118,18 @@ footer {
 	text-align: center;
 	font-size: 10px;
 	background: #eee;
-	border-top: 1px solid #aaa;
+	border: 1px solid #aaa;
 	color: gray;
 	box-shadow: #aaa 0 0 1em; /*color x y length*/
 	-webkit-transition: 0.5s;
 }
 footer:before {
 	content:"";
-	margin: -65px 0 0 -2px;
+	margin: -114px 0 0 664px;
 	display: block;
 	position: fixed;
 	border-width: 32px;
-	border-color: transparent #aaa #aaa transparent;
+	border-color: transparent transparent #aaa #aaa;
 	border-style: solid;
 }
 footer:after {
