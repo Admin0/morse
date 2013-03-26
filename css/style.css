@@ -125,7 +125,7 @@ footer {
 }
 footer:before {
 	content:"";
-	margin: -114px 0 0 664px;
+	margin: -65px -2px 0 0;
 	display: block;
 	position: fixed;
 	border-width: 32px;
@@ -134,7 +134,7 @@ footer:before {
 }
 footer:after {
 	content:"";
-	margin: -65px -2px 0 0;
+	margin: -114px 0 0 664px;
 	display: block;
 	position: fixed;
 	border-width: 32px;
