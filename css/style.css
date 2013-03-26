@@ -1,13 +1,13 @@
 html	{
-	background: #555;
+	background: #eee;
 }
 
 body	{
 	padding: 0 0 4em;
 	margin: 0 auto;
-	background: #f5f5f5;
+	background: #fff;
 	color:#444;
-	width: 725px;
+	width: 600px;
 	border: 1px solid #aaa;
 	box-shadow: #aaa 0 0 1em;
 }
@@ -57,7 +57,7 @@ body	{
 	width:200%;
 }
 .imgs	{
-	width:50%; float:left; background: #f5f5f5;
+	width:50%; float:left; background: #fff;
 	-webkit-box-pack: center;
 	-webkit-box-align: center;
 	display: -webkit-box;
