@@ -125,7 +125,16 @@ footer {
 }
 footer:before {
 	content:"";
-	margin-top: -65px;
+	margin: -65px 0 0 -2px;
+	display: block;
+	position: fixed;
+	border-width: 32px;
+	border-color: transparent #aaa #aaa transparent;
+	border-style: solid;
+}
+footer:after {
+	content:"";
+	margin: -65px -2px 0 0;
 	display: block;
 	position: fixed;
 	border-width: 32px;
