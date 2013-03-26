@@ -129,7 +129,7 @@ footer:before {
 	display: block;
 	position: fixed;
 	border-width: 32px;
-	border-color: transparent transparent #aaa #aaa;
+	border-color: transparent #aaa #aaa transparent;
 	border-style: solid;
 }
 footer:after {
@@ -138,7 +138,7 @@ footer:after {
 	display: block;
 	position: fixed;
 	border-width: 32px;
-	border-color: transparent #aaa #aaa transparent;
+	border-color: transparent transparent #aaa #aaa;
 	border-style: solid;
 }
 .menu	{
