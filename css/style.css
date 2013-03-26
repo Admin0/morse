@@ -112,9 +112,10 @@ body	{
 footer {
 	position: fixed;
 	/*height:50px;*/
+	width: 728px;
 	bottom: 0;
+	margin-left: -64px;
 	text-align: center;
-	width: 725px;
 	font-size: 10px;
 	background: #eee;
 	border-top: 1px solid #aaa;
@@ -179,8 +180,9 @@ footer {
 
 #ad {
 	position: absolute;
-	width:725px;
+	width:728px;
 	height:90px;
+	margin-left: -64px;
 	top: 0;
 	text-align: center;
 	background: #eee;
