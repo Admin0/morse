@@ -3,7 +3,7 @@ var margin = {
 	"ad":48,
 	"footer":50,
 	"n_b":25,//notification_bar
-	"body":100
+	"body":67 //tested at jnu
 };
 var color = {
 		'toggle_bg0':'#ffffff',
@@ -16,7 +16,7 @@ var color = {
 	
 var currentImg=0;
 function button_swipe() {
-	var IMG_WIDTH = 725;
+	var IMG_WIDTH = 600;
 
 	//var currentImg=0;
 	var maxImages=2;
