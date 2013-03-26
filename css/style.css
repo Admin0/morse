@@ -123,6 +123,12 @@ footer {
 	box-shadow: #aaa 0 0 1em; /*color x y length*/
 	-webkit-transition: 0.5s;
 }
+footer:before {
+	width:20px;
+	height:20px;
+	content:"";
+	background-color:yellow;
+}
 .menu	{
 	width:24%;
 	height:50px;
