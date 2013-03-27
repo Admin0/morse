@@ -228,3 +228,9 @@ input[type="button"]:active,input[type="submit"]:active ,.button:active
 .button:has(input)	{
 	backgroud: #ffa;
 }
+
+@media handheld	{
+	html	{
+		width:320px;
+	}
+}
