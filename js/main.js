@@ -248,7 +248,7 @@ function button_click() {
 
 function notice() {
 	function notice_img() {//notice_animation
-		$('.notice').css({"margin":"2em " + (window.document.width - 310)/2 + "px 0"});
+		$('.notice').css({"margin":"2em " + ($('html').width() - 320) / 2 + "px"});
 		$('.notice:last').css("margin",0);
 		$('#notice0').fadeIn().animate({top: '+=1em'},500,function(){
 			$('#notice1').fadeIn().animate({top: '-=1em'},500,function(){
