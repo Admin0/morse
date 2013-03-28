@@ -87,10 +87,21 @@ function button_swipe() {
 	*/
 	function scrollImages(distance, duration) {
 		imgs = $("#imgs");
-		imgs.css("-webkit-transition-duration", (duration/1000).toFixed(1) + "s");
+		imgs.css({
+			"-webkit-transition-duration":	(duration/1000).toFixed(1) + "s",
+			"-moz-transition-duration":		(duration/1000).toFixed(1) + "s",
+			"-o-transition-duration":		(duration/1000).toFixed(1) + "s",
+			"transition-duration":			(duration/1000).toFixed(1) + "s"
+		});
 		//inverse the number we set in the css
 		var value = (distance<0 ? "" : "-") + Math.abs(distance).toString();
-		imgs.css("-webkit-transform", "translate3d("+value +"px,0px,0px)");
+		imgs.css({
+			"-webkit-transform":"translate3d("+value +"px,0px,0px)",
+			"-moz-transform":	"translate3d("+value +"px,0px,0px)",
+			"-ms-transform":	"translate3d("+value +"px,0px,0px)",
+			"-o-transform":		"translate3d("+value +"px,0px,0px)",
+			"transform":		"translate3d("+value +"px,0px,0px)"
+		});
 	}
 
 	function toggle_morse() {

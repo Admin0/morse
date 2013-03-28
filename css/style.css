@@ -41,6 +41,9 @@ body	{
 	width: 85%;
 	padding:1em;
 	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
 }
 .input_toggle	{
 	width: 3em;
@@ -59,8 +62,12 @@ body	{
 .imgs	{
 	width:50%; float:left; background: #fff;
 	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	box-pack: center;
 	-webkit-box-align: center;
-	display: -webkit-box;
+	-moz-box-align: center;
+	box-align: center;
+	/*display: -webkit-box;*/
 	height:3.5em;
 }
 #translate, #analyze {
@@ -72,6 +79,7 @@ body	{
 	background:#4d90fe;
 	border: 1px solid #3079ed;
 	border-radius:3px;
+	display: inline-block;
 	/*-webkit-transition: 0.25s;*/
 }
 #translate:active, #analyze:active {
@@ -122,6 +130,9 @@ footer {
 	color: gray;
 	box-shadow: #aaa 0 0 1em; /*color x y length*/
 	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
 }
 .menu	{
 	width:24%;
@@ -189,6 +200,9 @@ footer {
 	border: 1px solid #aaa;
 	box-shadow: #aaa 0 0 1em;
 	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
 }
 
 input			{border:1px solid silver; border-radius:3px; background:#f0f0f0; padding:2px 5px;}
@@ -208,6 +222,9 @@ input[type="button"]:active,input[type="submit"]:active ,.button:active
 	display:inline-block;
 	margin: 0 0 1ex 1ex;
 	-webkit-transition: .5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
 }
 .button_first	{
 	margin-right:0;
