@@ -16,7 +16,7 @@ var color = {
 	
 var currentImg=0;
 function button_swipe() {
-	var IMG_WIDTH = 600;
+	var IMG_WIDTH = $('.contents').width();
 
 	//var currentImg=0;
 	var maxImages=2;
@@ -49,18 +49,18 @@ function button_swipe() {
 			var duration=0;
 			if (direction == "left")
 				if (currentImg == maxImages - 1) { // 마지막 이미지에서 왼쪽 스와이프 제한
-					scrollImages((IMG_WIDTH * currentImg) + distance/5, duration);
+					scrollImages(($('.contents').width() * currentImg) + distance/5, duration);
 				} else {
-					scrollImages((IMG_WIDTH * currentImg) + distance, duration);	
+					scrollImages(($('.contents').width() * currentImg) + distance, duration);	
 				}
 			else if (direction == "right")
 				if (currentImg == 0) { // 첫 이미지에서 오른쪽 스와이프 제한
-					scrollImages((IMG_WIDTH * currentImg) - distance/5, duration);
+					scrollImages(($('.contents').width() * currentImg) - distance/5, duration);
 				} else {
-					scrollImages((IMG_WIDTH * currentImg) - distance, duration);	
+					scrollImages(($('.contents').width() * currentImg) - distance, duration);	
 				}
 		} else if ( phase == "cancel") {
-			scrollImages(IMG_WIDTH * currentImg, speed);
+			scrollImages($('.contents').width() * currentImg, speed);
 		} else if ( phase =="end" ) {
 			if (direction == "right") {
 				previousImage();
@@ -73,13 +73,13 @@ function button_swipe() {
 			
 	function previousImage() {
 		currentImg = Math.max(currentImg-1, 0);
-		scrollImages( IMG_WIDTH * currentImg, speed);
+		scrollImages( $('.contents').width() * currentImg, speed);
 	}
 
 	function nextImage()
 	{
 		currentImg = Math.min(currentImg+1, maxImages-1);
-		scrollImages( IMG_WIDTH * currentImg, speed);
+		scrollImages( $('.contents').width() * currentImg, speed);
 	}
 		
 	/**

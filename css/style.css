@@ -12,6 +12,10 @@ body	{
 	box-shadow: #aaa 0 0 1em;
 }
 
+.contents	{
+
+}
+
 #notice	{
 	display:none;
 	z-index: 1;
@@ -29,6 +33,19 @@ body	{
 	color:#fff;
 	left:0;
 	display:none;
+}
+
+#send_to_phone	{
+	text-align:center;
+	width: 250px;
+	position: fixed;
+	right:0;
+}
+#download_app	{
+	text-align:center;
+	width: 250px;
+	position: fixed;
+	left:0;
 }
 
 #input {
@@ -187,11 +204,27 @@ footer {
 	background:#bce;
 }
 
-#ad {
+#ad_top_screen {
 	position: absolute;
 	width:728px;
 	height:90px;
 	margin: 1em 0 1em -64px;
+	top: 0;
+	text-align: center;
+	background: #eee;
+	border: 1px solid #aaa;
+	box-shadow: #aaa 0 0 1em;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+#ad_top_mobile	{
+	display:none;
+	position: absolute;
+	width:100%;
+	height:50px;
+	margin: 2.5em 0 2.5em 0;
 	top: 0;
 	text-align: center;
 	background: #eee;
@@ -244,8 +277,13 @@ input[type="button"]:active,input[type="submit"]:active ,.button:active
 	backgroud: #ffa;
 }
 
-@media handheld	{
-	html	{
-		width:320px;
-	}
+@media handheld, only screen and (max-device-width: 480px), only screen and (max-device-width: 320px), screen and (max-width: 600px)	{	
+	body,footer	{width:100%;}
+	#ad_top_screen	{display:none;}
+	#ad_top_mobile	{display:block;}
+}
+
+/*#send_to_phone hide*/
+@media screen and (max-width: 1100px)	{
+	#send_to_phone,#download_app	{display:none;}
 }

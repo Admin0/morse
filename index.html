@@ -14,48 +14,60 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-		<div id="notice">
+		<section id="notice">
 			<img class="notice" id="notice0" style="top: 0em;" src="image/notice0.png">
 			<img class="notice" id="notice1" style="top: 11em;" src="image/notice1.png">
 			<img class="notice" id="notice2" style="top: 10em; left:170px;" src="image/notice2.png">
 			<img class="notice" id="notice3" style="top: 13em;" src="image/notice3.png">
 			<img class="notice" id="notice4" style="top: 21em;" src="image/notice4.png">
 			<label class="notice" style="display: block; bottom:0; padding:1em 0; margin:0; text-align:left; background:#555; width:100%;">&nbsp;<input type="checkbox" id="notice_check"> 안내 화면을 더 이상 보지 않습니다.</label>
-		</div>
-		<form id="input">
-			<input id="input_textarea" type="text" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();"></input>
-			<input type="button" class="input_toggle" style="" value="☎">
-			<div style="width:100%; overflow: hidden; margin: 1em 0 .5em; background:#ccc;">
-				<div id="imgs">
-					<div class="imgs">
-						<div id="translate">translate</div>
-					</div>
-					<div class="imgs">
-						<div id="analyze">analyze</div>
-					</div>
-				</div>
-			</div>
-		</form>
-		<form id="option">
-			<div style="display: inline-block;">
-		    	<div class="button button_first"><label><input type="radio" name="type" id="radio_kr" value="kr" checked><span class="radio_span">한글</span></label></div>
-		        <div class="button button_between"><label><input type="radio" name="type" id="radio_en" value="en"><span class="radio_span">영어</span></label></div>
-		        <div class="button button_last"><label><input type="radio" name="type" id="radio_nm" value="nm"><span class="radio_span">숫자</span></label></div>
-	        </div>
-	        <div style="display: inline-block;">
-		        <div class="button"><label><input id="assemble" type="checkbox" checked /><span class="radio_span">음소조합(KR)</span></label></div>
-		        <div class="button"><label><input id="capital" type="checkbox" /><span class="radio_span">대문자(EN)</span></label></div>
-		    </div>	
-		    <div style="display: inline-block;">
-		        <div class="button button_first">
-		        	<label><input type="radio" name="space">긴공백: <input id="space_string" type="text" style="width:1em;" value="　　　" onclick="select()"></label>
-					<label><input type="radio" name="space">짧은공백: <input id="space_char" type="text" style="width:1em;" value="　" onclick="select()"></label>
-				</div>
-		        <div class="button button_between" onclick="$('#space_char').val('　');$('#space_string').val('　　　');"><label><input type="radio" name="space" checked>JinH</label></div>
-		       	<div class="button button_last" onclick="$('#space_char').val(' ');$('#space_string').val('9');" ><label><input type="radio" name="space">모바일</label></div>
-		    </div>
-		</form>
-		<textarea id="output" rows="1" cols="10" onclick="select()">모스 부호 변환기 + 해석기
+		</section>
+        <section id="send_to_phone">
+        	<p>Use it on your Phone!</p>
+        	<img src="image/qrcode.png" style="width:100px; height:100px;"/>
+        </section>
+        <section id="download_app">
+        	<p>Morsecode on Google Play!</p>
+        	<img src="image/google_play.png" style="width:200px;" onclick="window.location = 'https://chrome.google.com/webstore/detail/cobccnllippnmgibbgdnkdaljjpcppjl'"/>
+        	<p>&nbsp;</p>
+        	<p>and, Chrome Web Store!</p>
+        	<img src="image/chrome_store.png" style="width:200px;" onclick="window.location = 'https://play.google.com/store/apps/details?id=com.morsecode.translator.jinh'"/>
+        </section>
+        <section id="index" class="contents">
+            <form id="input">
+                <input id="input_textarea" type="text" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();"></input>
+                <input type="button" class="input_toggle" style="" value="☎">
+                <div style="width:100%; overflow: hidden; margin: 1em 0 .5em; background:#ccc;">
+                    <div id="imgs">
+                        <div class="imgs">
+                            <div id="translate">translate</div>
+                        </div>
+                        <div class="imgs">
+                            <div id="analyze">analyze</div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form id="option">
+                <div style="display: inline-block;">
+                    <div class="button button_first"><label><input type="radio" name="type" id="radio_kr" value="kr" checked><span class="radio_span">한글</span></label></div>
+                    <div class="button button_between"><label><input type="radio" name="type" id="radio_en" value="en"><span class="radio_span">영어</span></label></div>
+                    <div class="button button_last"><label><input type="radio" name="type" id="radio_nm" value="nm"><span class="radio_span">숫자</span></label></div>
+                </div>
+                <div style="display: inline-block;">
+                    <div class="button"><label><input id="assemble" type="checkbox" checked /><span class="radio_span">음소조합(KR)</span></label></div>
+                    <div class="button"><label><input id="capital" type="checkbox" /><span class="radio_span">대문자(EN)</span></label></div>
+                </div>	
+                <div style="display: inline-block;">
+                    <div class="button button_first">
+                        <label><input type="radio" name="space">긴공백: <input id="space_string" type="text" style="width:1em;" value="　　　" onclick="select()"></label>
+                        <label><input type="radio" name="space">짧은공백: <input id="space_char" type="text" style="width:1em;" value="　" onclick="select()"></label>
+                    </div>
+                    <div class="button button_between" onclick="$('#space_char').val('　');$('#space_string').val('　　　');"><label><input type="radio" name="space" checked>JinH</label></div>
+                    <div class="button button_last" onclick="$('#space_char').val(' ');$('#space_string').val('9');" ><label><input type="radio" name="space">모바일</label></div>
+                </div>
+            </form>
+            <textarea id="output" rows="1" cols="10" onclick="select()">모스 부호 변환기 + 해석기
 
 
 
@@ -78,19 +90,20 @@
 
 
 · · · ·　 ·　 · – · ·　 · – · ·　 – – –　　　 · – –　 – – –　 · – ·　 · – · ·　 – · ·　 – · – · – –</textarea>
-		<div style="text-align:center;">
-			<script type="text/javascript"><!--
-                google_ad_client = "ca-pub-8175591114279139";
-                /* 배너 */
-                google_ad_slot = "4776153728";
-                google_ad_width = 468;
-                google_ad_height = 60;
-                //-->
+            <div style="text-align:center;">
+                <script type="text/javascript"><!--
+                    google_ad_client = "ca-pub-8175591114279139";
+                    /* 배너 */
+                    google_ad_slot = "4776153728";
+                    google_ad_width = 468;
+                    google_ad_height = 60;
+                    //-->
+                    </script>
+                    <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                 </script>
-                <script type="text/javascript"
-                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-            </script>
-        </div>
+            </div>
+        </section>
 
 		<footer>
 			<div class="menu" id="menu_toggle">
@@ -125,7 +138,7 @@
 				</div>
 			</div>
 		</footer>
-		<div id="ad">
+		<div id="ad_top_screen">
        		<script type="text/javascript"><!--
 				google_ad_client = "ca-pub-8175591114279139";
 				/* 리더보드 */
@@ -137,6 +150,20 @@
 				<script type="text/javascript"
 				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 			</script>
+		</div>
+		<div id="ad_top_mobile">
+			<script type="text/javascript"><!--
+				// XHTML should not attempt to parse these strings, declare them CDATA.
+				/* <![CDATA[ */
+				window.googleAfmcRequest = {
+					client: 'ca-mb-pub-8175591114279139',
+					format: '320x50_mb',
+					output: 'HTML',
+					slotname: '9013298457',
+				};
+				/* ]]> */
+            //--></script>
+			<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_afmc_ads.js"></script>
 		</div>
 		<script type="text/javascript"><!-- analytics -->
         
