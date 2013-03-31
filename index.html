@@ -23,6 +23,7 @@
 			<img class="notice" id="notice4" style="top: 21em;" src="image/notice4.png">
 			<label class="notice" style="display: block; bottom:0; padding:1em 0; margin:0; text-align:left; background:#555; width:100%;">&nbsp;<input type="checkbox" id="notice_check"> 안내 화면을 더 이상 보지 않습니다.</label>
 		</section>
+        <div id="notice_msg">test</div>
         <section id="send_to_phone">
         	<p>Use it on your Phone!</p>
         	<img src="image/qrcode.png" style="width:100px; height:100px;"/>
@@ -38,7 +39,7 @@
             <form id="input">
                 <input id="input_textarea" type="text" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();"></input>
                 <input type="button" class="input_toggle" style="" value="☎">
-                <div style="width:100%; overflow: hidden; margin: 1em 0 .5em; background:#ccc;">
+                <div style="width:100%; overflow: hidden; margin: 1em 0 .5em; background:#eee;">
                     <div id="imgs">
                         <div class="imgs">
                             <div id="translate">translate</div>
@@ -91,18 +92,18 @@
 
 
 · · · ·　 ·　 · – · ·　 · – · ·　 – – –　　　 · – –　 – – –　 · – ·　 · – · ·　 – · ·　 – · – · – –</textarea>
-            <div style="text-align:center;">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-8175591114279139";
-/* 대형직사각형 */
-google_ad_slot = "8258672091";
-google_ad_width = 336;
-google_ad_height = 280;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+            <div style="text-align:center; overflow:hidden;">
+				<script type="text/javascript"><!--
+					google_ad_client = "ca-pub-8175591114279139";
+					/* 대형직사각형 */
+					google_ad_slot = "8258672091";
+					google_ad_width = 336;
+					google_ad_height = 280;
+					//-->
+                </script>
+                <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
             </div>
         </section>
 
@@ -132,7 +133,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 					<div class="share_button"><div class="share_icon" id="share_twitter"></div>twitter</div>
 				</div>
 				<div class="footer_output" id="footer_output_setting">
-					<div class="setting" onclick="localStorage.clear()">실행 화면 안내 애니메이션 다시 보기</div>
+					<div class="setting" id="setting_notice">실행 화면 안내 애니메이션 다시 보기</div>
 					<div class="setting" onclick="window.location = 'license.html'">오픈 소스 라이센스</div>
 					<div class="setting" onclick="window.location = 'info.html'">정보</div>
 					<div class="setting" onclick="ax.ext.android.finish()">종료</div>

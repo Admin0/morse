@@ -3,7 +3,7 @@ var margin = {
 	"ad":48,
 	"footer":50,
 	"n_b":25,//notification_bar
-	"body":67 //tested at jnu
+	"body":128 //tested at jnu
 };
 var color = {
 		'toggle_bg0':'#ffffff',
@@ -272,16 +272,24 @@ function notice() {
 	
 	if (window.localStorage.getItem('notice154') !== "read") {
 		$('#notice').show();
+		$('#setting_notice').click(function(){
+			notice_mag('새로고침하면 도움말이 표시됩니다.');
+			localStorage.clear();
+		});
+	} else {
+		$('#setting_notice').click(function(){
+			notice_mag('새로고침하면 도움말이 표시됩니다.');
+			localStorage.clear();
+		});
 	}
-	$('#notice').click(function(){
-		if($("#notice_check:checked").val() == 'on') {
-			$('#notice').fadeOut();$('#notice_bg').fadeOut();
-			window.localStorage.setItem('notice154', 'read');
-		}
-	});	
+	
 	$('#notice').click(function(){
 		$(this).fadeOut();
 	});
+	
+	function notice_mag(msg) {
+		$('#notice_msg').text(msg).css({"margin-left":($('.contents').width()-$('#notice_msg').width())/2}).fadeIn().delay(2000).fadeOut();	
+	}
 }
 
 function initialize() {
@@ -289,7 +297,7 @@ function initialize() {
 }
 
 $(function() {
-	//initialize()
+	initialize()
 	output_resize();
 	button_swipe();
 	button_click();

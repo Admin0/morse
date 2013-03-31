@@ -8,8 +8,13 @@ body	{
 	background: #fff;
 	color:#444;
 	width: 600px;
-	border: 1px solid #aaa;
+	outline:1px solid #aaa;
+	/*border: 1px solid #aaa;*/
 	box-shadow: #aaa 0 0 1em;
+	-webkit-transition: .5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
 }
 
 .contents	{
@@ -33,6 +38,19 @@ body	{
 	color:#fff;
 	left:0;
 	display:none;
+}
+#notice_msg {
+	position:fixed;
+	min-width: 200px;
+	max-width: 500px;
+	text-align: center;
+	background:#eee;
+	bottom:15%;
+	padding:1ex;
+	outline:1px solid #aaa;
+	box-shadow: #aaa 0 0 1em;
+	display:none;;
+	z-index: 1;
 }
 
 #send_to_phone	{
@@ -95,11 +113,15 @@ body	{
 	border: 1px solid #3079ed;
 	border-radius:3px;
 	display: inline-block;
+	cursor: pointer;
 	/*-webkit-transition: 0.25s;*/
 }
 #translate:active, #analyze:active {
 	background: #4787ed; 
-	box-shadow:#3079ed 0 0 1ex;
+	box-shadow: #3079ed 0 0 1ex;
+}
+#translate:hover, #analyze:hover {
+	box-shadow: #4787ed 0 0 1ex;
 }
 
 #option {
@@ -137,22 +159,22 @@ footer {
 	/*height:50px;*/
 	width: 600px;
 	bottom: 0;
-	margin-left: -1px;
 	text-align: center;
 	font-size: 10px;
 	background: #eee;
-	border: 1px solid #aaa;
+	outline:1px solid #aaa;
 	color: gray;
 	box-shadow: #aaa 0 0 1em; /*color x y length*/
-	-webkit-transition: 0.5s;
+	/*-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
 	-o-transition: 0.5s;
-	transition: 0.5s;
+	transition: 0.5s;*/
 }
 .menu	{
 	width:24%;
 	height:50px;
 	display:inline-block;
+	cursor: pointer;
 }
 .menu img	{
 	width:32px;
@@ -173,6 +195,7 @@ footer {
 	width:32px;
 	height:32px;
 	margin:auto;
+	border-radius:1ex;
 }
 .share_icon:active	{
 	box-shadow:#3079ed 0 0 16px;
@@ -199,9 +222,13 @@ footer {
 	border-color:silver;
 	border-width:1px 0 0 0;
 	border-style:solid;
+	cursor: pointer;
 }
 .setting:active	{
 	background:#bce;
+}
+.setting:hover	{
+	background:#ddd;
 }
 
 #ad_top_screen {
@@ -212,7 +239,7 @@ footer {
 	top: 0;
 	text-align: center;
 	background: #eee;
-	border: 1px solid #aaa;
+	outline:1px solid #aaa;
 	box-shadow: #aaa 0 0 1em;
 	-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
@@ -228,7 +255,7 @@ footer {
 	top: 0;
 	text-align: center;
 	background: #eee;
-	border: 1px solid #aaa;
+	outline:1px solid #aaa;
 	box-shadow: #aaa 0 0 1em;
 	-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
@@ -252,6 +279,7 @@ input[type="button"]:active,input[type="submit"]:active ,.button:active
 .button	{ 
 	display:inline-block;
 	margin: 0 0 1ex 1ex;
+	cursor:pointer;
 	-webkit-transition: .5s;
 	-moz-transition: 0.5s;
 	-o-transition: 0.5s;
@@ -277,6 +305,7 @@ input[type="button"]:active,input[type="submit"]:active ,.button:active
 	backgroud: #ffa;
 }
 
+/*mobile css*/
 @media handheld, only screen and (max-device-width: 480px), only screen and (max-device-width: 320px), screen and (max-width: 600px)	{	
 	body,footer	{width:100%;}
 	body	{
@@ -284,6 +313,10 @@ input[type="button"]:active,input[type="submit"]:active ,.button:active
 	}
 	#ad_top_screen	{display:none;}
 	#ad_top_mobile	{display:block;}
+	#output_msg	{
+		min-width: 50%;
+		max-width: 85%;
+	}
 }
 
 /*#send_to_phone hide*/
