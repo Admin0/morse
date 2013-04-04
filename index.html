@@ -6,13 +6,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="google-site-verification" content="_D3_W4589GIbhr8GHlw8CIY3fMaeZxr23F4FP9u-9bM" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="image/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery_touchswipe.js"></script>
 		<script type="text/javascript" src="js/kakaolink.js"></script>
 		<script type="text/javascript" src="js/translate.js"></script>
 		<script type="text/javascript" src="js/analyze.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
 		<section id="notice">
@@ -25,20 +27,20 @@
 		</section>
         <div id="notice_msg">test</div>
         <section id="send_to_phone">
+        	<img src="image/qrcode.png" style="width:96px; height:100px;"/>
         	<p>Use it on your Phone!</p>
-        	<img src="image/qrcode.png" style="width:100px; height:100px;"/>
         </section>
         <section id="download_app">
+        	<img src="image/icon_google_play.png" style="width:64px; cursor:pointer;" onclick="window.location = 'https://play.google.com/store/apps/details?id=com.morsecode.translator.jinh'"/>
         	<p>Morsecode on Google Play!</p>
-        	<img src="image/google_play.png" style="width:200px;" onclick="window.location = 'https://chrome.google.com/webstore/detail/cobccnllippnmgibbgdnkdaljjpcppjl'"/>
         	<p>&nbsp;</p>
+        	<img src="image/icon_chrome_store.png" style="width:64px; cursor:pointer;" onclick="window.location = 'https://chrome.google.com/webstore/detail/cobccnllippnmgibbgdnkdaljjpcppjl'"/>
         	<p>and, Chrome Web Store!</p>
-        	<img src="image/chrome_store.png" style="width:200px;" onclick="window.location = 'https://play.google.com/store/apps/details?id=com.morsecode.translator.jinh'"/>
         </section>
         <section id="index" class="contents">
             <form id="input">
                 <input id="input_textarea" type="text" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();"></input>
-                <input type="button" class="input_toggle" style="" value="☎">
+                <input type="button" id="input_toggle" value="☎">
                 <div style="width:100%; overflow: hidden; margin: 1em 0 .5em; background:#eee;">
                     <div id="imgs">
                         <div class="imgs">

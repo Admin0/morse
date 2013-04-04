@@ -108,13 +108,13 @@ function button_swipe() {
 		if (currentImg == 0) {
 			$('#input_textarea').attr('placeholder','한글, 영어, 숫자 및 문자를 입력하세요.').attr('type','text');
 			$('#option').slideUp();
-			$('.input_toggle').hide();
+			$('#input_toggle').hide();
 			$('#menu_toggle div').text('해석기');
 			$('#menu_toggle img').attr('src','image/menu_forward.png');
 		} else if (currentImg == 1) {
 			$('#input_textarea').attr('placeholder','모스 부호를 입력하세요. (type: tel)').attr('type','tel');
 			$('#option').slideDown();
-			$('.input_toggle').show().attr('value',input_type['tel']);
+			$('#input_toggle').show().attr('value',input_type['tel']);
 			$('#menu_toggle div').text('변환기');
 			$('#menu_toggle img').attr('src','image/menu_back.png');
 		}
@@ -167,7 +167,7 @@ function button_click() {
         threshold:25
       });
 	
-	$('.input_toggle').click(function(){
+	$('#input_toggle').click(function(){
 		if ($(this).attr('value') == input_type['tel']) {
 			$('#input_textarea').attr({'type':'text','placeholder':'모스 부호를 입력하세요. (type: text)'});
 			$(this).attr('value',input_type['text']);
@@ -181,8 +181,10 @@ function button_click() {
 		if (event.which == 13) {
 			if (currentImg == 0) {
 				translate();
+				output_resize();
 			} else if (currentImg == 1) {
 				analyze();
+				output_resize();
 			}
 		}
 	}).keydown(function(event) {
@@ -229,7 +231,7 @@ function button_click() {
 		window.location = "mailto:?subject=[모스 부호] 앱으로 만든 부호를 보냅니다.&body=" + $('#output').val() + " http://admin0.github.com/morse/";
 	});
 	$('#share_twitter').click(function(){
-		window.open("https://twitter.com/share?url=http://admin0.github.com/morse/%C2%A0@Bloger_JinH&text=" + $('#output').val(),'','height=260,width=550').focus(); return false;
+		window.open("https://twitter.com/share?url=http://admin0.github.com/morse/%C2%A0@Bloger_JinH&text=",'','height=260,width=550').focus(); return false;
 	});
 	
 	$('#menu_review').click(function(){
@@ -270,18 +272,27 @@ function notice() {
 	setTimeout(notice_img(),5000);
 	//notice_img()
 	
-	if (window.localStorage.getItem('notice154') !== "read") {
-		$('#notice').show();
-		$('#setting_notice').click(function(){
-			notice_mag('새로고침하면 도움말이 표시됩니다.');
-			localStorage.clear();
-		});
-	} else {
-		$('#setting_notice').click(function(){
-			notice_mag('새로고침하면 도움말이 표시됩니다.');
-			localStorage.clear();
-		});
-	}
+	$('#notice').click(function(){
+		if($("#notice_check:checked").val() == 'on') {
+			$('#notice').fadeOut();$('#notice_bg').fadeOut();
+			window.localStorage.setItem('notice154', 'read');
+			$('#setting_notice').css({"color":"gray"});
+		}
+		check_notice();
+	});	
+
+	function check_notice() {
+		if (window.localStorage.getItem('notice154') !== "read") {
+			$('#notice').show();
+			$('#setting_notice').css({"color":"silver"});
+		} else {
+			$('#setting_notice').click(function(){
+				notice_mag('새로고침하면 도움말이 표시됩니다.');
+				localStorage.clear();
+				$('#setting_notice').css({"color":"silver"});
+			});
+		}
+	}check_notice();
 	
 	$('#notice').click(function(){
 		$(this).fadeOut();

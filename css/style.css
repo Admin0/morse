@@ -17,6 +17,8 @@ body	{
 	transition: 0.5s;
 }
 
+a	{color:gray; text-decoration:none;}
+
 .contents	{
 
 }
@@ -73,20 +75,22 @@ body	{
 #input_textarea {
 	width: 85%;
 	padding:1em;
+	font-family: sans-serif;
 	-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
 	-o-transition: 0.5s;
 	transition: 0.5s;
 }
-.input_toggle	{
+#input_toggle	{
 	width: 3em;
 	display:none;
 	position:absolute;
+	font-family: sans-serif;
 	margin-left: -3em;
-	padding: 1em 0 !important;
+	padding: 1em 0;
 	/*-webkit-transition: 0.25s;*/
-	border-top-left-radius:0 !important;
-	border-bottom-left-radius:0 !important;
+	border-top-left-radius:0;
+	border-bottom-left-radius:0;
 }
 
 #imgs	{
@@ -109,6 +113,7 @@ body	{
 	padding: 1ex;
 	text-transform: uppercase;
 	color:#fff;
+	font-family: sans-serif;
 	background:#4d90fe;
 	border: 1px solid #3079ed;
 	border-radius:3px;
@@ -130,7 +135,7 @@ body	{
 	/*font-size:12px;*/
 	display:none;
 	box-shadow: #ccc -.5ex .5ex 1em inset;
-	border: 1px solid #ccc;
+	outline: 1px solid #ccc;
 }
 #option input[type=radio],
 #option input[type=checkbox]	{
@@ -147,11 +152,13 @@ body	{
 #output {
 	width: 90%;
 	/*border: 1px silver solid;*/
+	font-family: sans-serif;
 	background:none;
 	border:none;
 	/*padding: 1em;*/
 	display: block;
 	margin: .5em auto;
+	font-size: 16px;
 }
 
 footer {
@@ -176,6 +183,9 @@ footer {
 	display:inline-block;
 	cursor: pointer;
 }
+.menu:hover	{
+	background:#ddd;
+}
 .menu img	{
 	width:32px;
 	height:32px;
@@ -190,6 +200,10 @@ footer {
 	width: 19%;
 	display:inline-block;
 	padding:2em 0;
+	cursor:pointer;
+}
+.share_button:hover	{
+	background:#ddd;
 }
 .share_icon	{
 	width:32px;
@@ -229,6 +243,17 @@ footer {
 }
 .setting:hover	{
 	background:#ddd;
+}
+
+.previous_page	{
+	left:0;
+	width:32px;
+	position: absolute;
+	bottom:0;
+	padding: 9px 0;
+}
+.previous_page:hover	{
+	background:#ccc;
 }
 
 #ad_top_screen {
