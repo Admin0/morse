@@ -26,7 +26,7 @@ a	{color:gray; text-decoration:none;}
 #notice	{
 	display:none;
 	z-index: 1;
-	position:absolute;
+	position:fixed;
 	width: 100%; 
 	height: 100%;
 	top:0;
