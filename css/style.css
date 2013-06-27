@@ -344,7 +344,7 @@ input[type="button"]:active,input[type="submit"]:active ,.button:active
 	}
 }
 
-/*#send_to_phone hide*/
+/*#send_to_phone hide; size changed*/
 @media screen and (max-width: 1100px)	{
 	#send_to_phone,#download_app	{display:none;}
 }
