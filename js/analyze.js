@@ -295,6 +295,7 @@ function analyze() {
 		output = output.replace(/ㄹㄱ(?=[ㄱ-ㅎ])/g,"ㄺ");
 		output = output.replace(/ㄹㅁ(?=[ㄱ-ㅎ])/g,"ㄻ");
 		output = output.replace(/ㄹㅂ(?=[ㄱ-ㅎ])/g,"ㄼ");
+		output = output.replace(/ㄹㅎ(?=[ㄱ-ㅎ])/g,"ㅀ");
 		output = output.replace(/ㅂㅅ(?=[ㄱ-ㅎ])/g,"ㅄ");
 		for	(i=0; i<JungSeong.length; i++) {//모음 앞에 자음있으면 무조건 결합.
 			for (j=0; j<ChoSeong.length; j++) {
