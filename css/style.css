@@ -334,7 +334,7 @@ input[type="button"]:active,input[type="submit"]:active ,.button:active
 @media handheld, only screen and (max-device-width: 480px), only screen and (max-device-width: 320px), screen and (max-width: 600px)	{	
 	body,footer	{width:100%;}
 	body	{
-		margin: 100px auto 0;
+		margin: 50px auto 0;
 	}
 	#ad_top_screen	{display:none;}
 	#ad_top_mobile	{display:block;}
