@@ -298,20 +298,29 @@ function analyze() {
 		output = output.replace(/ㄹㅎ(?=[ㄱ-ㅎ])/g,"ㅀ");
 		output = output.replace(/ㅂㅅ(?=[ㄱ-ㅎ])/g,"ㅄ");
 		for	(i=0; i<JungSeong.length; i++) {//모음 앞에 자음있으면 무조건 결합.
-			for (j=0; j<ChoSeong.length; j++) {
-				var hangeul = new RegExp(String.fromCharCode(ChoSeong[j]) + String.fromCharCode(JungSeong[i]), 'g');
-				output = output.replace(hangeul,String.fromCharCode(j*21*28+i*28+0xAC00));
+			if(output.indexOf(String.fromCharCode(JungSeong[i])) !== -1){
+				for (j=0; j<ChoSeong.length; j++) {
+					if(output.indexOf(String.fromCharCode(ChoSeong[j])) !== -1){
+						var hangeul = new RegExp(String.fromCharCode(ChoSeong[j]) + String.fromCharCode(JungSeong[i]), 'g');
+						output = output.replace(hangeul,String.fromCharCode(j*21*28+i*28+0xAC00));
+					}
+				}
 			}
 		}
 		
 		for	(i=0; i<JungSeong.length; i++) {//문자 뒤에 자음이 있으면 받침으로 결합.
 			for (j=0; j<ChoSeong.length; j++) {
-				for (k=0; k<JongSeong.length; k++) {
-					var hangeul = new RegExp(String.fromCharCode(j*21*28+i*28+0xAC00) + String.fromCharCode(JongSeong[k]), 'g');
-					output = output.replace(hangeul,String.fromCharCode(j*21*28+i*28+k+0xAC00));
+				if(output.indexOf(String.fromCharCode(j*21*28+i*28+0xAC00)) !== -1){
+					for (k=0; k<JongSeong.length; k++) {
+						if(output.indexOf(String.fromCharCode(JongSeong[k])) !== -1){
+							var hangeul = new RegExp(String.fromCharCode(j*21*28+i*28+0xAC00) + String.fromCharCode(JongSeong[k]), 'g');
+							output = output.replace(hangeul,String.fromCharCode(j*21*28+i*28+k+0xAC00));
+						}
+					}
 				}
 			}
 		}
+
 	}
 	
 	var lang = $(":input:radio[name=type]:checked").val();//라디오 체크 먼저 실행 후 한번 씩 실행.
