@@ -15,6 +15,7 @@ body	{
 	-moz-transition: 0.5s;
 	-o-transition: 0.5s;
 	transition: 0.5s;
+	font-family:roboto, arial, "맑은 고딕";
 }
 
 a	{color:gray; text-decoration:none;}
@@ -159,6 +160,8 @@ a	{color:gray; text-decoration:none;}
 	display: block;
 	margin: .5em auto;
 	font-size: 16px;
+	font-family:roboto, arial, "맑은 고딕"
+	line-height:1.5;
 }
 
 footer {
