@@ -1,0 +1,10 @@
+{
+  "notice_to_android": "Morsecode on Google Play!",
+  "notice_to_chrome": "and, Chrome Web Store!",
+  "notice_to_phone": "Use it on your Phone!",
+  "notice_donate": "Or... maybe you can donate a little for me.",
+  "notice_check": "I don't want to see the guide screen.",
+  "input_textarea_placeholder_0": "Input the English, numbers, and etc.",
+  "input_textarea_placeholder_1": "enter a Morse code. (type: $1)",
+  "output_0":"MORSE CODE TRANSLATOR + ANALYZER\n\n\n- HOW TO USE\n1. 입력창에 변환하고 싶은 문자를 입력합니다.\n2. [TRNASLATE] 버튼을 누릅니다.\n3. 변환된 모스 부호가 출력됩니다.\n\n- ANALYZE THE CODE\n1. 버튼을 왼쪽으로 쓸어넘깁니다.\n2. [ANALYZE] 버튼이 나타납니다.\n3. 입력창에 [-]과 [.] 또는 [1]과 [0]을 이용하며 모스 부호를 입력합니다.\n4. 옵션 지정 후 [ANALYZE] 버튼을 누릅니다.\n5. 해석된 문자열이 출력됩니다.\n\n\n모스 부호 - 위키백과, 우리 모두의 백과사전.\n모스 부호(Morse code)는 짧은 발신 전류(・)와 긴 발신 전류(-)을 적절히 조합하여 알파벳과 숫자를 표기한 것으로 기본적인 형태는 국제적으로 비슷하다. 미국의 발명가 새뮤얼 핀리 브리즈 모스가 고안하였으며, 1844년 최초로 볼티모어와 워싱턴 D.C. 사이 전신 연락에 사용되었다.\n\n· · · ·　 ·　 · – · ·　 · – · ·　 – – –　　　 · – –　 – – –　 · – ·　 · – · ·　 – · ·　 – · – · – –"
+}

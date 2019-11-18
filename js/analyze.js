@@ -4,7 +4,7 @@
  *******************************************/
 
 function analyze() {
-	
+
 	var j,k,output = '';
 	var text = $('#input_textarea').val();
 	var space_char = new RegExp($('#space_char').val(), 'g');
@@ -14,9 +14,9 @@ function analyze() {
 	text = text.replace(/\s/g,""); //공백 제거
 	text = text.replace(/1|－|-|ㅡ/g,"–");
 	text = text.replace(/0|ㆍ|\.|\*|`|'/g,"·");
-	
+
 	var input = text.split('_');
-	
+
 	/*var input = new Array();
 	for (i=0; i<text.length; i++) {
 		input[i] = text.charAt(i);
@@ -142,7 +142,7 @@ function analyze() {
 		}
 	}
 	function translate_kr() {
-		for (i=0; i<$('#input_textarea').val().length; i++) {	
+		for (i=0; i<$('#input_textarea').val().length; i++) {
 			if (input[i] == '·') {//모음
 				input[i] = 'ㅏ';
 			}else if (input[i] == '––·–') {
@@ -245,25 +245,25 @@ function analyze() {
 				input[i] = 'ㅎ';
 			}
 		}
-	} 
+	}
 	function assemble() {//한글 음소 결합
-		var ChoSeong = new Array ( 
-			0x3131, 0x3132, 0x3134, 0x3137, 0x3138, 0x3139, 
-			0x3141, 0x3142, 0x3143, 0x3145, 0x3146, 0x3147, 
-			0x3148, 0x3149, 0x314a, 0x314b, 0x314c, 0x314d, 0x314e 
+		var ChoSeong = new Array (
+			0x3131, 0x3132, 0x3134, 0x3137, 0x3138, 0x3139,
+			0x3141, 0x3142, 0x3143, 0x3145, 0x3146, 0x3147,
+			0x3148, 0x3149, 0x314a, 0x314b, 0x314c, 0x314d, 0x314e
 		);
-		var JungSeong = new Array ( 
-			0x314f, 0x3150, 0x3151, 0x3152, 0x3153, 0x3154, 
-			0x3155, 0x3156, 0x3157, 0x3158, 0x3159, 0x315a, 
-			0x315b, 0x315c, 0x315d, 0x315e, 0x315f, 0x3160, 
-			0x3161, 0x3162, 0x3163 
+		var JungSeong = new Array (
+			0x314f, 0x3150, 0x3151, 0x3152, 0x3153, 0x3154,
+			0x3155, 0x3156, 0x3157, 0x3158, 0x3159, 0x315a,
+			0x315b, 0x315c, 0x315d, 0x315e, 0x315f, 0x3160,
+			0x3161, 0x3162, 0x3163
 		);
-		var JongSeong = new Array ( 
-			0x0000, 0x3131, 0x3132, 0x3133, 0x3134,0x3135, 
-			0x3136, 0x3137, 0x3139, 0x313a, 0x313b, 0x313c, 
-			0x313d, 0x313e, 0x313f, 0x3140, 0x3141, 0x3142, 
-			0x3144, 0x3145, 0x3146, 0x3147, 0x3148, 0x314a, 
-			0x314b, 0x314c, 0x314d, 0x314e 
+		var JongSeong = new Array (
+			0x0000, 0x3131, 0x3132, 0x3133, 0x3134,0x3135,
+			0x3136, 0x3137, 0x3139, 0x313a, 0x313b, 0x313c,
+			0x313d, 0x313e, 0x313f, 0x3140, 0x3141, 0x3142,
+			0x3144, 0x3145, 0x3146, 0x3147, 0x3148, 0x314a,
+			0x314b, 0x314c, 0x314d, 0x314e
 		);
 		output = output.replace(/ㅗㅣ/g,"ㅚ");//이중모음 조합
 		output = output.replace(/ㅜㅣ/g,"ㅟ");
@@ -277,7 +277,7 @@ function analyze() {
 		output = output.replace(/ㅜㅔ/g,"ㅞ");
 		output = output.replace(/ㅗㅐ/g,"ㅙ");
 		/*var ChoSeong2 = new Array ( //쌍자음으로 결합 가능한 초성 집합
-			0x3131, 0x3137, 0x3142, 0x3145, 0x3148 
+			0x3131, 0x3137, 0x3142, 0x3145, 0x3148
 		);*/
 		for (var i=0; i<ChoSeong.length; i++) {//쌍자음 조합
 			var hangeul = new RegExp(
@@ -307,7 +307,7 @@ function analyze() {
 				}
 			}
 		}
-		
+
 		for	(i=0; i<JungSeong.length; i++) {//문자 뒤에 자음이 있으면 받침으로 결합.
 			for (j=0; j<ChoSeong.length; j++) {
 				if(output.indexOf(String.fromCharCode(j*21*28+i*28+0xAC00)) !== -1){
@@ -322,7 +322,7 @@ function analyze() {
 		}
 
 	}
-	
+
 	var lang = $(":input:radio[name=type]:checked").val();//라디오 체크 먼저 실행 후 한번 씩 실행.
 	if (lang == "kr") {
 		translate_kr();
@@ -336,7 +336,7 @@ function analyze() {
 		translate_nm();
 	}
 	translate_en();translate_nm();translate_kr();
-	
+
 	//변환 코드
 	//output = '<div>문자열공백:[' + $('#space_string').val() + '] 문자공백:[' + $('#space_char').val() + ']으로 해독.</div>';
 	for (var i=0; i<input.length; i++) {
@@ -344,5 +344,5 @@ function analyze() {
 	}
 	if ((lang == "kr")&&($('#assemble:checked').val() == "on")) {assemble();}
 	//$('#output').html(output).css('text-transform', ($('#capital:checked').val() == "on") ? "uppercase" : "none");//for div element
-	$('#output').val(output).css('text-transform', ($('#capital:checked').val() == "on") ? "uppercase" : "none");//for textarea element
+	$('#output').text(output).css('text-transform', ($('#capital:checked').val() == "on") ? "uppercase" : "none");//for textarea element
 }
