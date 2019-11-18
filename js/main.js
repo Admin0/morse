@@ -17,158 +17,72 @@ var color = {
   'toogle_border1': '#3079ed'
 };
 
+const TRANSLATE_MODE = 0;
+const ANALYZE_MODE = 1;
+
+function tranlyze(type) {
+  if (type == TRANSLATE_MODE) {
+    translate("·", "–");
+    output_resize();
+  } else if (type == ANALYZE_MODE) {
+    analyze();
+    output_resize();
+  }
+  if ($(input_textarea).val() != "") {
+    $('#output_menu').removeClass('hide');
+    $('#output').addClass('on');
+  } else {
+    $('#output_menu').addClass('hide');
+    $('#output').removeClass('on');
+  }
+}
+
 var currentImg = 0;
 
 function button_swipe() {
-  var IMG_WIDTH = $('.contents').width();
-
-  //var currentImg=0;
-  var maxImages = 2;
-  var speed = 500;
-
-  var imgs;
-
-  var swipeOptions = {
-    triggerOnTouchEnd: true,
-    swipeStatus: swipeStatus,
-    allowPageScroll: "vertical",
-    threshold: 75
-  };
-
-  $(function() {
-    imgs = $("#imgs");
-    imgs.swipe(swipeOptions);
-  });
-
-
-  /**
-   * Catch each phase of the swipe.
-   * move : we drag the div.
-   * cancel : we animate back to where we were
-   * end : we animate to the next image
-   */
-  function swipeStatus(event, phase, direction, distance) {
-    //If we are moving before swipe, and we are going Lor R in X mode, or U or D in Y mode then drag.
-    if (phase == "move" && (direction == "left" || direction == "right")) {
-      var duration = 0;
-      if (direction == "left")
-        if (currentImg == maxImages - 1) { // 마지막 이미지에서 왼쪽 스와이프 제한
-          scrollImages(($('.contents').width() * currentImg) + distance / 5, duration);
-        } else {
-          scrollImages(($('.contents').width() * currentImg) + distance, duration);
-        }
-      else if (direction == "right")
-        if (currentImg == 0) { // 첫 이미지에서 오른쪽 스와이프 제한
-          scrollImages(($('.contents').width() * currentImg) - distance / 5, duration);
-        } else {
-          scrollImages(($('.contents').width() * currentImg) - distance, duration);
-        }
-    } else if (phase == "cancel") {
-      scrollImages($('.contents').width() * currentImg, speed);
-    } else if (phase == "end") {
-      if (direction == "right") {
-        previousImage();
-      } else if (direction == "left") {
-        nextImage();
-      }
-      toggle_morse(); //1.7.0
-    }
-  }
-
-  function previousImage() {
-    currentImg = Math.max(currentImg - 1, 0);
-    scrollImages($('.contents').width() * currentImg, speed);
-  }
-
-  function nextImage() {
-    currentImg = Math.min(currentImg + 1, maxImages - 1);
-    scrollImages($('.contents').width() * currentImg, speed);
-  }
-
-  /**
-   * Manuallt update the position of the imgs on drag
-   */
-  function scrollImages(distance, duration) {
-    imgs = $("#imgs");
-    imgs.css({
-      "-webkit-transition-duration": (duration / 1000).toFixed(1) + "s",
-      "-moz-transition-duration": (duration / 1000).toFixed(1) + "s",
-      "-o-transition-duration": (duration / 1000).toFixed(1) + "s",
-      "transition-duration": (duration / 1000).toFixed(1) + "s"
-    });
-    //inverse the number we set in the css
-    var value = (distance < 0 ? "" : "-") + Math.abs(distance).toString();
-    imgs.css({
-      "-webkit-transform": "translate3d(" + value + "px,0px,0px)",
-      "-moz-transform": "translate3d(" + value + "px,0px,0px)",
-      "-ms-transform": "translate3d(" + value + "px,0px,0px)",
-      "-o-transform": "translate3d(" + value + "px,0px,0px)",
-      "transform": "translate3d(" + value + "px,0px,0px)"
-    });
-  }
 
   function toggle_morse() {
     if (currentImg == 0) {
       $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0')).attr('type', 'text');
       $('#option').slideUp();
       $('#input_toggle').hide();
-      $('#menu_toggle div').text('해석기');
+      $('#menu_toggle div').text($.i18n('analyzer'));
       $('#menu_toggle img').attr('src', 'image/menu_forward.png');
     } else if (currentImg == 1) {
       $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_1', 'tel')).attr('type', 'tel');
       $('#option').slideDown();
       $('#input_toggle').show().attr('value', input_type['tel']);
-      $('#menu_toggle div').text('변환기');
+      $('#menu_toggle div').text($.i18n('translator'));
       $('#menu_toggle img').attr('src', 'image/menu_back.png');
     }
     $('.footer_output').slideUp();
   }
   $('#menu_toggle').click(function() { //menu toggle translator <-> analyzer 1.6.0
     if (currentImg == 0) {
-      nextImage();
+      currentImg = 1;
     } else {
-      previousImage();
+      currentImg = 0;
     }
+    $('#input_textarea').val('');
+    tranlyze(currentImg);
+    $('#input_textarea').focus();
     toggle_morse();
   });
 }
 
 function output_resize() {
-  document.getElementById('output').style.height = 'auto';
-  document.getElementById('output').style.height = document.getElementById('output').scrollHeight + 'px';
+  document.getElementById('output_textarea').style.height = 'auto';
+  document.getElementById('output_textarea').style.height = document.getElementById('output_textarea').scrollHeight + 'px';
 }
 
 function button_click() {
-  $('#translate').swipe({
-    click: function() {
-      $('#output').val('Translating...');
-      //ax.ext.ui.showProgress('Translating...');
-      translate();
-      setTimeout('output_resize()');
-      //ax.ext.ui.hideProgress();
-    },
-    swipe: function() {
-      //스와이프에는 출력 방지
-    }
-  });
-  $('#analyze').swipe({
-    click: function() {
-      $('#output').val('Analyzing...');
-      //ax.ext.ui.showProgress('Analyzing...');
-      analyze();
-      setTimeout('output_resize()');
-      //ax.ext.ui.hideProgress();
-    },
-    swipe: function() {
-      //스와이프에는 출력 방지
-    }
-  });
-  $('#option').swipe({
-    swipeUp: function() {
-      $('#option').slideUp();
-    },
-    threshold: 25
-  });
+
+  // $('#option').swipe({
+  //   swipeUp: function() {
+  //     $('#option').slideUp();
+  //   },
+  //   threshold: 25
+  // });
 
   $('#input_toggle').click(function() {
     if ($(this).attr('value') == input_type['tel']) {
@@ -186,19 +100,12 @@ function button_click() {
     }
   });
 
-  $('input[type="text"]').keyup(function() {
-    // if (event.which == 13) {
-    if (currentImg == 0) {
-      translate();
-      output_resize();
-    } else if (currentImg == 1) {
-      analyze();
-      output_resize();
-    }
-    // }
+  $('#input_textarea').keyup(function() {
+    tranlyze(currentImg);
   }).keydown(function(event) {
     if (event.which == 13) {
-      event.preventDefault();
+      // event.preventDefault();
+      return false;
     }
   });
 
@@ -280,97 +187,42 @@ function button_click() {
   });
 }
 
-function notice() {
-  function notice_img() { //notice_animation
-    $('.notice').css({
-      "margin": "2em " + ($('html').width() - 320) / 2 + "px"
+function toast(msg, icon, time) {
+  if (icon == null) {
+    icon = "priority_high";
+  }
+  if (time == null) {
+    time = 1500;
+  }
+
+  $('#toast').remove();
+  $('body').append('<div id="toast" class="shadow"><i class="material-icons">' + icon + '</i>' + msg + '</div>');
+  $('#toast').css("left", "calc(1em + " + $("nav").width() + "px)").addClass("on").removeClass("off");
+
+  setTimeout(function() {
+    $("#toast").addClass("off").removeClass("on", function() {
+      $(this).delay(300).remove();
     });
-    $('.notice:last').css("margin", 0);
-    $('#notice0').fadeIn().animate({
-      top: '+=1em'
-    }, 500, function() {
-      $('#notice1').fadeIn().animate({
-        top: '-=1em'
-      }, 500, function() {
-        $('#notice2').fadeIn(function() {
-          $('#notice1').animate({
-            opacity: '0'
-          }, 250, function() {
-            $('#notice2').animate({
-              left: '-150px'
-            }, 1000, function() {
-              $('#notice2').css({
-                left: '170px'
-              }).hide().fadeIn();
-              $('#notice1').css({
-                opacity: '1'
-              }).hide().fadeIn(function() {
-                $('#notice3').fadeIn().animate({
-                  top: '+=1em'
-                }, 1000, function() {
-                  $('#notice4').fadeIn();
-                });
-              });
-            });
-          });
-        });
-      });
-    });
-  }
-  setTimeout(notice_img(), 5000);
-  //notice_img()
-
-  $('#notice').click(function() {
-    if ($("#notice_check:checked").val() == 'on') {
-      $('#notice').fadeOut();
-      $('#notice_bg').fadeOut();
-      window.localStorage.setItem('notice154', 'read');
-      $('#setting_notice').css({
-        "color": "gray"
-      });
-    }
-    check_notice();
-  });
-
-  function check_notice() {
-    if (window.localStorage.getItem('notice154') !== "read") {
-      $('#notice').show();
-      $('#setting_notice').css({
-        "color": "silver"
-      });
-    } else {
-      $('#setting_notice').click(function() {
-        notice_mag('새로고침하면 도움말이 표시됩니다.');
-        localStorage.clear();
-        $('#setting_notice').css({
-          "color": "silver"
-        });
-      });
-    }
-  }
-  check_notice();
-
-  $('#notice').click(function() {
-    $(this).fadeOut();
-  });
-
-  function notice_mag(msg) {
-    $('#notice_msg').text(msg).css({
-      "margin-left": ($('.contents').width() - $('#notice_msg').width()) / 2
-    }).fadeIn().delay(2000).fadeOut();
-  }
-}
-
-function initialize() {
-  $('body').css({
-    "min-height": window.document.height - margin["body"]
-  });
+  }, time + 300);
 }
 
 $(function() {
-  initialize()
+  // initialize()
   output_resize();
   button_swipe();
   button_click();
-  notice();
+  title_tooltip();
+
+  $('#input_textarea').focus();
+  // notice();
+
+  var clipboard = new ClipboardJS('.copy');
+  clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+
+    e.clearSelection();
+  });
+
 });

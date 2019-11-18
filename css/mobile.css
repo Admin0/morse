@@ -1,0 +1,51 @@
+@media handheld, only screen and (max-device-width: 480px), only screen and (max-device-width: 320px), screen and (max-width: 600px) {
+  body, footer {
+    width: 100%;
+  }
+
+  body {
+    /* margin: 100px auto 0; */
+  }
+
+  #ad_top_screen {
+    display: none;
+  }
+
+  #ad_top_mobile {
+    display: block;
+  }
+
+  #output_msg {
+    min-width: 50%;
+    max-width: 85%;
+  }
+
+  .contents {
+    display: block;
+    box-shadow: none;
+    border-radius: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #input {
+    width: calc(100% - 2em);
+    padding: 1em;
+  }
+
+  #input_textarea {
+    min-height: 1.5em;
+    font-size: 1em;
+  }
+
+  #output {
+    width: calc(100% - 2em);
+    padding: 1em;
+    background: #4caf50 !important;
+    color: #fff;
+  }
+
+  #output_textarea {
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,24 @@
+#ad_top_screen {
+  /* position: absolute; */
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  background: #eee;
+  outline: 1px solid #aaa;
+  box-shadow: #aaa 0 0 1em;
+  transition: 0.5s;
+}
+
+#ad_top_mobile {
+  display: none;
+  /* position: absolute; */
+  width: 100%;
+  /* height: 100px; */
+  margin: 0;
+  top: 0;
+  text-align: center;
+  background: #eee;
+  outline: 1px solid #aaa;
+  box-shadow: #aaa 0 0 1em;
+  transition: 0.5s;
+}

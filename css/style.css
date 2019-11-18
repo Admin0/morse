@@ -1,23 +1,16 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Material+Icons');
+@import url('ad.css');
 
 html {
   background: #eee;
 }
 
 body {
-  padding: 0 0 4em;
-  margin: 8em auto 0;
-  background: #fff;
-  color: #444;
-  width: 600px;
-  outline: 1px solid #aaa;
-  /*border: 1px solid #aaa;*/
-  box-shadow: #aaa 0 0 1em;
-  -webkit-transition: .5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  padding: 0;
+  margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -26,7 +19,17 @@ a {
   text-decoration: none;
 }
 
-.contents {}
+.contents {
+  margin: 2em auto 8em;
+  max-width: 1280px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 5px 11px rgba(0, 0, 0, .2);
+  border-radius: .5em;
+  /* border: 1px solid #aaa; */
+  position: relative;
+  display: flex;
+}
 
 #notice {
   display: none;
@@ -39,6 +42,8 @@ a {
   color: #000;
   background: rgba(0, 0, 0, 0.5);
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  border-radius: .5em;
 }
 
 .notice {
@@ -79,17 +84,22 @@ a {
 
 #input {
   text-align: center;
-  padding-top: 2em;
+  width: calc(50% - 4em);
+  padding: 2em;
+  /* background: gold; */
+  border-right: 1px solid #ddd;
 }
 
 #input_textarea {
-  width: 85%;
-  padding: 1em;
-  font-family: sans-serif;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  width: calc(100% - 0em);
+  min-height: 300px;
+  padding: 0;
+  font-family: 'Lato', 'Noto Sans KR', sans-serif;
+  background: #fff;
+  border: none;
+  overflow: hidden;
+  resize: none;
+  font-size: 1.5em;
 }
 
 #input_toggle {
@@ -149,7 +159,6 @@ a {
 #option {
   background: #eee;
   padding: 1em .5em .5em;
-  /*font-size:12px;*/
   display: none;
   box-shadow: #ccc -.5ex .5ex 1em inset;
   outline: 1px solid #ccc;
@@ -169,28 +178,66 @@ a {
 }
 
 #output {
-  width: calc(100% - 4em);
+  width: calc(50% - 4em);
+  /* background: red; */
+  padding: 2em;
+}
+
+#output_textarea {
   height: inherit !important;
   text-align: justify;
-  /*border: 1px silver solid;*/
-  font-family: sans-serif;
-  background: none;
+  font-family: 'Lato', 'Noto Sans KR', sans-serif;
+  font-size: 1.5em;
   border: none;
-  /*padding: 1em;*/
   display: block;
-  margin: .5em auto;
-  font-size: 16px;
   line-height: 1.5;
   white-space: pre-wrap;
+}
+#output.on{
+  background: #f5f5f5;
+  border-top-right-radius: .5em;
+  border-bottom-right-radius: .5em;
+}
+#output_menu {
+  text-align: right;
+  margin: -1em;
+  color: #777;
+}
+
+#output_menu i:hover {
+  color: #4caf50;
+}
+
+.placeholder {
+  opacity: .6;
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+}
+
+#feadback {
+  position: absolute;
+  bottom: -2em;
+  right: 0.5em;
+  font-size: .75em;
+  font-style: italic;
+  opacity: .5;
+  cursor: pointer;
+}
+
+#feadback:hover {
+  text-decoration: underline;
 }
 
 footer {
   position: fixed;
-  /*height:50px;*/
+  left: calc(50% - 300px);
   width: 600px;
   bottom: 0;
   text-align: center;
-  font-size: 10px;
+  font-size: .5em;
   background: #eee;
   outline: 1px solid #aaa;
   color: gray;
@@ -271,7 +318,6 @@ footer {
 .setting {
   text-align: left;
   padding: 1em;
-  font-size: 12px;
   border-color: silver;
   border-width: 1px 0 0 0;
   border-style: solid;
@@ -296,39 +342,6 @@ footer {
 
 .previous_page:hover {
   background: #ccc;
-}
-
-#ad_top_screen {
-  position: absolute;
-  width: 728px;
-  height: 90px;
-  margin: 1em 0 1em -64px;
-  top: 0;
-  text-align: center;
-  background: #eee;
-  outline: 1px solid #aaa;
-  box-shadow: #aaa 0 0 1em;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-}
-
-#ad_top_mobile {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  margin: 0;
-  top: 0;
-  text-align: center;
-  background: #eee;
-  outline: 1px solid #aaa;
-  box-shadow: #aaa 0 0 1em;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
 }
 
 input {
@@ -414,33 +427,99 @@ input[type="button"]:active, input[type="submit"]:active, .button:active {
   backgroud: #ffa;
 }
 
-/*mobile css*/
-@media handheld, only screen and (max-device-width: 480px), only screen and (max-device-width: 320px), screen and (max-width: 600px) {
-  body, footer {
-    width: 100%;
+/* ------------------------------------------------------------------- */
+/* ***** tooltip ***** */
+/* ------------------------------------------------------------------- */
+#tooltip, #tooltip_nav {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  background: #424242;
+  -webkit-transition: .5s opacity;
+  transition: .5s opacity;
+  padding: 1ex;
+  border-radius: 3px;
+  max-width: 400px;
+  z-index: 4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+}
+
+#tooltip_nav {
+  position: fixed;
+  z-index: 4;
+}
+
+#tooltip_before, #tooltip_nav_before {
+  border-color: #424242 transparent transparent;
+  border-width: 1ex 1ex 0;
+  border-style: solid;
+  content: " ";
+  position: absolute;
+  left: calc(50% - .5em);
+  bottom: -.9ex
+}
+
+#tooltip_text {
+  white-space: pre-line;
+}
+
+/* ------------------------------------------------------------------- */
+/* ***** toast ***** */
+/* ------------------------------------------------------------------- */
+#toast {
+  line-height: 1;
+  position: fixed;
+  background-color: #424242;
+  color: rgba(255, 255, 255, .9);
+  fill: rgba(255, 255, 255, .9);
+  padding: 1em 1.5em 1em .75em;
+  min-width: 350px;
+  max-width: calc(100% - 2em);
+  bottom: 1em;
+  z-index: 5;
+}
+
+#toast i.material-icons {
+  font-size: 20px;
+  margin-bottom: 1px;
+}
+
+@keyframes snackbar_on {
+  0% {
+    opacity: 0;
   }
 
-  body {
-    margin: 100px auto 0;
-  }
-
-  #ad_top_screen {
-    display: none;
-  }
-
-  #ad_top_mobile {
-    display: block;
-  }
-
-  #output_msg {
-    min-width: 50%;
-    max-width: 85%;
+  100% {
+    opacity: 1;
   }
 }
 
-/*#send_to_phone hide; size changed*/
-@media screen and (max-width: 1100px) {
-  #send_to_phone, #download_app {
-    display: none;
+#toast.on {
+  animation-name: snackbar_on;
+  animation-duration: .3s;
+}
+
+@keyframes snackbar_off {
+  0% {
+    opacity: 1;
   }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#toast.off {
+  opacity: 0;
+  visibility: none;
+  animation-name: snackbar_off;
+  animation-duration: .3s;
+  z-index: 0;
+}
+
+.copy {
+  cursor: pointer;
 }

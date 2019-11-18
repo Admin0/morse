@@ -10,102 +10,117 @@
 	<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="image/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery_touchswipe.js"></script>
-	<script type="text/javascript" src="js/kakaolink.js"></script>
-	<script type="text/javascript" src="js/translate.js"></script>
-	<script type="text/javascript" src="js/analyze.js"></script>
 	<script type="text/javascript" src="js/jquery.i18n.js"></script>
 	<script type="text/javascript" src="js/jquery.i18n.messagestore.js"></script>
-	<script type="text/javascript" src="js/sub__i18n.js"></script>
-	<script type="text/javascript" src="js/key.js"></script>
+	<script type="text/javascript" src="js/kakaolink.js"></script>
+	<script type="text/javascript" src="js/main__keys.js"></script>
+	<script type="text/javascript" src="js/main__translate.js"></script>
+	<script type="text/javascript" src="js/main__analyze.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/sub__tooltip.js"></script>
+	<script type="text/javascript" src="js/sub__clipboard.min.js"></script>
+	<script type="text/javascript" src="js/sub__i18n.js"></script>
 </head>
 
 <body>
-	<section id="notice">
+	<!-- <section id="notice">
 		<img class="notice" id="notice0" style="top: 0em;" src="image/notice0.png">
 		<img class="notice" id="notice1" style="top: 11em;" src="image/notice1.png">
 		<img class="notice" id="notice2" style="top: 10em; left:170px;" src="image/notice2.png">
 		<img class="notice" id="notice3" style="top: 13em;" src="image/notice3.png">
 		<img class="notice" id="notice4" style="top: 21em;" src="image/notice4.png">
 		<label class="notice" style="display: block; bottom:0; padding:1em 0; margin:0; text-align:left; background:#555; width:100%;">&nbsp;<input type="checkbox" id="notice_check"><span data-i18n="notice_check">안내 화면을 더 이상 보지 않습니다.</span></label>
-	</section>
+	</section> -->
 	<div id="notice_msg">test</div>
-	<section id="send_to_phone">
-		<img src="image/qrcode.png" style="width:96px; height:100px;" />
-		<p data-i18n="notice_to_phone">Use it on your Phone!</p>
-		<p>&nbsp;</p>
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-			<input type="hidden" name="cmd" value="_s-xclick">
-			<input type="hidden" name="hosted_button_id" value="KC5BHX6F7MKVW">
-			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-		</form>
-		<p data-i18n="notice_donate">Or... maybe you can donate a little for me.</p>
 
-	</section>
-	<section id="download_app">
-		<img src="image/icon_google_play.png" style="width:64px; cursor:pointer;" onclick="window.location = 'https://play.google.com/store/apps/details?id=com.morsecode.translator.jinh'" />
-		<p data-i18n="notice_to_android">Morsecode on Google Play!</p>
-		<p>&nbsp;</p>
-		<img src="image/icon_chrome_store.png" style="width:64px; cursor:pointer;" onclick="window.location = 'https://chrome.google.com/webstore/detail/cobccnllippnmgibbgdnkdaljjpcppjl'" />
-		<p data-i18n="notice_to_chrome">and, Chrome Web Store!</p>
-	</section>
+	<div id="ad_top_screen">
+		<script type="text/javascript">
+			<!--
+			google_ad_client = "ca-pub-8175591114279139";
+			/* 리더보드 */
+			google_ad_slot = "0699157334";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			//-->
+		</script>
+		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	</div>
+	<div id="ad_top_mobile">
+		<script type="text/javascript">
+			google_ad_client = "ca-pub-8175591114279139";
+			google_ad_slot = "2202330987";
+			google_ad_width = 320;
+			google_ad_height = 100;
+		</script>
+		<!-- 큰 모바일 배너 -->
+		<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	</div>
+
 	<section id="index" class="contents">
-		<form id="input">
-			<input id="input_textarea" type="text" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();"></input>
-			<input type="button" id="input_toggle" value="☎">
-			<div style="width:100%; overflow: hidden; margin: 1em 0 .5em; background:#eee;">
-				<div id="imgs">
-					<div class="imgs">
-						<div id="translate">translate</div>
-					</div>
-					<div class="imgs">
-						<div id="analyze">analyze</div>
-					</div>
-				</div>
-			</div>
-		</form>
-		<form id="option">
-			<div style="display: inline-block;">
-				<div class="button button_first"><label><input type="radio" name="type" id="radio_kr" value="kr" checked><span class="radio_span">한글</span></label></div>
-				<div class="button button_between"><label><input type="radio" name="type" id="radio_en" value="en"><span class="radio_span">영어</span></label></div>
-				<div class="button button_last"><label><input type="radio" name="type" id="radio_nm" value="nm"><span class="radio_span">숫자</span></label></div>
-			</div>
-			<div style="display: inline-block;">
-				<div class="button"><label><input id="assemble" type="checkbox" checked /><span class="radio_span">음소조합(KR)</span></label></div>
-				<div class="button"><label><input id="capital" type="checkbox" /><span class="radio_span">대문자(EN)</span></label></div>
-			</div>
-			<div style="display: inline-block;">
-				<div class="button button_first">
-					<label><input type="radio" name="space">긴공백: <input id="space_string" type="text" style="width:1em;" value="　　　" onclick="select()"></label>
-					<label><input type="radio" name="space">짧은공백: <input id="space_char" type="text" style="width:1em;" value="　" onclick="select()"></label>
-				</div>
-				<div class="button button_between" onclick="$('#space_char').val('　');$('#space_string').val('　　　');"><label><input type="radio" name="space" checked>JinH</label></div>
-				<div class="button button_last" onclick="$('#space_char').val(' ');$('#space_string').val('9');"><label><input type="radio" name="space">모바일</label></div>
-			</div>
-		</form>
-		<div id="output" data-i18n="output_0"></div>
-		<div style="text-align:center; overflow:hidden;">
-			<script type="text/javascript">
-				<!--
-				google_ad_client = "ca-pub-8175591114279139";
-				/* 대형직사각형 */
-				google_ad_slot = "8258672091";
-				google_ad_width = 336;
-				google_ad_height = 280;
-				//-->
-			</script>
-			<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
+		<div id="input">
+			<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();"></textarea>
+			<!-- <input type="button" id="input_toggle" value="☎"> -->
 		</div>
+		<div id="output">
+
+			<form id="option">
+				<div style="display: inline-block;">
+					<div class="button button_first"><label><input type="radio" name="type" id="radio_kr" value="kr" checked><span class="radio_span">한글</span></label></div>
+					<div class="button button_between"><label><input type="radio" name="type" id="radio_en" value="en"><span class="radio_span">영어</span></label></div>
+					<div class="button button_last"><label><input type="radio" name="type" id="radio_nm" value="nm"><span class="radio_span">숫자</span></label></div>
+				</div>
+				<div style="display: inline-block;">
+					<div class="button"><label><input id="assemble" type="checkbox" checked /><span class="radio_span">음소조합(KR)</span></label></div>
+					<div class="button"><label><input id="capital" type="checkbox" /><span class="radio_span">대문자(EN)</span></label></div>
+				</div>
+				<div style="display: inline-block;">
+					<div class="button button_first">
+						<label><input type="radio" name="space">긴공백: <input id="space_string" type="text" style="width:1em;" value="　　　" onclick="select()"></label>
+						<label><input type="radio" name="space">짧은공백: <input id="space_char" type="text" style="width:1em;" value="　" onclick="select()"></label>
+					</div>
+					<div class="button button_between" onclick="$('#space_char').val('　');$('#space_string').val('　　　');"><label><input type="radio" name="space" checked>JinH</label></div>
+					<div class="button button_last" onclick="$('#space_char').val(' ');$('#space_string').val('9');"><label><input type="radio" name="space">모바일</label></div>
+				</div>
+			</form>
+			<div id="output_textarea"><span class="placeholder" data-i18n="output_0"></span></div>
+
+			<div style="text-align:center; overflow:hidden;">
+				<script type="text/javascript">
+					<!--
+					google_ad_client = "ca-pub-8175591114279139";
+					/* 대형직사각형 */
+					google_ad_slot = "8258672091";
+					google_ad_width = 336;
+					google_ad_height = 280;
+					//-->
+				</script>
+				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			</div>
+
+			<div id="output_menu" class="hide">
+				<span class="copy" data-clipboard-target="#output_textarea" onclick="toast('copied!')" title="Copy translation">
+					<i class="material-icons" data-clipboard-target="#output_textarea"> file_copy </i>
+				</span>
+			</div>
+
+		</div>
+		<!-- <div id="feadback"><a href="//blog.jinh.kr/guestbook">feadback</a></div> -->
+		<div id="feadback"><a href="mailto:admin@jinh.kr">Send feadback</a></div>
 	</section>
+
+	<section id="context_menu"></section>
+
+	<div id="nav_bg" onclick="$('nav, #nav_bg').removeClass('on');"></div>
 
 	<footer>
 		<div class="menu" id="menu_toggle">
 			<img src="image/menu_forward.png">
-			<div>해석기</div>
+			<div data-i18n="analyzer">해석기</div>
 		</div>
 		<div class="menu" id="menu_share">
 			<img src="image/menu_share.png">
@@ -138,37 +153,13 @@
 				</div>
 			</div>
 			<div class="footer_output" id="footer_output_setting">
-				<div class="setting" id="setting_notice">실행 화면 안내 애니메이션 다시 보기</div>
+				<!-- <div class="setting" id="setting_notice">실행 화면 안내 애니메이션 다시 보기</div> -->
 				<div class="setting" onclick="window.location = 'license.html'">오픈 소스 라이센스</div>
 				<div class="setting" onclick="window.location = 'info.html'">정보</div>
 				<div class="setting" onclick="ax.ext.android.finish()">종료</div>
 			</div>
 		</div>
 	</footer>
-	<div id="ad_top_screen">
-		<script type="text/javascript">
-			<!--
-			google_ad_client = "ca-pub-8175591114279139";
-			/* 리더보드 */
-			google_ad_slot = "0699157334";
-			google_ad_width = 728;
-			google_ad_height = 90;
-			//-->
-		</script>
-		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-		</script>
-	</div>
-	<div id="ad_top_mobile">
-		<script type="text/javascript">
-			google_ad_client = "ca-pub-8175591114279139";
-			google_ad_slot = "2202330987";
-			google_ad_width = 320;
-			google_ad_height = 100;
-		</script>
-		<!-- 큰 모바일 배너 -->
-		<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-		</script>
-	</div>
 
 	<script>
 		<!-- analytics -->
