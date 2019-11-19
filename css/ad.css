@@ -9,6 +9,12 @@
   transition: 0.5s;
 }
 
+#ad_bottom {
+  margin: 4em auto 8em;
+  text-align: center;
+  transition: 0.5s;
+}
+
 @media handheld, only screen and (max-width: 600px) {
   #ad_top {
   display: none;

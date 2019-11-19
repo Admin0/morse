@@ -29,7 +29,7 @@ header {
   color: rgba(0, 0, 0, .98);
   box-shadow: 0 2px 6px 0 rgba(60, 64, 67, .15);
   transition: .3s;
-  width: calc(100%);
+  width: calc(100% - 16px);
   /* height: 64px; */
   left: 0;
   top: 0;
@@ -64,7 +64,7 @@ body.fold header {
 }
 
 .contents {
-  margin: 1em auto 8em;
+  margin: 1em auto 4em;
   max-width: 1280px;
   width: 100%;
   background: #fff;
@@ -114,6 +114,8 @@ body.fold header {
   display: inline-block;
   width: 50%;
   position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #card_header .lang_box.lang {
@@ -155,7 +157,7 @@ body.analyze #card_header .lang_box.code {
 }
 
 .card_header {
-  height: 46px;
+  height: 48px;
   cursor: pointer;
   padding: 0 24px;
   text-transform: uppercase;
@@ -176,7 +178,8 @@ body.analyze #card_header .lang_box.code {
   animation: border-grow .3s cubic-bezier(0.4, 0, 0.4, 1) 0s;
 }
 
-.translate .lang_box.code .card_header:not(.auto) {
+.translate .lang_box.code .card_header:not(.auto),
+.analyze .lang_box.code .card_header.auto {
   color: #aaa;
   cursor: not-allowed;
 }

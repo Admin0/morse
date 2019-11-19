@@ -8,7 +8,7 @@
   "notice_check": "案内画面をもう見ません。",
   "input_textarea_placeholder_0": " 日本語、英語、数字を入力してください。" ,
   "input_textarea_placeholder_1": " モールス符号を入力してください。",
-  "output_0": "MORSE CODE TRANSLATOR + ANALYZER\n\n\n- HOW TO USE\n1. Input the text what you want to translate to the Morse code.\n2. The translated Morse code is output.",
+  "output_0": "ここで翻訳されたモールス符号が出力されます。",
   "analyze": "analyze",
   "analyzer": "analyzer",
   "translate": "translate",
@@ -18,5 +18,10 @@
   "lang_en": "英語",
   "lang_ko": "韓国語",
   "lang_ja": "日本語",
+  "lang_ru": "ロシア語",
+  "lang_gr": "ギリシャ語",
+  "lang_he": "ヘブライ語",
+  "lang_ar": "アラビア語",
+  "lang_pr": "ペルシア語",
   "feedback": "Send feedback"
 }
