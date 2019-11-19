@@ -41,3 +41,23 @@ function title_tooltip() {
     );
   });
 }
+
+
+function toast(msg, icon, time) {
+  if (icon == null) {
+    icon = "priority_high";
+  }
+  if (time == null) {
+    time = 1500;
+  }
+
+  $('#toast').remove();
+  $('body').append('<div id="toast" class="shadow"><i class="material-icons">' + icon + '</i>' + msg + '</div>');
+  $('#toast').addClass("on").removeClass("off");
+
+  setTimeout(function() {
+    $("#toast").addClass("off").removeClass("on", function() {
+      $(this).delay(300).remove();
+    });
+  }, time + 300);
+}

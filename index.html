@@ -25,45 +25,26 @@
 </head>
 
 <body>
-	<!-- <section id="notice">
-		<img class="notice" id="notice0" style="top: 0em;" src="image/notice0.png">
-		<img class="notice" id="notice1" style="top: 11em;" src="image/notice1.png">
-		<img class="notice" id="notice2" style="top: 10em; left:170px;" src="image/notice2.png">
-		<img class="notice" id="notice3" style="top: 13em;" src="image/notice3.png">
-		<img class="notice" id="notice4" style="top: 21em;" src="image/notice4.png">
-		<label class="notice" style="display: block; bottom:0; padding:1em 0; margin:0; text-align:left; background:#555; width:100%;">&nbsp;<input type="checkbox" id="notice_check"><span data-i18n="notice_check">안내 화면을 더 이상 보지 않습니다.</span></label>
-	</section> -->
-	<div id="notice_msg">test</div>
 
-	<div id="ad_top_screen">
-		<script type="text/javascript">
-			<!--
-			google_ad_client = "ca-pub-8175591114279139";
-			/* 리더보드 */
-			google_ad_slot = "0699157334";
-			google_ad_width = 728;
-			google_ad_height = 90;
-			//-->
-		</script>
-		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-		</script>
-	</div>
-	<div id="ad_top_mobile">
-		<script type="text/javascript">
-			google_ad_client = "ca-pub-8175591114279139";
-			google_ad_slot = "2202330987";
-			google_ad_width = 320;
-			google_ad_height = 100;
-		</script>
-		<!-- 큰 모바일 배너 -->
-		<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+	<header>
+		<div id="header_menu"><i id="nav_on" onclick="if($('nav').attr('class')!='on'){$('nav, #nav_bg').addClass('on');}else{$('nav, #nav_bg').removeClass('on');};" class="material-icons">menu</i></div>
+		<h1><span id="title"><span class="hide_mobile"></span>#M³ Translator</span></h1>
+	</header>
+
+	<div id="ad_top">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- 반응형 -->
+		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8175591114279139" data-ad-slot="6064236981" data-ad-format="auto" data-full-width-responsive="true"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 	</div>
 
 	<section id="index" class="contents">
 		<div id="input">
-			<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();"></textarea>
+			<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
 			<!-- <input type="button" id="input_toggle" value="☎"> -->
+			<div id="input_del" class="hide" onclick="clear();"><i class="material-icons"> close </i></div>
 		</div>
 		<div id="output">
 

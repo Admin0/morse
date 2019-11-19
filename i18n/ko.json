@@ -6,7 +6,7 @@
   "notice_check": "안내 화면을 더 이상 보지 않습니다.",
   "input_textarea_placeholder_0": " 한글, 영어, 숫자 및 문자를 입력하세요.",
   "input_textarea_placeholder_1": " 모스 부호를 입력하세요.",
-  "output_0": "모스 부호 변환기 + 해석기\n\n\n- 사용 방법\n1. 입력창에 변환하고 싶은 문자를 입력합니다.\n2. [TRNASLATE] 버튼을 누릅니다.\n3. 변환된 모스 부호가 출력됩니다.",
+  "output_0": "모스 부호 변환기 + 해석기\n\n\n- 사용 방법\n1. 입력창에 변환하고 싶은 문자를 입력합니다.\n2. 변환된 모스 부호가 출력됩니다.",
   "analyze": "해석",
   "analyzer": "해석기",
   "translate": "번역",

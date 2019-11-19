@@ -7,14 +7,6 @@
     /* margin: 100px auto 0; */
   }
 
-  #ad_top_screen {
-    display: none;
-  }
-
-  #ad_top_mobile {
-    display: block;
-  }
-
   #output_msg {
     min-width: 50%;
     max-width: 85%;
@@ -48,4 +40,5 @@
   #output_textarea {
     font-size: 1em;
   }
+  footer{left: auto;}
 }
