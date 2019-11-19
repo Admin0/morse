@@ -1,10 +1,16 @@
 #ad_top {
   /* position: absolute; */
   /* width: fit-content; */
-  margin: calc(64px + 0em) auto 0;
+  margin: 1em auto 0;
   text-align: center;
   /* background: #eee; */
   /* outline: 1px solid #aaa; */
   /* box-shadow: #aaa 0 0 1em; */
   transition: 0.5s;
+}
+
+@media handheld, only screen and (max-width: 600px) {
+  #ad_top {
+  display: none;
+  }
 }

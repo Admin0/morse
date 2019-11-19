@@ -51,7 +51,8 @@
 			<div class="lang_box lang">
 				<div id="" class="card_header selected" data-i18n='lang_morse'>MORSE CODE</div>
 			</div>
-			<div id="re_anaylze" class=""><i class="material-icons"> swap_horiz </i></div>
+			<label id="re_anaylze" class="" for="checkbox"><input type="checkbox" id="checkbox"><i class="material-icons"> swap_horiz </i></label>
+
 		</div>
 		<div id="card_body">
 			<div id="input">
@@ -60,8 +61,15 @@
 				<div id="input_del" onclick="clear()" class="hide"><i class="material-icons"> close </i></div>
 			</div>
 			<div id="output">
+				<div id="output_textarea"><span class="placeholder" data-i18n="output_0"></span></div>
 
-				<form id="option">
+				<div id="output_menu" class="hide">
+					<span class="copy" data-clipboard-target="#output_textarea" onclick="toast('copied!')" title="Copy translation">
+						<i class="material-icons" data-clipboard-target="#output_textarea"> file_copy </i>
+					</span>
+				</div>
+
+				<!-- <form id="option">
 					<div style="display: inline-block;">
 						<div class="button button_first"><label><input type="radio" name="type" id="radio_kr" value="kr" checked><span class="radio_span">한글</span></label></div>
 						<div class="button button_between"><label><input type="radio" name="type" id="radio_en" value="en"><span class="radio_span">영어</span></label></div>
@@ -79,23 +87,8 @@
 						<div class="button button_between" onclick="$('#space_char').val('　');$('#space_string').val('　　　');"><label><input type="radio" name="space" checked>JinH</label></div>
 						<div class="button button_last" onclick="$('#space_char').val(' ');$('#space_string').val('9');"><label><input type="radio" name="space">모바일</label></div>
 					</div>
-				</form>
-				<div id="output_textarea"><span class="placeholder" data-i18n="output_0"></span></div>
+				</form> -->
 
-				<div style="text-align:center; overflow:hidden;">
-					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- 반응형 -->
-					<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8175591114279139" data-ad-slot="6064236981" data-ad-format="auto" data-full-width-responsive="true"></ins>
-					<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-				</div>
-
-				<div id="output_menu" class="hide">
-					<span class="copy" data-clipboard-target="#output_textarea" onclick="toast('copied!')" title="Copy translation">
-						<i class="material-icons" data-clipboard-target="#output_textarea"> file_copy </i>
-					</span>
-				</div>
 
 			</div>
 		</div>
@@ -107,6 +100,15 @@
 		This site is under construction now. It's still incomplete, so try the <a href="/morse/v2">old version</a>.<br><br>
 		공사중입니다. 아직 미완성이니, <a href="/morse/v2">이전 버전</a>을 써보세요.
 	</section>
+
+	<div style="text-align:center; overflow:hidden;">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- 반응형 -->
+		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8175591114279139" data-ad-slot="6064236981" data-ad-format="auto" data-full-width-responsive="true"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
 
 	<section id="context_menu"></section>
 

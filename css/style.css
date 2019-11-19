@@ -3,6 +3,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Material+Icons');
 @import url('ad.css');
+@import url('animate.css');
+
+::selection {
+  background: rgba(0, 0, 0, 0);
+}
 
 html {
   background: #eee;
@@ -20,7 +25,7 @@ a {
 }
 
 header {
-  position: fixed;
+  /* position: fixed; */
   color: rgba(0, 0, 0, .98);
   box-shadow: 0 2px 6px 0 rgba(60, 64, 67, .15);
   transition: .3s;
@@ -94,12 +99,11 @@ body.fold header {
   outline: 1px solid #aaa;
   box-shadow: #aaa 0 0 1em;
   display: none;
-  ;
   z-index: 1;
 }
 
 #card_header {
-  height: 48px;
+  min-height: 48px;
   width: 100%;
   /* background: gold; */
   border-bottom: 1px solid #ddd;
@@ -117,11 +121,11 @@ body.fold header {
   width: calc(50% - 2em);
 }
 
-#card_header .on.lang_box.lang {
+body.analyze #card_header .lang_box.lang {
   left: 0;
 }
 
-#card_header .on.lang_box.code {
+body.analyze #card_header .lang_box.code {
   right: 0;
   width: calc(50% - 2em);
 }
@@ -132,9 +136,22 @@ body.fold header {
   border-radius: 25px;
   width: 50px;
   position: absolute;
-  left: calc(50% - 25px);
+  left: calc(50% - 12px);
   text-align: center;
   line-height: 58px;
+}
+
+#re_anaylze input+i {
+  transition: 0.25s;
+  transform: rotate(0);
+}
+
+#re_anaylze input:checked+i {
+  transform: rotate(180deg);
+}
+
+#re_anaylze input {
+  display: none;
 }
 
 .card_header {
@@ -148,10 +165,15 @@ body.fold header {
   line-height: 48px;
 }
 
-.card_header.selected {
+.card_header.selected::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  height: 45px;
+  width: 100%;
   border-bottom: solid 3px #4284f3;
   animation: border-grow .3s cubic-bezier(0.4, 0, 0.4, 1) 0s;
-  color: #4285f4;
 }
 
 .translate .lang_box.code .card_header:not(.auto) {
@@ -183,6 +205,12 @@ body.fold header {
   overflow: hidden;
   resize: none;
   font-size: 1.25em;
+}
+
+#input_textarea::selection,
+#output_textarea::selection {
+  color: #fff;
+  background: #4284f3;
 }
 
 #input_toggle {
@@ -221,27 +249,6 @@ body.fold header {
   box-align: center;
   /*display: -webkit-box;*/
   height: 3.5em;
-}
-
-#option {
-  background: #eee;
-  padding: 1em .5em .5em;
-  display: none;
-  box-shadow: #ccc -.5ex .5ex 1em inset;
-  outline: 1px solid #ccc;
-}
-
-#option input[type=radio],
-#option input[type=checkbox] {
-  display: none;
-}
-
-#option input {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  border: none;
-  color: silver;
 }
 
 #output {
@@ -597,4 +604,13 @@ input[type="button"]:active, input[type="submit"]:active, .button:active {
 
 #tooltip_text {
   white-space: pre-line;
+}
+
+@media only screen and (max-width: 1280px) {
+  .contents {
+    box-shadow: none;
+    border-radius: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
 }

@@ -7,8 +7,10 @@ function analyze() {
 
 	var j,k,output = '';
 	var text = $('#input_textarea').val();
-	var space_char = new RegExp($('#space_char').val(), 'g');
-	var space_string = new RegExp($('#space_string').val()+'|\n|\r', 'g');
+	// var space_char = new RegExp($('#space_char').val(), 'g');
+	// var space_string = new RegExp($('#space_string').val()+'|\n|\r', 'g');
+	var space_char = new RegExp('　', 'g');
+	var space_string = new RegExp('　　　'+'|\n|\r', 'g');
 	text = text.replace(space_string,"_/_"); //문자열공백
 	text = text.replace(space_char,"_"); //문자사이공백
 	text = text.replace(/\s/g,""); //공백 제거

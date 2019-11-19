@@ -35,27 +35,29 @@ function tranlyze(type) {
   }
 }
 
-function mode() {
+function mode() { // this method for change type (toggle)
   if (type == TRANSLATE_MODE) {
     type = ANALYZE_MODE;
     $('body').addClass('analyze');
     $('body').removeClass('translate');
+
     $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_1', 'tel')).attr('type', 'tel');
-    $('#option').slideDown();
+
     $('#input_toggle').show().attr('value', input_type['tel']);
     $('#menu_toggle div').text($.i18n('translator'));
     $('#menu_toggle img').attr('src', 'image/menu_back.png');
-    $('.lang_box').addClass('on');
+
   } else if (type == ANALYZE_MODE) {
     type = TRANSLATE_MODE;
     $('body').removeClass('analyze');
     $('body').addClass('translate');
+
     $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0')).attr('type', 'text');
-    $('#option').slideUp();
+
     $('#input_toggle').hide();
     $('#menu_toggle div').text($.i18n('analyzer'));
     $('#menu_toggle img').attr('src', 'image/menu_forward.png');
-    $('.lang_box').removeClass('on');
+
   }
   $('.footer_output').slideUp();
 }
@@ -73,12 +75,16 @@ function initialize() {
     clear();
   });
 
-  $('#re_anaylze').on('click', function() {
+  $('#re_anaylze').on('change', function() {
     $('#input_textarea').val($('#output_textarea').text());
     mode();
     tranlyze(type);
   });
 
+  $('.lang_box.code .card_header').on('click', function() {
+    $('.lang_box.code .card_header').removeClass('selected');
+    $(this).addClass('selected');
+  });
 }
 
 var type = TRANSLATE_MODE;
@@ -125,25 +131,6 @@ function button_click() {
       // event.preventDefault();
       return false;
     }
-  });
-
-
-  function option_toggel() {
-    $('#option .button:has(input:checked)').css({
-      'background': color['toggle_bg1'],
-      'color': color['toggle_color1'],
-      'border-color': color['toogle_border1']
-    }); //initialize
-    tranlyze(type);
-  }
-  option_toggel();
-  $('#option input[type=radio],#option input[type=checkbox]').click(function() { //radiobox toggle
-    $('#option input[type=radio]:not(:checked), #option input[type=checkbox]:not(:checked)').parent().parent().css({
-      'background': color['toggle_bg0'],
-      'color': color['toggle_color0'],
-      'border-color': color['toogle_border0']
-    });
-    option_toggel();
   });
 
   $('#menu_share').click(function() {
