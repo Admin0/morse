@@ -35,42 +35,61 @@ function tranlyze(type) {
   }
 }
 
-function clear() {
-  $('#input_textarea').val('');
-  tranlyze(currentImg);
-  $('#input_textarea').focus();
+function mode() {
+  if (type == TRANSLATE_MODE) {
+    type = ANALYZE_MODE;
+    $('body').addClass('analyze');
+    $('body').removeClass('translate');
+    $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_1', 'tel')).attr('type', 'tel');
+    $('#option').slideDown();
+    $('#input_toggle').show().attr('value', input_type['tel']);
+    $('#menu_toggle div').text($.i18n('translator'));
+    $('#menu_toggle img').attr('src', 'image/menu_back.png');
+    $('.lang_box').addClass('on');
+  } else if (type == ANALYZE_MODE) {
+    type = TRANSLATE_MODE;
+    $('body').removeClass('analyze');
+    $('body').addClass('translate');
+    $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0')).attr('type', 'text');
+    $('#option').slideUp();
+    $('#input_toggle').hide();
+    $('#menu_toggle div').text($.i18n('analyzer'));
+    $('#menu_toggle img').attr('src', 'image/menu_forward.png');
+    $('.lang_box').removeClass('on');
+  }
+  $('.footer_output').slideUp();
 }
 
-var currentImg = 0;
+function initialize() {
+
+  function clear() {
+    $('#input_textarea').val('');
+    tranlyze(type);
+    $('#input_textarea').focus();
+    console.log('all cleared');
+  }
+
+  $('#input_del').on('click', function() {
+    clear();
+  });
+
+  $('#re_anaylze').on('click', function() {
+    $('#input_textarea').val($('#output_textarea').text());
+    mode();
+    tranlyze(type);
+  });
+
+}
+
+var type = TRANSLATE_MODE;
 
 function button_swipe() {
 
-  function toggle_morse() {
-    if (currentImg == 0) {
-      $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0')).attr('type', 'text');
-      $('#option').slideUp();
-      $('#input_toggle').hide();
-      $('#menu_toggle div').text($.i18n('analyzer'));
-      $('#menu_toggle img').attr('src', 'image/menu_forward.png');
-    } else if (currentImg == 1) {
-      $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_1', 'tel')).attr('type', 'tel');
-      $('#option').slideDown();
-      $('#input_toggle').show().attr('value', input_type['tel']);
-      $('#menu_toggle div').text($.i18n('translator'));
-      $('#menu_toggle img').attr('src', 'image/menu_back.png');
-    }
-    $('.footer_output').slideUp();
-  }
   $('#menu_toggle').click(function() { //menu toggle translator <-> analyzer 1.6.0
-    if (currentImg == 0) {
-      currentImg = 1;
-    } else {
-      currentImg = 0;
-    }
+    mode();
     $('#input_textarea').val('');
-    tranlyze(currentImg);
+    tranlyze(type);
     $('#input_textarea').focus();
-    toggle_morse();
   });
 }
 
@@ -100,7 +119,7 @@ function button_click() {
   });
 
   $('#input_textarea').keyup(function() {
-    tranlyze(currentImg);
+    tranlyze(type);
   }).keydown(function(event) {
     if (event.which == 13) {
       // event.preventDefault();
@@ -115,6 +134,7 @@ function button_click() {
       'color': color['toggle_color1'],
       'border-color': color['toogle_border1']
     }); //initialize
+    tranlyze(type);
   }
   option_toggel();
   $('#option input[type=radio],#option input[type=checkbox]').click(function() { //radiobox toggle
@@ -187,20 +207,18 @@ function button_click() {
 }
 
 $(function() {
-  // initialize()
+  initialize();
   button_swipe();
   button_click();
   title_tooltip();
 
   $('#input_textarea').focus();
-  // notice();
 
   var clipboard = new ClipboardJS('.copy');
   clipboard.on('success', function(e) {
     console.info('Action:', e.action);
     console.info('Text:', e.text);
     console.info('Trigger:', e.trigger);
-
     e.clearSelection();
   });
 

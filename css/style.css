@@ -12,11 +12,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1;
 }
 
 a {
-  color: gray;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 header {
@@ -40,7 +40,8 @@ header h1 {
   margin: 0;
   /* text-align: left; */
   display: inline-block;
-  position: relative;top: -5px;
+  position: relative;
+  top: -5px;
 }
 
 body.fold header {
@@ -58,31 +59,21 @@ body.fold header {
 }
 
 .contents {
-  margin: 2em auto 8em;
+  margin: 1em auto 8em;
   max-width: 1280px;
   width: 100%;
   background: #fff;
   box-shadow: 0 5px 11px rgba(0, 0, 0, .2);
   border-radius: .5em;
   /* border: 1px solid #aaa; */
-  position: relative;
-  display: flex;
   transition: .3s;
+  position: relative;
 }
 
 #notice {
-  display: none;
-  z-index: 1;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  color: #000;
-  background: rgba(0, 0, 0, 0.5);
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-  border-radius: .5em;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .notice {
@@ -107,24 +98,77 @@ body.fold header {
   z-index: 1;
 }
 
-#send_to_phone {
-  text-align: center;
-  width: 250px;
-  position: fixed;
-  right: 0;
+#card_header {
+  height: 48px;
+  width: 100%;
+  /* background: gold; */
+  border-bottom: 1px solid #ddd;
+  position: relative;
 }
 
-#download_app {
-  text-align: center;
-  width: 250px;
-  position: fixed;
+#card_header .lang_box {
+  display: inline-block;
+  width: 50%;
+  position: absolute;
+}
+
+#card_header .lang_box.lang {
+  right: 0;
+  width: calc(50% - 2em);
+}
+
+#card_header .on.lang_box.lang {
   left: 0;
+}
+
+#card_header .on.lang_box.code {
+  right: 0;
+  width: calc(50% - 2em);
+}
+
+#re_anaylze {
+  height: 46px;
+  cursor: pointer;
+  border-radius: 25px;
+  width: 50px;
+  position: absolute;
+  left: calc(50% - 25px);
+  text-align: center;
+  line-height: 58px;
+}
+
+.card_header {
+  height: 46px;
+  cursor: pointer;
+  padding: 0 24px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  line-height: 48px;
+}
+
+.card_header.selected {
+  border-bottom: solid 3px #4284f3;
+  animation: border-grow .3s cubic-bezier(0.4, 0, 0.4, 1) 0s;
+  color: #4285f4;
+}
+
+.translate .lang_box.code .card_header:not(.auto) {
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+#card_body {
+  width: 100%;
+  position: relative;
+  display: flex;
 }
 
 #input {
   text-align: center;
   width: calc(50% - 4em);
-  padding: 2em;
+  padding: 2em 4em 2em 2em;
   /* background: gold; */
   border-right: 1px solid #ddd;
 }
@@ -138,7 +182,7 @@ body.fold header {
   border: none;
   overflow: hidden;
   resize: none;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 #input_toggle {
@@ -156,8 +200,9 @@ body.fold header {
 #input_del {
   position: absolute;
   right: calc(50% + 1em);
-  top: 1em;
+  top: 1.5em;
   cursor: pointer;
+  padding: 8px;
 }
 
 #imgs {
@@ -176,30 +221,6 @@ body.fold header {
   box-align: center;
   /*display: -webkit-box;*/
   height: 3.5em;
-}
-
-#translate, #analyze {
-  width: 50%;
-  /*margin: 2em auto;*/
-  padding: 1ex;
-  text-transform: uppercase;
-  color: #fff;
-  font-family: sans-serif;
-  background: #4d90fe;
-  border: 1px solid #3079ed;
-  border-radius: 3px;
-  display: inline-block;
-  cursor: pointer;
-  /*-webkit-transition: 0.25s;*/
-}
-
-#translate:active, #analyze:active {
-  background: #4787ed;
-  box-shadow: #3079ed 0 0 1ex;
-}
-
-#translate:hover, #analyze:hover {
-  box-shadow: #4787ed 0 0 1ex;
 }
 
 #option {
@@ -234,7 +255,7 @@ body.fold header {
   height: inherit !important;
   text-align: justify;
   font-family: 'Lato', 'Noto Sans KR', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.25em;
   border: none;
   display: block;
   line-height: 1.5;
@@ -477,6 +498,66 @@ input[type="button"]:active, input[type="submit"]:active, .button:active {
 
 .button:has(input) {
   backgroud: #ffa;
+}
+
+.copy {
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------- */
+/* ***** toast ***** */
+/* ------------------------------------------------------------------- */
+#toast {
+  line-height: 1;
+  position: fixed;
+  background-color: #424242;
+  color: rgba(255, 255, 255, .9);
+  fill: rgba(255, 255, 255, .9);
+  padding: 1em 1.5em 1em .75em;
+  min-width: 350px;
+  max-width: calc(100% - 2em);
+  bottom: 1em;
+  left: 1em;
+  z-index: 5;
+  border-radius: 3px;
+}
+
+#toast i.material-icons {
+  font-size: 20px;
+  margin-bottom: 1px;
+}
+
+@keyframes snackbar_on {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#toast.on {
+  animation-name: snackbar_on;
+  animation-duration: .3s;
+}
+
+@keyframes snackbar_off {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#toast.off {
+  opacity: 0;
+  visibility: none;
+  animation-name: snackbar_off;
+  animation-duration: .3s;
+  z-index: 0;
 }
 
 /* ------------------------------------------------------------------- */

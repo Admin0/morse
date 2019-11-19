@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>모스 부호(Morse code)</title>
+	<title>#morse</title>
 	<meta http-equiv="pragma" content="no-cache" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="google-site-verification" content="_D3_W4589GIbhr8GHlw8CIY3fMaeZxr23F4FP9u-9bM" />
@@ -24,11 +24,11 @@
 	<script type="text/javascript" src="js/sub__i18n.js"></script>
 </head>
 
-<body>
+<body class="translate">
 
 	<header>
 		<div id="header_menu"><i id="nav_on" onclick="if($('nav').attr('class')!='on'){$('nav, #nav_bg').addClass('on');}else{$('nav, #nav_bg').removeClass('on');};" class="material-icons">menu</i></div>
-		<h1><span id="title"><span class="hide_mobile"></span>#M³ Translator</span></h1>
+		<h1><span id="title"><span data-i18n='title'>M³ Translator</span><span class="hide_mobile"></span></span></h1>
 	</header>
 
 	<div id="ad_top">
@@ -41,57 +41,71 @@
 	</div>
 
 	<section id="index" class="contents">
-		<div id="input">
-			<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-			<!-- <input type="button" id="input_toggle" value="☎"> -->
-			<div id="input_del" class="hide" onclick="clear();"><i class="material-icons"> close </i></div>
+		<div id="card_header">
+			<div class="lang_box code">
+				<div id="" class="card_header selected auto" data-i18n='lang_auto'>AUTO</div>
+				<div id="" class="card_header en" data-i18n='lang_en'>EN</div>
+				<div id="" class="card_header ko" data-i18n='lang_ko'>KO</div>
+				<div id="" class="card_header ja" data-i18n='lang_ja'>JA</div>
+			</div>
+			<div class="lang_box lang">
+				<div id="" class="card_header selected" data-i18n='lang_morse'>MORSE CODE</div>
+			</div>
+			<div id="re_anaylze" class=""><i class="material-icons"> swap_horiz </i></div>
 		</div>
-		<div id="output">
+		<div id="card_body">
+			<div id="input">
+				<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+				<!-- <input type="button" id="input_toggle" value="☎"> -->
+				<div id="input_del" onclick="clear()" class="hide"><i class="material-icons"> close </i></div>
+			</div>
+			<div id="output">
 
-			<form id="option">
-				<div style="display: inline-block;">
-					<div class="button button_first"><label><input type="radio" name="type" id="radio_kr" value="kr" checked><span class="radio_span">한글</span></label></div>
-					<div class="button button_between"><label><input type="radio" name="type" id="radio_en" value="en"><span class="radio_span">영어</span></label></div>
-					<div class="button button_last"><label><input type="radio" name="type" id="radio_nm" value="nm"><span class="radio_span">숫자</span></label></div>
-				</div>
-				<div style="display: inline-block;">
-					<div class="button"><label><input id="assemble" type="checkbox" checked /><span class="radio_span">음소조합(KR)</span></label></div>
-					<div class="button"><label><input id="capital" type="checkbox" /><span class="radio_span">대문자(EN)</span></label></div>
-				</div>
-				<div style="display: inline-block;">
-					<div class="button button_first">
-						<label><input type="radio" name="space">긴공백: <input id="space_string" type="text" style="width:1em;" value="　　　" onclick="select()"></label>
-						<label><input type="radio" name="space">짧은공백: <input id="space_char" type="text" style="width:1em;" value="　" onclick="select()"></label>
+				<form id="option">
+					<div style="display: inline-block;">
+						<div class="button button_first"><label><input type="radio" name="type" id="radio_kr" value="kr" checked><span class="radio_span">한글</span></label></div>
+						<div class="button button_between"><label><input type="radio" name="type" id="radio_en" value="en"><span class="radio_span">영어</span></label></div>
+						<div class="button button_last"><label><input type="radio" name="type" id="radio_nm" value="nm"><span class="radio_span">숫자</span></label></div>
 					</div>
-					<div class="button button_between" onclick="$('#space_char').val('　');$('#space_string').val('　　　');"><label><input type="radio" name="space" checked>JinH</label></div>
-					<div class="button button_last" onclick="$('#space_char').val(' ');$('#space_string').val('9');"><label><input type="radio" name="space">모바일</label></div>
+					<div style="display: inline-block;">
+						<div class="button"><label><input id="assemble" type="checkbox" checked /><span class="radio_span">음소조합(KR)</span></label></div>
+						<div class="button"><label><input id="capital" type="checkbox" /><span class="radio_span">대문자(EN)</span></label></div>
+					</div>
+					<div style="display: inline-block;">
+						<div class="button button_first">
+							<label><input type="radio" name="space">긴공백: <input id="space_string" type="text" style="width:1em;" value="　　　" onclick="select()"></label>
+							<label><input type="radio" name="space">짧은공백: <input id="space_char" type="text" style="width:1em;" value="　" onclick="select()"></label>
+						</div>
+						<div class="button button_between" onclick="$('#space_char').val('　');$('#space_string').val('　　　');"><label><input type="radio" name="space" checked>JinH</label></div>
+						<div class="button button_last" onclick="$('#space_char').val(' ');$('#space_string').val('9');"><label><input type="radio" name="space">모바일</label></div>
+					</div>
+				</form>
+				<div id="output_textarea"><span class="placeholder" data-i18n="output_0"></span></div>
+
+				<div style="text-align:center; overflow:hidden;">
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- 반응형 -->
+					<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8175591114279139" data-ad-slot="6064236981" data-ad-format="auto" data-full-width-responsive="true"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
 				</div>
-			</form>
-			<div id="output_textarea"><span class="placeholder" data-i18n="output_0"></span></div>
 
-			<div style="text-align:center; overflow:hidden;">
-				<script type="text/javascript">
-					<!--
-					google_ad_client = "ca-pub-8175591114279139";
-					/* 대형직사각형 */
-					google_ad_slot = "8258672091";
-					google_ad_width = 336;
-					google_ad_height = 280;
-					//-->
-				</script>
-				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-				</script>
+				<div id="output_menu" class="hide">
+					<span class="copy" data-clipboard-target="#output_textarea" onclick="toast('copied!')" title="Copy translation">
+						<i class="material-icons" data-clipboard-target="#output_textarea"> file_copy </i>
+					</span>
+				</div>
+
 			</div>
-
-			<div id="output_menu" class="hide">
-				<span class="copy" data-clipboard-target="#output_textarea" onclick="toast('copied!')" title="Copy translation">
-					<i class="material-icons" data-clipboard-target="#output_textarea"> file_copy </i>
-				</span>
-			</div>
-
 		</div>
 		<!-- <div id="feadback"><a href="//blog.jinh.kr/guestbook">feadback</a></div> -->
-		<div id="feadback"><a href="mailto:admin@jinh.kr">Send feadback</a></div>
+		<div id="feadback"><a href="mailto:admin@jinh.kr" data-i18n="feedback">Send feadback</a></div>
+	</section>
+
+	<section id="notice">
+		This site is under construction now. It's still incomplete, so try the <a href="/morse/v2">old version</a>.<br><br>
+		공사중입니다. 아직 미완성이니, <a href="/morse/v2">이전 버전</a>을 써보세요.
 	</section>
 
 	<section id="context_menu"></section>

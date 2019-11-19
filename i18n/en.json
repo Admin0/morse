@@ -1,4 +1,6 @@
 {
+  "title": "M³ Translator",
+  "descript": "Miraculous Mighty Morse",
   "notice_to_android": "Morsecode on Google Play!",
   "notice_to_chrome": "and, Chrome Web Store!",
   "notice_to_phone": "Use it on your Phone!",
@@ -10,5 +12,11 @@
   "analyze": "analyze",
   "analyzer": "analyzer",
   "translate": "translate",
-  "translator": "translator"
+  "translator": "translator",
+  "lang_morse": "Morse Code",
+  "lang_auto": "Auto detect",
+  "lang_en": "English",
+  "lang_ko": "Korean",
+  "lang_ja": "Japanese",
+  "feedback": "Send feedback"
 }

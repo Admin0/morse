@@ -1,4 +1,6 @@
 {
+  "title": "기만의 모스 부호",
+  "descript": "기적의 만능 모스 부호",
   "notice_to_android": "안드로이드에서 만나보세요!",
   "notice_to_chrome": "크롬 웹스토어에도 있습니다!",
   "notice_to_phone": "모바일에서도 해보시구요.",
@@ -10,5 +12,11 @@
   "analyze": "해석",
   "analyzer": "해석기",
   "translate": "번역",
-  "translator": "번역기"
+  "translator": "번역기",
+  "lang_morse": "모스 부호",
+  "lang_auto": "자동 감지",
+  "lang_en": "영어",
+  "lang_ko": "한국어",
+  "lang_ja": "일본어",
+  "feedback": "의견 보내기"
 }

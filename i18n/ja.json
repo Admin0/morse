@@ -1,9 +1,22 @@
 {
+  "title": "M³ Translator",
+  "descript": "Miraculous Mighty Morse",
   "notice_to_android": "アンドロイドで会ってみてください！",
   "notice_to_chrome": "ChromeのWebストアもあります！",
   "notice_to_phone": "モバイルでもみてください。",
   "notice_donate": "...または少し寄付していただいてもなりますよ。",
   "notice_check": "案内画面をもう見ません。",
-  "input_textarea_placeholder_0": " 日本語、英語、数字、文字を入力してください。" ,
-  "input_textarea_placeholder_1": " モールス符号を入力してください。"
+  "input_textarea_placeholder_0": " 日本語、英語、数字を入力してください。" ,
+  "input_textarea_placeholder_1": " モールス符号を入力してください。",
+  "output_0": "MORSE CODE TRANSLATOR + ANALYZER\n\n\n- HOW TO USE\n1. Input the text what you want to translate to the Morse code.\n2. The translated Morse code is output.",
+  "analyze": "analyze",
+  "analyzer": "analyzer",
+  "translate": "translate",
+  "translator": "translator",
+  "lang_morse": "モールス符号",
+  "lang_auto": "自動検出",
+  "lang_en": "英語",
+  "lang_ko": "韓国語",
+  "lang_ja": "日本語",
+  "feedback": "Send feedback"
 }
