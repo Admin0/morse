@@ -22,6 +22,7 @@
 	<script type="text/javascript" src="js/sub__tooltip.js"></script>
 	<script type="text/javascript" src="js/sub__clipboard.min.js"></script>
 	<script type="text/javascript" src="js/sub__i18n.js"></script>
+	<script type="text/javascript" src="js/sub__message.js" defer></script>
 </head>
 
 <body class="translate">
@@ -73,38 +74,18 @@
 						<i class="material-icons" data-clipboard-target="#output_textarea"> file_copy </i>
 					</span>
 				</div>
-
-				<!-- <form id="option">
-					<div style="display: inline-block;">
-						<div class="button button_first"><label><input type="radio" name="type" id="radio_kr" value="kr" checked><span class="radio_span">한글</span></label></div>
-						<div class="button button_between"><label><input type="radio" name="type" id="radio_en" value="en"><span class="radio_span">영어</span></label></div>
-						<div class="button button_last"><label><input type="radio" name="type" id="radio_nm" value="nm"><span class="radio_span">숫자</span></label></div>
-					</div>
-					<div style="display: inline-block;">
-						<div class="button"><label><input id="assemble" type="checkbox" checked /><span class="radio_span">음소조합(KR)</span></label></div>
-						<div class="button"><label><input id="capital" type="checkbox" /><span class="radio_span">대문자(EN)</span></label></div>
-					</div>
-					<div style="display: inline-block;">
-						<div class="button button_first">
-							<label><input type="radio" name="space">긴공백: <input id="space_string" type="text" style="width:1em;" value="　　　" onclick="select()"></label>
-							<label><input type="radio" name="space">짧은공백: <input id="space_char" type="text" style="width:1em;" value="　" onclick="select()"></label>
-						</div>
-						<div class="button button_between" onclick="$('#space_char').val('　');$('#space_string').val('　　　');"><label><input type="radio" name="space" checked>JinH</label></div>
-						<div class="button button_last" onclick="$('#space_char').val(' ');$('#space_string').val('9');"><label><input type="radio" name="space">모바일</label></div>
-					</div>
-				</form> -->
-
-
 			</div>
 		</div>
 		<!-- <div id="feadback"><a href="//blog.jinh.kr/guestbook">feadback</a></div> -->
 		<div id="feadback"><a href="mailto:admin@jinh.kr" data-i18n="feedback">Send feadback</a></div>
 	</section>
 
-	<section id="notice">
+	<section id="message"> </section>
+
+	<!-- <section id="notice">
 		This site is under construction now. It's still incomplete, so try the <a href="/morse/v2">old version</a>.<br><br>
 		공사중입니다. 아직 미완성이니, <a href="/morse/v2">이전 버전</a>을 써보세요.
-	</section>
+	</section> -->
 
 	<div id="ad_bottom">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -120,48 +101,11 @@
 	<div id="nav_bg" onclick="$('nav, #nav_bg').removeClass('on');"></div>
 
 	<footer>
-		<div class="menu" id="menu_toggle">
-			<img src="image/menu_forward.png">
-			<div data-i18n="analyzer">해석기</div>
-		</div>
-		<div class="menu" id="menu_share">
-			<img src="image/menu_share.png">
-			<div>공유</div>
-		</div>
-		<div class="menu" id="menu_review">
-			<img src="image/menu_review.png">
-			<div>리뷰</div>
-		</div>
-		<div class="menu" id="menu_setting">
-			<img src="image/menu_setting.png">
-			<div>설정</div>
-		</div>
-		<div id="footer_output">
-			<div class="footer_output" id="footer_output_share">
-				<div class="share_button">
-					<div class="share_icon" id="share_facebook"></div>facebook
-				</div>
-				<div class="share_button">
-					<div class="share_icon" id="share_google"></div>google+
-				</div>
-				<div class="share_button">
-					<div class="share_icon" id="share_kakaotalk"></div>kakaotalk
-				</div>
-				<div class="share_button">
-					<div class="share_icon" id="share_mail"></div>mail
-				</div>
-				<div class="share_button">
-					<div class="share_icon" id="share_twitter"></div>twitter
-				</div>
-			</div>
-			<div class="footer_output" id="footer_output_setting">
-				<!-- <div class="setting" id="setting_notice">실행 화면 안내 애니메이션 다시 보기</div> -->
-				<div class="setting" onclick="window.location = 'license.html'">오픈 소스 라이센스</div>
-				<div class="setting" onclick="window.location = 'info.html'">정보</div>
-				<div class="setting" onclick="ax.ext.android.finish()">종료</div>
-			</div>
-		</div>
-	</footer>
+    <p class="copyright">© 2013 -
+      <script>
+        document.write(new Date().getFullYear());
+      </script> JinH</p>
+  </footer>
 
 	<script>
 		<!-- analytics -->

@@ -23,5 +23,11 @@
   "lang_he": "히브리어",
   "lang_ar": "아랍어",
   "lang_pr": "페르시아어",
-  "feedback": "의견 보내기"
+  "feedback": "의견 보내기",
+  "message_0": "\"수신자 전원에게 알림. 이것은 영원한 침묵에 앞선우리의 마지막 함성.\" <span class='subtitle'>프랑스 해군의 1997년 1월 31일 마지막 모스 부호 메시지</span>",
+  "message_1": "\" · · · · 　· · \" <br> \" – · · – 　– – – \" <span class='subtitle'>영화 렛미인</span>",
+  "message_2": "\" · · · 　– 　· – 　– · – – \" <span class='subtitle'>영화 인터스텔라</span>",
+  "message_3": "\"하나님께서 하신 일을 보아라\" <span class='subtitle'>1844년 3월 24일, 모스부호로 전송된 최초의 메시지</span>",
+  "message_4": "\" · · · 　– – – 　· · · \" <span class='subtitle'>Save Our Ship, 국제 조난 신호</span>",
+  "message_5": "\" – · – · 　– – · – 　– · · \" <span class='subtitle'>Come Quick Danger, 20세기 초반까지 사용된 조난 신호</span>"
 }

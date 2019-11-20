@@ -6,7 +6,7 @@
   "notice_to_phone": "モバイルでもみてください。",
   "notice_donate": "...または少し寄付していただいてもなりますよ。",
   "notice_check": "案内画面をもう見ません。",
-  "input_textarea_placeholder_0": " 日本語、英語、数字を入力してください。" ,
+  "input_textarea_placeholder_0": " 日本語、英語、数字、文字を入力してください。" ,
   "input_textarea_placeholder_1": " モールス符号を入力してください。",
   "output_0": "ここで翻訳されたモールス符号が出力されます。",
   "analyze": "analyze",

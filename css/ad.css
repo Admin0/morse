@@ -1,11 +1,7 @@
 #ad_top {
-  /* position: absolute; */
-  /* width: fit-content; */
-  margin: 1em auto 0;
+  margin: calc(1em - 64px) auto 0;
   text-align: center;
-  /* background: #eee; */
-  /* outline: 1px solid #aaa; */
-  /* box-shadow: #aaa 0 0 1em; */
+  min-height: 280px;
   transition: 0.5s;
 }
 

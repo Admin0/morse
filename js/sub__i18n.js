@@ -8,6 +8,8 @@ $(window).on('load', function() {
   // $.i18n().locale = "ja";
   $('[data-i18n]').i18n();
   $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0'));
+
+  message();
 });
 
 // $(document).ready(function(){

@@ -15,7 +15,7 @@ html {
 
 body {
   padding: 0;
-  margin: 0;
+  margin: calc(64px + 64px) auto 0;
   font-family: 'Noto Sans KR', sans-serif;
   line-height: 1;
 }
@@ -25,7 +25,7 @@ a {
 }
 
 header {
-  /* position: fixed; */
+  position: fixed;
   color: rgba(0, 0, 0, .98);
   box-shadow: 0 2px 6px 0 rgba(60, 64, 67, .15);
   transition: .3s;
@@ -75,17 +75,23 @@ body.fold header {
   position: relative;
 }
 
-#notice {
+#notice, #message {
   text-align: center;
   font-size: 1em;
   font-weight: bold;
+  width: fit-content;
+  line-height: 2;
+  margin: auto;
+  padding: 0 3em;
 }
 
-.notice {
-  position: absolute;
-  color: #fff;
-  left: 0;
-  display: none;
+.subtitle {
+  color: #aaa;
+  font-size: .75em;
+  display: block;
+  font-style: italic;
+  text-align: right;
+  margin: 0 -3em 0em 0em;
 }
 
 #notice_msg {
@@ -316,20 +322,10 @@ body.analyze #card_header .lang_box.code {
 
 footer {
   position: fixed;
-  left: calc(50% - 300px);
-  width: 600px;
   bottom: 0;
+  width: 100%;
   text-align: center;
-  font-size: .5em;
-  background: #eee;
-  outline: 1px solid #aaa;
   color: gray;
-  box-shadow: #aaa 0 0 1em;
-  /*color x y length*/
-  /*-webkit-transition: 0.5s;
-	-moz-transition: 0.5s;
-	-o-transition: 0.5s;
-	transition: 0.5s;*/
 }
 
 .menu {
@@ -350,10 +346,6 @@ footer {
 
 .menu:active {
   background: #bce;
-}
-
-.footer_output {
-  display: none;
 }
 
 .share_button {
