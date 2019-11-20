@@ -34,9 +34,13 @@
   "message_7": "<span class='quote'>CW (Continuous Wave)</span> <span class='source'>Another name called Morse code</span>",
   "message_8": "<span class='quote'>1844年</span> <span class='source'>Invented Morse Code</span>",
   "message_9": "<span class='quote'>約30年</span> <span class='source'>Number of years Morse code played before the invention of the telephone</span>",
-  "message_10": "<span class='quote'>アルフレッド・ヴェイルとジョセフ・ヘンリー</span> <span class='source'>Realizes the idea of Samuel Morse (Morse ninja the patent)</span>",
+  "message_10": "<span class='quote'>アルフレッド・ヴェイルとジョセフ・ヘンリー</span> <span class='source'>Realizes the idea of Samuel Morse (but Morse ninja the patent)</span>",
   "message_11": "<span class='quote'>アルフレッド・ヴェイル</span> <span class='source'>モールス符号体系完成</span>",
   "message_12": "<span class='quote'>ジョセフ・ヘンリー</span> <span class='source'>モールス電信機の開発者</span>",
   "message_13": "<span class='quote'> – · – · 　· · · · 　· 　· – · 　· – · 　– · – – </span> <span class='source'>ザ・カーレント・ウォー (映画)</span>",
-  "message_14": "<span class='quote'>息子は、あなたの計画があるんだ！</span> <span class='source'>パラサイト 半地下の家族 (映画)</span>"
+  "message_14": "<span class='quote'>息子は、あなたの計画があるんだ！</span> <span class='source'>パラサイト 半地下の家族 (映画)</span>",
+  "message_15": "<span class='quote'> – · – · 　– – · – 　　　– · · 　· 　　　– · – · 　· – 　· – – · 　– · – · 　– – – 　– – 　　　– · · 　– · 　　　· · · 　– · – </span> <span class='source'>1943 famicom ver. (game)</span>",
+  "message_16": "<span class='quote'> – 　– – – 　　　– · · · 　· · 　– – · 　　　– · · · 　· – 　– · · 　　　· – – 　– – – 　· – · · 　· · – · </span> <span class='source'>Wolfenstein 3D (game)</span>",
+  "message_17": "<span class='quote'> – · · 　· 　　　· – · · 　· · 　– 　– 　· – · · 　· 　　　· – · 　· 　– · · 　　　· – · 　· · 　– · · 　· · 　– · 　– – · 　　　· · · · 　– – – 　– – – 　– · · </span> <span class='source'>Wolfenstein 3D (game)</span>",
+  "message_18": "<span class='quote'> · 　· – · · 　· · 　– – 　· · 　– · 　· – 　– 　· 　　　· · · · 　· · 　– 　· – · · 　· 　· – · </span> <span class='source'>Wolfenstein 3D (game)</span>"
 }

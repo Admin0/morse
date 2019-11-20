@@ -25,8 +25,8 @@
   "lang_pr": "페르시아어",
   "feedback": "의견 보내기",
   "message_0": "<span class='quote'>수신자 전원에게 알림. 이것은 영원한 침묵에 앞선 우리의 마지막 함성.</span> <span class='source'>프랑스 해군의 1997년 1월 31일 마지막 모스 부호 메시지</span>",
-  "message_1": "<span class='quote'> · · · · 　· · </span> <br> <span class='quote'> – · · – 　– – – </span> <span class='source'>영화 렛미인</span>",
-  "message_2": "<span class='quote'> · · · 　– 　· – 　– · – – </span> <span class='source'>영화 인터스텔라</span>",
+  "message_1": "<span class='quote'> · · · · 　· · </span> <br> <span class='quote'> – · · – 　– – – </span> <span class='source'>렛미인 (영화)</span>",
+  "message_2": "<span class='quote'> · · · 　– 　· – 　– · – – </span> <span class='source'>인터스텔라 (영화)</span>",
   "message_3": "<span class='quote'>하나님께서 하신 일을 보아라</span> <span class='source'>1844년 3월 24일, 모스부호로 전송된 최초의 메시지</span>",
   "message_4": "<span class='quote'> · · · 　– – – 　· · · </span> <span class='source'>Save Our Ship, 국제 조난 신호</span>",
   "message_5": "<span class='quote'> – · – · 　– – · – 　– · · </span> <span class='source'>Come Quick Danger、20世紀初めまで使用された遭難信号</span>",
@@ -34,9 +34,14 @@
   "message_7": "<span class='quote'>CW (Continuous Wave)</span> <span class='source'>모스 부호를 부르는 다른 이름</span>",
   "message_8": "<span class='quote'>1844년</span> <span class='source'>모스 부호가 발명된 해</span>",
   "message_9": "<span class='quote'>약 30년</span> <span class='source'>전화 발명 이전에 모스 부호가 활약한 햇수</span>",
-  "message_10": "<span class='quote'>알프레드 베일(Alfred Vail)과 조세프 헨리(Joseph Henry)</span> <span class='source'>새뮤얼 모스의 아이디어를 제품화 (모스가 특허권 닌자함)</span>",
+  "message_10": "<span class='quote'>알프레드 베일(Alfred Vail)과 조세프 헨리(Joseph Henry)</span> <span class='source'>새뮤얼 모스의 아이디어를 제품화 (그런데 모스가 특허권 닌자함)</span>",
   "message_11": "<span class='quote'>알프레드 베일(Alfred Vail)</span> <span class='source'>모스 부호 체계 완성</span>",
   "message_12": "<span class='quote'>조세프 헨리(Joseph Henry)</span> <span class='source'>모스 전신기의 개발자</span>",
-  "message_13": "<span class='quote'> – · – · 　· · · · 　· 　· – · 　· – · 　– · – – </span> <span class='source'>영화 커런트 워</span>",
-  "message_14": "<span class='quote'>아들아, 넌 계획이 다 있구나!</span> <span class='source'>영화 기생충</span>"
+  "message_13": "<span class='quote'> – · – · 　· · · · 　· 　· – · 　· – · 　– · – – </span> <span class='source'>커런트 워 (영화)</span>",
+  "message_14": "<span class='quote'>아들아, 넌 계획이 다 있구나!</span> <span class='source'>기생충 (영화)</span>",
+  "message_15": "<span class='quote'> – · – · 　– – · – 　　　– · · 　· 　　　– · – · 　· – 　· – – · 　– · – · 　– – – 　– – 　　　– · · 　– · 　　　· · · 　– · – </span> <span class='source'>1943 패미콤 버전 (게임)</span>",
+  "message_16": "<span class='quote'> – 　– – – 　　　– · · · 　· · 　– – · 　　　– · · · 　· – 　– · · 　　　· – – 　– – – 　· – · · 　· · – · </span> <span class='source'>울펜슈타인 3D (게임)</span>",
+  "message_17": "<span class='quote'> – · · 　· 　　　· – · · 　· · 　– 　– 　· – · · 　· 　　　· – · 　· 　– · · 　　　· – · 　· · 　– · · 　· · 　– · 　– – · 　　　· · · · 　– – – 　– – – 　– · · </span> <span class='source'>울펜슈타인 3D (게임)</span>",
+  "message_18": "<span class='quote'> · 　· – · · 　· · 　– – 　· · 　– · 　· – 　– 　· 　　　· · · · 　· · 　– 　· – · · 　· 　· – · </span> <span class='source'>울펜슈타인 3D (게임)</span>"
 }
+ 　

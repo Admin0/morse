@@ -24,7 +24,7 @@ const LANG_HE = 5;
 const LANG_AR = 6;
 const LANG_PR = 7;
 
-var lang = LANG_EN;
+var lang = (!window.localStorage["lang"]) ? LANG_EN : window.localStorage["lang"];
 
 function tranlyze(type) {
   if (type == TRANSLATE_MODE) {
@@ -145,6 +145,7 @@ function initialize() {
     } else if ($('.selected').hasClass('pr')) {
       lang = LANG_PR;
     }
+    window.localStorage["lang"] = lang;
     tranlyze(type);
   });
 }
@@ -204,6 +205,8 @@ $(function() {
   title_tooltip();
 
   $('#input_textarea').focus();
+
+  $("#nav_menu").load("nav_menu.html");
 
   var clipboard = new ClipboardJS('.copy');
   clipboard.on('success', function(e) {

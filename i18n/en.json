@@ -34,9 +34,13 @@
   "message_7": "<span class='quote'>CW (Continuous Wave)</span> <span class='source'>Another name called Morse code</span>",
   "message_8": "<span class='quote'>The year 1844</span> <span class='source'>Invented Morse Code</span>",
   "message_9": "<span class='quote'>About 30 years</span> <span class='source'>Number of years Morse code played before the invention of the telephone</span>",
-  "message_10": "<span class='quote'>Alfred Vail and Joseph Henry</span> <span class='source'>Realizes the idea of Samuel Morse (Morse ninja the patent)</span>",
+  "message_10": "<span class='quote'>Alfred Vail and Joseph Henry</span> <span class='source'>Realizes the idea of Samuel Morse (but, Morse ninja the patent)</span>",
   "message_11": "<span class='quote'>Alfred Vail</span> <span class='source'>complete the Morse code system</span>",
   "message_12": "<span class='quote'>Joseph Henry</span> <span class='source'>Developer of the Morse key</span>",
   "message_13": "<span class='quote'> – · – · 　· · · · 　· 　· – · 　· – · 　– · – – </span> <span class='source'>Current War (film)</span>",
-  "message_14": "<span class='quote'>Son, you've got a plan!</span> <span class='source'>영화 기생충</span>"
+  "message_14": "<span class='quote'>Son, you've got a plan!</span> <span class='source'>Parasite (film)</span>",
+  "message_15": "<span class='quote'> – · – · 　– – · – 　　　– · · 　· 　　　– · – · 　· – 　· – – · 　– · – · 　– – – 　– – 　　　– · · 　– · 　　　· · · 　– · – </span> <span class='source'>1943 Famicom ver. (game)</span>",
+  "message_16": "<span class='quote'> – 　– – – 　　　– · · · 　· · 　– – · 　　　– · · · 　· – 　– · · 　　　· – – 　– – – 　· – · · 　· · – · </span> <span class='source'>Wolfenstein 3D (game)</span>",
+  "message_17": "<span class='quote'> – · · 　· 　　　· – · · 　· · 　– 　– 　· – · · 　· 　　　· – · 　· 　– · · 　　　· – · 　· · 　– · · 　· · 　– · 　– – · 　　　· · · · 　– – – 　– – – 　– · · </span> <span class='source'>Wolfenstein 3D (game)</span>",
+  "message_18": "<span class='quote'> · 　· – · · 　· · 　– – 　· · 　– · 　· – 　– 　· 　　　· · · · 　· · 　– 　· – · · 　· 　· – · </span> <span class='source'>Wolfenstein 3D (game)</span>"
 }

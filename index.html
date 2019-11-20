@@ -3,8 +3,8 @@
 
 <head>
 	<title>#morse</title>
-	<meta http-equiv="pragma" content="no-cache" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8"/>
+	<meta name="description" content="기적의 만능 모스 부호 변환기 + 해석기. #모스_부호" />
 	<meta name="google-site-verification" content="_D3_W4589GIbhr8GHlw8CIY3fMaeZxr23F4FP9u-9bM" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
@@ -80,6 +80,25 @@
 		<div id="feadback"><a href="mailto:admin@jinh.kr" data-i18n="feedback">Send feadback</a></div>
 	</section>
 
+	<nav>
+		<div id='nav'>
+			<div id='nav_header'>
+				<div id="to_github" class="" onclick="console_event('q');">
+					<i class="material-icons">home</i><span>#morse</span>
+				</div>
+				<div id="setting_bt">
+					<i class="material-icons">settings</i>
+					<i class="material-icons setting_arrow">play_arrow</i>
+				</div>
+			</div>
+			<div id="nav_item_list"></div>
+			<div id="nav_menu"></div>
+		</div>
+		<!-- <div id='nav_footer'><i class='material-icons'>chevron_left</i></div> -->
+	</nav>
+
+  <div id="nav_bg" onclick="$('nav, #nav_bg').removeClass('on');"></div>
+
 	<section id="message"> </section>
 
 	<!-- <section id="notice">
@@ -101,11 +120,11 @@
 	<div id="nav_bg" onclick="$('nav, #nav_bg').removeClass('on');"></div>
 
 	<footer>
-    <p class="copyright">© 2013 -
-      <script>
-        document.write(new Date().getFullYear());
-      </script> JinH</p>
-  </footer>
+		<p class="copyright">© 2013 -
+			<script>
+				document.write(new Date().getFullYear());
+			</script> JinH</p>
+	</footer>
 
 	<script>
 		<!-- analytics -->
