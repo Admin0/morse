@@ -75,7 +75,7 @@ body.fold header {
   position: relative;
 }
 
-#notice, #message {
+#message {
   text-align: center;
   font-size: 1em;
   font-weight: bold;
@@ -83,9 +83,38 @@ body.fold header {
   line-height: 2;
   margin: auto;
   padding: 0 3em;
+  font-family: 'Lato', 'Noto Sans KR', sans-serif;
 }
 
-.subtitle {
+.quote::before, .quote::after {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  opacity: .45;
+}
+
+.quote::before {
+  content: 'format_quote';
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.quote::after {
+  content: 'format_quote';
+  right: 0;
+}
+
+.source {
   color: #aaa;
   font-size: .75em;
   display: block;

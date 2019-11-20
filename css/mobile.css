@@ -4,7 +4,7 @@
   }
 
   body {
-    /* margin: 100px auto 0; */
+    margin: 64px auto 0;
   }
 
   header {
@@ -20,6 +20,7 @@
     display: block;
     box-shadow: none;
     margin-top: 0;
+    border-top: none;
   }
 
   #card_body {

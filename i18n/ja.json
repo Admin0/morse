@@ -23,5 +23,20 @@
   "lang_he": "ヘブライ語",
   "lang_ar": "アラビア語",
   "lang_pr": "ペルシア語",
-  "feedback": "Send feedback"
+  "feedback": "Send feedback",
+  "message_0": "<span class='quote'>受信者全員のお知らせ これは永遠の沈黙に先立つ最後の歓声。</span> <span class='source'>フランス海軍の1997年1月31日、最後のモールス符号のメッセージだ</span>",
+  "message_1": "<span class='quote'> · · · · 　· · </span> <br> <span class='quote'> – · · – 　– – – </span> <span class='source'>モールス (映画)</span>",
+  "message_2": "<span class='quote'> · · · 　– 　· – 　– · – – </span> <span class='source'>インターステラー (映画)</span>",
+  "message_3": "<span class='quote'>What hath God wrought</span> <span class='source'>1844年3月24日、モールス符号で伝送された最初のメッセージ</span>",
+  "message_4": "<span class='quote'> · · · 　– – – 　· · · </span> <span class='source'>Save Our Ship, 国際遭難信号</span>",
+  "message_5": "<span class='quote'> – · – · 　– – · – 　– · · </span> <span class='source'>Come Quick Danger, Rescue signals used until the early 20th century</span>",
+  "message_6": "<span class='quote'>のサミュエル・モールス</span> <span class='source'>Origin of the name</span>",
+  "message_7": "<span class='quote'>CW (Continuous Wave)</span> <span class='source'>Another name called Morse code</span>",
+  "message_8": "<span class='quote'>1844年</span> <span class='source'>Invented Morse Code</span>",
+  "message_9": "<span class='quote'>約30年</span> <span class='source'>Number of years Morse code played before the invention of the telephone</span>",
+  "message_10": "<span class='quote'>アルフレッド・ヴェイルとジョセフ・ヘンリー</span> <span class='source'>Realizes the idea of Samuel Morse (Morse ninja the patent)</span>",
+  "message_11": "<span class='quote'>アルフレッド・ヴェイル</span> <span class='source'>モールス符号体系完成</span>",
+  "message_12": "<span class='quote'>ジョセフ・ヘンリー</span> <span class='source'>モールス電信機の開発者</span>",
+  "message_13": "<span class='quote'> – · – · 　· · · · 　· 　· – · 　· – · 　– · – – </span> <span class='source'>ザ・カーレント・ウォー (映画)</span>",
+  "message_14": "<span class='quote'>息子は、あなたの計画があるんだ！</span> <span class='source'>パラサイト 半地下の家族 (映画)</span>"
 }
