@@ -5,9 +5,29 @@
 @import url('ad.css');
 @import url('animate.css');
 @import url('nav.css');
+@import url('module.css');
 
 ::selection {
   background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-track {
+  background-color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-corner {
+  opacity: 0;
 }
 
 html {

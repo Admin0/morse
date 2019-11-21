@@ -1,32 +1,15 @@
-<html>
-	<head>
-        <title>모스 부호(Morse code)</title>
-		<meta http-equiv="pragma" content="no-cache" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="image/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/jquery_touchswipe.js"></script>
-	</head>
-	<body style="color:gray; margin-bottom:2em;">
-    	<section class="contents" style="padding:1em">
-            <h1 style="margin-top:2em;">개발자 정보</h1>
-            <img alt="jinh" src="image/jinh.png" style="width:72px; height:72px; display: block; margin:auto;"/>
-            <span style="display: block; text-align: center;">jinh</span>
-
-            <h1 style="margin-top:2em;">어플 정보</h1>
-            <img alt="app icon" src="image/icon.png" style="width:72px; height:72px; display: block; margin:auto;"/>
-            <span style="display: block; text-align: center;">모스 부호(Morse code)</span>
-<h2>업데이트 기록</h2>
+<h3>업데이트 기록</h3>
 <pre>19.11.18	3.0.0
- 다국어 지원.
- 안드로이드 앱처럼 어려 언어 번역 가능하게 만듦.
+ i18n 적용.
+ 해석 가능한 언어를 대폭 확장.
+ 디자인 개선.
+
+----------------------------------------------------
 
 13.03.31	2.0.0
  모스 부호 웹페이지 제작 및 공개.
+
+----------------------------------------------------
 
  13.03.24	1.6.0	0.39MB
  하단 액션 바 추가.
@@ -59,8 +42,8 @@
 
 13.02.28.	1.0.0	0.18MB
  안드로이드판 모스 부호 변환기 배포.</pre>
-    <input type="button" class="button" value="과거 기록 펼치기" onClick="eval($('#updatelog').slideDown());"><div id="updatelog" style="display:none;">
-<h2>모스 부호 해석기 업데이트 기록</h2>
+
+<h3>모스 부호 해석기 업데이트 기록</h3>
 <pre>----------------------------------------------------
 
 2013.02.19.	ver.1.5		28.8KB
@@ -101,7 +84,7 @@
 
 ----------------------------------------------------</pre>
 
-<h2>모스 부호 변환기 업데이트 기록</h2>
+<h3>모스 부호 변환기 업데이트 기록</h3>
 
 <pre>2013.02.07.	ver.1.2.1	12.4KB
 
@@ -132,82 +115,4 @@
 초안 작성 / 일부 제작.
 
 ----------------------------------------------------
-    </pre></div>
-
-            <h1 style="margin-top:2em;">모스 부호 정보</h1>
-            <h2>모스 부호 - 위키백과, 우리 모두의 백과사전.</h2>
-            <p>모스 부호(Morse code)는 짧은 발신 전류(・)와 긴 발신 전류(-)을 적절히 조합하여 알파벳과 숫자를 표기한 것으로 기본적인 형태는 국제적으로 비슷하다. 미국의 발명가 새뮤얼 핀리 브리즈 모스가 고안하였으며, 1844년 최초로 볼티모어와 워싱턴 D.C. 사이 전신 연락에 사용되었다.</p>
-            <h2>규칙</h2>
-            <p>문자와 기호 사이는 3단점 길이의 간격을 취하고 영어의 경우 낱말 단위마다 7단점 길이의 간격을 두며, 한글의 경우 글자와 글자 사이는 5단점의 길이를 둔다. 각 글자에 대한 부호 지정은 가장 많이 사용되는 글자(영어 e, 한글 ㅏ)를 가장 짧은 부호(.)로 정한다. 즉 많이 사용되는 글자일수록 타전하기 편하도록 할당 부호가 짧아진다는 것이다. 모스 부호의 길이가 짧은 것 부터 순서대로 늘어놓으면, e i t a n s d h m r u b f g k l v w c j o p x z q y 가 된다.</p>
-            <h2>로마자 모스 부호</h2>
-<pre>문자 부호  문자 부호
-A ·–     N –·
-B –···   O –––
-C –·–·   P ·––·
-D –··    Q ––·–
-E ·      R ·–·
-F ··–·   S ···
-G ––·    T –
-H ····   U ··–
-I ··     V ···–
-J ·–––   W ·––
-K –·–    X –··–
-L ·–··   Y –·––
-M ––     Z ––··</pre>
-      <h2>한글 모스 부호</h2>
-<pre>문자 부호   문자 부호
-ㄱ ·–··   ㅎ ·–––
-ㄴ ··–·   ㅏ ·
-ㄷ –···   ㅑ ··
-ㄹ ···–   ㅓ –
-ㅁ ––     ㅕ ···
-ㅂ ·––    ㅗ ·–
-ㅅ ––·    ㅛ –·
-ㅇ –·–    ㅜ ····
-ㅈ ·––·   ㅠ ·–·
-ㅊ –·–·   ㅡ –··
-ㅋ –··–   ㅣ ··–
-ㅌ ––··   ㅐ ––·–
-ㅍ –––    ㅔ –·––</pre>
-      <h2>숫자 모스 부호</h2>
-<pre>문자 부호         문자 부호
-1 ·––––, ·–    6 –····, –····
-2 ··–––, ··–   7 ––···, –···
-3 ···––, ···–  8 –––··, –··
-4 ····–, ····– 9 ––––·, –·
-5 ·····, ····· 0 –––––, –</pre>
-		</section>
-
-		<footer style="height:50px;">
-			<img class="previous_page" src="image/menu_previous.png" onClick="window.location = 'index.html'">
-			<p>© 2013-2014 JinH</p>
-		</footer>
-		<div id="ad_top_screen">
-       		<script type="text/javascript"><!--
-				google_ad_client = "ca-pub-8175591114279139";
-				/* 리더보드 */
-				google_ad_slot = "0699157334";
-				google_ad_width = 728;
-				google_ad_height = 90;
-				//-->
-				</script>
-				<script type="text/javascript"
-				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
-		</div>
-		<div id="ad_top_mobile">
-			<script type="text/javascript"><!--
-				// XHTML should not attempt to parse these strings, declare them CDATA.
-				/* <![CDATA[ */
-				window.googleAfmcRequest = {
-					client: 'ca-mb-pub-8175591114279139',
-					format: '320x50_mb',
-					output: 'HTML',
-					slotname: '9013298457',
-				};
-				/* ]]> */
-            //--></script>
-			<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_afmc_ads.js"></script>
-		</div>
-	</body>
-</html>
+    </pre>

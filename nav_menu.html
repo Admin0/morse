@@ -1,7 +1,33 @@
 <!-- <h2 id="" class=""><a href="">메뉴</a></h2> -->
 
-<h3 class="item" title="#qulify 공유하기"><a onclick="$('#share, #setting_bg').addClass('on');"><i class="material-icons">share</i><span>#qulify 공유하기<span></span></span></a></h3>
-<h3 class="item" title="리뷰 남기기"><a href="//blog.jinh.kr/guestbook/" target="_blank"><i class="material-icons">create</i><span>리뷰 남기기<span></span></span></a></h3>
+<h3 class="item" title="#qulify 공유하기">
+  <a onclick="$('#share, #setting_bg').addClass('on');">
+    <i class="material-icons">share</i><span data-i18n='title'>#morse</span><span> 공유하기</span>
+  </a>
+</h3>
+<h3 class="item" title="리뷰 남기기">
+  <a href="//blog.jinh.kr/guestbook/" target="_blank">
+    <i class="material-icons">create</i><span>리뷰 남기기</span>
+  </a>
+</h3>
+
 <hr>
-<h3 id="opensource_license" class="item opensource_license" name="opensource_license" title="오픈소스 라이선스"><a onclick="load('opensource_license');" href="#opensource_license"><i class="material-icons">favorite</i><span>오픈소스 라이선스<span></span></span></a></h3>
-<h3 id="update_log" class="item update_log" name="update_log" title="업데이트 기록"><a onclick="load('update_log');" href="#update_log"><i class="material-icons">update</i><span>업데이트 기록<span></span></span></a></h3>
+
+<h3 id="opensource_license" class="item opensource_license" name="opensource_license" title="오픈소스 라이선스">
+  <a onclick="$('nav, .contents.sub').removeClass('on');$('#license, #nav_bg').addClass('on');" href="#opensource_license">
+    <i class="material-icons">favorite</i><span>오픈소스 라이선스</span>
+  </a>
+</h3>
+<h3 id="update_log" class="item update_log" name="update_log" title="업데이트 기록">
+  <a onclick="$('nav, .contents.sub').removeClass('on');$('#info, #nav_bg').addClass('on');" href="#update_log">
+    <i class="material-icons">update</i><span>업데이트 기록</span>
+  </a>
+</h3>
+
+<hr>
+
+<h3 id="opensource_license" class="item opensource_license" name="opensource_license" title="오픈소스 라이선스">
+  <a href="/morse/v2">
+    <i class="material-icons">favorite</i><span>구버전(v2) 사용하기</span>
+  </a>
+</h3>

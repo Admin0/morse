@@ -198,15 +198,20 @@ function button_click() {
 
 }
 
+function load_modules() {
+  $("#nav_menu").load("nav_menu.html");
+  $("#info").load("info.html");
+  $("#license").load("license.html");
+}
+
 $(function() {
   initialize();
   button_swipe();
   button_click();
   title_tooltip();
+  load_modules();
 
   $('#input_textarea').focus();
-
-  $("#nav_menu").load("nav_menu.html");
 
   var clipboard = new ClipboardJS('.copy');
   clipboard.on('success', function(e) {
