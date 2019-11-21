@@ -44,7 +44,7 @@ header {
 
 header h1 {
   /* text-transform: uppercase; */
-  font-size: 20px;
+  font-size: 1.25em;
   margin: 0;
   /* text-align: left; */
   display: inline-block;
@@ -126,20 +126,6 @@ body.fold header {
   margin: 0 -3em 0em 0em;
 }
 
-#notice_msg {
-  position: fixed;
-  min-width: 200px;
-  max-width: 500px;
-  text-align: center;
-  background: #eee;
-  bottom: 15%;
-  padding: 1ex;
-  outline: 1px solid #aaa;
-  box-shadow: #aaa 0 0 1em;
-  display: none;
-  z-index: 1;
-}
-
 #card_header {
   min-height: 48px;
   width: 100%;
@@ -181,18 +167,31 @@ body.analyze #card_header .lang_box.code {
   line-height: 58px;
 }
 
-#re_anaylze input+i {
+#re_anaylze input+i, #lang_list input+i {
   transition: 0.25s;
   transform: rotate(0);
+}
+
+#re_anaylze input+i {
   vertical-align: unset;
 }
 
-#re_anaylze input:checked+i {
+#re_anaylze input:checked+i, #lang_list input:checked+i {
   transform: rotate(180deg);
 }
 
-#re_anaylze input {
+#re_anaylze input, #lang_list input {
   display: none;
+}
+
+#lang_list {
+  height: 46px;
+  cursor: pointer;
+  width: 50px;
+  text-align: center;
+  line-height: 48px;
+  display: inline-block;
+  margin-left: 1em;
 }
 
 .card_header {
@@ -228,6 +227,10 @@ body.analyze #card_header .lang_box.code {
 
 .analyze .card_header.selected::after {
   border-bottom: solid 3px #4284f3;
+}
+
+.lang_box.code .card_header:nth-of-type(n+5) {
+  display: none;
 }
 
 .translate .lang_box.code .card_header:not(.auto),

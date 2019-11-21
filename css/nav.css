@@ -69,7 +69,11 @@ nav a {
   position: relative;
   text-decoration: none;
 }
-nav i {margin-right: .5em;}
+
+nav i {
+  margin-right: .5em;
+}
+
 nav:not(.fold) a {
   text-overflow: ellipsis;
 }
@@ -487,10 +491,6 @@ nav.fold #nav h2 a {
 /* ***** mobile ***** */
 /* ------------------------------------------------------------------- */
 @media handheld, only screen and (max-device-width:480px), only screen and (max-device-width:320px), screen and (max-width:1080px) {
-  #nav_on {
-    display: block;
-  }
-
   nav {
     z-index: 6;
     box-shadow: none;

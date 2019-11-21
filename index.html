@@ -3,7 +3,7 @@
 
 <head>
 	<title>#morse</title>
-	<meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<meta name="description" content="기적의 만능 모스 부호 변환기 + 해석기. #모스_부호" />
 	<meta name="google-site-verification" content="_D3_W4589GIbhr8GHlw8CIY3fMaeZxr23F4FP9u-9bM" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -32,7 +32,7 @@
 		<h1><span id="title"><span data-i18n='title'>M³ Translator</span><span class="hide_mobile"></span></span></h1>
 	</header>
 
-	<div id="ad_top">
+	<div id="ad_top" class="da_top">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- 반응형 -->
 		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8175591114279139" data-ad-slot="6064236981" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -40,7 +40,14 @@
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 	</div>
-
+	<div id="ad_top_mobile" class="da_top">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- #morse 모바일 상단 -->
+		<ins class="adsbygoogle" style="display:inline-block;height:90px" data-ad-client="ca-pub-8175591114279139" data-ad-slot="9681951651" data-full-width-responsive="true"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	</div>
 	<section id="index" class="contents">
 		<div id="card_header">
 			<div class="lang_box code">
@@ -53,11 +60,12 @@
 				<div id="" class="card_header he" data-i18n='lang_he'>HE</div>
 				<div id="" class="card_header ar" data-i18n='lang_ar'>AR</div>
 				<div id="" class="card_header pr" data-i18n='lang_pr'>PR</div>
+				<label id="lang_list" class="" for="ck_lang_list"><input type="checkbox" id="ck_lang_list"><i class="material-icons">keyboard_arrow_down</i></label>
 			</div>
 			<div class="lang_box lang">
 				<div id="" class="card_header selected" data-i18n='lang_morse'>MORSE CODE</div>
 			</div>
-			<label id="re_anaylze" class="" for="checkbox"><input type="checkbox" id="checkbox"><i class="material-icons"> swap_horiz </i></label>
+			<label id="re_anaylze" class="" for="ch_swap"><input type="checkbox" id="ch_swap"><i class="material-icons"> swap_horiz </i></label>
 
 		</div>
 		<div id="card_body">
@@ -97,7 +105,7 @@
 		<!-- <div id='nav_footer'><i class='material-icons'>chevron_left</i></div> -->
 	</nav>
 
-  <div id="nav_bg" onclick="$('nav, #nav_bg').removeClass('on');"></div>
+	<div id="nav_bg" onclick="$('nav, #nav_bg').removeClass('on');"></div>
 
 	<section id="message"> </section>
 
