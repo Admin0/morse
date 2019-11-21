@@ -5,8 +5,9 @@
   transition: 0.5s;
 }
 
-#ad_top_mobile {
+#ad_top.mobile {
   display: none;
+  margin: 48px auto 0;
 }
 
 #ad_bottom {
@@ -16,11 +17,11 @@
 }
 
 @media handheld, only screen and (max-width: 600px) {
-  #ad_top_mobile {
-    display: block;
-  }
-
   #ad_top {
     display: none;
+  }
+
+  #ad_top.mobile {
+    display: block;
   }
 }

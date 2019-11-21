@@ -1,17 +1,3 @@
-var input_type = {
-  'tel': 'Tel',
-  'text': 'Aa'
-}; //input type value
-
-var color = {
-  'toggle_bg0': '#ffffff',
-  'toggle_color0': '#aaaaaa',
-  'toogle_border0': '#aaaaaa',
-  'toggle_bg1': '#4d90fe',
-  'toggle_color1': '#ffffff',
-  'toogle_border1': '#3079ed'
-};
-
 const TRANSLATE_MODE = 0;
 const ANALYZE_MODE = 1;
 
