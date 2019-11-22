@@ -1,7 +1,7 @@
 const TRANSLATE_MODE = 0;
 const ANALYZE_MODE = 1;
 
-const LANG_KO = 0;
+const LANG_AUTO = 0;
 const LANG_EN = 1;
 const LANG_JA = 2;
 const LANG_RU = 3;
@@ -9,6 +9,7 @@ const LANG_GR = 4;
 const LANG_HE = 5;
 const LANG_AR = 6;
 const LANG_PR = 7;
+const LANG_KO = 8;
 
 var lang = (!window.localStorage["lang"]) ? LANG_EN : window.localStorage["lang"];
 
@@ -16,7 +17,7 @@ function tranlyze(type) {
   if (type == TRANSLATE_MODE) {
     translate("·", "–");
   } else if (type == ANALYZE_MODE) {
-    analyze();
+    $('#output_textarea').text(analyze(lang));
   }
   if ($(input_textarea).val() != "") {
     $('#output_menu, #input_del').removeClass('hide');
@@ -35,7 +36,6 @@ function mode() { // this method for change type (toggle)
 
     $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_1', 'tel')).attr('type', 'tel');
 
-    $('#input_toggle').show().attr('value', input_type['tel']);
     $('#menu_toggle div').text($.i18n('translator'));
     $('#menu_toggle img').attr('src', 'image/menu_back.png');
 
@@ -114,7 +114,9 @@ function initialize() {
     $('.lang_box.code .card_header').removeClass('selected');
     $(this).addClass('selected');
 
-    if ($('.selected').hasClass('ko')) {
+    if ($('.selected').hasClass('auto')) {
+      lang = LANG_EN; //TODO
+    } else if ($('.selected').hasClass('ko')) {
       lang = LANG_KO;
     } else if ($('.selected').hasClass('en')) {
       lang = LANG_EN;
@@ -138,40 +140,7 @@ function initialize() {
 
 var type = TRANSLATE_MODE;
 
-function button_swipe() {
-
-  $('#menu_toggle').click(function() { //menu toggle translator <-> analyzer 1.6.0
-    mode();
-    $('#input_textarea').val('');
-    tranlyze(type);
-    $('#input_textarea').focus();
-  });
-}
-
-function button_click() {
-
-  // $('#option').swipe({
-  //   swipeUp: function() {
-  //     $('#option').slideUp();
-  //   },
-  //   threshold: 25
-  // });
-
-  $('#input_toggle').click(function() {
-    if ($(this).attr('value') == input_type['tel']) {
-      $('#input_textarea').attr({
-        'type': 'text',
-        'placeholder': $.i18n('input_textarea_placeholder_1', 'text')
-      });
-      $(this).attr('value', input_type['text']);
-    } else {
-      $('#input_textarea').attr({
-        'type': 'tel',
-        'placeholder': $.i18n('input_textarea_placeholder_1', 'tel')
-      });
-      $(this).attr('value', input_type['tel']);
-    }
-  });
+function detect_input() {
 
   $('#input_textarea').keyup(function() {
     tranlyze(type);
@@ -192,8 +161,7 @@ function load_modules() {
 
 $(function() {
   initialize();
-  button_swipe();
-  button_click();
+  detect_input();
   title_tooltip();
   load_modules();
 

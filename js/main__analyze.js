@@ -3,7 +3,7 @@
  * Original Code by JinH(jinh.tistory.com) *
  *******************************************/
 
-function analyze() {
+function analyze(lang) {
 
   var j, k, output = '';
   var text = $('#input_textarea').val();
@@ -19,20 +19,17 @@ function analyze() {
 
   var input = text.split('_');
 
-  var v = input; //$('#input_textarea').val();
-
   function analyze_sub(key_set) {
+    var v = input;
     for (var i = 0; i < v.length; i++) {
       for (var j = 0; j < key_set.length; j++) {
         if (v[i] == key_set[j][1]) {
           v[i] = key_set[j][0];
-          console.log(v[i]);
-          console.log(key_set[j][1]);
-          console.log(key_set[j][0]);
           break;
         }
       }
     }
+    return v;
   }
 
   /*var input = new Array();
@@ -119,32 +116,31 @@ function analyze() {
         }
       }
     }
-
   }
 
   if (lang == LANG_KO) {
-    analyze_sub(key.kr);
+    input = analyze_sub(key.kr);
     text = "";
     for (var i = 0; i < input.length; i++) {
       text = text + input[i];
     }
     assemble();
   } else if (lang == LANG_EN) {
-    analyze_sub(key.en);
+    input = analyze_sub(key.en);
   } else if (lang == LANG_JA) {
-    analyze_sub(key.jp);
+    input = analyze_sub(key.jp);
   } else if (lang == LANG_RU) {
-    analyze_sub(key.ru);
+    input = analyze_sub(key.ru);
   } else if (lang == LANG_GR) {
-    analyze_sub(key.gr);
+    input = analyze_sub(key.gr);
   } else if (lang == LANG_HE) {
-    analyze_sub(key.he);
+    input = analyze_sub(key.he);
   } else if (lang == LANG_AR) {
-    analyze_sub(key.ar);
+    input = analyze_sub(key.ar);
   } else if (lang == LANG_PR) {
-    analyze_sub(key.pr);
+    input = analyze_sub(key.pr);
   }
-  analyze_sub(key.nm);
+  input = analyze_sub(key.nm);
 
   //변환 코드
   //output = '<div>문자열공백:[' + $('#space_string').val() + '] 문자공백:[' + $('#space_char').val() + ']으로 해독.</div>';
@@ -155,6 +151,6 @@ function analyze() {
     assemble();
   }
   output = output.replace(/\//g, " ");
-  //$('#output').html(output).css('text-transform', ($('#capital:checked').val() == "on") ? "uppercase" : "none");//for div element
-  $('#output_textarea').text(output).css('text-transform', ($('#capital:checked').val() == "on") ? "uppercase" : "none"); //for textarea element
+
+  return output;
 }

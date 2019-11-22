@@ -4,8 +4,8 @@
 }
 
 .contents.sub {
-  padding: 1em;
-  max-width: calc(1280px - 2em);
+  padding:2em;
+  max-width: calc(1280px - 4em);
   z-index: 6;
   position: fixed;
   height: calc(100% - 12em);
