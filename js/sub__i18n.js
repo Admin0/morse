@@ -29,7 +29,7 @@ function i18n_set() {
 
   i18n_message();
 
-  if ($('.card_header.auto').text() == 'LANG_AUTO') {
+  if ($('.card_header.auto').text() == 'lang_auto') {
     setTimeout(function() {
       console.log('ERROR: i18n was not activated because DOM is not ready.');
       i18n_set();
