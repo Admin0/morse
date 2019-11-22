@@ -7,9 +7,8 @@
 
 #ad_top.mobile {
   display: none;
-  margin: 48px auto 0;
-  height: 100px;
-	width:100%;
+  margin: auto;
+  width: 100%;
 }
 
 #ad_bottom {
