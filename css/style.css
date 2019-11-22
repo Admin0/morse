@@ -6,6 +6,8 @@
 @import url('animate.css');
 @import url('nav.css');
 @import url('module.css');
+@import url('toast.css');
+@import url('card_lang.css');
 
 ::selection {
   background: rgba(0, 0, 0, 0);
@@ -176,7 +178,7 @@ body.analyze #card_header .lang_box.code {
   width: calc(50% - 2em);
 }
 
-#re_anaylze {
+#re_anaylze, #lang_list {
   height: 46px;
   cursor: pointer;
   border-radius: 25px;
@@ -204,14 +206,16 @@ body.analyze #card_header .lang_box.code {
   display: none;
 }
 
+.translate #lang_list {
+  display: none;
+}
+
 #lang_list {
-  height: 46px;
-  cursor: pointer;
-  width: 50px;
-  text-align: center;
   line-height: 48px;
   display: inline-block;
   margin-left: 1em;
+  position: static;
+  vertical-align: middle;
 }
 
 .card_header {
@@ -286,25 +290,13 @@ body.analyze #card_header .lang_box.code {
 }
 
 .analyze #input_textarea {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 #input_textarea::selection,
 #output_textarea::selection {
   color: #fff;
   background: #4284f3;
-}
-
-#input_toggle {
-  width: 3em;
-  display: none;
-  position: absolute;
-  font-family: sans-serif;
-  margin-left: -3em;
-  padding: 1em 0;
-  /*-webkit-transition: 0.25s;*/
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 #input_del {
@@ -590,109 +582,4 @@ input[type="button"]:active, input[type="submit"]:active, .button:active {
 
 .material-icons {
   vertical-align: text-bottom;
-}
-
-/* ------------------------------------------------------------------- */
-/* ***** toast ***** */
-/* ------------------------------------------------------------------- */
-#toast {
-  line-height: 1;
-  position: fixed;
-  background-color: #424242;
-  color: rgba(255, 255, 255, .9);
-  fill: rgba(255, 255, 255, .9);
-  padding: 1em 1.5em 1em .75em;
-  min-width: 350px;
-  max-width: calc(100% - 2em);
-  bottom: 1em;
-  left: 1em;
-  z-index: 5;
-  border-radius: 3px;
-}
-
-#toast i.material-icons {
-  font-size: 20px;
-  margin-bottom: 1px;
-}
-
-@keyframes snackbar_on {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-#toast.on {
-  animation-name: snackbar_on;
-  animation-duration: .3s;
-}
-
-@keyframes snackbar_off {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-#toast.off {
-  opacity: 0;
-  visibility: none;
-  animation-name: snackbar_off;
-  animation-duration: .3s;
-  z-index: 0;
-}
-
-/* ------------------------------------------------------------------- */
-/* ***** tooltip ***** */
-/* ------------------------------------------------------------------- */
-#tooltip, #tooltip_nav {
-  color: #fff;
-  position: absolute;
-  top: 0;
-  visibility: hidden;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  background: #424242;
-  -webkit-transition: .5s opacity;
-  transition: .5s opacity;
-  padding: 1ex;
-  border-radius: 3px;
-  max-width: 400px;
-  z-index: 4;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-  font-size: 14px;
-}
-
-#tooltip_nav {
-  position: fixed;
-  z-index: 4;
-}
-
-#tooltip_before, #tooltip_nav_before {
-  border-color: #424242 transparent transparent;
-  border-width: 1ex 1ex 0;
-  border-style: solid;
-  content: " ";
-  position: absolute;
-  left: calc(50% - .5em);
-  bottom: -.9ex
-}
-
-#tooltip_text {
-  white-space: pre-line;
-}
-
-@media only screen and (max-width: 1280px) {
-  .contents {
-    box-shadow: none;
-    border-radius: 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-  }
 }

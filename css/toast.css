@@ -1,0 +1,95 @@
+/* ------------------------------------------------------------------- */
+/* ***** toast ***** */
+/* ------------------------------------------------------------------- */
+#toast {
+  line-height: 1;
+  position: fixed;
+  background-color: #424242;
+  color: rgba(255, 255, 255, .9);
+  fill: rgba(255, 255, 255, .9);
+  padding: 1em 1.5em 1em .75em;
+  min-width: 350px;
+  max-width: calc(100% - 2em);
+  bottom: 1em;
+  left: 1em;
+  z-index: 5;
+  border-radius: 3px;
+}
+
+#toast i.material-icons {
+  font-size: 20px;
+  margin-bottom: 1px;
+}
+
+@keyframes snackbar_on {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#toast.on {
+  animation-name: snackbar_on;
+  animation-duration: .3s;
+}
+
+@keyframes snackbar_off {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#toast.off {
+  opacity: 0;
+  visibility: none;
+  animation-name: snackbar_off;
+  animation-duration: .3s;
+  z-index: 0;
+}
+
+/* ------------------------------------------------------------------- */
+/* ***** tooltip ***** */
+/* ------------------------------------------------------------------- */
+#tooltip, #tooltip_nav {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  background: #424242;
+  -webkit-transition: .5s opacity;
+  transition: .5s opacity;
+  padding: 1ex;
+  border-radius: 3px;
+  max-width: 400px;
+  z-index: 4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+  font-size: 14px;
+}
+
+#tooltip_nav {
+  position: fixed;
+  z-index: 4;
+}
+
+#tooltip_before, #tooltip_nav_before {
+  border-color: #424242 transparent transparent;
+  border-width: 1ex 1ex 0;
+  border-style: solid;
+  content: " ";
+  position: absolute;
+  left: calc(50% - .5em);
+  bottom: -.9ex
+}
+
+#tooltip_text {
+  white-space: nowrap;
+}

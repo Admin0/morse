@@ -72,6 +72,7 @@ nav a {
 
 nav i {
   margin-right: .5em;
+  font-size: 20px!important;
 }
 
 nav:not(.fold) a {

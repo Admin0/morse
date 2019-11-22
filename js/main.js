@@ -34,49 +34,63 @@ function mode() { // this method for change type (toggle)
     $('body').addClass('analyze');
     $('body').removeClass('translate');
 
-    $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_1', 'tel')).attr('type', 'tel');
-
-    $('#menu_toggle div').text($.i18n('translator'));
-    $('#menu_toggle img').attr('src', 'image/menu_back.png');
+    $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_1', 'tel'));
 
     $('.lang_box.lang .card_header').removeClass('selected');
     setTimeout(function() {
       $('.lang_box.lang .card_header').addClass('selected');
     }, 0);
 
-    if ($('.lang_box.code .selected.auto').length != 0) {
-      $('.lang_box.code .auto').removeClass('selected');
+    if ($('.selected.auto').length != 0) {
+      $('.auto').removeClass('selected');
       if (lang == LANG_EN) {
-        $('.lang_box.code .en').addClass('selected');
+        $('.en').addClass('selected');
       } else if (lang == LANG_JA) {
-        $('.lang_box.code .ja').addClass('selected');
+        $('.ja').addClass('selected');
       } else if (lang == LANG_KO) {
-        $('.lang_box.code .ko').addClass('selected');
+        $('.ko').addClass('selected');
       } else if (lang == LANG_RU) {
-        $('.lang_box.code .ru').addClass('selected');
+        $('.ru').addClass('selected');
       } else if (lang == LANG_GR) {
-        $('.lang_box.code .gr').addClass('selected');
+        $('.gr').addClass('selected');
       } else if (lang == LANG_HE) {
-        $('.lang_box.code .he').addClass('selected');
+        $('.he').addClass('selected');
       } else if (lang == LANG_AR) {
-        $('.lang_box.code .ar').addClass('selected');
+        $('.ar').addClass('selected');
       } else if (lang == LANG_PR) {
-        $('.lang_box.code .pr').addClass('selected');
+        $('.pr').addClass('selected');
       } else {
-        $('.lang_box.code .en').addClass('selected');
+        $('.en').addClass('selected');
       }
     }
-
+    // if ($('.lang_box.code .selected.auto').length != 0) {
+    //   $('.lang_box.code .auto').removeClass('selected');
+    //   if (lang == LANG_EN) {
+    //     $('.lang_box.code .en').addClass('selected');
+    //   } else if (lang == LANG_JA) {
+    //     $('.lang_box.code .ja').addClass('selected');
+    //   } else if (lang == LANG_KO) {
+    //     $('.lang_box.code .ko').addClass('selected');
+    //   } else if (lang == LANG_RU) {
+    //     $('.lang_box.code .ru').addClass('selected');
+    //   } else if (lang == LANG_GR) {
+    //     $('.lang_box.code .gr').addClass('selected');
+    //   } else if (lang == LANG_HE) {
+    //     $('.lang_box.code .he').addClass('selected');
+    //   } else if (lang == LANG_AR) {
+    //     $('.lang_box.code .ar').addClass('selected');
+    //   } else if (lang == LANG_PR) {
+    //     $('.lang_box.code .pr').addClass('selected');
+    //   } else {
+    //     $('.lang_box.code .en').addClass('selected');
+    //   }
+    // }
   } else if (type == ANALYZE_MODE) {
     type = TRANSLATE_MODE;
     $('body').removeClass('analyze');
     $('body').addClass('translate');
 
-    $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0')).attr('type', 'text');
-
-    $('#input_toggle').hide();
-    $('#menu_toggle div').text($.i18n('analyzer'));
-    $('#menu_toggle img').attr('src', 'image/menu_forward.png');
+    $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0'));
 
     $('.lang_box.lang .card_header').removeClass('selected');
     setTimeout(function() {
@@ -84,8 +98,8 @@ function mode() { // this method for change type (toggle)
     }, 0);
 
     if ($('.lang_box.code .selected.auto').length == 0) {
-      $('.lang_box.code .selected').removeClass('selected');
-      $('.lang_box.code .auto').addClass('selected');
+      $('.lang_box.code .selected, #card_lang .selected').removeClass('selected');
+      $('.lang_box.code .auto, #card_lang .auto').addClass('selected');
     }
 
   }
@@ -110,30 +124,53 @@ function initialize() {
     tranlyze(type);
   });
 
-  $('.lang_box.code .card_header').on('click', function() {
-    $('.lang_box.code .card_header').removeClass('selected');
-    $(this).addClass('selected');
+  $('.lang_box.code .card_header, .card_lang').on('click', function() {
+    $('.lang_box.code .card_header, .card_lang').removeClass('selected');
 
-    if ($('.selected').hasClass('auto')) {
+    if ($(this).hasClass('auto')) {
       lang = LANG_EN; //TODO
-    } else if ($('.selected').hasClass('ko')) {
+      $('.card_header.en, .card_lang.en').addClass('selected');
+      if ($(this).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
+    } else if ($(this).hasClass('ko')) {
       lang = LANG_KO;
-    } else if ($('.selected').hasClass('en')) {
+      $('.card_header.ko, .card_lang.ko').addClass('selected');
+      if ($(this).hasClass('card_lang')) $('.card_header.ko').insertAfter('.card_header.auto');
+    } else if ($(this).hasClass('en')) {
       lang = LANG_EN;
-    } else if ($('.selected').hasClass('ja')) {
+      $('.card_header.en, .card_lang.en').addClass('selected');
+      if ($(this).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
+    } else if ($(this).hasClass('ja')) {
       lang = LANG_JA;
-    } else if ($('.selected').hasClass('ru')) {
+      $('.card_header.ja, .card_lang.ja').addClass('selected');
+      if ($(this).hasClass('card_lang')) $('.card_header.ja').insertAfter('.card_header.auto');
+    } else if ($(this).hasClass('ru')) {
       lang = LANG_RU;
-    } else if ($('.selected').hasClass('gr')) {
+      $('.card_header.ru, .card_lang.ru').addClass('selected');
+      if ($(this).hasClass('card_lang')) $('.card_header.ru').insertAfter('.card_header.auto');
+    } else if ($(this).hasClass('gr')) {
       lang = LANG_GR;
-    } else if ($('.selected').hasClass('he')) {
+      $('.card_header.gr, .card_lang.gr').addClass('selected');
+      if ($(this).hasClass('card_lang')) $('.card_header.gr').insertAfter('.card_header.auto');
+    } else if ($(this).hasClass('he')) {
       lang = LANG_HE;
-    } else if ($('.selected').hasClass('ar')) {
+      $('.card_header.he, .card_lang.he').addClass('selected');
+      if ($(this).hasClass('card_lang')) $('.card_header.he').insertAfter('.card_header.auto');
+    } else if ($(this).hasClass('ar')) {
       lang = LANG_AR;
-    } else if ($('.selected').hasClass('pr')) {
+      $('.card_header.ar, .card_lang.ar').addClass('selected');
+      if ($(this).hasClass('card_lang')) $('.card_header.ar').insertAfter('.card_header.auto');
+    } else if ($(this).hasClass('pr')) {
       lang = LANG_PR;
+      $('.card_header.pr, .card_lang.pr').addClass('selected');
+      if ($(this).hasClass('card_lang')) $('.card_header.pr').insertAfter('.card_header.auto');
     }
     window.localStorage["lang"] = lang;
+
+    //card_body
+    $('#lang_list input').prop("checked", false);
+    $('#card_lang').removeClass('on');
+
+    // all after
     tranlyze(type);
   });
 }
@@ -159,8 +196,19 @@ function load_modules() {
   $("#license").load("license.html");
 }
 
+function initialize_langDropDown() {
+  $('#lang_list').on('click', function() {
+    if ($('#lang_list input').prop("checked")) {
+      $('#card_lang').addClass('on');
+    } else {
+      $('#card_lang').removeClass('on');
+    }
+  });
+}
+
 $(function() {
   initialize();
+  initialize_langDropDown();
   detect_input();
   title_tooltip();
   load_modules();
