@@ -27,8 +27,6 @@ function i18n_set() {
 
   $("meta[name='description']").attr("content", $.i18n('descript') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
 
-  i18n_message();
-
   // if ($('.card_header.auto').text() == 'lang_auto') {
   if ($('#i18n_checker').text() == '#morse' || $('#i18n_checker').length == 0) {
     setTimeout(function() {
@@ -40,17 +38,7 @@ function i18n_set() {
   }
 }
 
-// $(window).on('load', function() {
-//   // $.i18n().locale = "ja";
-//   $('[data-i18n]').i18n();
-//   $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0'));
-//   $('#html').attr('placeholder', $.i18n('input_textarea_placeholder_0'));
-//
-//   $("meta[name='description']").attr("content", $.i18n('descript') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
-//
-//   message();
-// });
-
 $(document).ready(function() {
+  i18n_message();
   i18n_set();
 });
