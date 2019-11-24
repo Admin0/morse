@@ -14,3 +14,23 @@
     width: 100%;
   }
 }
+
+@keyframes swap-lang_box-r {
+  0% {
+    right: 2.5em;
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes swap-lang_box-l {
+  0% {
+    left: 2.5em;
+  }
+
+  100% {
+    left: 0;
+  }
+}

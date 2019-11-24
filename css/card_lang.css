@@ -64,6 +64,7 @@
   opacity: .45;
   content: 'check';
   margin-right: .25em;
+  color: #1a73e8;
 }
 
 #card_lang .card_lang:not(.selected) {

@@ -61,6 +61,27 @@
 			<label id="re_anaylze" class="" for="ch_swap"><input type="checkbox" id="ch_swap"><i class="material-icons"> swap_horiz </i></label>
 
 		</div>
+
+		<div id="card_option">
+			<form style="display: inline-block;">
+				<label class="button button_first title" <span data-i18n="op_space_set">GAP_SET</span></label>
+				<input type="radio" name="space" id="space_0" checked>
+				<label for="space_0" class="button button_between" onclick="$('#space_char').text('　');$('#space_string').text('　　　');"><span data-i18n="op_space_set_n">NORMAL_SET</span></label>
+				<input type="radio" name="space" id="space_1">
+				<label for="space_1" class="button button_between" onclick="$('#space_char').text(' ');$('#space_string').text('9');"><span data-i18n="op_space_set_m">MOBILE_SET</span></label>
+				<input type="radio" name="space" id="space_2">
+				<label for="space_2" class="button button_last">
+					<span data-i18n="op_space_manual">MANUAL_SET</span> &gt;
+					<span data-i18n="op_space_long">LONG_SPACE</span>:
+					<span class="input" contenteditable="true" id="space_string">　　　</span>
+					<span data-i18n="op_space_short">SHORT_SPACE</span>:
+					<span class="input" contenteditable="true" id="space_char"> 　</span>
+				</label>
+			</form>
+			<input id="kr_assemble" type="checkbox" checked /><label class="button" for="kr_assemble"><span data-i18n="op_kr_assemble">ASSEMBLE (KR)</span></label>
+			<input id="en_capital" type="checkbox" checked /><label class="button" for="en_capital"><span data-i18n="op_en_capital">CAPITAL (EN)</span></label>
+		</div>
+
 		<div id="card_body">
 			<div id="input">
 				<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>

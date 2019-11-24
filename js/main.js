@@ -11,7 +11,7 @@ const LANG_AR = 6;
 const LANG_PR = 7;
 const LANG_KO = 8;
 
-var lang = (!window.localStorage["lang"]) ? LANG_EN : window.localStorage["lang"];
+var lang = window.localStorage["lang"] || LANG_EN;
 
 function tranlyze(type) {
   if (type == TRANSLATE_MODE) {
@@ -121,6 +121,10 @@ function initialize() {
   $('#re_anaylze').on('change', function() {
     $('#input_textarea').val($('#output_textarea').text());
     mode();
+    tranlyze(type);
+  });
+
+  $('#card_option input').on('change', function() {
     tranlyze(type);
   });
 
