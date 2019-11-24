@@ -5,17 +5,26 @@ $.i18n().load({
 });
 
 function i18n_message() {
-  const list_message = [];
-  for (var i = 0; i < 99; i++) {
-    var m = $.i18n('message_' + i);
-    if (m != 'message_' + i) {
-      // console.log('ddd: ' + i);
-      list_message.push(m);
-    } else {
-      break;
+  if (typeof list_message === "undefined") {
+    const list_message = [];
+    for (var i = 0; i < 99; i++) {
+      var m = $.i18n('message_' + i);
+      if (m != 'message_' + i) {
+        // console.log('ddd: ' + i);
+        list_message.push(m);
+      } else {
+        break;
+      }
     }
+    console.log('i18n was activated. (message)');
+    $('#message').html(list_message[Math.floor(Math.random() * (list_message.length))]);
+  } else {
+    setTimeout(function() {
+      console.log('ERROR: i18n was not activated because DOM is not ready. (message)');
+      console.log(list_message);
+      i18n_message();
+    }, 100);
   }
-  $('#message').html(list_message[Math.floor(Math.random() * (list_message.length))]);
 }
 
 function i18n_set() {
