@@ -5,7 +5,7 @@ $.i18n().load({
 });
 
 function i18n_message() {
-  if (typeof list_message === "undefined") {
+  if (typeof list_message === "undefined" || $('#message').text() == "MESSAGE") {
     const list_message = [];
     for (var i = 0; i < 99; i++) {
       var m = $.i18n('message_' + i);
