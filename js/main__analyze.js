@@ -8,7 +8,9 @@ function analyze(lang) {
   var j, k, output = '';
   var text = $('#input_textarea').val();
   var space_char = new RegExp($('#space_char').text(), 'g');
-  var space_string = new RegExp($('#space_string').text() + '|\n|\r', 'g');
+  // var space_string = new RegExp($('#space_string').text() + '|\n|\r', 'g');
+  var space_string = new RegExp($('#space_string').text(), 'g');
+  text = text.replace(/\n|\r/g, "_///_"); //줄바꿈
   text = text.replace(space_string, "_/_"); //문자열공백
   text = text.replace(space_char, "_"); //문자사이공백
   text = text.replace(/\s/g, ""); //공백 제거
@@ -148,11 +150,12 @@ function analyze(lang) {
   if (lang == LANG_KO && $('#kr_assemble').prop("checked")) {
     assemble();
   }
-  if (lang == LANG_EN && $('#en_capital').prop("checked")) {
-    output = output.toUpperCase();
-  }
 
-  output = output.replace(/\//g, " ");
+  output = $('#en_capital').prop("checked") ? output.toUpperCase() : output.toLowerCase();
+
+  output = output
+    .replace(/\/\/\//g, '\n')
+    .replace(/\//g, " ");
 
   return output;
 }

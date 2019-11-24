@@ -71,11 +71,11 @@
 				<label for="space_1" class="button button_between" onclick="$('#space_char').text(' ');$('#space_string').text('9');"><span data-i18n="op_space_set_m">MOBILE_SET</span></label>
 				<input type="radio" name="space" id="space_2">
 				<label for="space_2" class="button button_last">
-					<span data-i18n="op_space_manual">MANUAL_SET</span> &gt;
-					<span data-i18n="op_space_long">LONG_SPACE</span>:
-					<span class="input" contenteditable="true" id="space_string">　　　</span>
+					<span data-i18n="op_space_manual">MANUAL_SET</span>
+					(<span data-i18n="op_space_long">LONG_SPACE</span>:
+					<span class="input" contenteditable="true" id="space_string">　　　</span>,
 					<span data-i18n="op_space_short">SHORT_SPACE</span>:
-					<span class="input" contenteditable="true" id="space_char"> 　</span>
+					<span class="input" contenteditable="true" id="space_char"> 　</span>)
 				</label>
 			</form>
 			<input id="kr_assemble" type="checkbox" checked /><label class="button" for="kr_assemble"><span data-i18n="op_kr_assemble">ASSEMBLE (KR)</span></label>
@@ -137,7 +137,7 @@
 		<div id='nav'>
 			<div id='nav_header'>
 				<div id="to_github" class="" onclick="console_event('q');">
-					<i class="material-icons">home</i><span>#morse</span>
+					<i class="material-icons">home</i><span data-i18n="title">#morse</span>
 				</div>
 				<div id="setting_bt">
 					<i class="material-icons">settings</i>

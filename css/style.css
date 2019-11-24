@@ -347,6 +347,8 @@ body.analyze #card_header .lang_box.code {
   display: block;
   line-height: 1.5;
   white-space: pre-wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .translate #output_textarea {
@@ -370,6 +372,9 @@ body.analyze #card_header .lang_box.code {
 
 #output_menu i:hover {
   color: #00C853;
+}
+.analyze #output_menu i:hover {
+  color: #4284f3;
 }
 
 .placeholder {
@@ -626,7 +631,9 @@ input[type="radio"]:checked+label.button_between {
 .button.title {
   text-transform: uppercase;
   font-weight: bold;
-  background: #ddd;color: #1a73e8;
+  background: #ddd;
+  color: #1a73e8;
+  padding: .5em .75em;
 }
 
 .copy {

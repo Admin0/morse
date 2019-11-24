@@ -63,7 +63,7 @@
   #input_textarea {
     min-height: 1.5em;
     line-height: 1.5;
-    font-size: 1em;
+    /* font-size: 1em; */
   }
 
   #input_del {
@@ -89,7 +89,15 @@
   }
 
   #output_textarea {
-    font-size: 1em;
+    /* font-size: 1em; */
+  }
+
+  #output_menu {
+    color: #fff;
+  }
+
+  #output_menu i:hover {
+    color: #fff;
   }
 
   footer {

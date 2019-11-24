@@ -129,46 +129,47 @@ function initialize() {
   });
 
   $('.lang_box.code .card_header, .card_lang').on('click', function() {
-    $('.lang_box.code .card_header, .card_lang').removeClass('selected');
-
-    if ($(this).hasClass('auto')) {
-      lang = LANG_EN; //TODO
-      $('.card_header.en, .card_lang.en').addClass('selected');
-      if ($(this).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
-    } else if ($(this).hasClass('ko')) {
-      lang = LANG_KO;
-      $('.card_header.ko, .card_lang.ko').addClass('selected');
-      if ($(this).hasClass('card_lang')) $('.card_header.ko').insertAfter('.card_header.auto');
-    } else if ($(this).hasClass('en')) {
-      lang = LANG_EN;
-      $('.card_header.en, .card_lang.en').addClass('selected');
-      if ($(this).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
-    } else if ($(this).hasClass('ja')) {
-      lang = LANG_JA;
-      $('.card_header.ja, .card_lang.ja').addClass('selected');
-      if ($(this).hasClass('card_lang')) $('.card_header.ja').insertAfter('.card_header.auto');
-    } else if ($(this).hasClass('ru')) {
-      lang = LANG_RU;
-      $('.card_header.ru, .card_lang.ru').addClass('selected');
-      if ($(this).hasClass('card_lang')) $('.card_header.ru').insertAfter('.card_header.auto');
-    } else if ($(this).hasClass('gr')) {
-      lang = LANG_GR;
-      $('.card_header.gr, .card_lang.gr').addClass('selected');
-      if ($(this).hasClass('card_lang')) $('.card_header.gr').insertAfter('.card_header.auto');
-    } else if ($(this).hasClass('he')) {
-      lang = LANG_HE;
-      $('.card_header.he, .card_lang.he').addClass('selected');
-      if ($(this).hasClass('card_lang')) $('.card_header.he').insertAfter('.card_header.auto');
-    } else if ($(this).hasClass('ar')) {
-      lang = LANG_AR;
-      $('.card_header.ar, .card_lang.ar').addClass('selected');
-      if ($(this).hasClass('card_lang')) $('.card_header.ar').insertAfter('.card_header.auto');
-    } else if ($(this).hasClass('pr')) {
-      lang = LANG_PR;
-      $('.card_header.pr, .card_lang.pr').addClass('selected');
-      if ($(this).hasClass('card_lang')) $('.card_header.pr').insertAfter('.card_header.auto');
+    if (type == ANALYZE_MODE) {
+      $('.lang_box.code .card_header, .card_lang').removeClass('selected');
+      if ($(this).hasClass('auto')) {
+        lang = LANG_EN; //TODO
+        $('.card_header.en, .card_lang.en').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
+      } else if ($(this).hasClass('ko')) {
+        lang = LANG_KO;
+        $('.card_header.ko, .card_lang.ko').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.ko').insertAfter('.card_header.auto');
+      } else if ($(this).hasClass('en')) {
+        lang = LANG_EN;
+        $('.card_header.en, .card_lang.en').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
+      } else if ($(this).hasClass('ja')) {
+        lang = LANG_JA;
+        $('.card_header.ja, .card_lang.ja').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.ja').insertAfter('.card_header.auto');
+      } else if ($(this).hasClass('ru')) {
+        lang = LANG_RU;
+        $('.card_header.ru, .card_lang.ru').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.ru').insertAfter('.card_header.auto');
+      } else if ($(this).hasClass('gr')) {
+        lang = LANG_GR;
+        $('.card_header.gr, .card_lang.gr').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.gr').insertAfter('.card_header.auto');
+      } else if ($(this).hasClass('he')) {
+        lang = LANG_HE;
+        $('.card_header.he, .card_lang.he').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.he').insertAfter('.card_header.auto');
+      } else if ($(this).hasClass('ar')) {
+        lang = LANG_AR;
+        $('.card_header.ar, .card_lang.ar').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.ar').insertAfter('.card_header.auto');
+      } else if ($(this).hasClass('pr')) {
+        lang = LANG_PR;
+        $('.card_header.pr, .card_lang.pr').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.pr').insertAfter('.card_header.auto');
+      }
+      window.localStorage["lang"] = lang;
     }
-    window.localStorage["lang"] = lang;
 
     //card_body
     $('#lang_list input').prop("checked", false);
@@ -195,9 +196,9 @@ function detect_input() {
 }
 
 function load_modules() {
-  $("#nav_menu").load("nav_menu.html");
   $("#info").load("info.html");
   $("#license").load("license.html");
+  $("#nav_menu").load("nav_menu.html");
 }
 
 function initialize_langDropDown() {
