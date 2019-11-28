@@ -109,6 +109,7 @@ body.fold header {
   margin: auto;
   padding: 0 3em;
   font-family: 'Lato', 'Noto Sans KR', sans-serif;
+  transition: 1s;
 }
 
 .quote::before, .quote::after {
