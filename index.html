@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>#morse</title>
+	<title data-i18n="info__title">#morse</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="기적의 만능 모스 부호 변환기 + 해석기. #모스_부호" />
 	<meta name="google-site-verification" content="_D3_W4589GIbhr8GHlw8CIY3fMaeZxr23F4FP9u-9bM" />
@@ -22,6 +22,7 @@
 	<script type="text/javascript" src="js/sub__tooltip.js"></script>
 	<script type="text/javascript" src="js/sub__clipboard.min.js"></script>
 	<script type="text/javascript" src="js/sub__i18n.js"></script>
+	<script type="text/javascript" src="js/sub__scroll.js"></script>
 	<script data-ad-client="ca-pub-8175591114279139" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
@@ -29,7 +30,7 @@
 
 	<header>
 		<div id="header_menu"><i id="nav_on" onclick="if($('nav').attr('class')!='on'){$('nav, #nav_bg').addClass('on');}else{$('nav, #nav_bg').removeClass('on');};" class="material-icons">menu</i></div>
-		<h1><span id="title"><span data-i18n='title'>M³ Translator</span><span class="hide_mobile"></span></span></h1>
+		<h1><span id="title"><span data-i18n='info__title'>#morse</span><span class="hide_mobile"></span></span></h1>
 	</header>
 
 	<div id="ad_top" class="da_top">
@@ -102,7 +103,7 @@
 			</div>
 
 			<div id="output">
-				<div id="output_textarea"><span class="placeholder" data-i18n="output_0"></span></div>
+				<div id="output_textarea"><span class="placeholder" data-i18n="card__output_0"></span></div>
 
 				<div id="output_menu" class="hide">
 					<span class="copy" data-clipboard-target="#output_textarea" onclick="toast('copied!')" title="Copy translation">
@@ -137,14 +138,14 @@
 		<div id='nav'>
 			<div id='nav_header'>
 				<div id="to_github" class="" onclick="console_event('q');">
-					<i class="material-icons">home</i><span data-i18n="title">#morse</span>
+					<i class="material-icons">home</i><span data-i18n="info__title">#morse</span>
 				</div>
 				<div id="setting_bt">
 					<i class="material-icons">settings</i>
 					<i class="material-icons setting_arrow">play_arrow</i>
 				</div>
 			</div>
-			<div id="nav_item_list"></div>
+			<!-- <div id="nav_item_list"></div> -->
 			<div id="nav_menu"></div>
 		</div>
 		<!-- <div id='nav_footer'><i class='material-icons'>chevron_left</i></div> -->

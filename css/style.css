@@ -326,7 +326,7 @@ body.analyze #card_header .lang_box.code {
 }
 
 .analyze #card_option {
-  padding: 1em 1em .5em;
+  padding: .5em 1em 1em;
   max-height: 1000px;
   max-height: inherit;
   visibility: visible;
@@ -598,7 +598,7 @@ input[type="radio"]:checked+label {
 
 .button {
   display: inline-block;
-  margin: 0 .5em .5em 0;
+  margin: .5em .5em 0 0;
   padding: .5em .75em .5em .5em;
   cursor: pointer;
   border: 1px solid #ddd;

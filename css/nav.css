@@ -72,7 +72,7 @@ nav a {
 
 nav i {
   margin-right: .5em;
-  font-size: 20px!important;
+  /* font-size: 20px!important; */
 }
 
 nav:not(.fold) a {
@@ -96,7 +96,8 @@ nav h2:first-of-type {
 nav h3.item {
   position: relative;
   margin: .25em 0;
-  padding: 0
+  padding: 0;
+  font-weight:normal;
 }
 
 nav h3.item:after {

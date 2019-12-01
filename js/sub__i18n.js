@@ -9,10 +9,10 @@ const i18n = {
     // $.i18n().locale = "ja";
 
     $('[data-i18n]').i18n();
-    $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0'));
-    $('#html').attr('placeholder', $.i18n('input_textarea_placeholder_0'));
+    $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
+    $('#html').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
 
-    $("meta[name='description']").attr("content", $.i18n('descript') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
+    $("meta[name='description']").attr("content", $.i18n('info__descript') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
 
     i18n.message.set();
 
