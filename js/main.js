@@ -34,7 +34,7 @@ function mode() { // this method for change type (toggle)
     $('body').addClass('analyze');
     $('body').removeClass('translate');
 
-    $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_1', 'tel'));
+    $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', 'tel'));
 
     $('.lang_box.lang .card_header').removeClass('selected');
     setTimeout(function() {
@@ -90,7 +90,7 @@ function mode() { // this method for change type (toggle)
     $('body').removeClass('analyze');
     $('body').addClass('translate');
 
-    $('#input_textarea').attr('placeholder', $.i18n('input_textarea_placeholder_0'));
+    $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
 
     $('.lang_box.lang .card_header').removeClass('selected');
     setTimeout(function() {

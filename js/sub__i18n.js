@@ -5,8 +5,11 @@ $.i18n().load({
 });
 
 const i18n = {
-  set: function() {
-    // $.i18n().locale = "ja";
+  set: function(nation_code) {
+
+    if (nation_code != null) { // 언어 설정
+      $.i18n().locale = nation_code;
+    }
 
     $('[data-i18n]').i18n();
     $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
@@ -16,7 +19,7 @@ const i18n = {
 
     i18n.message.set();
 
-    // if ($('.card_header.auto').text() == 'lang_auto') {
+    // module(ex nav.html) 안에 있는 요소 중 하나를 체크해야함.
     if ($('#i18n_checker').text() == '#morse' || $('#i18n_checker').length == 0) {
       setTimeout(function() {
         console.log('ERROR: i18n was not activated because DOM is not ready.');
@@ -26,7 +29,7 @@ const i18n = {
       console.log('i18n was activated.');
     }
   },
-  message: {
+  message: { // 메세지 로딩을 위해 추가로 만든 코드
     list: [],
     set: function() {
       if ($('#message').text() == "MESSAGE") {
