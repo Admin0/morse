@@ -97,7 +97,7 @@ nav h3.item {
   position: relative;
   margin: .25em 0;
   padding: 0;
-  font-weight:normal;
+  font-weight: normal;
 }
 
 nav h3.item:after {
@@ -157,10 +157,10 @@ nav #nav_header {
   background: #fafafa;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12) inset;
   position: relative;
-  padding: 10px 0;
   color: rgba(0, 0, 0, .54);
   white-space: nowrap;
   transition: .3s;
+  height: 64px;
 }
 
 nav.fold #nav_header {
@@ -171,13 +171,15 @@ nav.fold #nav_header {
   cursor: pointer;
   transition: .3s;
   width: 100%;
-  padding: 6px 8px 6px 22px;
+  padding: 0 8px 0 22px;
+  line-height: 64px;
   color: rgba(0, 0, 0, 0.54);
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: calc(100% - 82px);
+  /* width: calc(100% - 82px); */
+  width: calc(100%);
 }
 
 #to_github i {
@@ -248,11 +250,9 @@ nav #nav_menu {
 
 #setting_bt {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
-  /*width: 20px;*/
-  height: 20px;
-  width: 48px;
-  padding: 8px 0;
-  /*margin: 0 4px;*/
+  height: 24px;
+  width: 64px;
+  padding: 20px 0;
   display: inline-block;
   transition: 0s;
   text-align: center;
@@ -264,9 +264,8 @@ nav #nav_menu {
 #setting_bt i {
   transition: .3s;
   position: absolute;
-  font-size: 1.25em !important;
   right: 0;
-  margin-right: 12px;
+  margin-right: 18px;
 }
 
 #setting_bt:hover i:not(.setting_arrow) {
@@ -282,7 +281,7 @@ nav #nav_menu {
 #setting_bt:hover i.setting_arrow {
   visibility: visible;
   opacity: 1;
-  right: -8px;
+  right: -12px;
 }
 
 nav.fold #nav_header {

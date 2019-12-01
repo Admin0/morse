@@ -9,6 +9,9 @@ const i18n = {
 
     if (nation_code != null) { // 언어 설정
       $.i18n().locale = nation_code;
+      i18n.message.set(true);
+    } else {
+      i18n.message.set();
     }
 
     $('[data-i18n]').i18n();
@@ -16,8 +19,6 @@ const i18n = {
     $('#html').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
 
     $("meta[name='description']").attr("content", $.i18n('info__descript') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
-
-    i18n.message.set();
 
     // module(ex nav.html) 안에 있는 요소 중 하나를 체크해야함.
     if ($('#i18n_checker').text() == '#morse' || $('#i18n_checker').length == 0) {
@@ -31,19 +32,21 @@ const i18n = {
   },
   message: { // 메세지 로딩을 위해 추가로 만든 코드
     list: [],
-    set: function() {
-      if ($('#message').text() == "MESSAGE") {
+    i: null,
+    set: function(reset) {
+      if ($('#message').text() == "MESSAGE" || reset) {
         for (var i = 0; i < 99; i++) {
           var m = $.i18n('message_' + i);
           if (m != 'message_' + i) {
             // console.log('ddd: ' + i);
-            this.list.push(m);
+            this.list[i] = m;
           } else {
             break;
           }
         }
+        this.i = this.i || Math.floor(Math.random() * (this.list.length));
         $('#message')
-          .html(this.list[Math.floor(Math.random() * (this.list.length))])
+          .html(this.list[this.i])
           .removeClass('hide');
       }
     }
