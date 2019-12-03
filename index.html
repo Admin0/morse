@@ -46,15 +46,15 @@
 		<div id="card_header">
 			<div class="lang_box code">
 				<div id="" class="card_header selected auto" data-i18n='lang_auto'>AUTO</div>
-				<div id="" class="card_header en" data-i18n='lang_en'>EN</div>
-				<div id="" class="card_header ko" data-i18n='lang_ko'>KO</div>
-				<div id="" class="card_header ja" data-i18n='lang_ja'>JA</div>
-				<div id="" class="card_header ru" data-i18n='lang_ru'>RU</div>
-				<div id="" class="card_header gr" data-i18n='lang_gr'>GR</div>
-				<div id="" class="card_header th" data-i18n='lang_th'>TH</div>
-				<div id="" class="card_header he" data-i18n='lang_he'>HE</div>
-				<div id="" class="card_header ar" data-i18n='lang_ar'>AR</div>
-				<div id="" class="card_header pr" data-i18n='lang_pr'>PR</div>
+				<div id="" class="card_header en" data-i18n='a_en'>EN</div>
+				<div id="" class="card_header ko" data-i18n='a_kr'>KO</div>
+				<div id="" class="card_header ja" data-i18n='a_jp'>JA</div>
+				<div id="" class="card_header ru" data-i18n='a_ru'>RU</div>
+				<div id="" class="card_header gr" data-i18n='a_gr'>GR</div>
+				<div id="" class="card_header th" data-i18n='a_th'>TH</div>
+				<div id="" class="card_header he" data-i18n='a_he'>HE</div>
+				<div id="" class="card_header ar" data-i18n='a_ar'>AR</div>
+				<div id="" class="card_header pr" data-i18n='a_pr'>PR</div>
 				<label id="lang_list" class="" for="ck_lang_list"><input type="checkbox" id="ck_lang_list"><i class="material-icons">keyboard_arrow_down</i></label>
 			</div>
 			<div class="lang_box lang">
@@ -80,8 +80,8 @@
 					<span class="input" contenteditable="true" id="space_char"> 　</span>)
 				</label>
 			</form>
-			<input id="kr_assemble" type="checkbox" checked /><label class="button" for="kr_assemble"><span data-i18n="op_kr_assemble">ASSEMBLE (KR)</span></label>
-			<input id="en_capital" type="checkbox" checked /><label class="button" for="en_capital"><span data-i18n="op_en_capital">CAPITAL (EN)</span></label>
+			<input id="kr_assemble" type="checkbox" checked /><label class="button" for="kr_assemble"><span data-i18n="a_assemble">ASSEMBLE (KR)</span></label>
+			<input id="en_capital" type="checkbox" checked /><label class="button" for="en_capital"><span data-i18n="a_capital">CAPITAL (EN)</span></label>
 		</div>
 
 		<div id="card_body">
@@ -107,7 +107,7 @@
 				<div id="output_textarea"><span class="placeholder" data-i18n="card__output_0"></span></div>
 
 				<div id="output_menu" class="hide">
-					<span class="copy" data-clipboard-target="#output_textarea" onclick="toast('copied!')" title="Copy translation">
+					<span class="copy" data-clipboard-target="#output_textarea" onclick="toast($.i18n('bt_copied'));m.history.push()" title="bt_copy">
 						<i class="material-icons" data-clipboard-target="#output_textarea"> file_copy </i>
 					</span>
 				</div>
@@ -115,15 +115,15 @@
 		</div>
 		<div id="card_lang">
 			<!-- <div id="" class="card_lang selected auto" data-i18n='lang_auto'>AUTO</div> -->
-			<div id="" class="card_lang en" data-i18n='lang_en'>EN</div>
-			<div id="" class="card_lang ko" data-i18n='lang_ko'>KO</div>
-			<div id="" class="card_lang ja" data-i18n='lang_ja'>JA</div>
-			<div id="" class="card_lang ru" data-i18n='lang_ru'>RU</div>
-			<div id="" class="card_lang gr" data-i18n='lang_gr'>GR</div>
-			<div id="" class="card_lang th" data-i18n='lang_th'>TH</div>
-			<div id="" class="card_lang he" data-i18n='lang_he'>HE</div>
-			<div id="" class="card_lang ar" data-i18n='lang_ar'>AR</div>
-			<div id="" class="card_lang pr" data-i18n='lang_pr'>PR</div>
+			<div id="" class="card_lang en" data-i18n='a_en'>EN</div>
+			<div id="" class="card_lang ko" data-i18n='a_kr'>KO</div>
+			<div id="" class="card_lang ja" data-i18n='a_jp'>JA</div>
+			<div id="" class="card_lang ru" data-i18n='a_ru'>RU</div>
+			<div id="" class="card_lang gr" data-i18n='a_gr'>GR</div>
+			<div id="" class="card_lang th" data-i18n='a_th'>TH</div>
+			<div id="" class="card_lang he" data-i18n='a_he'>HE</div>
+			<div id="" class="card_lang ar" data-i18n='a_ar'>AR</div>
+			<div id="" class="card_lang pr" data-i18n='a_pr'>PR</div>
 		</div>
 
 		<!-- <div id="feadback"><a href="//blog.jinh.kr/guestbook">feadback</a></div> -->
@@ -167,8 +167,8 @@
 	</div>
 
 	<section id="history_wrap">
-		<div class="title">HISTORY</div>
-		<div class="item"><span class="info">INFO</span><span data-i18n=history__clear class="clear" onclick="window.localStorage.clear();m.history.reset();m.history.set();">CLEAR</span></div>
+		<div class="title" data-i18n="history">HISTORY</div>
+		<div class="item wrap"><span class="info">INFO</span><span data-i18n=history_clear class="clear" onclick="window.localStorage.clear();m.history.reset();m.history.set();">CLEAR</span></div>
 		<div id="history"></div>
 	</section>
 

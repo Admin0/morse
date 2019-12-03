@@ -1,7 +1,7 @@
 function title_tooltip() {
   $('[title]').attr({
     'data-title': function() {
-      return this.title;
+      return $.i18n(this.title);
     },
     'title': null
   });

@@ -1,27 +1,36 @@
 const m = {
   history: {
-    set: function() {
+    set: function(standalone) {
       for (var i = 0; i < 50; i++) {
-        if (typeof window.localStorage["history" + (i)] !== "undefined") {
-          $("#history").append("<div class='item'>" + window.localStorage["history" + (i)] + "<div>");
+        if (typeof window.localStorage["history_input_" + i] !== "undefined") {
+          $("#history").append("<div class='item'><div class='i'>" + window.localStorage["history_input_" + i] + "</div><div class='o'>" + window.localStorage["history_output_" + i] + "</div></div>");
         } else {
           break;
         }
       }
-      $("#history_wrap .info").text($.i18n("history__i", $("#history .item").length));
+      $("#history_wrap .info").text($.i18n("history_i", $("#history .item").length));
+      if (standalone) {
+        console.log("history was loaded.");
+      }
     },
     reset: function() {
       $("#history").html("");
     },
     push: function() {
+      // var lang = $("#input_textarea").val();
       var input = $("#input_textarea").val();
-      if (input != "") {
+      var output = $("#output_textarea").text();
+      if (input != "" && input != window.localStorage["history_input_0"]) {
         for (var i = 0; i < 50; i++) {
-          if (typeof window.localStorage["history" + (49 - i)] !== "undefined") {
-            window.localStorage["history" + (49 - i + 1)] = window.localStorage["history" + (49 - i)];
+          if (typeof window.localStorage["history_input_" + (49 - i)] !== "undefined") {
+            // window.localStorage["history_lang_" + (49 - i + 1)] = window.localStorage["history_lang_" + (49 - i)];
+            window.localStorage["history_input_" + (49 - i + 1)] = window.localStorage["history_input_" + (49 - i)];
+            window.localStorage["history_output_" + (49 - i + 1)] = window.localStorage["history_output_" + (49 - i)];
           }
         }
-        window.localStorage["history0"] = input;
+        // window.localStorage["history_lang_0"] = lang;
+        window.localStorage["history_input_0"] = input;
+        window.localStorage["history_output_0"] = output;
         this.reset();
         this.set();
       }
@@ -218,7 +227,7 @@ function initialize() {
     tranlyze(type);
   });
 
-  m.history.set();
+  m.history.set(true);
 }
 
 var type = TRANSLATE_MODE;

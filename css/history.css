@@ -1,5 +1,5 @@
 #history_wrap {
-  margin: 1em auto 4em;
+  margin: 2em auto 4em;
   max-width: 1280px;
   width: 100%;
   background: #fff;
@@ -22,19 +22,35 @@
 
 #history_wrap .item {
   border-top: 1px solid #dadce0;
+}
+
+#history_wrap .clear,
+#history_wrap .info {
   font-size: 14px;
-}
-
-#history_wrap #history .item {
-  cursor: pointer;
-}
-
-#history_wrap #history  .item:hover {
-  background: #eee;
 }
 
 #history_wrap .clear {
   float: right;
   display: inline-block;
   cursor: pointer;
+}
+
+#history_wrap #history .item {
+  cursor: pointer;
+  font-size: 16px;
+  transition: .125s;
+  padding: .5em 1em;
+}
+
+#history_wrap #history .item:hover {
+  /* background: #eee; */
+  box-shadow: 0 5px 11px rgba(0, 0, 0, .2);
+}
+
+#history_wrap #history .item .i,
+#history_wrap #history .item .o {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: .5em 0;
 }

@@ -1,4 +1,308 @@
 {
+  "app_name": "モールス符号",
+  "app_name_full": "モモ·トランスレーター",
+  "app_promotion": "モールス符号 ⇄ 日本語(片仮名だけ)解析可能！\n奇跡の万能モールス符号変換器+解析機!",
+  "morse": "モールス符号",
+
+  "action_settings": "設定",
+  "action_sound": "音",
+  "action_flash": "フラッシュ",
+  "action_vibration": "振動",
+  "action_one_button": "ワンボタンモード",
+
+
+  "translate_hint": "文字を入力してください",
+  "analyze_hint": "モールス符号を入力してください",
+  "bt": "ボタン",
+  "bt_t": "ハングルなどをモールス符号に変換します",
+  "bt_a": "モールス符号を解釈します",
+  "bt_del": "削除",
+  "bt_voice": "テキストに話します",
+
+  "input_error__stt_unavailable": "エラー：音声の認識が不可能",
+
+
+  "output_other_maybe": "もしか？",
+
+  "a_option": "解釈の設定",
+  "a_kr": "韓国語",
+  "a_en": "英語",
+  "a_jp": "日本語",
+  "a_ru": "ロシア語",
+  "a_gr": "ギリシャ語",
+  "a_he": "ヘブライ語",
+  "a_ar": "アラビア語",
+  "a_pr": "ペルシア語",
+  "a_no": "数字",
+  "a_capital": "大文字(英語)",
+
+  "output_massage": "出力文字列",
+  "output_error__translate_to_morse": "(エラー:モールス符号を再びモス符号に変換しようと試みました。)",
+  "output_play_repeat": "リピート再生",
+  "bt_speak": "%sを再生します",
+  "bt_speak_loading": "%sの再生を準備します",
+  "bt_speak_stop": "%sの出力を終了します",
+  "bt_copy": "クリップボードにコピーします",
+  "bt_copied": "コピーされました",
+
+  "output_error__tts_lang": "エラー:機器にインストールされてTTSでサポートされていない言語",
+
+  "output_more": "もっと見る",
+  "output_more_share": "共有する",
+  "output_more_re": "再%s",
+
+
+  "noti_running": "再生中…",
+  "noti_text": "スイープて停止する",
+
+  "key_space": "SPACE",
+  "a_assemble": "音素組合(韓国語)",
+
+  "quit_check": "後に行くことをもう一度押せば終了されます",
+
+
+
+  "s": "設定",
+
+  "s_locale": "アプリの言語",
+  "s_locale_default": "デフォルトの言語",
+  "s_locale_notyet": "完全に適用するために、アプリを再起動してください。",
+  "s_locale_contributor": "翻訳：JinH・ザ・デベロッパー",
+
+  "s_t": "変換",
+  "s_t_full": "変換（文字→モールス符号）",
+
+  "s_t_speak": "再生の設定",
+  "s_t_speak_summary": "サウンドの長さや種類を選択",
+
+  "s_t_speak_length": "サウンドの長さ",
+  "s_t_speak_length_summary": "サウンドの長さを選択",
+
+  "s_t_beep": "信号音",
+  "s_t_beep_sound_00": "新しく入ってきたニュース",
+  "s_t_beep_sound_01": "チュートリアルマスター",
+  "s_t_beep_sound_02": "フーリエ変換",
+  "s_t_beep_sound_03": "答えのない声",
+  "s_t_beep_sound_04": "電話回線を挙げたまま",
+  "s_t_beep_sound_05": "軍人精神",
+  "s_t_beep_sound_06": "受像機の調整のため",
+
+  "s_a": "解析",
+  "s_a_full": "解析（モールス符号→文字）",
+
+  "s_a_input": "入力",
+  "s_a_input_volume": "ボリュームのキー入力",
+  "s_a_1button_on": "男前特）モールス符号をワンボタンで書き込むことができている",
+  "s_a_1button_off": "ダメ特）モールス符号をワンボタンで書き込むことができません",
+  "s_a_input_volume_on": "苦痛を楽しむことが出来る方ですね!",
+  "s_a_input_volume_off": "ボリュームのキーを利用して入力できません",
+  "s_a_input_volume_dialog": "ボリュームのキーを利用して入力しますか?\nいつでも設定から変更できます。",
+
+  "s_output": "出力",
+  "s_output_style_dit": "ドットのスタイル",
+  "s_output_style_dit_summary": "空欄にしておくと、初期化されます",
+  "s_output_style_dah": "ダッシュのスタイル",
+  "s_output_style_dah_summary": "空欄にしておくと、初期化されます",
+  "s_t_fixed_shape": "形の固定",
+  "s_t_fixed_shape_on": "形が初期化されます",
+  "s_t_fixed_shape_off": "ひよこ、赤などの単語を変換して見ましょう",
+
+
+  "s_a_lang": "言語",
+
+  "s_a_capital_en": "自動で大文字/小文字（英語）",
+  "s_a_capital_en_on": "大文字/小文字を世話適用されます",
+  "s_a_capital_en_off": "次のオプションから手動で適用されます",
+
+  "s_a_capital_en_upper": "全部大文字にしたいですか？",
+  "s_a_capital_en_upper_off": "解析結果を小文字で表示します",
+
+  "s_a_assemble_kr": "音素の組み合わせ（ハングル）",
+  "s_a_assemble_kr_on": "例) 안녕?",
+  "s_a_assemble_kr_off": "例) ㅇㅏㄴㄴㅕㅇ?",
+
+  "s_a_hira_jp": "ひらがな（日本語）",
+  "s_a_hira_jp_on": "解析結果をひらがなで表示します",
+  "s_a_hira_jp_off": "解析結果をカタカナで表示します",
+
+  "s_dev": "ディベロッパー",
+  "s_dev_ver": "バージョン",
+  "s_dev_ver_history": "更新履歴",
+  "s_dev_license": "オープンソースライセンス",
+  "s_dev_license_summary": "オープンソースソフトウェアのライセンス詳細",
+  "s_dev_reset": "リセット",
+  "s_dev_reset_summary": "すべてのことを初めて戻します",
+
+  "s_etc_contributor": "協力者",
+  "s_etc_contributor_summary": " アプリの翻訳などの助けをいただいた方のリスト",
+
+  "s_etc": "その他の",
+  "s_etc_rate": "アプリを評価する",
+  "s_etc_share": "アプリを共有する",
+  "s_a_capital_en_upper_on": "解析結果を大文字で表示します",
+
+  "s_etc_donation": "寄付する（広告を削除する）",
+  "s_etc_donation_ads": "広告を削除する",
+  "s_etc_donation_summary": "開発者の痛ましいＨＰを回復させてあげよう！",
+  "s_etc_donation_00": "$0.9\t\t\t\tエネルギーバー",
+  "s_etc_donation_01": "$1.9\t\t\t\tエネルギードリンク",
+  "s_etc_donation_02": "$4.9\t\t\t\tコーヒー",
+  "s_etc_donation_03": "$9.9\t\t\t\tフライドチキン",
+  "s_etc_donation_thanks": "寄付していただきありがとうございます！",
+
+
+  "quest_pokemon_title": "あ! やせいの カイハツシャが とびだしてきた!",
+  "quest_pokemon_message_short": "ユーザーはなにをしますか?",
+  "quest_pokemon_message": "ユーザーは どうする?  （注：開発者は、ぼろぼろ装いに、持病でほんつけて、14インチのモニターにコーディングをしている。救いの手が必要に見える。）",
+  "quest_pokemon_message_effect": "こうかは ばつぐんだ！",
+  "quest_pokemon_choice_1": "▸ ひょうか",
+  "quest_pokemon_choice_2": "▸ きょうゆう",
+  "quest_pokemon_choice_3": "▸ きふ",
+  "quest_pokemon_choice_4": "▸ こうこくを みる",
+  "quest_pokemon_cancel": "開発者を 無視した。開発者は、広告と 一緒に 暗い中に消えた…",
+  "quest_pokemon_cancel_0": "開発者を 見ぬふりした",
+  "quest_pokemon_cancel_1": "なぜか 開発者が こちらに お辞儀をしている... 何？",
+
+  "q_poke_000_title": "あ! やせいの %sが とびだしてきた!",
+
+  "q_poke_appeared": "はっけん",
+  "q_poke_defeated": "なぐる",
+  "q_poke_wantsBattle": "%Sが しょうぶを かけてきた！（%dかいなぐる）",
+  "q_poke_endBattle": "なぐりしました！（%dかい）",
+  "q_poke_cancelBattle": "やせいの %Sが にげた！",
+
+
+
+
+
+
+  "q_poke_000": "カイハツシャ",
+  "q_poke_000_dex": "開発者は、ぼろぼろ装いに、持病でほんつけて、14インチのモニターにコーディングをしている。救いの手が必要に見える。",
+  "q_poke_001": "ユウウツナカエル",
+
+  "q_poke_002": "ドッジ",
+
+  "q_poke_003": "トロールフェイス",
+
+  "q_poke_004": "ペドクマ",
+
+  "q_poke_005": "エアジャン",
+
+  "q_poke_006": "ゲジュクイ",
+
+  "q_poke_007": "ぶくぶ",
+
+  "q_poke_008": "はと",
+
+  "q_poke_009": "タコが死にました..ーー;",
+
+  "q_poke_010": "もやしバプのガイ",
+
+  "q_poke_011": "シンハ兄",
+
+  "q_poke_012": "キムチ・ウォーリア",
+
+  "q_poke_013": "ヒーメン",
+
+  "q_poke_014": "兵長（明日賞休暇キャンセル者）",
+
+  "q_poke_015": "ポドルイ",
+
+  "q_poke_016": "ニャンキャット",
+
+  "q_poke_017": "ボルトボーイ",
+
+  "q_poke_018": "テーミー",
+
+  "q_poke_019": "お兄さんがおごる(:gun:)",
+
+  "q_poke_020": "セックス",
+
+  "q_poke_021": "(なにっ？)",
+
+  "q_poke_022": "まめ",
+
+  "q_poke_023": "ニャー(1/2)",
+
+  "q_poke_024": "ヤャー(2/2)",
+
+  "q_poke_025": "艦艇カード",
+
+  "q_poke_026": "(_____)",
+
+  "q_poke_027": "たぬきマン",
+
+  "q_poke_028": "ポストモダニズムのイエス・キリスト",
+
+  "q_poke_029": "自分撮り乱入げっ歯類",
+
+  "q_poke_030": "クッパ店のおばさん",
+
+  "q_poke_031": "ビッグデータロボット",
+
+  "q_poke_032": "ファックイェー",
+
+  "q_poke_033": "時空好き",
+
+  "q_poke_034": "最終チャル甲",
+
+  "q_poke_035": "ニャンコサンダー",
+
+  "q_poke_036": "ヤムチャ（だった）",
+  "q_poke_036_dex": "スカウター人間。",
+  "q_poke_037": "5分残りホース",
+
+  "q_poke_038": "狡猾な策略家",
+
+  "q_poke_039": "右フック犬",
+
+
+
+
+
+  "quest_survival": "インスティンクト",
+  "quest_survival_active": "[Q]キーを押してインスティンクトを活性化してください。",
+  "quest_survival_title": "ララの日記",
+  "quest_survival_direction_e": "東",
+  "quest_survival_direction_w": "西",
+  "quest_survival_direction_s": "南",
+  "quest_survival_direction_n": "北",
+  "quest_survival_msg_skip": "スキップ",
+  "quest_survival_msg_next": "進む",
+  "quest_survival_msg_prev": "戻る",
+  "quest_survival_msg_pre_0": "一ヵ月前: \n…同僚たちと一緒に伝説の古代王国の邪馬台国を探して航海を始めた…",
+  "quest_survival_msg_pre_1": "一週間前: \n…航海途中、ひどい暴風を会って、人里離れた島に漂流してしまった…",
+  "quest_survival_msg_pre_2": "一週間前: \n…島にはソラリ狂信徒や野生動物が私の命を脅かしている。…",
+  "quest_survival_msg_pre_3": "数日前: \n…同僚たちを探して一早く島から脱出しなければならない。\nそれとも狂信徒をすべて虐殺して余裕のあるように流出するほうがいいのかも…",
+  "quest_survival_msg_pre_4": "今日:\n…数日の間、狂信徒の村を見せるたびに破壊した。\nあっ、*北方の空*で、モーター音が聞こえる。 救助ヘリかもしれない。",
+  "quest_survival_msg_pre_5": "よし、ヘリコプターに向かって遭難信号を送ると!",
+  "quest_survival_msg_virgin0": "ヘリコプターは知れない力によって墜落した。",
+  "quest_survival_msg_virgin1": "しかし、あなたのインスティンクトはいつよりも敏感になった。",
+  "quest_survival_msg_virgin2": "夜も昼のように明るく見える、方向さえ感知できるようになったのだ。",
+
+
+  "title_is": "称号",
+  "title_donor": "寄付者",
+  "title_donor_summary": "声援に感謝します",
+  "title_survivor": "生存者",
+  "title_survivor_summary": "島で生き残りました",
+  "quest_survival_menu_3dCompass": "3Dの羅針盤",
+  "quest_survival_menu_showIntro": "イントロを再び見る",
+  "quest_survival_menu_showValues": "センサー値を見る",
+  "quest_survival_menu_onFlash": "開始時の光らす",
+  "quest_survival_menu_addToHome": "ホーム画面に追加",
+  "quest_survival_menu_getApp": "アプリをダウンロード",
+  "quest_survival_menu_getParent": "親アプリをダウンロード",
+  "quest_survival_menu_openApp": "単独アプリを実行",
+  "quest_survival_menu_openParent": "親アプリを実行",
+  "title_pokemon": "マスター",
+  "title_pokemon_summary": "すべてのモンスターを倒した",
+
+
+
+
+
+
   "analyze": "分析",
   "analyzer": "アナライザ",
   "card__feedback": "フィードバック",
@@ -17,8 +321,17 @@
   "lang_morse": "モールス符号",
   "lang_pr": "ペルシア語",
   "lang_ru": "ロシア語",
+  "lang_th": "タイ語",
   "message_0": "<span class='quote'>受信者全員のお知らせ これは永遠の沈黙に先立つ最後の歓声。</span> <span class='source'>フランス海軍の1997年1月31日、最後のモールス符号のメッセージだ</span>",
   "message_1": "<span class='quote'> · · · · 　· · </span> <br> <span class='quote'> – · · – 　– – – </span> <span class='source'>モールス（映画）</span>",
+  "message_2": "<span class='quote'> · · · 　– 　· – 　– · – – </span> <span class='source'>インターステラー (映画)</span>",
+  "message_3": "<span class='quote'>What hath God wrought</span> <span class='source'>1844年3月24日、モールス符号で伝送された最初のメッセージ</span>",
+  "message_4": "<span class='quote'> · · · 　– – – 　· · · </span> <span class='source'>Save Our Ship, 国際遭難信号</span>",
+  "message_5": "<span class='quote'> – · – · 　– – · – 　– · · </span> <span class='source'>、20世紀初頭までに使用された遭難信号</span>",
+  "message_6": "<span class='quote'>のサミュエル・モールス</span> <span class='source'>名称の由来</span>",
+  "message_7": "<span class='quote'>CW (Continuous Wave)</span> <span class='source'>モールス符号を呼ぶ別の名前</span>",
+  "message_8": "<span class='quote'>1844年</span> <span class='source'>モールス符号が発明された年</span>",
+  "message_9": "<span class='quote'>約30年</span> <span class='source'>電話の発明以前にモールス符号が活躍した年数</span>",
   "message_10": "<span class='quote'>アルフレッド・ヴェイルとジョセフ・ヘンリー</span> <span class='source'>サミュエル・モールスのアイデアを製品化（ところが、モスが特許権忍者する）</span>",
   "message_11": "<span class='quote'>アルフレッド・ヴェイル</span> <span class='source'>モールス符号体系完成</span>",
   "message_12": "<span class='quote'>ジョセフ・ヘンリー</span> <span class='source'>モールス電信機の開発者</span>",
@@ -29,14 +342,6 @@
   "message_17": "<span class='quote'> – · · 　· 　　　· – · · 　· · 　– 　– 　· – · · 　· 　　　· – · 　· 　– · · 　　　· – · 　· · 　– · · 　· · 　– · 　– – · 　　　· · · · 　– – – 　– – – 　– · · </span> <span class='source'>ウルフェンシュタイン3D（ゲーム）</span>",
   "message_18": "<span class='quote'> · 　· – · · 　· · 　– – 　· · 　– · 　· – 　– 　· 　　　· · · · 　· · 　– 　· – · · 　· 　· – · </span> <span class='source'>ウルフェンシュタイン3D（ゲーム）</span>",
   "message_19": "<span class='quote'>【モモ】は【文字通りモールス】のバリエーションです。</span> <span class='source'>モモ·トランスレーター</span>",
-  "message_2": "<span class='quote'> · · · 　– 　· – 　– · – – </span> <span class='source'>インターステラー (映画)</span>",
-  "message_3": "<span class='quote'>What hath God wrought</span> <span class='source'>1844年3月24日、モールス符号で伝送された最初のメッセージ</span>",
-  "message_4": "<span class='quote'> · · · 　– – – 　· · · </span> <span class='source'>Save Our Ship, 国際遭難信号</span>",
-  "message_5": "<span class='quote'> – · – · 　– – · – 　– · · </span> <span class='source'>、20世紀初頭までに使用された遭難信号</span>",
-  "message_6": "<span class='quote'>のサミュエル・モールス</span> <span class='source'>名称の由来</span>",
-  "message_7": "<span class='quote'>CW (Continuous Wave)</span> <span class='source'>モールス符号を呼ぶ別の名前</span>",
-  "message_8": "<span class='quote'>1844年</span> <span class='source'>モールス符号が発明された年</span>",
-  "message_9": "<span class='quote'>約30年</span> <span class='source'>電話の発明以前にモールス符号が活躍した年数</span>",
   "nav__license": "オープンソースライセンス",
   "nav__oldver2": "古いバージョン（v2）を使用する",
   "nav__review": "レビューを残す",
