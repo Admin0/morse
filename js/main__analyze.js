@@ -133,6 +133,8 @@ function analyze(lang) {
     input = analyze_sub(key.ru);
   } else if (lang == LANG_GR) {
     input = analyze_sub(key.gr);
+  } else if (lang == LANG_TH) {
+    input = analyze_sub(key.th);
   } else if (lang == LANG_HE) {
     input = analyze_sub(key.he);
   } else if (lang == LANG_AR) {

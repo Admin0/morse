@@ -1,0 +1,40 @@
+#history_wrap {
+  margin: 1em auto 4em;
+  max-width: 1280px;
+  width: 100%;
+  background: #fff;
+  /* box-shadow: 0 5px 11px rgba(0, 0, 0, .2); */
+  border-radius: .5em;
+  border: 1px solid #dadce0;
+  transition: .3s;
+  position: relative;
+  font-family: 'Lato', 'Noto Sans KR', sans-serif;
+}
+
+#history_wrap .title,
+#history_wrap .item {
+  padding: 1em;
+}
+
+#history_wrap .title {
+  font-size: 20px;
+}
+
+#history_wrap .item {
+  border-top: 1px solid #dadce0;
+  font-size: 14px;
+}
+
+#history_wrap #history .item {
+  cursor: pointer;
+}
+
+#history_wrap #history  .item:hover {
+  background: #eee;
+}
+
+#history_wrap .clear {
+  float: right;
+  display: inline-block;
+  cursor: pointer;
+}

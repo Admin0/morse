@@ -8,6 +8,7 @@
 @import url('module.css');
 @import url('toast.css');
 @import url('card_lang.css');
+@import url('history.css');
 
 ::selection {
   background: rgba(0, 0, 0, 0);
@@ -43,6 +44,7 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   line-height: 1;
   height: calc(100% - 64px - 64px);
+  cursor: default;
 }
 
 a {
@@ -277,7 +279,7 @@ body.analyze #card_header .lang_box.code {
 #input {
   text-align: center;
   width: calc(50% - 6em);
-  padding: 2em 4em 2em 2em;
+  padding: 1.5em 4em 1.5em 2em;
   /* background: gold; */
   border-right: 1px solid #ddd;
 }
@@ -335,7 +337,7 @@ body.analyze #card_header .lang_box.code {
 
 #output {
   width: calc(50% - 4em);
-  padding: 2em;
+  padding: 1.5em 2em;
   position: relative;
 }
 

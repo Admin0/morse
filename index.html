@@ -51,6 +51,7 @@
 				<div id="" class="card_header ja" data-i18n='lang_ja'>JA</div>
 				<div id="" class="card_header ru" data-i18n='lang_ru'>RU</div>
 				<div id="" class="card_header gr" data-i18n='lang_gr'>GR</div>
+				<div id="" class="card_header th" data-i18n='lang_th'>TH</div>
 				<div id="" class="card_header he" data-i18n='lang_he'>HE</div>
 				<div id="" class="card_header ar" data-i18n='lang_ar'>AR</div>
 				<div id="" class="card_header pr" data-i18n='lang_pr'>PR</div>
@@ -59,7 +60,7 @@
 			<div class="lang_box lang">
 				<div id="" class="card_header selected" data-i18n='lang_morse'>MORSE CODE</div>
 			</div>
-			<label id="re_anaylze" class="" for="ch_swap"><input type="checkbox" id="ch_swap"><i class="material-icons"> swap_horiz </i></label>
+			<label id="re_anaylze" class="" for="ch_swap"><input type="checkbox" id="ch_swap" onclick="m.history.push();"><i class="material-icons"> swap_horiz </i></label>
 
 		</div>
 
@@ -87,7 +88,7 @@
 			<div id="input">
 				<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
 				<!-- <input type="button" id="input_toggle" value="☎"> -->
-				<div id="input_del" onclick="clear()" class="hide"><i class="material-icons"> close </i></div>
+				<div id="input_del" onclick="clear();m.history.push();" class="hide"><i class="material-icons"> close </i></div>
 			</div>
 
 			<div id="ad_top" class="mobile">
@@ -119,13 +120,14 @@
 			<div id="" class="card_lang ja" data-i18n='lang_ja'>JA</div>
 			<div id="" class="card_lang ru" data-i18n='lang_ru'>RU</div>
 			<div id="" class="card_lang gr" data-i18n='lang_gr'>GR</div>
+			<div id="" class="card_lang th" data-i18n='lang_th'>TH</div>
 			<div id="" class="card_lang he" data-i18n='lang_he'>HE</div>
 			<div id="" class="card_lang ar" data-i18n='lang_ar'>AR</div>
 			<div id="" class="card_lang pr" data-i18n='lang_pr'>PR</div>
 		</div>
 
 		<!-- <div id="feadback"><a href="//blog.jinh.kr/guestbook">feadback</a></div> -->
-		<div id="feadback"><a href="mailto:admin@jinh.kr" data-i18n="feedback">Send feadback</a></div>
+		<div id="feadback"><a href="mailto:admin@jinh.kr" data-i18n="card__feedback">Send feadback</a></div>
 	</section>
 
 	<div id="license" class="contents sub"></div>
@@ -155,11 +157,6 @@
 
 	<section id="message" class="hide">MESSAGE</section>
 
-	<!-- <section id="notice">
-		This site is under construction now. It's still incomplete, so try the <a href="/morse/v2">old version</a>.<br><br>
-		공사중입니다. 아직 미완성이니, <a href="/morse/v2">이전 버전</a>을 써보세요.
-	</section> -->
-
 	<div id="ad_bottom">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- 반응형 -->
@@ -169,8 +166,15 @@
 		</script>
 	</div>
 
+	<section id="history_wrap">
+		<div class="title">HISTORY</div>
+		<div class="item"><span class="info">INFO</span><span data-i18n=history__clear class="clear" onclick="window.localStorage.clear();m.history.reset();m.history.set();">CLEAR</span></div>
+		<div id="history"></div>
+	</section>
+
 	<footer>
-		<p class="copyright">© 2013 -
+		<p class="copyright">
+			© 2013 -
 			<script>
 				document.write(new Date().getFullYear());
 			</script> JinH</p>

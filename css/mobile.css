@@ -50,6 +50,10 @@
     display: none;
   }
 
+  #lang_list{
+    float: right;
+  }
+
   #card_body {
     display: block;
   }

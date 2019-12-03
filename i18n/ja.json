@@ -1,10 +1,10 @@
 {
   "analyze": "分析",
   "analyzer": "アナライザ",
+  "card__feedback": "フィードバック",
   "card__input_textarea_placeholder_0": " 日本語、英語、数字、文字を入力してください。",
   "card__input_textarea_placeholder_1": " モールス符号を入力してください。",
   "card__output_0": "ここで翻訳されたモールス符号が出力されます。",
-  "card__feedback": "フィードバック",
   "info__descript": "【モモ】は【文字通りモールス】のバリエーションです。",
   "info__title": "モモ·トランスレーター",
   "lang_ar": "アラビア語",
@@ -24,10 +24,11 @@
   "message_12": "<span class='quote'>ジョセフ・ヘンリー</span> <span class='source'>モールス電信機の開発者</span>",
   "message_13": "<span class='quote'> – · – · 　· · · · 　· 　· – · 　· – · 　– · – – </span> <span class='source'>ザ・カーレント・ウォー（映画）</span>",
   "message_14": "<span class='quote'>息子は、あなたの計画があるんだ！</span> <span class='source'>パラサイト 半地下の家族（映画）</span>",
-  "message_15": "<span class='quote'> – · – · 　– – · – 　　　– · · 　· 　　　– · – · 　· – 　· – – · 　– · – · 　– – – 　– – 　　　– · · 　– · 　　　· · · 　– · – </span> <span class='source'>1943 famicom ver. (game)</span>",
+  "message_15": "<span class='quote'> – · – · 　– – · – 　　　– · · 　· 　　　– · – · 　· – 　· – – · 　– · – · 　– – – 　– – 　　　– · · 　– · 　　　· · · 　– · – </span> <span class='source'>1943ファミコン版（ゲーム）</span>",
   "message_16": "<span class='quote'> – 　– – – 　　　– · · · 　· · 　– – · 　　　– · · · 　· – 　– · · 　　　· – – 　– – – 　· – · · 　· · – · </span> <span class='source'>ウルフェンシュタイン3D（ゲーム）</span>",
-  "message_17": "<span class='quote'> – · · 　· 　　　· – · · 　· · 　– 　– 　· – · · 　· 　　　· – · 　· 　– · · 　　　· – · 　· · 　– · · 　· · 　– · 　– – · 　　　· · · · 　– – – 　– – – 　– · · </span> <span class='source'>Wolfenstein 3D (game)</span>",
+  "message_17": "<span class='quote'> – · · 　· 　　　· – · · 　· · 　– 　– 　· – · · 　· 　　　· – · 　· 　– · · 　　　· – · 　· · 　– · · 　· · 　– · 　– – · 　　　· · · · 　– – – 　– – – 　– · · </span> <span class='source'>ウルフェンシュタイン3D（ゲーム）</span>",
   "message_18": "<span class='quote'> · 　· – · · 　· · 　– – 　· · 　– · 　· – 　– 　· 　　　· · · · 　· · 　– 　· – · · 　· 　· – · </span> <span class='source'>ウルフェンシュタイン3D（ゲーム）</span>",
+  "message_19": "<span class='quote'>【モモ】は【文字通りモールス】のバリエーションです。</span> <span class='source'>モモ·トランスレーター</span>",
   "message_2": "<span class='quote'> · · · 　– 　· – 　– · – – </span> <span class='source'>インターステラー (映画)</span>",
   "message_3": "<span class='quote'>What hath God wrought</span> <span class='source'>1844年3月24日、モールス符号で伝送された最初のメッセージ</span>",
   "message_4": "<span class='quote'> · · · 　– – – 　· · · </span> <span class='source'>Save Our Ship, 国際遭難信号</span>",
@@ -36,6 +37,10 @@
   "message_7": "<span class='quote'>CW (Continuous Wave)</span> <span class='source'>モールス符号を呼ぶ別の名前</span>",
   "message_8": "<span class='quote'>1844年</span> <span class='source'>モールス符号が発明された年</span>",
   "message_9": "<span class='quote'>約30年</span> <span class='source'>電話の発明以前にモールス符号が活躍した年数</span>",
+  "nav__license": "オープンソースライセンス",
+  "nav__oldver2": "古いバージョン（v2）を使用する",
+  "nav__review": "レビューを残す",
+  "nav__update": "アップデート履歴",
   "notice_check": "案内画面をもう見ません。",
   "notice_donate": "...または少し寄付していただいてもなりますよ。",
   "notice_to_android": "アンドロイドで会ってみてください！",
@@ -51,13 +56,4 @@
   "op_space_short": "文字",
   "translate": "翻訳",
   "translator": "トランスレーター"
-
-
-
-
-
-
-
-
-
 }

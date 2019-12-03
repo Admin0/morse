@@ -1,3 +1,34 @@
+const m = {
+  history: {
+    set: function() {
+      for (var i = 0; i < 50; i++) {
+        if (typeof window.localStorage["history" + (i)] !== "undefined") {
+          $("#history").append("<div class='item'>" + window.localStorage["history" + (i)] + "<div>");
+        } else {
+          break;
+        }
+      }
+      $("#history_wrap .info").text($.i18n("history__i", $("#history .item").length));
+    },
+    reset: function() {
+      $("#history").html("");
+    },
+    push: function() {
+      var input = $("#input_textarea").val();
+      if (input != "") {
+        for (var i = 0; i < 50; i++) {
+          if (typeof window.localStorage["history" + (49 - i)] !== "undefined") {
+            window.localStorage["history" + (49 - i + 1)] = window.localStorage["history" + (49 - i)];
+          }
+        }
+        window.localStorage["history0"] = input;
+        this.reset();
+        this.set();
+      }
+    }
+  }
+}
+
 const TRANSLATE_MODE = 0;
 const ANALYZE_MODE = 1;
 
@@ -10,6 +41,7 @@ const LANG_HE = 5;
 const LANG_AR = 6;
 const LANG_PR = 7;
 const LANG_KO = 8;
+const LANG_TH = 9;
 
 var lang = window.localStorage["lang"] || LANG_EN;
 
@@ -29,6 +61,7 @@ function tranlyze(type) {
 }
 
 function mode() { // this method for change type (toggle)
+
   if (type == TRANSLATE_MODE) {
     type = ANALYZE_MODE;
     $('body').addClass('analyze');
@@ -53,6 +86,8 @@ function mode() { // this method for change type (toggle)
         $('.ru').addClass('selected');
       } else if (lang == LANG_GR) {
         $('.gr').addClass('selected');
+      } else if (lang == LANG_TH) {
+        $('.th').addClass('selected');
       } else if (lang == LANG_HE) {
         $('.he').addClass('selected');
       } else if (lang == LANG_AR) {
@@ -155,6 +190,10 @@ function initialize() {
         lang = LANG_GR;
         $('.card_header.gr, .card_lang.gr').addClass('selected');
         if ($(this).hasClass('card_lang')) $('.card_header.gr').insertAfter('.card_header.auto');
+      } else if ($(this).hasClass('th')) {
+        lang = LANG_TH;
+        $('.card_header.th, .card_lang.th').addClass('selected');
+        if ($(this).hasClass('card_lang')) $('.card_header.th').insertAfter('.card_header.auto');
       } else if ($(this).hasClass('he')) {
         lang = LANG_HE;
         $('.card_header.he, .card_lang.he').addClass('selected');
@@ -178,6 +217,8 @@ function initialize() {
     // all after
     tranlyze(type);
   });
+
+  m.history.set();
 }
 
 var type = TRANSLATE_MODE;
@@ -189,6 +230,7 @@ function detect_input() {
   }).keydown(function(event) {
     if (event.which == 13) {
       // event.preventDefault();
+      m.history.push();
       return false;
     }
   });
