@@ -68,8 +68,14 @@ const m = {
         }
       }
       $('.lang_box.lang .card_header').removeClass('selected');
-      if (this.code == CODE_MORSE) $('.morse').addClass('selected');
-      if (this.code == CODE_BRAILLE) $('.braille').addClass('selected');
+      if (this.code == CODE_MORSE) {
+        $('body').removeClass('braille');
+        $('.morse').addClass('selected');
+      }
+      if (this.code == CODE_BRAILLE) {
+        $('.braille').addClass('selected');
+        $('body').addClass('braille');
+      }
       // setTimeout(function() {
       //   $('.lang_box.lang .card_header').addClass('selected');
       // }, 0);
@@ -222,8 +228,10 @@ function initialize() {
     if ($(this).hasClass('morse')) {
       m.type.code = CODE_MORSE;
       $('.card_header.morse').addClass('selected');
+      $('body').removeClass('braille');
     } else if ($(this).hasClass('braille')) {
       m.type.code = CODE_BRAILLE;
+      $('body').addClass('braille');
       $('.card_header.braille').addClass('selected');
     }
 

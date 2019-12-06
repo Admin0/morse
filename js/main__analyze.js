@@ -62,7 +62,7 @@ function analyze(lang) {
     output = output.replace(/ㅗㅏ/g, "ㅘ");
     output = output.replace(/ㅜㅓ/g, "ㅝ");
     output = output.replace(/ㅏㅣ/g, "ㅐ");
-    output = output.replace(/ㅓㅣ/g, "ㅣ");
+    output = output.replace(/ㅓㅣ/g, "ㅔ");
     output = output.replace(/ㅑㅣ/g, "ㅒ");
     output = output.replace(/ㅕㅣ/g, "ㅖ");
     output = output.replace(/ㅜㅔ/g, "ㅞ");
@@ -124,7 +124,7 @@ function analyze(lang) {
     for (var i = 0; i < input.length; i++) {
       text = text + input[i];
     }
-    assemble();
+    // assemble();
   } else if (lang == LANG_EN) {
     input = analyze_sub(m.tranlyze.key.en);
   } else if (lang == LANG_JA) {
@@ -190,6 +190,31 @@ function analyze_b(lang) {
     return v;
   }
 
+  function assemble() {
+    output = output
+      .replace(/ᅮᅢ/g, "ᅱ")
+      .replace(/ᅣᅢ/g, "ᅤ")
+      .replace(/ᅯᅢ/g, "ᅰ")
+      .replace(/ᅪᅢ/g, "ᅫ")
+      .replace(/ᄀᄀ/g, "ᄁ")
+      .replace(/ᄃᄃ/g, "ᄄ")
+      .replace(/ᄇᄇ/g, "ᄈ")
+      .replace(/ᄉᄉ/g, "ᄊ")
+      .replace(/ᄌᄌ/g, "ᄍ")
+      .replace(/ᆨᆨ/g, "ᆩ")
+      .replace(/ᆨᆺ/g, "ᆪ")
+      .replace(/ᆫᆽ/g, "ᆬ")
+      .replace(/ᆫᇂ/g, "ᆭ")
+      .replace(/ᆯᆨ/g, "ᆰ")
+      .replace(/ᆯᆷ/g, "ᆱ")
+      .replace(/ᆯᆸ/g, "ᆲ")
+      .replace(/ᆯᆺ/g, "ᆳ")
+      .replace(/ᆯᇀ/g, "ᆴ")
+      .replace(/ᆯᇁ/g, "ᆵ")
+      .replace(/ᆯᇂ/g, "ᆶ")
+      .replace(/ᆺᆺ/g, "ᆻ");
+  }
+
   if (lang == LANG_KO) {
     input = analyze_sub(m.tranlyze.key_b.kr);
   } else if (lang == LANG_EN) {
@@ -200,6 +225,8 @@ function analyze_b(lang) {
   output = input.join("")
     .replace(/\/\/\//g, '\n')
     .replace(/\//g, " ");
+
+  if (lang == LANG_KO) assemble()
 
   return output;
 }

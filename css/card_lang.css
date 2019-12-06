@@ -16,6 +16,7 @@
   border-bottom-right-radius: .5em;
   border-top: 1px solid #eee;
   font-size: 14px;
+  z-index: 30;
 }
 
 #card_lang.on {

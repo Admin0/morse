@@ -25,7 +25,8 @@
 
 nav {
   position: fixed;
-  z-index: 5;
+  z-index: 31;
+  /* 구글 광고 위에 표시되게 하려고 */
   top: 0;
   left: 0;
   width: 300px;
