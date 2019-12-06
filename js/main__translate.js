@@ -140,6 +140,15 @@ function translate_b() {
   var input = hangulToJaso_b($('#input_textarea').val());
 
   for (var i = 0; i < v.length; i++) {
+    
+    if (input[i].charCodeAt() >= 0xFF01 && input[i].charCodeAt() <= 0xFF5E) { // "FF01:！" ~ "FF5E:～"에 속한 글자면 반각기호로
+      input[i] = String.fromCharCode(input[i].charCodeAt() - 0xFEE0);
+    } else if (input[i].charCodeAt() >= 0x0041 && input[i].charCodeAt() <= 0x005D) { // "FF41:A" ~ "005D:]"에 속한 글자면 소문자로
+      input[i] = String.fromCharCode(input[i].charCodeAt() + 0x0020);
+    } else if (input[i].charCodeAt() >= 0x3041 && input[i].charCodeAt() <= 0x3096) { // "3041:ぁ" ~ "3096:ゖ"에 속한 글자면 가타카나로
+      input[i] = String.fromCharCode(input[i].charCodeAt() + 0x0060);
+    }
+
     for (var j = 0; j < Object.keys(m.tranlyze.key_b).length; j++) {
       for (var k = 0; k < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]].length; k++) {
         if (input[i] == m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][0]) {
