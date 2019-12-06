@@ -119,30 +119,30 @@ function analyze(lang) {
   }
 
   if (lang == LANG_KO) {
-    input = analyze_sub(key.kr);
+    input = analyze_sub(m.tranlyze.key.kr);
     text = "";
     for (var i = 0; i < input.length; i++) {
       text = text + input[i];
     }
     assemble();
   } else if (lang == LANG_EN) {
-    input = analyze_sub(key.en);
+    input = analyze_sub(m.tranlyze.key.en);
   } else if (lang == LANG_JA) {
-    input = analyze_sub(key.jp);
+    input = analyze_sub(m.tranlyze.key.jp);
   } else if (lang == LANG_RU) {
-    input = analyze_sub(key.ru);
+    input = analyze_sub(m.tranlyze.key.ru);
   } else if (lang == LANG_GR) {
-    input = analyze_sub(key.gr);
+    input = analyze_sub(m.tranlyze.key.gr);
   } else if (lang == LANG_TH) {
-    input = analyze_sub(key.th);
+    input = analyze_sub(m.tranlyze.key.th);
   } else if (lang == LANG_HE) {
-    input = analyze_sub(key.he);
+    input = analyze_sub(m.tranlyze.key.he);
   } else if (lang == LANG_AR) {
-    input = analyze_sub(key.ar);
+    input = analyze_sub(m.tranlyze.key.ar);
   } else if (lang == LANG_PR) {
-    input = analyze_sub(key.pr);
+    input = analyze_sub(m.tranlyze.key.pr);
   }
-  input = analyze_sub(key.nm);
+  input = analyze_sub(m.tranlyze.key.nm);
 
   //변환 코드
   //output = '<div>문자열공백:[' + $('#space_string').val() + '] 문자공백:[' + $('#space_char').val() + ']으로 해독.</div>';
@@ -156,6 +156,48 @@ function analyze(lang) {
   output = $('#en_capital').prop("checked") ? output.toUpperCase() : output.toLowerCase();
 
   output = output
+    .replace(/\/\/\//g, '\n')
+    .replace(/\//g, " ");
+
+  return output;
+}
+
+function analyze_b(lang) {
+  var j, k, output = '';
+  var text = $('#input_textarea').val();
+  var space_char = new RegExp($('#space_char').text(), 'g');
+  // var space_string = new RegExp($('#space_string').text() + '|\n|\r', 'g');
+  var space_string = new RegExp($('#space_string').text(), 'g');
+  text = text.replace(/\n|\r/g, "_///_"); //줄바꿈
+  // text = text.replace(space_string, "_/_"); //문자열공백
+  // text = text.replace(space_char, "_"); //문자사이공백
+  // text = text.replace(/\s/g, ""); //공백 제거
+  // text = text.replace(/1|－|-|ㅡ/g, "–");
+  // text = text.replace(/0|ㆍ|\.|\*|`|'/g, "·");
+
+  var input = text.split('');
+
+  function analyze_sub(key_set) {
+    var v = input;
+    for (var i = 0; i < v.length; i++) {
+      for (var j = 0; j < key_set.length; j++) {
+        if (v[i] == key_set[j][1]) {
+          v[i] = key_set[j][0];
+          break;
+        }
+      }
+    }
+    return v;
+  }
+
+  if (lang == LANG_KO) {
+    input = analyze_sub(m.tranlyze.key_b.kr);
+  } else if (lang == LANG_EN) {
+    input = analyze_sub(m.tranlyze.key_b.en);
+  }
+  input = analyze_sub(m.tranlyze.key_b.nm);
+
+  output = input.join("")
     .replace(/\/\/\//g, '\n')
     .replace(/\//g, " ");
 

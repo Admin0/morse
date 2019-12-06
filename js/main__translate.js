@@ -69,14 +69,22 @@ function translate(dit, dah) {
       input[i] = String.fromCharCode(input[i].charCodeAt() + 0x0060);
     }
 
-    for (var j = 0; j < tranlyze_list.length; j++) {
-      for (var k = 0; k < tranlyze_list[j].length; k++) {
-        if (input[i] == tranlyze_list[j][k][0]) {
-          input[i] = tranlyze_list[j][k][1];
+    for (var j = 0; j < Object.keys(m.tranlyze.key).length; j++) {
+      for (var k = 0; k < m.tranlyze.key[Object.keys(m.tranlyze.key)[j]].length; k++) {
+        if (input[i] == m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0]) {
+          input[i] = m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][1];
           break;
         }
       }
     }
+    // for (var j = 0; j < m.tranlyze.list.length; j++) {
+    //   for (var k = 0; k < m.tranlyze.list[j].length; k++) {
+    //     if (input[i] == m.tranlyze.list[j][k][0]) {
+    //       input[i] = m.tranlyze.list[j][k][1];
+    //       break;
+    //     }
+    //   }
+    // }
   }
 
   var output = '';
@@ -89,4 +97,58 @@ function translate(dit, dah) {
 
   //$('#output').text(output);//for div element
   $('#output_textarea').text(output); //for textarea element
+}
+
+var hangulToJaso_b = function(text) {
+  function iSound(a) {
+    var r = ((a - parseInt('0xac00', 16)) / 28) / 21;
+    var t = String.fromCharCode(r + parseInt('0x1100', 16));
+    return t;
+  }
+
+  function mSound(a) {
+    var r = ((a - parseInt('0xac00', 16)) / 28) % 21;
+    var t = String.fromCharCode(r + parseInt('0x1161', 16));
+    return t;
+  }
+
+  function tSound(a) {
+    var r = (a - parseInt('0xac00', 16)) % 28;
+    if (r == 0) {
+      var t = ""
+    } else {
+      var t = String.fromCharCode(r + parseInt('0x11A8') - 1);
+    }
+    return t;
+  }
+  var chars = new Array();
+  v = new Array();
+  for (var i = 0; i < text.length; i++) {
+    chars[i] = text.charCodeAt(i);
+    if (chars[i] >= 0xAC00 && chars[i] <= 0xD7A3) {
+      v.push(iSound(chars[i]));
+      v.push(mSound(chars[i]));
+      v.push(tSound(chars[i]));
+    } else {
+      v.push(String.fromCharCode(chars[i]));
+    }
+  }
+  return v;
+};
+
+function translate_b() {
+  var input = hangulToJaso_b($('#input_textarea').val());
+
+  for (var i = 0; i < v.length; i++) {
+    for (var j = 0; j < Object.keys(m.tranlyze.key_b).length; j++) {
+      for (var k = 0; k < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]].length; k++) {
+        if (input[i] == m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][0]) {
+          input[i] = m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][1];
+          break;
+        }
+      }
+    }
+  }
+
+  $('#output_textarea').text(input.join(""));
 }

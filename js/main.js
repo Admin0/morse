@@ -1,4 +1,80 @@
+const TRANSLATE_MODE = 0;
+const ANALYZE_MODE = 1;
+
+const CODE_MORSE = 0;
+const CODE_BRAILLE = 1;
+
+const LANG_AUTO = 0;
+const LANG_EN = 1;
+const LANG_JA = 2;
+const LANG_RU = 3;
+const LANG_GR = 4;
+const LANG_HE = 5;
+const LANG_AR = 6;
+const LANG_PR = 7;
+const LANG_KO = 8;
+const LANG_TH = 9;
+
 const m = {
+  tranlyze: {
+    key: {},
+    list: {}
+  },
+  type: {
+    code: CODE_MORSE,
+    lang: LANG_AUTO,
+    toggle: function() { // this method for change type (toggle)
+      if (type == TRANSLATE_MODE) {
+        type = ANALYZE_MODE;
+        $('body').addClass('analyze');
+        $('body').removeClass('translate');
+
+        $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', 'tel'));
+
+        if ($('.selected.auto').length != 0) {
+          $('.auto').removeClass('selected');
+          if (lang == LANG_EN) {
+            $('.en').addClass('selected');
+          } else if (lang == LANG_JA) {
+            $('.ja').addClass('selected');
+          } else if (lang == LANG_KO) {
+            $('.ko').addClass('selected');
+          } else if (lang == LANG_RU) {
+            $('.ru').addClass('selected');
+          } else if (lang == LANG_GR) {
+            $('.gr').addClass('selected');
+          } else if (lang == LANG_TH) {
+            $('.th').addClass('selected');
+          } else if (lang == LANG_HE) {
+            $('.he').addClass('selected');
+          } else if (lang == LANG_AR) {
+            $('.ar').addClass('selected');
+          } else if (lang == LANG_PR) {
+            $('.pr').addClass('selected');
+          } else {
+            $('.en').addClass('selected');
+          }
+        }
+      } else if (type == ANALYZE_MODE) {
+        type = TRANSLATE_MODE;
+        $('body').removeClass('analyze');
+        $('body').addClass('translate');
+
+        $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
+
+        if ($('.lang_box.code .selected.auto').length == 0) {
+          $('.lang_box.code .selected, #card_lang .selected').removeClass('selected');
+          $('.lang_box.code .auto, #card_lang .auto').addClass('selected');
+        }
+      }
+      $('.lang_box.lang .card_header').removeClass('selected');
+      if (this.code == CODE_MORSE) $('.morse').addClass('selected');
+      if (this.code == CODE_BRAILLE) $('.braille').addClass('selected');
+      // setTimeout(function() {
+      //   $('.lang_box.lang .card_header').addClass('selected');
+      // }, 0);
+    }
+  },
   history: {
     set: function(standalone) {
       for (var i = 0; i < 50; i++) {
@@ -38,114 +114,29 @@ const m = {
   }
 }
 
-const TRANSLATE_MODE = 0;
-const ANALYZE_MODE = 1;
-
-const LANG_AUTO = 0;
-const LANG_EN = 1;
-const LANG_JA = 2;
-const LANG_RU = 3;
-const LANG_GR = 4;
-const LANG_HE = 5;
-const LANG_AR = 6;
-const LANG_PR = 7;
-const LANG_KO = 8;
-const LANG_TH = 9;
-
 var lang = window.localStorage["lang"] || LANG_EN;
 
 function tranlyze(type) {
-  if (type == TRANSLATE_MODE) {
-    translate("·", "–");
-  } else if (type == ANALYZE_MODE) {
-    $('#output_textarea').text(analyze(lang));
+  if (m.type.code == CODE_MORSE) {
+    if (type == TRANSLATE_MODE) {
+      translate("·", "–");
+    } else if (type == ANALYZE_MODE) {
+      $('#output_textarea').text(analyze(lang));
+    }
+  } else if (m.type.code == CODE_BRAILLE) {
+    if (type == TRANSLATE_MODE) {
+      translate_b();
+    } else if (type == ANALYZE_MODE) {
+      $('#output_textarea').text(analyze_b(lang));
+    }
   }
+
   if ($(input_textarea).val() != "") {
     $('#output_menu, #input_del').removeClass('hide');
     $('#output').addClass('on');
   } else {
     $('#output_menu, #input_del').addClass('hide');
     $('#output').removeClass('on');
-  }
-}
-
-function mode() { // this method for change type (toggle)
-
-  if (type == TRANSLATE_MODE) {
-    type = ANALYZE_MODE;
-    $('body').addClass('analyze');
-    $('body').removeClass('translate');
-
-    $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', 'tel'));
-
-    $('.lang_box.lang .card_header').removeClass('selected');
-    setTimeout(function() {
-      $('.lang_box.lang .card_header').addClass('selected');
-    }, 0);
-
-    if ($('.selected.auto').length != 0) {
-      $('.auto').removeClass('selected');
-      if (lang == LANG_EN) {
-        $('.en').addClass('selected');
-      } else if (lang == LANG_JA) {
-        $('.ja').addClass('selected');
-      } else if (lang == LANG_KO) {
-        $('.ko').addClass('selected');
-      } else if (lang == LANG_RU) {
-        $('.ru').addClass('selected');
-      } else if (lang == LANG_GR) {
-        $('.gr').addClass('selected');
-      } else if (lang == LANG_TH) {
-        $('.th').addClass('selected');
-      } else if (lang == LANG_HE) {
-        $('.he').addClass('selected');
-      } else if (lang == LANG_AR) {
-        $('.ar').addClass('selected');
-      } else if (lang == LANG_PR) {
-        $('.pr').addClass('selected');
-      } else {
-        $('.en').addClass('selected');
-      }
-    }
-    // if ($('.lang_box.code .selected.auto').length != 0) {
-    //   $('.lang_box.code .auto').removeClass('selected');
-    //   if (lang == LANG_EN) {
-    //     $('.lang_box.code .en').addClass('selected');
-    //   } else if (lang == LANG_JA) {
-    //     $('.lang_box.code .ja').addClass('selected');
-    //   } else if (lang == LANG_KO) {
-    //     $('.lang_box.code .ko').addClass('selected');
-    //   } else if (lang == LANG_RU) {
-    //     $('.lang_box.code .ru').addClass('selected');
-    //   } else if (lang == LANG_GR) {
-    //     $('.lang_box.code .gr').addClass('selected');
-    //   } else if (lang == LANG_HE) {
-    //     $('.lang_box.code .he').addClass('selected');
-    //   } else if (lang == LANG_AR) {
-    //     $('.lang_box.code .ar').addClass('selected');
-    //   } else if (lang == LANG_PR) {
-    //     $('.lang_box.code .pr').addClass('selected');
-    //   } else {
-    //     $('.lang_box.code .en').addClass('selected');
-    //   }
-    // }
-  } else if (type == ANALYZE_MODE) {
-    type = TRANSLATE_MODE;
-    $('body').removeClass('analyze');
-    $('body').addClass('translate');
-
-    $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
-
-    $('.lang_box.lang .card_header').removeClass('selected');
-    setTimeout(function() {
-      $('.lang_box.lang .card_header').addClass('selected');
-    }, 0);
-
-    if ($('.lang_box.code .selected.auto').length == 0) {
-      $('.lang_box.code .selected, #card_lang .selected').removeClass('selected');
-      $('.lang_box.code .auto, #card_lang .auto').addClass('selected');
-    }
-
   }
 }
 
@@ -164,7 +155,7 @@ function initialize() {
 
   $('#re_anaylze').on('change', function() {
     $('#input_textarea').val($('#output_textarea').text());
-    mode();
+    m.type.toggle();
     tranlyze(type);
   });
 
@@ -224,6 +215,18 @@ function initialize() {
     $('#card_lang').removeClass('on');
 
     // all after
+    tranlyze(type);
+  });
+  $('.lang_box.lang .card_header, .card_lang').on('click', function() {
+    $('.lang_box.lang .card_header').removeClass('selected');
+    if ($(this).hasClass('morse')) {
+      m.type.code = CODE_MORSE;
+      $('.card_header.morse').addClass('selected');
+    } else if ($(this).hasClass('braille')) {
+      m.type.code = CODE_BRAILLE;
+      $('.card_header.braille').addClass('selected');
+    }
+
     tranlyze(type);
   });
 
