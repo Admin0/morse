@@ -192,16 +192,20 @@ function analyze_b(lang) {
 
   function assemble() {
     output = output
-      .replace(/ᅮᅢ/g, "ᅱ")
+      .replace(/⠀/g, " ")
+      .replace(/ᇁ\s/g, ". ")
+      .replace(/ᄉᇀ/g, "\'") // 문장부호
+      .replace(/ᇂᆺ/g, "\'")
+      .replace(/ᅮᅢ/g, "ᅱ") // 이중모음
       .replace(/ᅣᅢ/g, "ᅤ")
       .replace(/ᅯᅢ/g, "ᅰ")
       .replace(/ᅪᅢ/g, "ᅫ")
-      .replace(/ᄀᄀ/g, "ᄁ")
+      .replace(/ᄀᄀ/g, "ᄁ") // 된소리 초성
       .replace(/ᄃᄃ/g, "ᄄ")
       .replace(/ᄇᄇ/g, "ᄈ")
       .replace(/ᄉᄉ/g, "ᄊ")
       .replace(/ᄌᄌ/g, "ᄍ")
-      .replace(/ᆨᆨ/g, "ᆩ")
+      .replace(/ᆨᆨ/g, "ᆩ") // 받침 조합
       .replace(/ᆨᆺ/g, "ᆪ")
       .replace(/ᆫᆽ/g, "ᆬ")
       .replace(/ᆫᇂ/g, "ᆭ")
@@ -212,7 +216,10 @@ function analyze_b(lang) {
       .replace(/ᆯᇀ/g, "ᆴ")
       .replace(/ᆯᇁ/g, "ᆵ")
       .replace(/ᆯᇂ/g, "ᆶ")
-      .replace(/ᆺᆺ/g, "ᆻ");
+      .replace(/ᆺᆺ/g, "ᆻ")
+      .replace(/([\u1100-\u115E])([^\u1161-\u11A7])/g, "$1ᅡ$2") // ㅏ 생략된거 복원
+      .replace(/([^\u1100-\u115E])([\u1161-\u11A7])/g, "$1ᄋ$2") // 초성 없는거에 ㅇ 붙임
+      .replace(/([\u1161-\u11A7])ᅨ/g, "$1ᆻ"); // 쌍시옷 받침 약자
   }
 
   if (lang == LANG_KO) {

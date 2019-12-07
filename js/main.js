@@ -227,10 +227,12 @@ function initialize() {
     $('.lang_box.lang .card_header').removeClass('selected');
     if ($(this).hasClass('morse')) {
       m.type.code = CODE_MORSE;
+      window.localStorage.type_code = CODE_MORSE;
       $('.card_header.morse').addClass('selected');
       $('body').removeClass('braille');
     } else if ($(this).hasClass('braille')) {
       m.type.code = CODE_BRAILLE;
+      window.localStorage.type_code = CODE_BRAILLE;
       $('body').addClass('braille');
       $('.card_header.braille').addClass('selected');
     }
