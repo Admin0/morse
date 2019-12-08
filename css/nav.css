@@ -25,8 +25,7 @@
 
 nav {
   position: fixed;
-  z-index: 31;
-  /* 구글 광고 위에 표시되게 하려고 */
+  z-index: 5;
   top: 0;
   left: 0;
   width: 300px;
@@ -494,7 +493,7 @@ nav.fold #nav h2 a {
 /* ------------------------------------------------------------------- */
 @media handheld, only screen and (max-device-width:480px), only screen and (max-device-width:320px), screen and (max-width:1080px) {
   nav {
-    z-index: 6;
+    z-index: 35;
     box-shadow: none;
     padding-top: 0;
     height: 100%
@@ -521,7 +520,7 @@ nav.fold #nav h2 a {
   }
 
   #setting {
-    z-index: 6;
+    z-index: 35;
     top: 0 !important;
     left: 0 !important;
     padding: 0 !important;
@@ -532,7 +531,7 @@ nav.fold #nav h2 a {
   }
 
   #setting_bg.on {
-    /* z-index: 6; */
+    z-index: 31;
   }
 
   #setting .header {
