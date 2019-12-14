@@ -32,23 +32,28 @@ const i18n = {
     }
   },
   message: { // 메세지 로딩을 위해 추가로 만든 코드
-    list: [],
+    list: {
+      quote: [],
+      source: []
+    },
     i: null,
     set: function(reset) {
-      if ($('#message').text() == "MESSAGE" || reset) {
+      if ($('#message .quote').text() == "MESSAGE" || reset) {
         for (var i = 0; i < 99; i++) {
           var m = $.i18n('message_' + i);
+          var s = $.i18n('message_' + i + '_source');
           if (m != 'message_' + i) {
             // console.log('ddd: ' + i);
-            this.list[i] = m;
+            this.list.quote[i] = m;
+            this.list.source[i] = s;
           } else {
             break;
           }
         }
-        this.i = this.i || Math.floor(Math.random() * (this.list.length));
-        $('#message')
-          .html(this.list[this.i])
-          .removeClass('hide');
+        this.i = this.i || Math.floor(Math.random() * (this.list.quote.length));
+        $('#message .quote').html(this.list.quote[this.i])
+        $('#message .source').html(this.list.source[this.i])
+        $('#message').removeClass('hide');
       }
     }
   }
