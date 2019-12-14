@@ -8,7 +8,7 @@
   visibility: hidden;
   opacity: 0;
   transition: .3s;
-  column-count: 4;
+  column-count: 5;
   grid-column-gap: 0;
   /* column-fill: auto; */
   height: calc(100% - 48px - 3em);

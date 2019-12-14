@@ -3,6 +3,25 @@
  * Original Code by JinH (https://jinh.kr) *
  *******************************************/
 
+m.tranlyze.t = {
+  lang: {
+    count: {
+      kr: 0,
+      en: 0,
+      jp: 0,
+      get: function() {
+        if (this.kr > this.en && this.kr > this.jp) {
+          m.tranlyze.t.lang.val = "ko";
+        } else if (this.jp > this.en && this.jp > this.kr) {
+          m.tranlyze.t.lang.val = "ja";
+        } else {
+          m.tranlyze.t.lang.val = "en";
+        }
+      }
+    }
+  }
+};
+
 var v;
 
 var hangulToJaso = function(text) {
@@ -53,6 +72,26 @@ var hangulToJaso = function(text) {
 ///////////////////////////////////////////////
 
 function translate(dit, dah) {
+
+  // m.tranlyze.t = {
+  //   lang: {
+  //     count: {
+  //       kr: 0,
+  //       en: 0,
+  //       jp: 0,
+  //       get: function() {
+  //         if (this.kr > this.en && this.kr > this.jp) {
+  //           m.tranlyze.t.lang.val = "ko";
+  //         } else if (this.jp > this.en && this.jp > this.kr) {
+  //           m.tranlyze.t.lang.val = "ja";
+  //         } else {
+  //           m.tranlyze.t.lang.val = "en";
+  //         }
+  //       }
+  //     }
+  //   }
+  // };
+
   var input = hangulToJaso($('#input_textarea').val());
   /*		var input = new Array();
   	for (i=0; i<$('#input_textarea').value.length; i++) {
@@ -73,6 +112,7 @@ function translate(dit, dah) {
       for (var k = 0; k < m.tranlyze.key[Object.keys(m.tranlyze.key)[j]].length; k++) {
         if (input[i] == m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0]) {
           input[i] = m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][1];
+          m.tranlyze.t.lang.count[Object.keys(m.tranlyze.key)[j]]++;
           break;
         }
       }
@@ -87,8 +127,10 @@ function translate(dit, dah) {
   output = output.split("·").join(dit + " ");
   output = output.split("–").join(dah + " ");
 
-  //$('#output').text(output);//for div element
-  $('#output_textarea').text(output); //for textarea element
+  m.tranlyze.t.lang.count.get();
+  $(".lang_box.code .detected").text(" - " + $.i18n("lang_"+m.tranlyze.t.lang.val));
+
+  $('#output_textarea').text(output);
 }
 
 var hangulToJaso_b = function(text) {
@@ -130,8 +172,27 @@ var hangulToJaso_b = function(text) {
 };
 
 function translate_b() {
-  var input = hangulToJaso_b($('#input_textarea').val());
 
+  // m.tranlyze.t = {
+  //   lang: {
+  //     count: {
+  //       kr: 0,
+  //       en: 0,
+  //       jp: 0,
+  //       get: function() {
+  //         if (this.kr > this.en && this.kr > this.jp) {
+  //           m.tranlyze.t.lang.val = "ko";
+  //         } else if (this.jp > this.en && this.jp > this.kr) {
+  //           m.tranlyze.t.lang.val = "ja";
+  //         } else {
+  //           m.tranlyze.t.lang.val = "en";
+  //         }
+  //       }
+  //     }
+  //   }
+  // };
+
+  var input = hangulToJaso_b($('#input_textarea').val());
   for (var i = 0; i < v.length; i++) {
 
     if (input[i].charCodeAt() >= 0xFF01 && input[i].charCodeAt() <= 0xFF5E) { // "FF01:！" ~ "FF5E:～"에 속한 글자면 반각기호로
@@ -146,6 +207,8 @@ function translate_b() {
       for (var k = 0; k < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]].length; k++) {
         if (input[i] == m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][0]) {
           input[i] = m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][1];
+
+          m.tranlyze.t.lang.count[Object.keys(m.tranlyze.key_b)[j]]++;
           // if (Object.keys(m.tranlyze.key_b)[j] == "kr") {
           //   언어별 분기 처리의 예시
           // }
@@ -155,5 +218,11 @@ function translate_b() {
     }
   }
 
+  // 언어 인식
+  m.tranlyze.t.lang.count.get();
+  $(".lang_box.code .detected").text(" - " + $.i18n("lang_"+m.tranlyze.t.lang.val));
+  // console.log(m.tranlyze.t.lang.val);
+
+  // 결과 출력
   $('#output_textarea').text(input.join(""));
 }

@@ -530,7 +530,7 @@ nav.fold #nav h2 a {
     border-radius: 0 !important;
   }
 
-  #setting_bg.on {
+  #nav_bg, #setting_bg {
     z-index: 31;
   }
 

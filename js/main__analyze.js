@@ -118,61 +118,6 @@ function analyze(lang) {
     }
   }
 
-  function hiragana_jp(input) {
-    var output = input.split("");
-    for (var i = 0; i < output.length; i++) {
-      if (output[i].match(new RegExp("[\u30a1-\u30f6]")) != null) { //ァ-ヶ
-        output[i] = String.fromCharCode(output[i].charCodeAt(0) - 0x0060);
-      }
-    }
-    return output.join("");
-  }
-
-  function improve_jp(input) {
-    var text = input;
-    text = text.replace(new RegExp("(?<=[ア-ヿ])[ツ](?=[ア-ヿ])(?!([ア-ヿ][\u3099])|[ア-オヤユヨ]|\s)"), "ッ"); //촉음
-    text = text //요음
-      .replace(new RegExp("(?<=([キシチニヒミリ])|([キシチヒ][\u3099]))[ヤ]"), "ャ")
-      .replace(new RegExp("(?<=([キシチニヒミリ])|([キシチヒ][\u3099]))[ユ]"), "ュ")
-      .replace(new RegExp("(?<=([キシチニヒミリ])|([キシチヒ][\u3099]))[ヨ]"), "ョ");
-    return text;
-  }
-
-  function assemble_jp(input) { //why assemble? : 정작 일본어 환경에서 u3099이 병신이 되는 문제가 발생하기 때문
-    const Dakuten = new Array(
-      0x304B, 0x304D, 0x304F, 0x3051, 0x3053, //히라가나 카키쿠케코
-      0x3055, 0x3057, 0x3059, 0x305B, 0x305D, //히라가나 사
-      0x305F, 0x3061, 0x3063, 0x3066, 0x3068, //히라가나 타
-      0x306F, 0x3072, 0x3075, 0x3078, 0x307B, //히라가나 하
-      0x30AB, 0x30AD, 0x30AF, 0x30B1, 0x30B3, //카타카나 카키쿠케코
-      0x30B5, 0x30B7, 0x30B9, 0x30BB, 0x30BD, //카타카나 사
-      0x30BF, 0x30C1, 0x30C3, 0x30C6, 0x30C8, //카타카나 타
-      0x30CF, 0x30D2, 0x30D5, 0x30D8, 0x30DB, //카타카나 하
-      0x309E, 0x30FD //나머지}
-    );
-    const Handakuten = new Array(
-      0x306F, 0x3072, 0x3075, 0x3078, 0x307B, //히라가나 하히후헤호
-      0x30CF, 0x30D2, 0x30D5, 0x30D8, 0x30DB //카타카나 하히후헤호
-    );
-
-    var text = input;
-    text = text
-      .replace(new RegExp("[ウ][゛\u3099]"), "ヴ")
-      .replace(new RegExp("[ワ][゛\u3099]"), "ヷ")
-      .replace(new RegExp("[ヰ][゛\u3099]"), "ヸ")
-      .replace(new RegExp("[ヱ][゛\u3099]"), "ヹ")
-      .replace(new RegExp("[ヲ][゛\u3099]"), "ヺ");
-    Dakuten.forEach( //탁점
-      function(item, index) {
-        text = text.replace(new RegExp(String.fromCharCode(item) + "[゛\u3099]"), String.fromCharCode(item + 0x0001));
-      });
-    Handakuten.forEach( //반탁점
-      function(item, index) {
-        text = text.replace(new RegExp(String.fromCharCode(item) + "[゜\u309A]"), String.fromCharCode(item + 0x0002));
-      });
-    return text;
-  }
-
   if (lang == LANG_KO) {
     input = analyze_sub(m.tranlyze.key.kr);
     text = "";
@@ -223,6 +168,64 @@ function analyze(lang) {
 
   return output;
 }
+
+function hiragana_jp(input) {
+  var output = input.split("");
+  for (var i = 0; i < output.length; i++) {
+    if (output[i].match(new RegExp("[\u30a1-\u30f6]")) != null) { //ァ-ヶ
+      output[i] = String.fromCharCode(output[i].charCodeAt(0) - 0x0060);
+    }
+  }
+  return output.join("");
+}
+
+function improve_jp(input) {
+  var text = input;
+  text = text.replace(new RegExp("(?<=[ア-ヿ])[ツ](?=[ア-ヿ])(?!([ア-ヿ][\u3099])|[ア-オヤユヨ]|\s)"), "ッ"); //촉음
+  text = text //요음
+    .replace(new RegExp("(?<=([キシチニヒミリ])|([キシチヒ][\u3099]))[ヤ]"), "ャ")
+    .replace(new RegExp("(?<=([キシチニヒミリ])|([キシチヒ][\u3099]))[ユ]"), "ュ")
+    .replace(new RegExp("(?<=([キシチニヒミリ])|([キシチヒ][\u3099]))[ヨ]"), "ョ");
+  return text;
+}
+
+function assemble_jp(input) { //why assemble? : 정작 일본어 환경에서 u3099이 병신이 되는 문제가 발생하기 때문
+  const Dakuten = new Array(
+    0x304B, 0x304D, 0x304F, 0x3051, 0x3053, //히라가나 카키쿠케코
+    0x3055, 0x3057, 0x3059, 0x305B, 0x305D, //히라가나 사
+    0x305F, 0x3061, 0x3063, 0x3066, 0x3068, //히라가나 타
+    0x306F, 0x3072, 0x3075, 0x3078, 0x307B, //히라가나 하
+    0x30AB, 0x30AD, 0x30AF, 0x30B1, 0x30B3, //카타카나 카키쿠케코
+    0x30B5, 0x30B7, 0x30B9, 0x30BB, 0x30BD, //카타카나 사
+    0x30BF, 0x30C1, 0x30C3, 0x30C6, 0x30C8, //카타카나 타
+    0x30CF, 0x30D2, 0x30D5, 0x30D8, 0x30DB, //카타카나 하
+    0x309E, 0x30FD //나머지}
+  );
+  const Handakuten = new Array(
+    0x306F, 0x3072, 0x3075, 0x3078, 0x307B, //히라가나 하히후헤호
+    0x30CF, 0x30D2, 0x30D5, 0x30D8, 0x30DB //카타카나 하히후헤호
+  );
+
+  var text = input;
+  text = text
+    .replace(new RegExp("[ウ][゛\u3099]"), "ヴ")
+    .replace(new RegExp("[ワ][゛\u3099]"), "ヷ")
+    .replace(new RegExp("[ヰ][゛\u3099]"), "ヸ")
+    .replace(new RegExp("[ヱ][゛\u3099]"), "ヹ")
+    .replace(new RegExp("[ヲ][゛\u3099]"), "ヺ");
+  Dakuten.forEach( //탁점
+    function(item, index) {
+      text = text.replace(new RegExp(String.fromCharCode(item) + "[゛\u3099]"), String.fromCharCode(item + 0x0001));
+    });
+  Handakuten.forEach( //반탁점
+    function(item, index) {
+      text = text.replace(new RegExp(String.fromCharCode(item) + "[゜\u309A]"), String.fromCharCode(item + 0x0002));
+    });
+  return text;
+}
+
+
+// BRAILLE
 
 function analyze_b(lang) {
   var j, k, output = '';
@@ -303,6 +306,8 @@ function analyze_b(lang) {
     input = analyze_sub(m.tranlyze.key_b.kr);
   } else if (lang == LANG_EN) {
     input = analyze_sub(m.tranlyze.key_b.en);
+  } else if (lang == LANG_JA) {
+    input = analyze_sub(m.tranlyze.key_b.jp);
   }
   input = analyze_sub(m.tranlyze.key_b.nm);
 
@@ -311,6 +316,13 @@ function analyze_b(lang) {
     .replace(/\//g, " ");
 
   if (lang == LANG_KO) assemble()
+  
+  if (lang == LANG_JA) {
+    output = improve_jp(output);
+    output = hiragana_jp(output);
+    output = assemble_jp(output);
+  }
 
+  $(".lang_box.code .detected").text("");
   return output;
 }
