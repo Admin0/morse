@@ -294,12 +294,12 @@ function analyze_b(lang) {
       .replace(/ᆯᇂ/g, "ᆶ")
       .replace(/ᆸᆺ/g, "ᆹ")
       .replace(/ᆺᆺ/g, "ᆻ")
-      .replace(/([\u1161-\u11A7])ᅨ/g, "$1ᆻ")
-      .replace(/([\u1100-\u115E])(?=[^\u1161-\u11A7])/g, "$1ᅡ") // ㅏ 생략된거 복원
-      .replace(/(?<=[^\u1100-\u115E])([\u1161-\u11A7])/g, "ᄋ$1") // 초성 없는거에 ㅇ 붙임
-      .replace(/(^[\u1161-\u11A7])/g, "ᄋ$1") // 중성 먼저 시작하면 ㅇ 붙임
+      .replace(/([ᅡ-ᅵ])ᅨ/g, "$1ᆻ")
+      .replace(/([ᄀ-ᄒ])((?=[^ᅡ-ᅵ])|$)/g, "$1ᅡ") // ㅏ 생략된거 복원 [ᄀ-ᄒ](?!\w)
+      .replace(/(?<=[^ᄀ-ᄒ])([ᅡ-ᅵ])/g, "ᄋ$1") // 초성 없는거에 ㅇ 붙임
+      .replace(/(^[ᅡ-ᅵ])/g, "ᄋ$1") // 중성 먼저 시작하면 ㅇ 붙임
       .replace(/([ᄉᄊᄌᄍᄎ])ᅧ/g, "$1ᅥ") // 경우에 따라 ㅕ, ㅓ 변환
-      .replace(/([\u1161-\u11A7])ᅨ/g, "$1ᆻ"); // 쌍시옷 받침 약자
+      .replace(/([ᅡ-ᅵ])ᅨ/g, "$1ᆻ"); // 쌍시옷 받침 약자
   }
 
   if (lang == LANG_KO) {
@@ -316,7 +316,7 @@ function analyze_b(lang) {
     .replace(/\//g, " ");
 
   if (lang == LANG_KO) assemble()
-  
+
   if (lang == LANG_JA) {
     output = improve_jp(output);
     output = hiragana_jp(output);

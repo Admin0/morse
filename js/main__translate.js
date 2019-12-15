@@ -128,7 +128,7 @@ function translate(dit, dah) {
   output = output.split("–").join(dah + " ");
 
   m.tranlyze.t.lang.count.get();
-  $(".lang_box.code .detected").text(" - " + $.i18n("lang_"+m.tranlyze.t.lang.val));
+  $(".lang_box.code .detected").text(" - " + $.i18n("lang_" + m.tranlyze.t.lang.val));
 
   $('#output_textarea').text(output);
 }
@@ -206,12 +206,18 @@ function translate_b() {
     for (var j = 0; j < Object.keys(m.tranlyze.key_b).length; j++) {
       for (var k = 0; k < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]].length; k++) {
         if (input[i] == m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][0]) {
-          input[i] = m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][1];
 
-          m.tranlyze.t.lang.count[Object.keys(m.tranlyze.key_b)[j]]++;
-          // if (Object.keys(m.tranlyze.key_b)[j] == "kr") {
-          //   언어별 분기 처리의 예시
-          // }
+          if (Object.keys(m.tranlyze.key_b)[j] == "kr") {
+            // console.log(Object.keys(m.tranlyze.key_b)[j]);
+            // console.log(input[i - 1]);
+            if (input[i].match(/[ᄀ-ᄊᄌ-ᄒ]/) != null && input[i + 1] == "ᅡ") {
+              input[i + 1] = "";
+            }
+          }
+
+          input[i] = m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][1]; // main translation
+
+          m.tranlyze.t.lang.count[Object.keys(m.tranlyze.key_b)[j]]++; // add counter
           break;
         }
       }
@@ -220,7 +226,7 @@ function translate_b() {
 
   // 언어 인식
   m.tranlyze.t.lang.count.get();
-  $(".lang_box.code .detected").text(" - " + $.i18n("lang_"+m.tranlyze.t.lang.val));
+  $(".lang_box.code .detected").text(" - " + $.i18n("lang_" + m.tranlyze.t.lang.val));
   // console.log(m.tranlyze.t.lang.val);
 
   // 결과 출력
