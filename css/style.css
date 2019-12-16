@@ -245,6 +245,10 @@ body.analyze #card_header .lang_box.code {
   color: #4284f3;
 }
 
+.braille .card_header.selected {
+  color: #f44336;
+}
+
 .card_header.selected::after {
   position: absolute;
   top: 0;
@@ -258,6 +262,10 @@ body.analyze #card_header .lang_box.code {
 
 .analyze .card_header.selected::after {
   border-bottom: solid 3px #4284f3;
+}
+
+.braille .card_header.selected::after {
+  border-bottom: solid 3px #f44336;
 }
 
 .lang_box.code .card_header:nth-of-type(n+5) {
@@ -376,8 +384,13 @@ body.analyze #card_header .lang_box.code {
 #output_menu i:hover {
   color: #00C853;
 }
+
 .analyze #output_menu i:hover {
   color: #4284f3;
+}
+
+.braille #output_menu i:hover {
+  color: #f44336;
 }
 
 .placeholder {

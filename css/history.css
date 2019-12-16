@@ -42,6 +42,10 @@
   padding: .5em 1em;
 }
 
+#history_wrap #history .item:nth-child(n+5) {
+  display: none;
+}
+
 #history_wrap #history .item:hover {
   /* background: #eee; */
   box-shadow: 0 5px 11px rgba(0, 0, 0, .2);
@@ -55,10 +59,15 @@
   margin: .5em 0;
 }
 
+#history_wrap .more {
+  text-align: center;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1280px) {
   #history_wrap {
     box-shadow: none;
-    border:none;
+    border: none;
     border-radius: 0;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;

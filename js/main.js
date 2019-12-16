@@ -71,10 +71,12 @@ const m = {
       if (this.code == CODE_MORSE) {
         $('body').removeClass('braille');
         $('.morse').addClass('selected');
+        $('link[rel="icon"]').attr('href', "image/favicon.ico");
       }
       if (this.code == CODE_BRAILLE) {
         $('.braille').addClass('selected');
         $('body').addClass('braille');
+        $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
       }
       // setTimeout(function() {
       //   $('.lang_box.lang .card_header').addClass('selected');
@@ -230,10 +232,12 @@ function initialize() {
       window.localStorage.type_code = CODE_MORSE;
       $('.card_header.morse').addClass('selected');
       $('body').removeClass('braille');
+      $('link[rel="icon"]').attr('href', "image/favicon.ico");
     } else if ($(this).hasClass('braille')) {
       m.type.code = CODE_BRAILLE;
       window.localStorage.type_code = CODE_BRAILLE;
       $('body').addClass('braille');
+      $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
       $('.card_header.braille').addClass('selected');
     }
 

@@ -50,7 +50,7 @@
     display: none;
   }
 
-  #lang_list{
+  #lang_list {
     float: right;
   }
 
@@ -86,6 +86,10 @@
 
   .analyze #output {
     background: #3079ed !important;
+  }
+
+  .braille #output {
+    background: #f44336 !important;
   }
 
   #output.on {
