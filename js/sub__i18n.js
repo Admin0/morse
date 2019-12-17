@@ -19,7 +19,7 @@ const i18n = {
     $('[data-i18n]').i18n();
 
     $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
-    $("meta[name='description']").attr("content", $.i18n('info__descript') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
+    $("meta[name='description']").attr("content", $.i18n('app_promotion') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
 
     // module(ex nav.html) 안에 있는 요소 중 하나를 체크해야함.
     if ($('#i18n_checker').text() == '#morse' || $('#i18n_checker').length == 0) {

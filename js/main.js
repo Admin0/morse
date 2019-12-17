@@ -282,6 +282,7 @@ function initialize_langDropDown() {
 $(function() {
   initialize();
   initialize_langDropDown();
+  url_check();
   detect_input();
   title_tooltip();
   load_modules();
