@@ -72,6 +72,10 @@
   padding-left: calc(20px + 1em);
 }
 
+body.braille #card_lang .card_lang:not(.braille) {
+  display: none;
+}
+
 @media only screen and (max-width: 1280px) {
   #card_lang {
     border-radius: 0;

@@ -23,9 +23,78 @@ const m = {
   type: {
     code: CODE_MORSE,
     lang: LANG_AUTO,
-    toggle: function() { // this method for change type (toggle)
-      if (type == TRANSLATE_MODE) {
-        type = ANALYZE_MODE;
+    mode: TRANSLATE_MODE
+  },
+  toggle: {
+    code: function(code) {
+      if (code == CODE_MORSE) {
+        m.type.code = CODE_MORSE;
+      } else if (code == CODE_BRAILLE) {
+        m.type.code = CODE_BRAILLE;
+      }
+      $('.lang_box.lang .card_header').removeClass('selected');
+      if (m.type.code == CODE_MORSE) {
+        $('body').removeClass('braille');
+        $('.lang_box .morse').addClass('selected');
+        $('link[rel="icon"]').attr('href', "image/favicon.ico");
+        // history.pushState(null, null, "../morse/");
+      }
+      if (m.type.code == CODE_BRAILLE) {
+        $('.lang_box .braille').addClass('selected');
+        $('body').addClass('braille');
+        $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
+        // history.pushState(null, null, "../braille/");
+      }
+    },
+    lang: function(target) {
+      var lang = LANG_EN;
+      $('.lang_box.code .card_header, .card_lang').removeClass('selected');
+      if ($(target).hasClass('auto')) {
+        lang = LANG_EN; //TODO
+        $('.card_header.en, .card_lang.en').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
+      } else if ($(target).hasClass('ko')) {
+        lang = LANG_KO;
+        $('.card_header.ko, .card_lang.ko').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.ko').insertAfter('.card_header.auto');
+      } else if ($(target).hasClass('en')) {
+        lang = LANG_EN;
+        $('.card_header.en, .card_lang.en').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
+      } else if ($(target).hasClass('ja')) {
+        lang = LANG_JA;
+        $('.card_header.ja, .card_lang.ja').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.ja').insertAfter('.card_header.auto');
+      } else if ($(target).hasClass('ru')) {
+        lang = LANG_RU;
+        $('.card_header.ru, .card_lang.ru').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.ru').insertAfter('.card_header.auto');
+      } else if ($(target).hasClass('gr')) {
+        lang = LANG_GR;
+        $('.card_header.gr, .card_lang.gr').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.gr').insertAfter('.card_header.auto');
+      } else if ($(target).hasClass('th')) {
+        lang = LANG_TH;
+        $('.card_header.th, .card_lang.th').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.th').insertAfter('.card_header.auto');
+      } else if ($(target).hasClass('he')) {
+        lang = LANG_HE;
+        $('.card_header.he, .card_lang.he').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.he').insertAfter('.card_header.auto');
+      } else if ($(target).hasClass('ar')) {
+        lang = LANG_AR;
+        $('.card_header.ar, .card_lang.ar').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.ar').insertAfter('.card_header.auto');
+      } else if ($(target).hasClass('pr')) {
+        lang = LANG_PR;
+        $('.card_header.pr, .card_lang.pr').addClass('selected');
+        if ($(target).hasClass('card_lang')) $('.card_header.pr').insertAfter('.card_header.auto');
+      }
+      m.type.lang = lang;
+    },
+    mode: function() {
+      if (m.type.mode == TRANSLATE_MODE) {
+        m.type.mode = ANALYZE_MODE;
         $('body').addClass('analyze');
         $('body').removeClass('translate');
 
@@ -33,30 +102,30 @@ const m = {
 
         if ($('.selected.auto').length != 0) {
           $('.auto').removeClass('selected');
-          if (lang == LANG_EN) {
+          if (m.type.lang == LANG_EN) {
             $('.en').addClass('selected');
-          } else if (lang == LANG_JA) {
+          } else if (m.type.lang == LANG_JA) {
             $('.ja').addClass('selected');
-          } else if (lang == LANG_KO) {
+          } else if (m.type.lang == LANG_KO) {
             $('.ko').addClass('selected');
-          } else if (lang == LANG_RU) {
+          } else if (m.type.lang == LANG_RU) {
             $('.ru').addClass('selected');
-          } else if (lang == LANG_GR) {
+          } else if (m.type.lang == LANG_GR) {
             $('.gr').addClass('selected');
-          } else if (lang == LANG_TH) {
+          } else if (m.type.lang == LANG_TH) {
             $('.th').addClass('selected');
-          } else if (lang == LANG_HE) {
+          } else if (m.type.lang == LANG_HE) {
             $('.he').addClass('selected');
-          } else if (lang == LANG_AR) {
+          } else if (m.type.lang == LANG_AR) {
             $('.ar').addClass('selected');
-          } else if (lang == LANG_PR) {
+          } else if (m.type.lang == LANG_PR) {
             $('.pr').addClass('selected');
           } else {
             $('.en').addClass('selected');
           }
         }
-      } else if (type == ANALYZE_MODE) {
-        type = TRANSLATE_MODE;
+      } else if (m.type.mode == ANALYZE_MODE) {
+        m.type.mode = TRANSLATE_MODE;
         $('body').removeClass('analyze');
         $('body').addClass('translate');
 
@@ -66,22 +135,11 @@ const m = {
           $('.lang_box.code .selected, #card_lang .selected').removeClass('selected');
           $('.lang_box.code .auto, #card_lang .auto').addClass('selected');
         }
+        $('#ck_lang_list').prop("checked", false);
+        $('#card_lang').removeClass('on');
       }
-      $('.lang_box.lang .card_header').removeClass('selected');
-      if (this.code == CODE_MORSE) {
-        $('body').removeClass('braille');
-        $('.morse').addClass('selected');
-        $('link[rel="icon"]').attr('href', "image/favicon.ico");
-      }
-      if (this.code == CODE_BRAILLE) {
-        $('.braille').addClass('selected');
-        $('body').addClass('braille');
-        $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
-      }
-      // setTimeout(function() {
-      //   $('.lang_box.lang .card_header').addClass('selected');
-      // }, 0);
-    }
+      this.code();
+    },
   },
   history: {
     set: function(standalone) {
@@ -101,7 +159,7 @@ const m = {
       $("#history").html("");
     },
     push: function() {
-      // var lang = $("#input_textarea").val();
+      // var m.type.lang = $("#input_textarea").val();
       var input = $("#input_textarea").val();
       var output = $("#output_textarea").text();
       if (input != "" && input != window.localStorage["history_input_0"]) {
@@ -122,20 +180,18 @@ const m = {
   }
 }
 
-var lang = window.localStorage["lang"] || LANG_EN;
-
 function tranlyze(type) {
   if (m.type.code == CODE_MORSE) {
     if (type == TRANSLATE_MODE) {
       translate("·", "–");
     } else if (type == ANALYZE_MODE) {
-      $('#output_textarea').text(analyze(lang));
+      $('#output_textarea').text(analyze(m.type.lang));
     }
   } else if (m.type.code == CODE_BRAILLE) {
     if (type == TRANSLATE_MODE) {
       translate_b();
     } else if (type == ANALYZE_MODE) {
-      $('#output_textarea').text(analyze_b(lang));
+      $('#output_textarea').text(analyze_b(m.type.lang));
     }
   }
 
@@ -152,7 +208,7 @@ function initialize() {
 
   function clear() {
     $('#input_textarea').val('');
-    tranlyze(type);
+    tranlyze(m.type.mode);
     $('#input_textarea').focus();
     console.log('all cleared');
   }
@@ -163,59 +219,17 @@ function initialize() {
 
   $('#re_anaylze').on('change', function() {
     $('#input_textarea').val($('#output_textarea').text());
-    m.type.toggle();
-    tranlyze(type);
+    m.toggle.mode();
+    tranlyze(m.type.mode);
   });
 
   $('#card_option input').on('change', function() {
-    tranlyze(type);
+    tranlyze(m.type.mode);
   });
 
   $('.lang_box.code .card_header, .card_lang').on('click', function() {
-    if (type == ANALYZE_MODE) {
-      $('.lang_box.code .card_header, .card_lang').removeClass('selected');
-      if ($(this).hasClass('auto')) {
-        lang = LANG_EN; //TODO
-        $('.card_header.en, .card_lang.en').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
-      } else if ($(this).hasClass('ko')) {
-        lang = LANG_KO;
-        $('.card_header.ko, .card_lang.ko').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.ko').insertAfter('.card_header.auto');
-      } else if ($(this).hasClass('en')) {
-        lang = LANG_EN;
-        $('.card_header.en, .card_lang.en').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.en').insertAfter('.card_header.auto');
-      } else if ($(this).hasClass('ja')) {
-        lang = LANG_JA;
-        $('.card_header.ja, .card_lang.ja').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.ja').insertAfter('.card_header.auto');
-      } else if ($(this).hasClass('ru')) {
-        lang = LANG_RU;
-        $('.card_header.ru, .card_lang.ru').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.ru').insertAfter('.card_header.auto');
-      } else if ($(this).hasClass('gr')) {
-        lang = LANG_GR;
-        $('.card_header.gr, .card_lang.gr').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.gr').insertAfter('.card_header.auto');
-      } else if ($(this).hasClass('th')) {
-        lang = LANG_TH;
-        $('.card_header.th, .card_lang.th').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.th').insertAfter('.card_header.auto');
-      } else if ($(this).hasClass('he')) {
-        lang = LANG_HE;
-        $('.card_header.he, .card_lang.he').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.he').insertAfter('.card_header.auto');
-      } else if ($(this).hasClass('ar')) {
-        lang = LANG_AR;
-        $('.card_header.ar, .card_lang.ar').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.ar').insertAfter('.card_header.auto');
-      } else if ($(this).hasClass('pr')) {
-        lang = LANG_PR;
-        $('.card_header.pr, .card_lang.pr').addClass('selected');
-        if ($(this).hasClass('card_lang')) $('.card_header.pr').insertAfter('.card_header.auto');
-      }
-      window.localStorage["lang"] = lang;
+    if (m.type.mode == ANALYZE_MODE) {
+      m.toggle.lang(this);
     }
 
     //card_body
@@ -223,36 +237,24 @@ function initialize() {
     $('#card_lang').removeClass('on');
 
     // all after
-    tranlyze(type);
+    tranlyze(m.type.mode);
   });
-  $('.lang_box.lang .card_header, .card_lang').on('click', function() {
-    $('.lang_box.lang .card_header').removeClass('selected');
-    if ($(this).hasClass('morse')) {
-      m.type.code = CODE_MORSE;
-      window.localStorage.type_code = CODE_MORSE;
-      $('.card_header.morse').addClass('selected');
-      $('body').removeClass('braille');
-      $('link[rel="icon"]').attr('href', "image/favicon.ico");
-    } else if ($(this).hasClass('braille')) {
-      m.type.code = CODE_BRAILLE;
-      window.localStorage.type_code = CODE_BRAILLE;
-      $('body').addClass('braille');
-      $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
-      $('.card_header.braille').addClass('selected');
+  $('.lang_box.lang .card_header').on('click', function() {
+    if (m.type.code == CODE_MORSE) {
+      m.toggle.code(CODE_BRAILLE);
+    } else if (m.type.code == CODE_BRAILLE) {
+      m.toggle.code(CODE_MORSE);
     }
-
-    tranlyze(type);
+    tranlyze(m.type.mode);
   });
 
   m.history.set(true);
 }
 
-var type = TRANSLATE_MODE;
-
 function detect_input() {
 
   $('#input_textarea').keyup(function() {
-    tranlyze(type);
+    tranlyze(m.type.mode);
   }).keydown(function(event) {
     if (event.which == 13) {
       // event.preventDefault();

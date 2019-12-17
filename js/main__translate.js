@@ -12,11 +12,19 @@ m.tranlyze.t = {
       get: function() {
         if (this.kr > this.en && this.kr > this.jp) {
           m.tranlyze.t.lang.val = "ko";
+          m.type.lang = LANG_KO;
         } else if (this.jp > this.en && this.jp > this.kr) {
           m.tranlyze.t.lang.val = "ja";
+          m.type.lang = LANG_JA;
         } else {
           m.tranlyze.t.lang.val = "en";
+          m.type.lang = LANG_EN;
         }
+      },
+      reset: function() {
+        this.kr = 0;
+        this.jp = 0;
+        this.en = 0;
       }
     }
   }
@@ -73,31 +81,13 @@ var hangulToJaso = function(text) {
 
 function translate(dit, dah) {
 
-  // m.tranlyze.t = {
-  //   lang: {
-  //     count: {
-  //       kr: 0,
-  //       en: 0,
-  //       jp: 0,
-  //       get: function() {
-  //         if (this.kr > this.en && this.kr > this.jp) {
-  //           m.tranlyze.t.lang.val = "ko";
-  //         } else if (this.jp > this.en && this.jp > this.kr) {
-  //           m.tranlyze.t.lang.val = "ja";
-  //         } else {
-  //           m.tranlyze.t.lang.val = "en";
-  //         }
-  //       }
-  //     }
-  //   }
-  // };
-
   var input = hangulToJaso($('#input_textarea').val());
   /*		var input = new Array();
   	for (i=0; i<$('#input_textarea').value.length; i++) {
   		input[i] = $('#input_textarea').value.charAt(i);
   	} */ //한글 입력 코드
 
+  m.tranlyze.t.lang.count.reset();
   for (var i = 0; i < v.length; i++) {
 
     if (input[i].charCodeAt() >= 0xFF01 && input[i].charCodeAt() <= 0xFF5E) { // "FF01:！" ~ "FF5E:～"에 속한 글자면 반각기호로
@@ -173,26 +163,8 @@ var hangulToJaso_b = function(text) {
 
 function translate_b() {
 
-  // m.tranlyze.t = {
-  //   lang: {
-  //     count: {
-  //       kr: 0,
-  //       en: 0,
-  //       jp: 0,
-  //       get: function() {
-  //         if (this.kr > this.en && this.kr > this.jp) {
-  //           m.tranlyze.t.lang.val = "ko";
-  //         } else if (this.jp > this.en && this.jp > this.kr) {
-  //           m.tranlyze.t.lang.val = "ja";
-  //         } else {
-  //           m.tranlyze.t.lang.val = "en";
-  //         }
-  //       }
-  //     }
-  //   }
-  // };
-
   var input = hangulToJaso_b($('#input_textarea').val());
+  m.tranlyze.t.lang.count.reset();
   for (var i = 0; i < v.length; i++) {
 
     if (input[i].charCodeAt() >= 0xFF01 && input[i].charCodeAt() <= 0xFF5E) { // "FF01:！" ~ "FF5E:～"에 속한 글자면 반각기호로

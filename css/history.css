@@ -42,7 +42,7 @@
   padding: .5em 1em;
 }
 
-#history_wrap #history .item:nth-child(n+5) {
+#history_wrap #history:not(.showAll) .item:nth-child(n+5) {
   display: none;
 }
 

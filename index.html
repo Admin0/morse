@@ -166,15 +166,15 @@
 		</div>
 		<div id="card_lang">
 			<!-- <div id="" class="card_lang selected auto" data-i18n='lang_auto'>AUTO</div> -->
-			<div id="" class="card_lang en" data-i18n='a_en'>EN</div>
-			<div id="" class="card_lang ko" data-i18n='a_kr'>KO</div>
-			<div id="" class="card_lang ja" data-i18n='a_jp'>JA</div>
-			<div id="" class="card_lang ru" data-i18n='a_ru'>RU</div>
-			<div id="" class="card_lang gr" data-i18n='a_gr'>GR</div>
-			<div id="" class="card_lang th" data-i18n='a_th'>TH</div>
-			<div id="" class="card_lang he" data-i18n='a_he'>HE</div>
-			<div id="" class="card_lang ar" data-i18n='a_ar'>AR</div>
-			<div id="" class="card_lang pr" data-i18n='a_pr'>PR</div>
+			<div id="" class="card_lang en morse braille" data-i18n='a_en'>EN</div>
+			<div id="" class="card_lang ko morse braille" data-i18n='a_kr'>KO</div>
+			<div id="" class="card_lang ja morse braille" data-i18n='a_jp'>JA</div>
+			<div id="" class="card_lang ru morse" data-i18n='a_ru'>RU</div>
+			<div id="" class="card_lang gr morse" data-i18n='a_gr'>GR</div>
+			<div id="" class="card_lang th morse" data-i18n='a_th'>TH</div>
+			<div id="" class="card_lang he morse" data-i18n='a_he'>HE</div>
+			<div id="" class="card_lang ar morse" data-i18n='a_ar'>AR</div>
+			<div id="" class="card_lang pr morse" data-i18n='a_pr'>PR</div>
 		</div>
 
 		<!-- <div id="feadback"><a href="//blog.jinh.kr/guestbook">feadback</a></div> -->
@@ -224,7 +224,7 @@
 		<div class="title" data-i18n="history">HISTORY</div>
 		<div class="item wrap"><span class="info">INFO</span><span data-i18n=history_clear class="clear" onclick="window.localStorage.clear();m.history.reset();m.history.set();">CLEAR</span></div>
 		<div id="history"></div>
-		<div class="item more" onclick="$('#history .item').show(); $(this).hide();"><i class="material-icons">expand_more</i></div>
+		<div class="item more" onclick="$('#history').addClass('showAll'); $(this).hide();"><i class="material-icons">expand_more</i></div>
 	</section>
 
 	<footer>
