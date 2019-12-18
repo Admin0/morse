@@ -179,6 +179,26 @@ const m = {
         this.set();
       }
     }
+  },
+  input: {
+    key: {
+      dit: function() {},
+      dah: function() {},
+      space: function() {},
+      del: function() {},
+      delAll: function() {}
+    },
+    key_b: function() {
+      var t = $("#input_textarea").val();
+      var c = 0x2800;
+      if ($('#key_b_1').prop("checked")) c += 2 ** 0;
+      if ($('#key_b_2').prop("checked")) c += 2 ** 1;
+      if ($('#key_b_3').prop("checked")) c += 2 ** 2;
+      if ($('#key_b_4').prop("checked")) c += 2 ** 3;
+      if ($('#key_b_5').prop("checked")) c += 2 ** 4;
+      if ($('#key_b_6').prop("checked")) c += 2 ** 5;
+      $("#input_textarea").val(t += String.fromCharCode(c));
+    }
   }
 }
 

@@ -9,6 +9,7 @@
 @import url('toast.css');
 @import url('card_lang.css');
 @import url('history.css');
+@import url('key.css');
 
 ::selection {
   background: rgba(0, 0, 0, 0);

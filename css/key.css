@@ -1,0 +1,38 @@
+section.key {
+  text-align: center;
+}
+
+section.key>div {
+  transition: .25s;
+  max-height: 0;
+  padding: 0 1em;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* .key .braille { */
+body.analyze.braille .key .braille {
+  border-top: 1px solid #ddd;
+  display: block;
+  padding: 1em 1em;
+  max-height: 1000px;
+  max-height: inherit;
+  visibility: visible;
+  opacity: 1;
+}
+
+.key .braille table {
+  margin: auto;
+}
+
+.key .braille input[type="checkbox"]:checked+label, input[type="radio"]:checked+label {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.key .braille input[type="checkbox"]+label::before, input[type="radio"]+label::before {
+  line-height: 24px;
+  margin: 0;
+}
