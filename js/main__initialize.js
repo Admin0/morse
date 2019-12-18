@@ -5,7 +5,7 @@ function url_check() {
       var target_pre = window.location.href.substring(window.location.href.indexOf("#") + 1);
       var target = (target_pre.substring(0, target_pre.length));
       if (target=="b"){
-        history.pushState(null, null, "../braille/");
+        history.replaceState(null, null, "../braille/");
         $('.lang_box.lang .card_header').removeClass('selected');
         m.type.code = CODE_BRAILLE;
         window.localStorage.type_code = CODE_BRAILLE;

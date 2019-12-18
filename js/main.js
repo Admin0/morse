@@ -36,12 +36,14 @@ const m = {
       if (m.type.code == CODE_MORSE) {
         $('body').removeClass('braille');
         $('.lang_box .morse').addClass('selected');
+        $('link[rel="shortcut icon"]').attr('href', "image/favicon.ico");
         $('link[rel="icon"]').attr('href', "image/favicon.ico");
         // history.pushState(null, null, "../morse/");
       }
       if (m.type.code == CODE_BRAILLE) {
-        $('.lang_box .braille').addClass('selected');
         $('body').addClass('braille');
+        $('.lang_box .braille').addClass('selected');
+        $('link[rel="shortcut icon"]').attr('href', "image/favicon_b.ico");
         $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
         // history.pushState(null, null, "../braille/");
       }
