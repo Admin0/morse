@@ -185,65 +185,35 @@ const m = {
       dit: function() {},
       dah: function() {},
       space: function() {},
-      del: function() {},
+      del: function() {
+        if (m.type.mode == ANALYZE_MODE && m.type.code == CODE_BRAILLE) {
+          var t = $("#input_textarea").val();
+          t = t.substring(0, t.length - 1);
+          $("#input_textarea").val(t);
+        }
+      },
       delAll: function() {},
-
-      b1: function() {
-        if ($('#key_b_1').prop("checked")) {
-          $('#key_b_1').prop("checked", false)
+      braille: function(dot) {
+        if (dot == undefined) {
+          var t = $("#input_textarea").val();
+          var c = 0x2800;
+          for (var i = 0; i < 6; i++) {
+            if ($('#key_b_' + (i + 1)).prop("checked")) c += 2 ** i;
+            $('#key_b_' + (i + 1)).prop("checked", false);
+          }
+          $("#input_textarea").val(t += String.fromCharCode(c));
+          tranlyze(m.type.mode);
+          $("#input_textarea").focus().setCursorPosition(t.length)
         } else {
-          $('#key_b_1').prop("checked", true)
-        }
-      },
-      b2: function() {
-        if ($('#key_b_2').prop("checked")) {
-          $('#key_b_2').prop("checked", false)
-        } else {
-          $('#key_b_2').prop("checked", true)
-        }
-      },
-      b3: function() {
-        if ($('#key_b_3').prop("checked")) {
-          $('#key_b_3').prop("checked", false)
-        } else {
-          $('#key_b_3').prop("checked", true)
-        }
-      },
-      b4: function() {
-        if ($('#key_b_4').prop("checked")) {
-          $('#key_b_4').prop("checked", false)
-        } else {
-          $('#key_b_4').prop("checked", true)
-        }
-      },
-      b5: function() {
-        if ($('#key_b_5').prop("checked")) {
-          $('#key_b_5').prop("checked", false)
-        } else {
-          $('#key_b_5').prop("checked", true)
-        }
-      },
-      b6: function() {
-        if ($('#key_b_6').prop("checked")) {
-          $('#key_b_6').prop("checked", false)
-        } else {
-          $('#key_b_6').prop("checked", true)
+          if ($('#key_b_' + dot).prop("checked")) {
+            $('#key_b_' + dot).prop("checked", false)
+          } else {
+            $('#key_b_' + dot).prop("checked", true)
+          }
         }
       }
-    },
-    key_b: function() {
-      var t = $("#input_textarea").val();
-      var c = 0x2800;
-      if ($('#key_b_1').prop("checked")) c += 2 ** 0;
-      if ($('#key_b_2').prop("checked")) c += 2 ** 1;
-      if ($('#key_b_3').prop("checked")) c += 2 ** 2;
-      if ($('#key_b_4').prop("checked")) c += 2 ** 3;
-      if ($('#key_b_5').prop("checked")) c += 2 ** 4;
-      if ($('#key_b_6').prop("checked")) c += 2 ** 5;
-      $("#input_textarea").val(t += String.fromCharCode(c));
-
-      tranlyze(m.type.mode);
     }
+
   }
 }
 

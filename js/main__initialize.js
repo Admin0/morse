@@ -28,70 +28,49 @@ function url_check() {
 
 function keyboard_shortcuts() {
   shortcut.add("space", function() {
-    if ($("body").is(".analyze.braille")) m.input.key_b();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille();
+  });
+  shortcut.add("enter", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.braille();
   });
 
   shortcut.add("1", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b1();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(1);
   });
-
   shortcut.add("F", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b1();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(1);
   });
   shortcut.add("2", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b2();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(2);
   });
   shortcut.add("D", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b2();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(2);
   });
   shortcut.add("3", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b3();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(3);
   });
   shortcut.add("S", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b3();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(3);
   });
   shortcut.add("4", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b4();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(4);
   });
   shortcut.add("J", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b4();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(4);
   });
   shortcut.add("5", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b5();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(5);
   });
   shortcut.add("K", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b5();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(5);
   });
   shortcut.add("6", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b6();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(6);
   });
   shortcut.add("L", function() {
-    if ($("body").is(".analyze.braille")) m.input.key.b6();
-  }, {
-    "disable_in_input": true
+    if ($("body").is(".analyze.braille")) m.input.key.braille(6);
+  });
+  shortcut.add("backspace", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.del();
   });
 }

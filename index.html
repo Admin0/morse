@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.i18n.js"></script>
 	<script type="text/javascript" src="js/jquery.i18n.messagestore.js"></script>
+	<script type="text/javascript" src="js/jquery__inputposition.js"></script>
 	<script type="text/javascript" src="js/kakaolink.js"></script>
 	<script type="text/javascript" src="js/main__initialize.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
@@ -138,7 +139,7 @@
 
 		<div id="card_body">
 			<div id="input">
-				<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." onclick="select();" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+				<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
 				<!-- <input type="button" id="input_toggle" value="☎"> -->
 				<div id="input_del" onclick="clear();m.history.push();" class="hide"><i class="material-icons"> close </i></div>
 			</div>
@@ -197,7 +198,7 @@
 						<td><input type="checkbox" id="key_b_6"><label for="key_b_6"></label></td>
 					</tr>
 					<tr>
-						<td colspan="2"><button type="button" name="ipnut" i18n="input" onclick="m.input.key_b()">INPUT</button></td>
+						<td colspan="2"><button type="button" name="ipnut" i18n="input" onclick="m.input.key.braille()">INPUT</button></td>
 					</tr>
 				</table>
 			</div>

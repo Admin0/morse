@@ -182,7 +182,7 @@ function translate_b() {
           if (Object.keys(m.tranlyze.key_b)[j] == "kr") {
             // console.log(Object.keys(m.tranlyze.key_b)[j]);
             // console.log(input[i - 1]);
-            if (input[i].match(/[ᄀ-ᄄᄆ-ᄊᄌᄍᄏ-ᄒ]/) != null && input[i + 1] == "ᅡ") {
+            if (input[i].match(/[ᄀ-ᄄᄆ-ᄊᄌᄍᄏ-ᄒ]/) != null && input[i + 1] == "ᅡ" && input[i + 3] != "ᄋ") {
               input[i + 1] = "";
             }
           }
