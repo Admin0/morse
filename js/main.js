@@ -186,7 +186,50 @@ const m = {
       dah: function() {},
       space: function() {},
       del: function() {},
-      delAll: function() {}
+      delAll: function() {},
+
+      b1: function() {
+        if ($('#key_b_1').prop("checked")) {
+          $('#key_b_1').prop("checked", false)
+        } else {
+          $('#key_b_1').prop("checked", true)
+        }
+      },
+      b2: function() {
+        if ($('#key_b_2').prop("checked")) {
+          $('#key_b_2').prop("checked", false)
+        } else {
+          $('#key_b_2').prop("checked", true)
+        }
+      },
+      b3: function() {
+        if ($('#key_b_3').prop("checked")) {
+          $('#key_b_3').prop("checked", false)
+        } else {
+          $('#key_b_3').prop("checked", true)
+        }
+      },
+      b4: function() {
+        if ($('#key_b_4').prop("checked")) {
+          $('#key_b_4').prop("checked", false)
+        } else {
+          $('#key_b_4').prop("checked", true)
+        }
+      },
+      b5: function() {
+        if ($('#key_b_5').prop("checked")) {
+          $('#key_b_5').prop("checked", false)
+        } else {
+          $('#key_b_5').prop("checked", true)
+        }
+      },
+      b6: function() {
+        if ($('#key_b_6').prop("checked")) {
+          $('#key_b_6').prop("checked", false)
+        } else {
+          $('#key_b_6').prop("checked", true)
+        }
+      }
     },
     key_b: function() {
       var t = $("#input_textarea").val();
@@ -198,6 +241,8 @@ const m = {
       if ($('#key_b_5').prop("checked")) c += 2 ** 4;
       if ($('#key_b_6').prop("checked")) c += 2 ** 5;
       $("#input_textarea").val(t += String.fromCharCode(c));
+
+      tranlyze(m.type.mode);
     }
   }
 }
@@ -307,6 +352,7 @@ $(function() {
   initialize();
   initialize_langDropDown();
   url_check();
+  keyboard_shortcuts();
   detect_input();
   title_tooltip();
   load_modules();

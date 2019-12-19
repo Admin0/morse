@@ -4,7 +4,7 @@ function url_check() {
     setTimeout(function() {
       var target_pre = window.location.href.substring(window.location.href.indexOf("#") + 1);
       var target = (target_pre.substring(0, target_pre.length));
-      if (target=="b"){
+      if (target == "b") {
         history.replaceState(null, null, "../braille/");
         $('.lang_box.lang .card_header').removeClass('selected');
         m.type.code = CODE_BRAILLE;
@@ -24,4 +24,74 @@ function url_check() {
   } else {
     // console_event(",.");
   }
+}
+
+function keyboard_shortcuts() {
+  shortcut.add("space", function() {
+    if ($("body").is(".analyze.braille")) m.input.key_b();
+  }, {
+    "disable_in_input": true
+  });
+
+  shortcut.add("1", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b1();
+  }, {
+    "disable_in_input": true
+  });
+
+  shortcut.add("F", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b1();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("2", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b2();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("D", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b2();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("3", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b3();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("S", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b3();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("4", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b4();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("J", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b4();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("5", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b5();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("K", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b5();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("6", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b6();
+  }, {
+    "disable_in_input": true
+  });
+  shortcut.add("L", function() {
+    if ($("body").is(".analyze.braille")) m.input.key.b6();
+  }, {
+    "disable_in_input": true
+  });
 }

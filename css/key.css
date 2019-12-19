@@ -33,6 +33,11 @@ body.analyze.braille .key .braille {
 }
 
 .key .braille input[type="checkbox"]+label::before, input[type="radio"]+label::before {
+  content: "radio_button_unchecked";
   line-height: 24px;
   margin: 0;
+}
+
+.key .braille input[type="checkbox"]:checked+label::before, .key .braille input[type="radio"]:checked+label::before {
+  content: "radio_button_checked";
 }
