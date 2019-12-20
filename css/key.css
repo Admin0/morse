@@ -40,8 +40,17 @@ body.analyze.braille .key .braille {
 
 .key .braille input[type="checkbox"]:checked+label::before, .key .braille input[type="radio"]:checked+label::before {
   content: "radio_button_checked";
+  color: #f44336;
+}
+.key .braille button,
+.key .braille input[type="button"] {
+  background: #f44336;
 }
 
+.key .braille button:hover,
+.key .braille input[type="button"]:hover {
+  background: #e57373;
+}
 @media handheld, only screen and (max-device-width: 480px), only screen and (max-device-width: 320px), screen and (max-width: 600px) {
 body.analyze footer{margin-bottom: 150px;}
 

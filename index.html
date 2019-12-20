@@ -157,7 +157,7 @@
 			</div>
 
 			<div id="output">
-				<div id="output_textarea"><span class="placeholder" data-i18n="card__output_0"></span></div>
+				<div id="output_textarea"><span class="placeholder"></span></div>
 
 				<div id="output_menu" class="hide">
 					<span class="copy" data-clipboard-target="#output_textarea" onclick="toast($.i18n('bt_copied'));m.history.push()" title="bt_copy">
@@ -197,10 +197,8 @@
 						<td><input type="checkbox" id="key_b_3"><label for="key_b_3"></label></td>
 						<td><input type="checkbox" id="key_b_6"><label for="key_b_6"></label></td>
 					</tr>
-					<tr>
-						<td colspan="2"><button type="button" name="ipnut" i18n="input" onclick="m.input.key.braille()">INPUT</button></td>
-					</tr>
 				</table>
+				<button type="button" name="ipnut" i18n="input" onclick="m.input.key.braille();" style="margin-top:.5em;"><i class="material-icons">keyboard_return</i></button>
 			</div>
 		</section>
 	</section>

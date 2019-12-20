@@ -309,10 +309,8 @@
   "analyzer": "アナライザ",
   "card__feedback": "フィードバック",
   "card__input_textarea_placeholder_0": " 日本語、英語、数字、文字を入力してください。",
-  "card__input_textarea_placeholder_1": " モールス符号を入力してください。",
-  "card__output_0": "ここで翻訳されたモールス符号が出力されます。",
-  "info__descript": "【モモ】は【文字通りモールス】のバリエーションです。",
-  "info__title": "モモ·トランスレーター",
+  "card__input_textarea_placeholder_1": " $1を入力してください。",
+  "card__output_0": "ここで翻訳された$1が出力されます。",
   "lang_ar": "アラビア語",
   "lang_auto": "自動検出",
   "lang_en": "英語",
@@ -324,6 +322,7 @@
   "lang_pr": "ペルシア語",
   "lang_ru": "ロシア語",
   "lang_th": "タイ語",
+
   "message_0": "受信者全員のお知らせ これは永遠の沈黙に先立つ最後の歓声。",
   "message_0_source": "フランス海軍の1997年1月31日、最後のモールス符号のメッセージだ",
   "message_1": " · · · · 　· ·  <br>  – · · – 　– – – ",
@@ -364,6 +363,13 @@
   "message_18_source": "ウルフェンシュタイン3D（ゲーム）",
   "message_19": "【モモ】は【文字通りモールス】のバリエーションです。モモ·トランスレーター",
   "message_19_source": "【モモ】は【文字通りモールス】のバリエーションです。モモ·トランスレーター",
+  "message_20": " – 　– – – 　· – · 　– 　· · – 　· – · 　· 　",
+  "message_20_source": "ジェレミア・デントン",
+
+
+
+
+
 
   "nav__license": "オープンソースライセンス",
   "nav__oldver2": "古いバージョン（v2）を使用する",
@@ -376,5 +382,12 @@
   "notice_to_phone": "モバイルでもみてください。",
   "op_en_capital": "大文字（en）",
   "op_kr_assemble": "音素の組み合わせ（kr）",
-  "op_space_long": "単語"
+  "op_space_long": "単語",
+  "op_space_manual": "マニュアル",
+  "op_space_set": "ギャップ",
+  "op_space_set_m": "モバイル",
+  "op_space_set_n": "ノーマル",
+  "op_space_short": "文字",
+  "translate": "翻訳",
+  "translator": "トランスレーター"
 }

@@ -309,10 +309,8 @@
   "analyzer": "해석기",
   "card__feedback": "의견 보내기",
   "card__input_textarea_placeholder_0": " 한글, 영어, 숫자 및 문자를 입력하세요.",
-  "card__input_textarea_placeholder_1": " 모스 부호를 입력하세요.",
-  "card__output_0": "여기에 번역된 모스 부호가 출력됩니다.",
-  "info__descript": "기만의 모스는 [기적의 만능 모스]의 준말입니다.",
-  "info__title": "기만의 모스 부호",
+  "card__input_textarea_placeholder_1": " $1를 입력하세요.",
+  "card__output_0": "여기에 번역된 $1가 출력됩니다.",
   "lang_ar": "아랍어",
   "lang_auto": "자동 감지",
   "lang_en": "영어",
@@ -324,6 +322,7 @@
   "lang_pr": "페르시아어",
   "lang_ru": "러시아어",
   "lang_th": "태국어",
+
   "message_0": "수신자 전원에게 알림. 이것은 영원한 침묵에 앞선 우리의 마지막 함성.",
   "message_0_source": "프랑스 해군의 1997년 1월 31일 마지막 모스 부호 메시지",
   "message_1": " · · · · 　· · </span> <br> <span class='quote'> – · · – 　– – – ",
@@ -362,8 +361,15 @@
   "message_17_source": "울펜슈타인 3D (게임)",
   "message_18": " · 　· – · · 　· · 　– – 　· · 　– · 　· – 　– 　· 　　　· · · · 　· · 　– 　· – · · 　· 　· – · ",
   "message_18_source": "울펜슈타인 3D (게임)",
-  "message_19": "기만의 모스는 [기적의 만능 모스]의 준말입니다.",
-  "message_19_source": "기만의 모스 부호",
+  "message_19": "기만의 번역기는 [기적의 만능 번역기]의 준말입니다.",
+  "message_19_source": "기만의 번역기",
+  "message_20": " – 　– – – 　· – · 　– 　· · – 　· – · 　· 　",
+  "message_20_source": "제레미아 덴튼",
+
+
+
+
+
 
   "nav__license": "오픈소스 라이선스",
   "nav__oldver2": "구버전(v2) 사용하기",

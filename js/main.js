@@ -47,6 +47,13 @@ const m = {
         $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
         // history.pushState(null, null, "../braille/");
       }
+      if (m.type.mode == ANALYZE_MODE) {
+        if (m.type.code == CODE_MORSE) {
+          $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('morse')));
+        } else if (m.type.code == CODE_BRAILLE) {
+          $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('braille')));
+        }
+      }
     },
     lang: function(target) {
       var lang = LANG_EN;
@@ -99,8 +106,8 @@ const m = {
         m.type.mode = ANALYZE_MODE;
         $('body').addClass('analyze');
         $('body').removeClass('translate');
-
-        $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', 'tel'));
+        if (m.type.code == CODE_MORSE) $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('morse')));
+        else if (m.type.code == CODE_BRAILLE) $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('braille')));
 
         if ($('.selected.auto').length != 0) {
           $('.auto').removeClass('selected');
@@ -238,6 +245,10 @@ function tranlyze(type) {
   } else {
     $('#output_menu, #input_del').addClass('hide');
     $('#output').removeClass('on');
+    if (m.type.mode == TRANSLATE_MODE && m.type.code == CODE_MORSE)
+      $('#output_textarea').html('<span class="placeholder">' + $.i18n('card__output_0', $.i18n('morse')) + '</span>')
+    else if (m.type.mode == TRANSLATE_MODE && m.type.code == CODE_BRAILLE)
+      $('#output_textarea').html('<span class="placeholder">' + $.i18n('card__output_0', $.i18n('braille')) + '</span>')
   }
 }
 

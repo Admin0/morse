@@ -309,10 +309,8 @@
   "analyzer": "analyzer",
   "card__feedback": "Send feedback",
   "card__input_textarea_placeholder_0": " If you input the English, numbers, and etc.",
-  "card__input_textarea_placeholder_1": " Input the Morse code.",
-  "card__output_0": "Then, the Morse code will be output here.",
-  "info__descript": "M³ is an abbreviation of Miraculous Mighty Morse.",
-  "info__title": "M³ Translator",
+  "card__input_textarea_placeholder_1": " Input the $1.",
+  "card__output_0": "Then, the $1 will be output here.",
   "lang_ar": "Arabic",
   "lang_auto": "Auto detect",
   "lang_en": "English",
@@ -324,6 +322,7 @@
   "lang_pr": "Persian",
   "lang_ru": "Russian",
   "lang_th": "Thai",
+
   "message_0": "Calling all. This is our last cry before our eternal silence.",
   "message_0_source": "French Navy ceased using Morse code on January 31, 1997, the final transmitted message",
   "message_1": " · · · · 　· ·  <br>  – · · – 　– – – ",
@@ -364,6 +363,13 @@
   "message_18_source": "Wolfenstein 3D (game)",
   "message_19": "M³ is an abbreviation of Miraculous Mighty Morse.",
   "message_19_source": "M³ Translator",
+  "message_20": " – 　– – – 　· – · 　– 　· · – 　· – · 　· 　",
+  "message_20_source": "Jeremiah Denton",
+
+
+
+
+
 
   "nav__license": "Open Source License",
   "nav__oldver2": "Try to the Old ver.(v2)",
