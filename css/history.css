@@ -1,4 +1,5 @@
 #history_wrap {
+  display: none;
   margin: 3.5em auto 4em;
   max-width: 1280px;
   width: 100%;
@@ -9,6 +10,10 @@
   transition: .3s;
   position: relative;
   font-family: 'Lato', 'Noto Sans KR', sans-serif;
+}
+
+#history_wrap.on {
+  display: block;
 }
 
 #history_wrap .title,
@@ -71,5 +76,71 @@
     border-radius: 0;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+  }
+}
+
+#ft-section {
+  text-align: center;
+  margin-top: 4em;
+}
+
+.ft-icon {
+  display: inline-block;
+  margin: 0 31px;
+  cursor: pointer;
+}
+
+.ft-icon.on {
+  color: #4285f4;
+}
+
+.ft-icon-img {
+  line-height: 70px;
+  text-align: center;
+  height: 70px;
+  width: 70px;
+  background: #fff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 50%;
+}
+
+.ft-icon.on .ft-icon-img {
+  background-color: #eaf0fc;
+  border-color: #d2e3fc;
+}
+
+.ft-icon-text {
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 8px;
+  opacity: .54;
+}
+
+.ft-icon.on .ft-icon-text {
+  opacity: 1;
+}
+
+.ft-icon .material-icons {
+  font-size: 32px;
+  line-height: .75em;
+  color: gray;
+}
+
+.ft-icon.on .material-icons {
+  color: #4285f4;
+}
+
+@media only screen and (max-width: 600px) {
+  .ft-icon {
+    margin: 0 18px;
+  }
+
+  .ft-icon-img {
+    line-height: 60px;
+    height: 60px;
+    width: 60px;
   }
 }

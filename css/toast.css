@@ -54,6 +54,49 @@
   z-index: 0;
 }
 
+@media only screen and (max-width: 600px) {
+  #toast {
+    padding: 1em 1.5em 1em .75em;
+    border-radius: 0;
+    min-width: 100%;
+    max-width: 100%;
+    bottom: 0;
+    left: 0 !important;
+    z-index: 5;
+  }
+
+  @keyframes snackbar_on {
+    0% {
+      bottom: -56px;
+    }
+
+    100% {
+      bottom: 0;
+    }
+  }
+
+  #toast.on {
+    animation-name: snackbar_on;
+    animation-duration: .3s;
+  }
+
+  @keyframes snackbar_off {
+    0% {
+      bottom: 0;
+    }
+
+    100% {
+      bottom: -56px;
+    }
+  }
+
+  #toast.off {
+    bottom: -56px;
+    animation-name: snackbar_off;
+    animation-duration: .3s;
+  }
+}
+
 /* ------------------------------------------------------------------- */
 /* ***** tooltip ***** */
 /* ------------------------------------------------------------------- */

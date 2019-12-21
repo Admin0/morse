@@ -74,3 +74,30 @@ function keyboard_shortcuts() {
     if ($("body").is(".analyze.braille")) m.input.key.del();
   });
 }
+
+function ft_icon() {
+  $('.ft-icon').on('click', function() {
+    if ($(this).hasClass('info')) {
+      if ($(this).hasClass('on')) {
+        $(this).removeClass('on');
+        $('.description').removeClass('on')
+      } else {
+        $(this).addClass('on');
+        if ($('.description.' + $.i18n.locale).length == 0)
+          $('.description.en').addClass('on');
+        else
+          $('.description.' + $.i18n.locale).addClass('on');
+      }
+    } else if ($(this).hasClass('history')) {
+      if ($(this).hasClass('on')) {
+        $(this).removeClass('on');
+        $('#history_wrap').removeClass('on')
+      } else {
+        $(this).addClass('on');
+        $('#history_wrap').addClass('on')
+      }
+    } else if ($(this).hasClass('code')) {
+      toast("Coming soon.")
+    }
+  })
+}

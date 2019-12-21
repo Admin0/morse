@@ -334,6 +334,7 @@ $(function() {
   initialize_langDropDown();
   url_check();
   keyboard_shortcuts();
+  ft_icon();
   detect_input();
   title_tooltip();
   load_modules();

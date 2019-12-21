@@ -9,6 +9,10 @@
   .lang_box.code .card_header:nth-of-type(n+4) {
     display: none;
   }
+
+  .description {
+    padding: 1em;
+  }
 }
 
 @media handheld, only screen and (max-device-width: 480px), only screen and (max-device-width: 320px), screen and (max-width: 600px) {
