@@ -27,6 +27,7 @@ const m = {
   },
   toggle: {
     code: function(code) {
+      keyboard_shortcuts(SHORTCUT_RESET);
       if (code == CODE_MORSE) {
         m.type.code = CODE_MORSE;
       } else if (code == CODE_BRAILLE) {
@@ -50,8 +51,10 @@ const m = {
       if (m.type.mode == ANALYZE_MODE) {
         if (m.type.code == CODE_MORSE) {
           $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('morse')));
+          keyboard_shortcuts(SHORTCUT_MORSE);
         } else if (m.type.code == CODE_BRAILLE) {
           $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('braille')));
+          keyboard_shortcuts(SHORTCUT_BRAILLE);
         }
       }
     },
@@ -102,12 +105,18 @@ const m = {
       m.type.lang = lang;
     },
     mode: function() {
+      keyboard_shortcuts(SHORTCUT_RESET);
       if (m.type.mode == TRANSLATE_MODE) {
         m.type.mode = ANALYZE_MODE;
         $('body').addClass('analyze');
         $('body').removeClass('translate');
-        if (m.type.code == CODE_MORSE) $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('morse')));
-        else if (m.type.code == CODE_BRAILLE) $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('braille')));
+        if (m.type.code == CODE_MORSE) {
+          $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('morse')));
+          keyboard_shortcuts(SHORTCUT_MORSE);
+        } else if (m.type.code == CODE_BRAILLE) {
+          $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('braille')));
+          keyboard_shortcuts(SHORTCUT_BRAILLE);
+        }
 
         if ($('.selected.auto').length != 0) {
           $('.auto').removeClass('selected');
@@ -333,7 +342,6 @@ $(function() {
   initialize();
   initialize_langDropDown();
   url_check();
-  keyboard_shortcuts();
   ft_icon();
   detect_input();
   title_tooltip();
