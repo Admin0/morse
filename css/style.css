@@ -52,6 +52,14 @@ a {
   /* text-decoration: none; */
 }
 
+ul {
+  padding-left: 1.5em;
+}
+
+li {
+  line-height: 1.5;
+}
+
 header {
   position: fixed;
   color: rgba(0, 0, 0, .98);
@@ -418,8 +426,20 @@ body.analyze #card_header .lang_box.code {
   text-decoration: underline;
 }
 
+.description {
+  font-size: 14px;
+  display: none;
+  max-width: 1280px;
+  margin: auto;
+  color: #555;
+}
+.description.on{
+  display: block;
+}
+
 footer {
   /* position: fixed; */
+  margin-top: 3em;
   bottom: 0;
   width: 100%;
   text-align: center;

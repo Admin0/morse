@@ -30,56 +30,6 @@
 </head>
 
 <body class="translate">
-	<section class="hide description en" style="height:0;">
-
-		Look! This is the Morse code!
-		Miraculous Mighty Morse code translator + analyzer!
-		Possible to Morse ⇄ English, Korean, Japanese or etc!
-
-		<h2>FEATURES</h2>
-		• LETTERS ⇄ MORSE - Translate to Morse code from English or etc. Of course reverse are possible.
-		• REAL TIME TRANSLATE - Why do you need to click every time [TRANSLATE] button for? Finally freed from the painful task.
-		• Somehow cool.
-		• Don't know why, but hot.
-		• Unknown, but attractive.
-
-		• LETTERS ⇄ BRAILLE - Translate to Braille from English or etc.
-		　
-		<h2>HOW TO USE</h2>
-		• Type letters in the input box to translate.
-		• Tap the icon at right side of input box. after that, type code in the input box to analyze.
-		<!-- • There are two type of input for Morse code, [1-button] and [3-buttons]. Changeable on settings.
-		• According to your taste, turn sound, vibration or flash. then, have fun with the Morse code. -->
-		　
-		-------------------------------------
-
-		Translations between the following languages are supported:
-		Latin(English, etc.), Arabic(Arabic, Persian, etc.), Cyrillic(Russian, etc.), Greek(Greek), Hangul(Korean), Hebrew(Hebrew or etc.), Kana(Japanese)
-	</section>
-	<section class="hide description ko" style="height:0;">
-		기적의 만능 [모스 부호, 점자] 변환기 + 해석기. #모스_부호 #점자 #브라유
-
-		※ 기만의 변환기는 [기적의 만능 변환기]의 준말입니다.
-		　
-		보라! 이것이 기적의 만능 변환기다!
-		　
-		# 특징
-		• 문자 ⇄ 모스 부호 - 한글, 영어, 일본어, 기호 등을 모스 부호로 변환. 물론 반대로도 가능.
-		<!-- • 원버튼 입력 시스템 - 복고 감성이 넘치는 원버튼 시스템을 구현. -->
-		<!-- • 1비트 기계음 - 넵, 소리도 납니다. "쓰돈돈 쓰 쓰돈돈ㅡ." -->
-		• 실시간 변환 - 왜 때문에 매번 [변환하기] 버튼을 눌러야 하죠? 고통스런 작업에서 영원히 해방.
-		• 왠지 쿨함.
-		• 어째선지 멋짐.
-		• 알 수 없지만 끌림.
-
-		• 문자 ⇄ 브라유 점자 변환 가능 - 정체성에 혼란이 오지만 일단 가능!
-		　
-		# 사용방법
-		• 입력창에 문자를 입력하면 모스 부호로 변환돼요.
-		• 입력창 위쪽의 아이콘을 누르고, 입력창에 모스부호를 입력하면 문자로 해석돼요.
-		<!-- • 모스 부호 입력 방식은 [1버튼]과 [3버튼] 두 가지 종류가 있고, 설정에서 바꿀 수 있어요. -->
-		<!-- • 취향에 따라 메뉴에서 소리, 진동, 플래시를 켜고 모스 부호를 즐겨 보아요. -->
-	</section>
 	<header>
 		<div id="header_menu"><i id="nav_on" onclick="if($('nav').attr('class')!='on'){$('nav, #nav_bg').addClass('on');}else{$('nav, #nav_bg').removeClass('on');};" class="material-icons">menu</i></div>
 		<h1><span id="title"><span data-i18n='app_name_full'>#morse</span><span class="hide_mobile"></span></span></h1>
@@ -247,6 +197,107 @@
 		<div class="item wrap"><span class="info">INFO</span><span data-i18n=history_clear class="clear" onclick="window.localStorage.clear();m.history.reset();m.history.set();">CLEAR</span></div>
 		<div id="history"></div>
 		<div class="item more" onclick="$('#history').addClass('showAll'); $(this).hide();"><i class="material-icons">expand_more</i></div>
+	</section>
+
+	<!-- 검색엔진이 모든 언어로 검색을 할 수 있게 i18n 말고 이런식으로 만들어줍니다. -->
+	<section class="description en on">
+
+		<h1>M³ Translator: #morse code #braille</h1>
+
+		<p>Look! This is the Morse code!</p>
+		<p>Miraculous Mighty Morse code translator + analyzer! (or Braille)</p>
+		<p>Possible to Morse (or Braille) ⇄ English, Korean, Japanese or etc!</p>
+
+		<h2># FEATURES</h2>
+		<ul>
+			<li><strong>LETTERS ⇄ MORSE & BRAILLE</strong> - Translate to Morse code (or Braille) from English or etc. Of course reverse are possible.</li>
+			<li><strong>REAL TIME TRANSLATE</strong> - Why do you need to click every time [TRANSLATE] button for? Finally freed from the painful task.</li>
+			<li>Somehow cool.</li>
+			<li>Don't know why, but hot.</li>
+			<li>Unknown, but attractive.</li>
+		</ul>
+		　
+		<h2># HOW TO USE</h2>
+		<ul>
+			<li>Type letters in the input box to translate.</li>
+			<li>Tap the switch icon at above of input box. after that, type code in the input box to analyze.</li>
+			<!-- <li>There are two type of input for Morse code, [1-button] and [3-buttons]. Changeable on settings.</li> -->
+			<!-- <li>According to your taste, turn sound, vibration or flash. then, have fun with the Morse code.</li> -->
+		</ul>
+		　
+		<p>-------------------------------------</p>
+
+		<h4>Translations between the following languages are supported</h4>
+		<p>Morse: Latin(English, etc.), Arabic(Arabic, Persian, etc.), Cyrillic(Russian, etc.), Greek(Greek), Hangul(Korean), Hebrew(Hebrew or etc.), Kana(Japanese)</p>
+		<p>Braille: Latin(English, etc.), Hangul(Korean), Kana(Japanese)</p>
+	</section>
+	<section class="description ko on">
+
+		<h1>기만의 번역기 #모스_부호 #점자 #브라유</h1>
+
+		<p>모스 부호 ⇄ 한글 해석 가능!</p>
+		<p>기적의 만능 모스 부호 변환기 + 해석기!</p>
+		<p>보라! 이것이 기적의 만능 변환기다!</p>
+
+		<h2># 특징</h2>
+		<ul>
+			<li><strong>문자 ⇄ 모스 부호</strong> - 한글, 영어, 일본어, 기호 등을 모스 부호로 변환. 물론 반대로도 가능.</li>
+			<li><strong>문자 ⇄ 브라유 점자</strong> - 정체성에 혼란이 오지만 일단 가능!</li>
+			<li><strong>실시간 변환</strong> - 왜 때문에 매번 [변환하기] 버튼을 눌러야 하죠? 고통스런 작업에서 영원히 해방.</li>
+			<!-- <li>원버튼 입력 시스템 - 복고 감성이 넘치는 원버튼 시스템을 구현.</li> -->
+			<!-- <li>1비트 기계음 - 넵, 소리도 납니다. "쓰돈돈 쓰 쓰돈돈ㅡ."</li> -->
+			<li>왠지 쿨함.</li>
+			<li>어째선지 멋짐.</li>
+			<li>알 수 없지만 끌림.</li>
+		</ul>
+
+		<h2># 사용방법</h2>
+		<ul>
+			<li>입력창에 문자를 입력하면 모스 부호로 변환돼요.</li>
+			<li>입력창 위쪽의 스위치 아이콘을 누르고, 입력창에 모스부호를 입력하면 문자로 해석돼요.</li>
+			<!-- <li>모스 부호 입력 방식은 [1버튼]과 [3버튼] 두 가지 종류가 있고, 설정에서 바꿀 수 있어요.</li> -->
+			<!-- <li>취향에 따라 메뉴에서 소리, 진동, 플래시를 켜고 모스 부호를 즐겨 보아요.</li> -->
+		</ul>
+
+		<p>-------------------------------------</p>
+		　
+		<h4>기만의 번역기는 다음 문자를 지원합니다.</h4>
+		<p>모스 부호: 한글(한국어), 가나(일본어), 그리스 문자(그리스어), 라틴 문자(영어 등), 아랍 문자(아랍어, 페르시아어 등), 키릴 문자(러시아어), 히브리 문자(히브리어 등)</p>
+		<p>브라유 점자: 한글(한국어), 가나(일본어), 라틴 문자(영어 등)</p>
+	</section>
+	<section class="description ja on">
+
+		<h1>モモ·トランスレーター：Morse code</h1>
+
+		<p>見よ。 これがモールス符号だ！</p>
+		<p>奇跡の万能モールス符号変換器+解析機！</p>
+		<p>モールス符号 ⇄ 日本語(片仮名だけ)解析可能！</p>
+
+		<h2># 特徴</h2>
+		<ul>
+			<li><strong>文字 ⇄ モールス符号</strong> - 日本語、英語、ハングル、記号などをモールス符号に解釈。もちろん逆も可能</li>
+			<li><strong>文字 ⇄ 点字</strong> - アイデンティティの混乱がくるが、一度可能！</li>
+			<li><strong>リアルタイム変換</strong> - なぜため、毎回『変換』ボタンを押さないといけませんか。 苦痛な作業で永遠に解放。</li>
+			<!-- <li>원버튼 입력 시스템 - 복고 감성이 넘치는 원버튼 시스템을 구현.</li> -->
+			<!-- <li>1비트 기계음 - 넵, 소리도 납니다. "쓰돈돈 쓰 쓰돈돈ㅡ."</li> -->
+			<li>なんかクールさ。</li>
+			<li>なぜだろう、素敵。</li>
+			<li>分からないが、引かれたこと。</li>
+		</ul>
+
+		<h2>使用方法</h2>
+		<ul>
+			<li>表示窓に文字を入力すると、モールス符号に変換されます。</li>
+			<li>表示窓の上のアイコンを押して、表示窓にモールス符号を入力すると、文字に解釈されます。</li>
+			<!-- <li>모스 부호 입력 방식은 [1버튼]과 [3버튼] 두 가지 종류가 있고, 설정에서 바꿀 수 있어요.</li> -->
+			<!-- <li>취향에 따라 메뉴에서 소리, 진동, 플래시를 켜고 모스 부호를 즐겨 보아요.</li> -->
+		</ul>
+
+		<p>-------------------------------------</p>
+		　
+		<h4>モモ・トランスレーターは、次の文字をサポートします。</h4>
+		<p>モールス符号：仮名（日本語）、ハングル（韓国語）、ギリシャ文字（ギリシャ語）、ローマ字（英語など）、アラビア文字（アラビア語、ペルシア語など）、キリル文字（ロシア語）、ヘブライ文字（ヘブライ語など）</p>
+		<p>点字：仮名（日本語）、ハングル（韓国語）、ローマ字（英語など）</p>
 	</section>
 
 	<footer>
