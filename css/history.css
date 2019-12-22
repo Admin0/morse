@@ -94,6 +94,14 @@
   color: #4285f4;
 }
 
+body.translate .ft-icon.on {
+  color: #00C853;
+}
+
+body.braille .ft-icon.on {
+  color: #f44336;
+}
+
 .ft-icon-img {
   line-height: 70px;
   text-align: center;
@@ -110,6 +118,16 @@
 .ft-icon.on .ft-icon-img {
   background-color: #eaf0fc;
   border-color: #d2e3fc;
+}
+
+body.translate .ft-icon.on .ft-icon-img {
+  background-color: #e8f5e9;
+  border-color: #c8e6c9;
+}
+
+body.braille  .ft-icon.on .ft-icon-img {
+  background-color: #ffebee;
+  border-color: #ffcdd2;
 }
 
 .ft-icon-text {
@@ -131,6 +149,12 @@
 
 .ft-icon.on .material-icons {
   color: #4285f4;
+}
+body.translate .ft-icon.on .material-icons {
+  color: #00C853;
+}
+body.braille  .ft-icon.on .material-icons {
+  color: #f44336;
 }
 
 @media only screen and (max-width: 600px) {

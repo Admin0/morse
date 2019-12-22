@@ -18,17 +18,13 @@ function url_check() {
       function gtag() {
         dataLayer.push(arguments);
       }
+      
       gtag('js', new Date());
       gtag('config', 'UA-39552694-1', {
-        'page_title': $.i81n('braille'),
+        // 'page_title': $.i18n('braille'),
         'page_path': '/braille/'
       });
 
-      // target.addClass("targeted");// target_by_class.addClass("targeted");
-      //
-      // // very important
-      // load($(target).attr("name"), $(target).attr("round"));
-      // console.log("load at open: " + $(target).attr("name") + ", " + $(target).attr("round"));
     }, 0)
   } else {
     // console_event(",.");
@@ -122,10 +118,10 @@ function ft_icon() {
         $('.description').removeClass('on')
       } else {
         $(this).addClass('on');
-        if ($('.description.' + $.i18n.locale).length == 0)
+        if ($('.description.' + $.i18n().locale).length == 0)
           $('.description.en').addClass('on');
         else
-          $('.description.' + $.i18n.locale).addClass('on');
+          $('.description.' + $.i18n().locale).addClass('on');
       }
     } else if ($(this).hasClass('history')) {
       if ($(this).hasClass('on')) {

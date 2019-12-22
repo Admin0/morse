@@ -427,6 +427,7 @@ body.analyze #card_header .lang_box.code {
 }
 
 .description {
+  line-height: 1.5;
   font-size: 14px;
   display: none;
   max-width: 1280px;
@@ -436,7 +437,10 @@ body.analyze #card_header .lang_box.code {
 .description.on{
   display: block;
 }
-
+.description small {
+  font-size: 14px;
+  /* font-weight: normal; */
+}
 footer {
   /* position: fixed; */
   margin-top: 3em;
