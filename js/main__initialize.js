@@ -51,12 +51,12 @@ function keyboard_shortcuts(type) {
       shortcut.remove("4");
       shortcut.remove("5");
       shortcut.remove("6");
-      shortcut.remove("f");
-      shortcut.remove("d");
-      shortcut.remove("s");
-      shortcut.remove("j");
-      shortcut.remove("k");
-      shortcut.remove("l");
+      shortcut.remove("F");
+      shortcut.remove("D");
+      shortcut.remove("S");
+      shortcut.remove("J");
+      shortcut.remove("K");
+      shortcut.remove("L");
       shortcut.remove("backspace");
       break;
     case SHORTCUT_MORSE:
