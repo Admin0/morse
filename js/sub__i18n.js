@@ -15,7 +15,7 @@ const i18n = {
     }
 
     $('.description').removeClass('on');
-    $('.description.' + $.i18n().locale).addClass('on');
+    $('.description.' + $.i18n().locale.substring(0, 2)).addClass('on');
     if ($('.description.on').length == 0) $('.description.en').addClass('on');
 
     $('html').attr('lang', $.i18n().locale);

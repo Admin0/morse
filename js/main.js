@@ -230,6 +230,11 @@ const m = {
       }
     }
 
+  },
+  test: function() {
+  console.log('hello');
+    return this;
+    // console.log(this);
   }
 }
 
