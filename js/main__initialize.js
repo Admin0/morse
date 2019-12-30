@@ -118,9 +118,10 @@ function ft_icon() {
     if ($(this).hasClass('info')) {
       if ($(this).hasClass('on')) {
         $(this).removeClass('on');
-        $('.description').removeClass('on')
+        $('.description').removeClass('on');
       } else {
         $(this).addClass('on');
+        $('.description').insertAfter($('#ft-section'));
         if ($('.description.' + $.i18n().locale).length == 0)
           $('.description.en').addClass('on');
         else
@@ -132,6 +133,7 @@ function ft_icon() {
         $('#history_wrap').removeClass('on')
       } else {
         $(this).addClass('on');
+        $('#history_wrap').insertAfter($('#ft-section'));
         $('#history_wrap').addClass('on')
       }
     } else if ($(this).hasClass('code')) {
