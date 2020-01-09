@@ -222,6 +222,15 @@ nav #nav_menu {
   padding-top: 14px;
 }
 
+dl#setting {
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  background: #fff;
+  width: calc(100% - 2em);
+  transition: .25s, background 0s, color 0s;
+  /* border-top: 1px rgba(0, 0, 0, .12) solid; */
+}
+
 #setting dt {
   font-size: 16px;
   /*color: #777;*/
@@ -251,7 +260,7 @@ nav #nav_menu {
 #setting_bt {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   height: 24px;
-  width: 64px;
+  width: 92px;
   padding: 20px 0;
   display: inline-block;
   transition: 0s;

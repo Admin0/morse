@@ -408,6 +408,7 @@ body.analyze #card_header .lang_box.code {
 }
 
 .hide {
+  display: none;
   visibility: hidden;
   opacity: 0;
 }
@@ -703,5 +704,6 @@ input[type="radio"]:checked+label.button_between {
 }
 
 .material-icons {
+  margin-right: .5em;
   vertical-align: text-bottom;
 }

@@ -12,21 +12,22 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
 	<link rel="manifest" href="manifest.json">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.i18n.js"></script>
-	<script type="text/javascript" src="js/jquery.i18n.messagestore.js"></script>
-	<script type="text/javascript" src="js/jquery__inputposition.js"></script>
-	<script type="text/javascript" src="js/kakaolink.js"></script>
-	<script type="text/javascript" src="js/main__initialize.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/main__translate.js"></script>
-	<script type="text/javascript" src="js/main__analyze.js"></script>
-	<script type="text/javascript" src="js/main__keys.js"></script>
-	<script type="text/javascript" src="js/sub__tooltip.js"></script>
-	<script type="text/javascript" src="js/sub__clipboard.min.js"></script>
-	<script type="text/javascript" src="js/sub__i18n.js"></script>
-	<script type="text/javascript" src="js/sub__scroll.js"></script>
-	<script type="text/javascript" src="js/sub__shortcut.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.i18n.js"></script>
+	<script src="js/jquery.i18n.messagestore.js"></script>
+	<script src="js/jquery__inputposition.js"></script>
+	<script src="js/kakaolink.js"></script>
+	<script src="js/main__initialize.js"></script>
+	<script src="js/main__settings.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/main__translate.js"></script>
+	<script src="js/main__analyze.js"></script>
+	<script src="js/main__keys.js"></script>
+	<script src="js/sub__tooltip.js"></script>
+	<script src="js/sub__clipboard.min.js"></script>
+	<script src="js/sub__i18n.js"></script>
+	<script src="js/sub__scroll.js"></script>
+	<script src="js/sub__shortcut.js"></script>
 	<script data-ad-client="ca-pub-8175591114279139" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
@@ -103,7 +104,7 @@
 					google_ad_height = 100;
 				</script>
 				<!-- 큰 모바일 배너 -->
-				<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+				<script src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 				</script>
 			</div>
 
@@ -166,10 +167,10 @@
 				<div id="to_github" class="" onclick="console_event('q');">
 					<img src="image\icon.png" alt="" style="width:24px; margin: 0 12px -6px 0;"><span data-i18n="app_name_full">#morse</span>
 				</div>
-				<!-- <div id="setting_bt">
+				<div id="setting_bt">
 					<i class="material-icons">settings</i>
 					<i class="material-icons setting_arrow">play_arrow</i>
-				</div> -->
+				</div>
 			</div>
 			<!-- <div id="nav_item_list"></div> -->
 			<div id="nav_menu"></div>
@@ -177,7 +178,33 @@
 		<!-- <div id='nav_footer'><i class='material-icons'>chevron_left</i></div> -->
 	</nav>
 
-	<div id="nav_bg" onclick="$('nav, #nav_bg, #info, #license').removeClass('on');"></div>
+	<div id="nav_bg" onclick="$('nav, #nav_bg, #info, #license, #setting').removeClass('on');"></div>
+
+	<dl id="setting">
+		<div class="header">
+			<i class="material-icons" onclick="$('#setting, #setting_bg').removeClass('on');">arrow_back</i><span>설정</span>
+		</div>
+		<div class="setting_title" data-i18n="s_output">OUTPUT</div>
+		<div class="setting_item" id="s_output_style_dit">
+			<i class="material-icons">more_horiz</i> <dt data-i18n="s_output_style_dit">DIT</dt> <span class="input" contenteditable="true">·</span>
+			<dd data-i18n="s_output_style_dit_summary">DIT_SUMMARY</dd>
+		</div>
+		<div class="setting_item" id="s_output_style_dah">
+			<i class="material-icons">remove</i> <dt data-i18n="s_output_style_dah">DAH</dt> <span class="input" contenteditable="true">–</span>
+			<dd data-i18n="s_output_style_dah_summary">DAH_SUMMARY</dd>
+		</div>
+		<!-- <div class="setting_title">답안</div>
+		<div class="setting_item" id="answer__serif">
+			<input type="checkbox" checked> <dt>세리프 글꼴</dt>
+			<dd class="on">답안의 글꼴이 세리프 글꼴로 보입니다.</dd>
+			<dd class="off">답안의 글꼴이 산세리프 글꼴로 보입니다.</dd>
+		</div>
+		<div class="setting_item" id="answer__quiz">
+			<input type="checkbox" checked> <dt>퀴즈 모드</dt>
+			<dd class="on">답이 가려졌습니다. 마우스 커서를 올리면 보입니다.</dd>
+			<dd class="off">답이 항상 보입니다.</dd>
+		</div> -->
+	</dl>
 
 	<section id="message" class="hide">
 		<span class='quote'>MESSAGE</span>

@@ -241,9 +241,9 @@ const m = {
 function tranlyze(type) {
   if (m.type.code == CODE_MORSE) {
     if (type == TRANSLATE_MODE) {
-      translate("·", "–");
+      translate($('#s_output_style_dit .input').text(), $('#s_output_style_dah .input').text());
     } else if (type == ANALYZE_MODE) {
-      $('#output_textarea').text(analyze(m.type.lang));
+      $('#output_textarea').text(analyze(m.type.lang, $('#s_output_style_dit .input').text(), $('#s_output_style_dah .input').text() ) );
     }
   } else if (m.type.code == CODE_BRAILLE) {
     if (type == TRANSLATE_MODE) {

@@ -12,7 +12,7 @@
   max-width: calc(100% - 2em);
   bottom: 1em;
   left: 1em;
-  z-index: 5;
+  z-index: 40;
   border-radius: 3px;
 }
 

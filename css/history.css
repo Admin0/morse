@@ -94,6 +94,10 @@
   color: #4285f4;
 }
 
+.ft-icon .material-icons {
+  margin-right: 0;
+}
+
 body.translate .ft-icon.on {
   color: #00C853;
 }
@@ -125,7 +129,7 @@ body.translate .ft-icon.on .ft-icon-img {
   border-color: #c8e6c9;
 }
 
-body.braille  .ft-icon.on .ft-icon-img {
+body.braille .ft-icon.on .ft-icon-img {
   background-color: #ffebee;
   border-color: #ffcdd2;
 }
@@ -150,10 +154,12 @@ body.braille  .ft-icon.on .ft-icon-img {
 .ft-icon.on .material-icons {
   color: #4285f4;
 }
+
 body.translate .ft-icon.on .material-icons {
   color: #00C853;
 }
-body.braille  .ft-icon.on .material-icons {
+
+body.braille .ft-icon.on .material-icons {
   color: #f44336;
 }
 

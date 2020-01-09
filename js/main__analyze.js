@@ -3,7 +3,7 @@
  * Original Code by JinH(jinh.tistory.com) *
  *******************************************/
 
-function analyze(lang) {
+function analyze(lang, dit, dah) {
 
   var j, k, output = '';
   var text = $('#input_textarea').val();
@@ -14,8 +14,11 @@ function analyze(lang) {
   text = text.replace(space_string, "_/_"); //문자열공백
   text = text.replace(space_char, "_"); //문자사이공백
   text = text.replace(/\s/g, ""); //공백 제거
-  text = text.replace(/1|－|-|ㅡ/g, "–");
-  text = text.replace(/0|ㆍ|\.|\*|`|'/g, "·");
+  text = text
+    .replace(/1|－|-|ㅡ/g, "–")
+    .replace(new RegExp(dah, 'g'), "–")
+    .replace(/0|ㆍ|\.|\*|`|'/g, "·")
+    .replace(new RegExp(dit, 'g'), "·");
 
   var input = text.split('_');
 
