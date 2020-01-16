@@ -1,0 +1,83 @@
+#card_lang {
+  position: absolute;
+  top: 48px;
+  background: #fff;
+  width: calc(100% - 3em);
+  /* border: 1px solid gold; */
+  padding: 1.5em;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  column-count: 4;
+  grid-column-gap: 0;
+  /* column-fill: auto; */
+  height: calc(100% - 48px - 3em);
+  border-bottom-left-radius: .5em;
+  border-bottom-right-radius: .5em;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+}
+
+#card_lang.on {
+  visibility: visible;
+  opacity: 1;
+}
+
+#card_lang .card_lang {
+  padding: 0 .5em;
+  border-radius: 3px;
+  cursor: pointer;
+  break-inside: avoid-column;
+  page-break-inside: avoid;
+  margin: .5em 0;
+  line-height: 30px;
+}
+
+#card_lang .card_lang:first-of-type {
+  margin-top: 0;
+}
+
+#card_lang .card_lang:not(.selected):hover {
+  background: #eee;
+}
+
+#card_lang .card_lang.selected {
+  background-color: #e8f0fe;
+  color: #4284f3;
+}
+
+#card_lang .card_lang.selected::before {
+  vertical-align: text-bottom;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  opacity: .45;
+  content: 'check';
+  margin-right: .25em;
+}
+
+#card_lang .card_lang:not(.selected) {
+  padding-left: calc(20px + 1em);
+}
+
+@media only screen and (max-width: 1280px) {
+  #card_lang {
+    border-radius: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #card_lang {
+    column-count: 2;
+  }
+}

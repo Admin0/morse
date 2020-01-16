@@ -1,0 +1,47 @@
+#info:not(.on), #license:not(.on) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.contents.sub {
+  padding:2em;
+  max-width: calc(1280px - 4em);
+  z-index: 6;
+  position: fixed;
+  height: calc(100% - 12em);
+  overflow-x: scroll;
+  top: 6em;
+  left: calc(50% - 640px);
+  margin: auto;
+  transition: .5s;
+  opacity: 1;
+  column-count: 2;
+  column-fill: auto;
+}
+
+.contents.sub h3 {
+  font-size: 1em;
+  margin: 2em 0 .5em;
+}
+
+.contents.sub a {
+  text-decoration: none;
+  color: #212121;
+}
+
+.contents.sub a::before {
+  border-bottom: 3px solid #00C853;
+  content: "";
+}
+
+.analyze .contents.sub a::before {
+  border-bottom: 3px solid #4284f3;
+}
+
+.contents.sub pre {
+  white-space: pre-wrap;
+}
+
+.contents.sub h3:first-of-type {
+  margin-top: 0;
+}

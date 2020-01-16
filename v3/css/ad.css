@@ -1,0 +1,28 @@
+#ad_top {
+  margin: calc(1em - 64px) auto 0;
+  text-align: center;
+  /* min-height: 280px; */
+  transition: 0.5s;
+}
+
+#ad_top.mobile {
+  display: none;
+  margin: auto;
+  width: 100%;
+}
+
+#ad_bottom {
+  margin: 4em auto 8em;
+  text-align: center;
+  transition: 0.5s;
+}
+
+@media handheld, only screen and (max-width: 600px) {
+  #ad_top {
+    display: none;
+  }
+
+  #ad_top.mobile {
+    display: block;
+  }
+}
