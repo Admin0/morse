@@ -293,6 +293,10 @@ dl#setting {
   right: -12px;
 }
 
+#setting .material-icons {
+  margin-right: .5em;
+}
+
 nav.fold #nav_header {
   /*display: block;*/
 }

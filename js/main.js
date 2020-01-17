@@ -214,7 +214,7 @@ const m = {
           var t = $("#input_textarea").val();
           var c = 0x2800;
           for (var i = 0; i < 6; i++) {
-            if ($('#key_b_' + (i + 1)).prop("checked")) c += 2 ** i;
+            if ($('#key_b_' + (i + 1)).prop("checked")) c += Math.pow(2, i); // c += 2 ** i <-- 이렇게 하면 ie에서 오류가 나네요...
             $('#key_b_' + (i + 1)).prop("checked", false);
           }
           $("#input_textarea").val(t += String.fromCharCode(c));

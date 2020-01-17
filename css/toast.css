@@ -19,6 +19,7 @@
 #toast i.material-icons {
   font-size: 20px;
   margin-bottom: 1px;
+  margin-right: .5em;
 }
 
 @keyframes snackbar_on {

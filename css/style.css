@@ -704,6 +704,6 @@ input[type="radio"]:checked+label.button_between {
 }
 
 .material-icons {
-  margin-right: .5em;
+  /* margin-right: .5em; */
   vertical-align: text-bottom;
 }
