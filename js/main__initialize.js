@@ -12,7 +12,7 @@ function url_check() {
         $('body').addClass('braille');
         $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
         $('.card_header.braille').addClass('selected');
-        i18n.message.set(true, code);
+        i18n.message.set(true, CODE_BRAILLE);
         console.log("#braille ACTIVATE");
       }
 
