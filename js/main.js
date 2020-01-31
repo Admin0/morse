@@ -28,6 +28,7 @@ const m = {
   toggle: {
     code: function(code) {
       keyboard_shortcuts(SHORTCUT_RESET);
+      i18n.message.set(true, code);
       if (code == CODE_MORSE) {
         m.type.code = CODE_MORSE;
       } else if (code == CODE_BRAILLE) {
