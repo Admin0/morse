@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "short_name": "Morse",
-  "name": "M³ Translator #morse #braille",
+  "name": "M³ Translator",
   "description": "Possible to Morse (or Braille) ⇄ English, Korean, Japanese or etc!",
   "version": "3.0.0",
   "app": {
@@ -25,9 +25,18 @@
     "type": "image/png",
     "sizes": "512x512"
   }],
-  "start_url": "/morse/",
+  "start_url": "index.html",
   "background_color": "#4284f3",
   "display": "standalone",
+  "orientation": "portrait",
   "scope": "/morse/",
   "theme_color": "#4284f3"
+  ,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.morsecode.translator.jinh",
+      "id": "com.morsecode.translator.jinh"
+    }
+  ]
 }
