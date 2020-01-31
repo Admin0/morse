@@ -9,9 +9,9 @@ const i18n = {
 
     if (nation_code != null) { // 언어 설정
       $.i18n().locale = nation_code;
-      i18n.message.set(true);
+      i18n.message.set(true, m.type.code);
     } else {
-      i18n.message.set();
+      i18n.message.set(false, m.type.code);
     }
 
     $('.description').removeClass('on');
@@ -42,27 +42,54 @@ const i18n = {
   },
   message: { // 메세지 로딩을 위해 추가로 만든 코드
     list: {
-      quote: [],
-      source: []
+      quote: {
+        m: [],
+        b: []
+      },
+      source: {
+        m: [],
+        b: []
+      }
     },
-    i: null,
-    set: function(reset) {
+    i: {
+      m: null,
+      b: null
+    },
+    set: function(reset, code) {
       if ($('#message .quote').text() == "MESSAGE" || reset) {
-        for (var i = 0; i < 99; i++) {
-          var m = $.i18n('message_' + i);
-          var s = $.i18n('message_' + i + '_source');
-          if (m != 'message_' + i) {
-            // console.log('ddd: ' + i);
-            this.list.quote[i] = m;
-            this.list.source[i] = s;
-          } else {
-            break;
+        if (code === undefined || code == CODE_MORSE) {
+          for (var i = 0; i < 99; i++) {
+            var m = $.i18n('message_' + i);
+            var s = $.i18n('message_' + i + '_source');
+            if (m != 'message_' + i) {
+              // console.log('ddd: ' + i);
+              this.list.quote.m[i] = m;
+              this.list.source.m[i] = s;
+            } else {
+              break;
+            }
           }
+          this.i.m = this.i.m || Math.floor(Math.random() * (this.list.quote.m.length));
+          $('#message .quote').html(this.list.quote.m[this.i.m])
+          $('#message .source').html(this.list.source.m[this.i.m])
+          $('#message').removeClass('hide');
+        } else if (code == CODE_BRAILLE) {
+          for (var i = 0; i < 99; i++) {
+            var m = $.i18n('messagb_' + i);
+            var s = $.i18n('messagb_' + i + '_source');
+            if (m != 'messagb_' + i) {
+              // console.log('ddd: ' + i);
+              this.list.quote.b[i] = m;
+              this.list.source.b[i] = s;
+            } else {
+              break;
+            }
+          }
+          this.i.b = this.i.b || Math.floor(Math.random() * (this.list.quote.b.length));
+          $('#message .quote').html(this.list.quote.b[this.i.b])
+          $('#message .source').html(this.list.source.b[this.i.b])
+          $('#message').removeClass('hide');
         }
-        this.i = this.i || Math.floor(Math.random() * (this.list.quote.length));
-        $('#message .quote').html(this.list.quote[this.i])
-        $('#message .source').html(this.list.source[this.i])
-        $('#message').removeClass('hide');
       }
     }
   }
