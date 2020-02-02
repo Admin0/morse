@@ -40,7 +40,13 @@ function analyze(lang, dit, dah) {
   	input[i] = text.charAt(i);
   } //모스 부호 입력 코드*/
 
-  function assemble_kr() { //한글 음소 결합
+  function assemble_kr() {
+
+    output = output
+      .replace(/([0-9])(ㅒ)/g, "$14")
+      .replace(/(ㅒ)(?=[0-9])/g, "4");
+
+    //한글 음소 결합
     const ChoSeong = new Array(
       0x3131, 0x3132, 0x3134, 0x3137, 0x3138, 0x3139,
       0x3141, 0x3142, 0x3143, 0x3145, 0x3146, 0x3147,

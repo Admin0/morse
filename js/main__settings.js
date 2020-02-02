@@ -62,7 +62,7 @@ function setting() {
     check_setting();
   });
 
-  $("#setting > .setting_item").on("click", function() {
+  $("#setting > .setting_item.auto_save").on("click", function() {
     // console.log($(this).hasClass("disabled"));
     if (!$(this).hasClass("disabled")) {
       var i = $("#setting > .setting_item").index(this);

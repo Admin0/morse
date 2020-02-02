@@ -270,13 +270,16 @@ function tranlyze(type) {
       $('#output_textarea').html('<span class="placeholder">' + $.i18n('card__output_0', $.i18n('braille')) + '</span>')
   }
 
-  if (m.type.mode == ANALYZE_MODE && m.type.code == CODE_BRAILLE) {
+  if (m.type.mode == ANALYZE_MODE && m.type.code == CODE_BRAILLE) { // 점자 해석일 때도 입력창 클릭하면 편집가능
     $('#input_textarea').on("focus, click", function() {
       console.log('good!');
       setTimeout(function() {
         $('#input_textarea').attr("readonly", false);
       }, 10);
     });
+    $('#input_textarea').on("focusout, blur", function(){
+      $('#input_textarea').attr("readonly", true);
+    })
   }
 }
 
