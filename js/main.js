@@ -27,13 +27,15 @@ const m = {
   },
   toggle: {
     code: function(code) {
-      keyboard_shortcuts(SHORTCUT_RESET);
-      i18n.message.set(true, code);
       if (code == CODE_MORSE) {
         m.type.code = CODE_MORSE;
       } else if (code == CODE_BRAILLE) {
         m.type.code = CODE_BRAILLE;
       }
+
+      keyboard_shortcuts(SHORTCUT_RESET);
+      i18n.message.set(true, m.type.code);
+
       $('.lang_box.lang .card_header').removeClass('selected');
       if (m.type.code == CODE_MORSE) {
         $('body').removeClass('braille');
@@ -49,12 +51,14 @@ const m = {
         $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
         // history.pushState(null, null, "../braille/");
       }
+      $('#input_textarea').attr("readonly", false); // 키보드 팝업 방지의 방지
       if (m.type.mode == ANALYZE_MODE) {
         if (m.type.code == CODE_MORSE) {
           $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('morse')));
           keyboard_shortcuts(SHORTCUT_MORSE);
         } else if (m.type.code == CODE_BRAILLE) {
           $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_1', $.i18n('braille')));
+          $('#input_textarea').attr("readonly", true); // 키보드 팝업 방지
           keyboard_shortcuts(SHORTCUT_BRAILLE);
         }
       }
@@ -233,7 +237,7 @@ const m = {
 
   },
   test: function() {
-  console.log('hello');
+    console.log('hello');
     return this;
     // console.log(this);
   }
@@ -244,7 +248,7 @@ function tranlyze(type) {
     if (type == TRANSLATE_MODE) {
       translate($('#s_output_style_dit .input').text(), $('#s_output_style_dah .input').text());
     } else if (type == ANALYZE_MODE) {
-      $('#output_textarea').text(analyze(m.type.lang, $('#s_output_style_dit .input').text(), $('#s_output_style_dah .input').text() ) );
+      $('#output_textarea').text(analyze(m.type.lang, $('#s_output_style_dit .input').text(), $('#s_output_style_dah .input').text()));
     }
   } else if (m.type.code == CODE_BRAILLE) {
     if (type == TRANSLATE_MODE) {
@@ -264,6 +268,15 @@ function tranlyze(type) {
       $('#output_textarea').html('<span class="placeholder">' + $.i18n('card__output_0', $.i18n('morse')) + '</span>')
     else if (m.type.mode == TRANSLATE_MODE && m.type.code == CODE_BRAILLE)
       $('#output_textarea').html('<span class="placeholder">' + $.i18n('card__output_0', $.i18n('braille')) + '</span>')
+  }
+
+  if (m.type.mode == ANALYZE_MODE && m.type.code == CODE_BRAILLE) {
+    $('#input_textarea').on("focus, click", function() {
+      console.log('good!');
+      setTimeout(function() {
+        $('#input_textarea').attr("readonly", false);
+      }, 10);
+    });
   }
 }
 
@@ -303,12 +316,14 @@ function initialize() {
     tranlyze(m.type.mode);
   });
   $('.lang_box.lang .card_header').on('click', function() {
-    if (m.type.code == CODE_MORSE) {
-      m.toggle.code(CODE_BRAILLE);
-    } else if (m.type.code == CODE_BRAILLE) {
-      m.toggle.code(CODE_MORSE);
+    if (!this.classList.contains('selected')) {
+      if (this.classList.contains('morse')) {
+        m.toggle.code(CODE_MORSE);
+      } else if (this.classList.contains('braille')) {
+        m.toggle.code(CODE_BRAILLE);
+      }
+      tranlyze(m.type.mode);
     }
-    tranlyze(m.type.mode);
   });
 
   m.history.set(true);
