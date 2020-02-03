@@ -1,0 +1,198 @@
+{
+  "app_name": "摩斯电码",
+  "app_name_full": "M³ 翻译机",
+  "app_promotion": "将摩斯电码 ⇄ 英语，韩语，日语，其他语言.",
+  "morse": "摩斯电码",
+
+
+  "action_settings": "设置",
+  "action_sound": "音效",
+  "action_flash": "闪光灯",
+  "action_vibration": "震动",
+  "action_one_button": "单键模式",
+
+
+  "translate_hint": "输入文字",
+  "analyze_hint": "输入摩斯电码",
+  "bt": "按钮",
+  "bt_t": "文字 > 摩斯电码",
+  "bt_a": "摩斯电码 > 文字",
+  "bt_del": "删除",
+  "bt_voice": "语音输入",
+
+
+
+
+  "output_other_maybe": "是它？",
+
+  "a_option": "分析选项",
+  "a_kr": "韩文",
+  "a_en": "英文",
+  "a_jp": "日文",
+  "a_ru": "俄文",
+  "a_gr": "希腊文",
+  "a_he": "希伯来文",
+  "a_ar": "阿拉伯文",
+  "a_pr": "波斯文",
+  "a_no": "数字",
+
+  "a_capital": "自动大写(en)",
+
+  "output_massage": "输出文字",
+  "output_error__translate_to_morse": "(错误: 尝试将摩斯电码翻译为摩斯电码)",
+  "output_play_repeat": "重播",
+  "bt_speak": "播放 %s",
+  "bt_speak_loading": "载入 %s",
+  "bt_speak_stop": "停止 %s",
+  "bt_copy": "复制到剪切板",
+  "bt_copied": "已复制",
+
+  "output_error__tts_lang": "错误：未找到支持该语言的TTS服务",
+
+  "output_more": "更多",
+  "output_more_share": "分享",
+  "output_more_re": "分享 %s",
+
+
+  "noti_running": "正在执行...",
+  "noti_text": "点击返回,或轻扫停止",
+
+  "key_space": "空格",
+  "a_assemble": "集合音位(韩文)",
+
+  "quit_check": "再次点击则退出",
+
+
+
+  "s": "设置",
+
+  "s_locale": "软件语言",
+  "s_locale_default": "默认",
+  "s_locale_notyet": "重启应用生效翻译",
+  "s_locale_contributor": "翻译: iblackly",
+
+  "s_t": "翻译",
+  "s_t_full": "翻译(文字 → 电码)",
+
+  "s_t_speak": "播放音效",
+  "s_t_speak_summary": "选择音长和类型",
+
+  "s_t_speak_length": "音长",
+  "s_t_speak_length_summary": "选择音长",
+
+  "s_t_beep": "蜂鸣声",
+  "s_t_beep_sound_00": "新消息声",
+  "s_t_beep_sound_01": "教程大师",
+  "s_t_beep_sound_02": "傅立叶变换声",
+  "s_t_beep_sound_03": "无应答声",
+  "s_t_beep_sound_04": "对讲机声",
+  "s_t_beep_sound_05": "山姆大叔需要你！",
+  "s_t_beep_sound_06": "关闭电视声",
+
+  "s_a": "分析",
+  "s_a_full": "分析(电码 → 文字)",
+
+  "s_a_input": "输入",
+
+
+
+
+
+
+
+  "s_output": "输出",
+  "s_output_style_dit": "该点的样式",
+  "s_output_style_dit_summary": "更改为你想要的。重置为空白",
+  "s_output_style_dah": "破折号风格",
+  "s_output_style_dah_summary": "更改为你想要的。重置为空白",
+
+
+
+
+
+  "s_a_lang": "语言",
+
+  "s_a_capital_en": "自动大写",
+  "s_a_capital_en_on": "应用自动大写",
+  "s_a_capital_en_off": "应用自动大写",
+
+  "s_a_capital_en_upper": "全部大写？",
+  "s_a_capital_en_upper_off": "结果将不会大写",
+
+  "s_a_assemble_kr": "集合音位(韩文)",
+  "s_a_assemble_kr_on": "例如) 안녕?",
+  "s_a_assemble_kr_off": "例如) ㅇㅏㄴㄴㅕㅇ?",
+
+  "s_a_hira_jp": "平假名(日文)",
+  "s_a_hira_jp_on": "结果转换为平假名",
+  "s_a_hira_jp_off": "结果转换为片假名",
+
+  "s_dev": "开发者",
+  "s_dev_ver": "版本",
+  "s_dev_ver_history": "历史更新",
+  "s_dev_license": "开原许可",
+  "s_dev_license_summary": "开源软件许可信息",
+
+
+
+  "s_etc_contributor": "贡献者",
+  "s_etc_contributor_summary": "人的名单谁在应用程序的帮助下，包括翻译",
+
+  "s_etc": "ETC",
+  "s_etc_rate": "软件打分",
+  "s_etc_share": "分享这个软件",
+  "s_a_capital_en_upper_on": "结果将全部大写",
+
+  "s_etc_donation": "赞助 (移除广告)",
+  "s_etc_donation_ads": "移除广告",
+  "s_etc_donation_summary": "恢复开发者的HP",
+  "s_etc_donation_00": "$0.9\t\t\t\t一条能量棒",
+  "s_etc_donation_01": "$1.9\t\t\t\t一瓶能量饮料",
+  "s_etc_donation_02": "$4.9\t\t\t\t一杯暖暖的咖啡",
+  "s_etc_donation_03": "$9.9\t\t\t\t一份披萨",
+  "s_etc_donation_thanks": "感谢赞助，我的HP正在恢复。",
+
+
+  "quest_pokemon_title": "野生的开发者粗现了！",
+
+  "quest_pokemon_message": "你会怎么做？\n\n(提示：开发者穿着破旧的衣服，而且正在发烧咳嗽，咳咳~ 正在对着14寸显示器编码中。开起来开发者似乎需要一个温暖的帮助。)",
+  "quest_pokemon_message_effect": "感谢你的支持！",
+  "quest_pokemon_choice_1": "▸ 评分",
+  "quest_pokemon_choice_2": "▸ 分享",
+  "quest_pokemon_choice_3": "▸ 赞助",
+  "quest_pokemon_choice_4": "▸ 看广告",
+  "quest_pokemon_cancel": "哦不~开发者需要你的支持！&#8230;",
+  "quest_pokemon_cancel_0": "哦不~开发者需要你的支持！",
+  "quest_pokemon_cancel_1": "哦不~开发者需要你的支持！",
+
+  "q_poke_000_title": "野生的%s粗现了！",
+
+
+
+
+
+
+
+
+
+  "q_poke_000": "开发者",
+
+
+
+
+
+
+
+
+
+  "quest_survival": "Survival Instinct"
+
+
+
+
+
+
+
+
+
+}

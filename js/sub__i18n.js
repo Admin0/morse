@@ -1,7 +1,9 @@
 $.i18n().load({
   'en': 'i18n/en.json',
   'ko': 'i18n/ko.json',
-  'ja': 'i18n/ja.json'
+  'ja': 'i18n/ja.json',
+  'pl': 'i18n/pl.json',
+  'zh-CN': 'i18n/zh-CN.json'
 });
 
 const i18n = {

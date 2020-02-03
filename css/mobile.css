@@ -21,14 +21,14 @@
   }
 
   body {
-    margin: 49px auto;
+    margin: 56px auto;
   }
 
   header {
     width: 100%;
     box-shadow: none;
     border-bottom: 1px solid #ddd;
-    padding: 0;
+    padding: 4px 0;
   }
 
   .contents {

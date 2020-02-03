@@ -12,5 +12,5 @@ jQuery(function($) {
 });
 
 $(document).ready(function() {
-  $('.contents.sub').hScroll(120);
+  if !is_mobile $('.contents.sub').hScroll(120);
 });

@@ -4,8 +4,7 @@
 }
 
 .contents.sub {
-  padding:2em;
-  max-width: calc(1280px - 4em);
+  max-width: 1280px;
   z-index: 6;
   position: fixed;
   height: calc(100% - 12em);
@@ -13,11 +12,14 @@
   top: 6em;
   left: calc(50% - 640px);
   margin: auto;
-  transition: .5s;
   opacity: 1;
   column-count: 2;
   column-fill: auto;
   line-height: 1.5;
+}
+
+.contents.sub .body {
+  padding: 0 2em 2em;
 }
 
 .contents.sub h3 {
@@ -45,4 +47,21 @@
 
 .contents.sub h3:first-of-type {
   margin-top: 0;
+}
+
+@media handheld, screen and (max-width: 1280px) {
+  .contents.sub {
+    max-width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 32;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    column-count: 1;
+  }
+}
+
+@media handheld, screen and (max-width: 600px) {
+  .contents.sub {}
 }

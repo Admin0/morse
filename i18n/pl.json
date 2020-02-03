@@ -1,0 +1,82 @@
+{
+  "app_name": "Kod Morse'a",
+  "app_name_full": "Tłumacz M³",
+
+  "morse": "Kod Morse'a",
+
+
+  "action_settings": "Ustawienia",
+  "action_sound": "Dźwięk",
+  "action_flash": "Flesz",
+  "action_vibration": "Wibracje",
+  "action_one_button": "1-Przycisk pierwszej akcji",
+
+
+  "translate_hint": "Wprowadź Tekst",
+  "analyze_hint": "Wprowadź kod Morse'a",
+  "bt": "Przycisk",
+  "bt_t": "Przetłumacz tekst na kod Morse'a",
+  "bt_a": "Przeanalizuj kod Morse'a do tekstu",
+  "bt_del": "Usuń",
+  "bt_voice": "Mowa do tekstu",
+
+
+
+
+  "output_other_maybe": "Może",
+
+  "a_option": "Ustawienia analizy",
+  "a_kr": "Koreański",
+  "a_en": "Angielski",
+  "a_jp": "Japoński",
+  "a_ru": "Rosyjski",
+  "a_gr": "Grecki",
+
+  "a_ar": "Arabski",
+  "a_pr": "Perski",
+  "a_no": "Numer",
+
+
+
+  "output_massage": "Tekst wyjściowy",
+  "output_error__translate_to_morse": "Błąd: Spróbuj przetłumaczyć kod Morse'a z kodu Morse'a",
+  "output_play_repeat": "Odtwórz ponownie",
+  "bt_speak": "%s jest odtwarzany",
+  "bt_speak_loading": "%s jest ładowany",
+  "bt_speak_stop": "Opuszczono %s",
+  "bt_copy": "Skopiuj do schowka",
+  "bt_copied": "Skopiowano",
+
+
+
+  "output_more": "Wiece",
+  "output_more_share": "Udostępnij",
+
+
+
+  "noti_running": "działa...",
+  "noti_text": "Dotknij aby powróci, przesuń aby zatrzymać.",
+
+  "key_space": "SPACJA",
+
+
+  "quit_check": "Naciśnij \"Powrót\" ponownie aby opóścić aplikację",
+
+
+
+
+  "s": "Ustawienia",
+
+
+  "s_locale_default": "Domyślny",
+  "s_locale_notyet": "Musisz zrestartować aplikacjię, aby zastosować.",
+  "s_locale_contributor": "Tłumaczyć: Paweł Jerzy Grzymski Ostręga",
+
+  "s_t": "Tłumacz",
+
+
+  "s_t_speak": "Odtwórz Dźwięk",
+  "s_t_speak_summary": "Wybierz długość i typ dźwięku",
+
+  "s_t_speak_length": "Długość dźwięku"
+}
