@@ -15,6 +15,7 @@
   opacity: 1;
   column-count: 2;
   column-fill: auto;
+  padding: 2em 0;
   line-height: 1.5;
 }
 
@@ -52,13 +53,19 @@
 @media handheld, screen and (max-width: 1280px) {
   .contents.sub {
     max-width: 100%;
-    height: 100%;
     left: 0;
-    top: 0;
     z-index: 32;
     overflow-x: hidden;
     overflow-y: scroll;
     column-count: 1;
+  }
+}
+
+@media handheld, screen and (max-width: 1080px) {
+  .contents.sub {
+  top: 0;
+  height: 100%;
+    padding: 0;
   }
 }
 

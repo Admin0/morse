@@ -3,7 +3,8 @@ $.i18n().load({
   'ko': 'i18n/ko.json',
   'ja': 'i18n/ja.json',
   'pl': 'i18n/pl.json',
-  'zh-CN': 'i18n/zh-CN.json'
+  'zh-CN': 'i18n/zh-CN.json',
+  'zh-TW': 'i18n/zh-TW.json'
 });
 
 const i18n = {

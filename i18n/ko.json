@@ -319,9 +319,12 @@
   "lang_ja": "일본어",
   "lang_ko": "한국어",
   "lang_morse": "모스 부호",
+  "lang_pl": "폴란드어",
   "lang_pr": "페르시아어",
   "lang_ru": "러시아어",
   "lang_th": "태국어",
+  "lang_zh-CN": "중국어 (간체)",
+  "lang_zh-TW": "중국어 (번체)",
 
   "message_0": "수신자 전원에게 알림. 이것은 영원한 침묵에 앞선 우리의 마지막 함성.",
   "message_0_source": "프랑스 해군의 1997년 1월 31일 마지막 모스 부호 메시지",
@@ -405,5 +408,4 @@
   "history": "기록",
   "history_i": "번역 $1개",
   "history_clear": "기록 지우기"
-
 }

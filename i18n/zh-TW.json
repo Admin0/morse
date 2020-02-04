@@ -1,0 +1,177 @@
+{
+  "app_name": "摩斯密碼",
+  "app_name_full": "設定",
+  "app_promotion": "閃光",
+  "morse": "音效",
+
+
+  "action_settings": "震動",
+  "action_sound": "輸入文字",
+  "action_flash": "單鍵模式",
+  "action_vibration": "輸入摩斯密碼",
+  "action_one_button": "按鈕",
+
+
+  "translate_hint": "翻譯文字至摩斯密碼",
+  "analyze_hint": "翻譯摩斯密碼至文字",
+  "bt": "刪除",
+  "bt_t": "語音輸入",
+  "bt_a": "輸出文字",
+  "bt_del": "(錯誤： 嘗試翻譯摩斯密碼至摩斯密碼。)",
+  "bt_voice": "重複播放",
+
+
+
+
+  "output_other_maybe": "分享",
+
+  "a_option": "日文",
+  "a_kr": "俄文",
+  "a_en": "希臘文",
+  "a_jp": "希伯來文",
+  "a_ru": "阿拉伯文",
+  "a_gr": "巴基斯坦文",
+  "a_he": "數字",
+  "a_ar": "大寫(英文)",
+  "a_pr": "可能是？",
+  "a_no": "錯誤：您的手機裝置不支援該語言的TTS服務",
+
+  "a_capital": "更多",
+
+  "output_massage": "播放 %s",
+  "output_error__translate_to_morse": "載入 %s",
+  "output_play_repeat": "結束%s",
+  "bt_speak": "複製到剪貼版",
+  "bt_speak_loading": "分析選項",
+  "bt_speak_stop": "韓文",
+  "bt_copy": "英文",
+  "bt_copied": "Survival Instinct",
+
+  "output_error__tts_lang": "重新 %s",
+
+  "output_more": "正在執行...",
+  "output_more_share": "輸入來回復，或滑動以暫停",
+  "output_more_re": "SPACE",
+
+
+  "noti_running": "集合音位(韓文)",
+  "noti_text": "在點擊一次離開",
+
+  "key_space": "設定",
+  "a_assemble": "軟體語言",
+
+  "quit_check": "預設",
+
+
+
+  "s": "您必須重新開啟軟體來完整應用",
+
+  "s_locale": "翻譯",
+  "s_locale_default": "翻譯(文字 → 摩斯密碼)",
+  "s_locale_notyet": "播放音效",
+  "s_locale_contributor": "人的名單誰在應用程序的幫助下，包括翻譯",
+
+  "s_t": "選擇音效種類與強度",
+  "s_t_full": "音效強度",
+
+  "s_t_speak": "選擇音效強度",
+  "s_t_speak_summary": "嗶嗶聲",
+
+  "s_t_speak_length": "新聞聲",
+  "s_t_speak_length_summary": "教學大師聲",
+
+  "s_t_beep": "情報聲",
+  "s_t_beep_sound_00": "沒有回答音效",
+  "s_t_beep_sound_01": "網路連接聲",
+  "s_t_beep_sound_02": "我要你！為了我們的軍隊",
+  "s_t_beep_sound_03": "關閉電視然後走出家門",
+  "s_t_beep_sound_04": "分析",
+  "s_t_beep_sound_05": "分析(摩斯 → 文字)",
+  "s_t_beep_sound_06": "輸入",
+
+  "s_a": "語言",
+  "s_a_full": "自動大寫",
+
+  "s_a_input": "啟用自動大寫",
+
+
+
+
+
+
+
+  "s_output": "該點的樣式",
+  "s_output_style_dit": "複製",
+  "s_output_style_dit_summary": "貢獻者",
+  "s_output_style_dah": "更改為你想要的。重置為空白。",
+  "s_output_style_dah_summary": "翻譯: Adan Chou",
+
+
+
+
+
+  "s_a_lang": "啟用自動根據以下設定",
+
+  "s_a_capital_en": "強制所有大寫？",
+  "s_a_capital_en_on": "分析結果將不會大寫",
+  "s_a_capital_en_off": "集合音位(韓文)",
+
+  "s_a_capital_en_upper": "例如) 안녕?",
+  "s_a_capital_en_upper_off": "例如) ㅇㅏㄴㄴㅕㅇ?",
+
+  "s_a_assemble_kr": "平假名 (日文)",
+  "s_a_assemble_kr_on": "分析結果將成為平假名",
+  "s_a_assemble_kr_off": "分析結果將成為片假名",
+
+  "s_a_hira_jp": "開發者",
+  "s_a_hira_jp_on": "版本",
+  "s_a_hira_jp_off": "更新歷史",
+
+  "s_dev": "開源資訊",
+  "s_dev_ver": "關於開源軟體的資訊",
+  "s_dev_ver_history": "等等",
+  "s_dev_license": "評分這個軟體",
+  "s_dev_license_summary": "分享這個軟體",
+
+
+
+  "s_etc_contributor": "野生的 %s 出現了！",
+  "s_etc_contributor_summary": "開發者",
+
+  "s_etc": "分析結果將會全部大寫",
+  "s_etc_rate": "贊助 (移除廣告)",
+  "s_etc_share": "這將會回復開發者的血量",
+  "s_a_capital_en_upper_on": "$0.9\t\t\t\t能量棒",
+
+  "s_etc_donation": "$1.9\t\t\t\t能量飲料",
+  "s_etc_donation_ads": "0",
+  "s_etc_donation_summary": "$4.9\t\t\t\t咖啡",
+  "s_etc_donation_00": "$9.9\t\t\t\t披薩",
+  "s_etc_donation_01": "感謝贊助！",
+  "s_etc_donation_02": "野生的 開發者 出現了！",
+  "s_etc_donation_03": "您將會怎麼做呢？\n\n(提示： 開發者 穿著破爛衣物、生病咳嗽、以及使用十四吋螢幕邊寫代碼。看起來像是個溫暖的幫助。)",
+  "s_etc_donation_thanks": "這超有效的！",
+
+
+  "quest_pokemon_title": "▸ 評分",
+
+  "quest_pokemon_message": "▸ 分享",
+  "quest_pokemon_message_effect": "▸ 贊助",
+  "quest_pokemon_choice_1": "▸ 看廣告",
+  "quest_pokemon_choice_2": "使用者 拒絕了 開發者 的面子。他消失進入了含有廣告的陰影之中#8230;",
+  "quest_pokemon_choice_3": "使用者 拒絕了 開發者 的面子。",
+  "quest_pokemon_choice_4": "怎麼說來 開發者 也用這種方法打招呼啊。為了什麼呢？",
+  "quest_pokemon_cancel": "輸出",
+  "quest_pokemon_cancel_0": "破折號風格",
+  "quest_pokemon_cancel_1": "更改為你想要的。重置為空白",
+
+
+
+
+
+
+
+
+
+  "quest_survival": "移除廣告"
+}
