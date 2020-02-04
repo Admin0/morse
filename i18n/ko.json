@@ -1,7 +1,7 @@
 {
-  "app_name": "번역기 (모스, 점자)",
-  "app_name_full": "기만의 번역기",
-  "app_promotion": "모스 부호, 점자 ⇄ 한글 해석 가능!\n기적의 만능 모스 부호 변환기 + 해석기!",
+  "app_name": "모스 부호",
+  "app_name_full": "기만의 모스 부호",
+  "app_promotion": "모스 부호 ⇄ 한글 해석 가능!\n기적의 만능 모스 부호 변환기 + 해석기!",
   "morse": "모스 부호",
   "braille": "점자",
 
@@ -311,6 +311,7 @@
   "card__input_textarea_placeholder_0": " 한글, 영어, 숫자 및 문자를 입력하세요.",
   "card__input_textarea_placeholder_1": " $1를 입력하세요.",
   "card__output_0": "여기에 번역된 $1가 출력됩니다.",
+  "card__output_1": "여기에 해석된 $1가 출력됩니다.",
   "lang_ar": "아랍어",
   "lang_auto": "자동 감지",
   "lang_en": "영어",
@@ -406,6 +407,6 @@
   "translator": "번역기",
 
   "history": "기록",
-  "history_i": "번역 $1개",
+  "history_i": "번역 %s개",
   "history_clear": "기록 지우기"
 }

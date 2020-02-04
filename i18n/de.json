@@ -1,0 +1,222 @@
+{
+  "app_name": "Morse Code",
+  "app_name_full": "M³ Translator",
+  "app_promotion": "Es ist möglich Morse ⇄ Deutsch, Englisch, Koreanisch, Japanisch, usw. zu übersetzen",
+  "morse": "Morse Code",
+
+
+  "action_settings": "Einstellungen",
+  "action_sound": "Ton",
+  "action_flash": "Blitz",
+  "action_vibration": "Vibration",
+  "action_one_button": "1-Knopf mod",
+
+
+  "translate_hint": "Eingabetext",
+  "analyze_hint": "Gib Morse code ein",
+  "bt": "Knopf",
+  "bt_t": "Übersetze Text in Morse",
+  "bt_a": "Übersetze Morse in Text",
+  "bt_del": "Löschen",
+  "bt_voice": "Sprache-zu-text",
+
+  "input_error__stt_unavailable": "FEHLER: Sprach Erkennung (SpeechRecognizer) ist nicht verfügbar",
+
+
+  "output_other_maybe": "Vielleicht?",
+
+  "a_option": "Optionen analysieren",
+  "a_kr": "Koreanisch",
+  "a_en": "Englisch",
+  "a_jp": "Japanisch",
+  "a_ru": "Russisch",
+  "a_gr": "Griechisch",
+  "a_he": "Hebräisch",
+  "a_ar": "Arabisch",
+  "a_pr": "Persisch",
+  "a_no": "Nummer",
+
+  "a_capital": "Großbuchstaben (en)",
+
+  "output_massage": "Ausgabetext",
+  "output_error__translate_to_morse": "(FEHLER: Du versuchst, Morse zu Morse zu übersetzen.)",
+  "output_play_repeat": "Abspielen wiederholen",
+  "bt_speak": "%s abspielen",
+  "bt_speak_loading": "%s lädt",
+  "bt_speak_stop": "%s beenden",
+  "bt_copy": "In Zwischenablage kopieren",
+  "bt_copied": "Kopiert",
+
+  "output_error__tts_lang": "FEHLER: Sprache wird nicht für TTS unterstützt.",
+
+  "output_more": "Mehr",
+  "output_more_share": "Teilen",
+  "output_more_re": "Re %s",
+
+
+  "noti_running": "läuft...",
+  "noti_text": "Drücken um zurückzukehren, oder wischen um zu stoppen",
+
+  "key_space": "LEERTASTE",
+  "a_assemble": "Phoneme zusammensetzen (kr)",
+
+  "quit_check": "Noch einmal auf zurück um zu beenden",
+
+
+
+  "s": "Einstellungen",
+
+  "s_locale": "Appsprache",
+  "s_locale_default": "Standard",
+  "s_locale_notyet": "Du musst die App neustarten, damit alles angewendet wird.",
+  "s_locale_contributor": "Übersetzer: falko17",
+
+  "s_t": "Übersetzen",
+  "s_t_full": "Übersetzen (Buchstaben →  Morse)",
+
+  "s_t_speak": "Ton abspielen",
+  "s_t_speak_summary": "Tonlänge und -art auswählen",
+
+  "s_t_speak_length": "Tonlänge",
+  "s_t_speak_length_summary": "Tonlänge auswählen",
+
+  "s_t_beep": "Piepton",
+  "s_t_beep_sound_00": "Eingehende News",
+  "s_t_beep_sound_01": "Tutorialmeister",
+  "s_t_beep_sound_02": "Fourier Umformung",
+  "s_t_beep_sound_03": "Unbeantwortete Nachricht",
+  "s_t_beep_sound_04": "Internet einrichten",
+  "s_t_beep_sound_05": "WIR WOLLEN DICH! FÜR DIE US ARMY",
+  "s_t_beep_sound_06": "Mach den Fernseher aus und geh raus",
+
+  "s_a": "Übersetzen",
+  "s_a_full": "Übersetzen (Morse → Buchstaben)",
+
+  "s_a_input": "Eingabe",
+  "s_a_input_volume": "Lautstärketasten Eingabe",
+
+
+  "s_a_input_volume_on": "Du magst es wohl hardcore",
+  "s_a_input_volume_off": "Lautstärketasten werden nicht für die Eingabe benutzt.",
+  "s_a_input_volume_dialog": "Mit den Lautstärketasten eingeben?\nDu kannst das jederzeit in den Einstellungen ändern.",
+
+  "s_output": "Ausgabe",
+  "s_output_style_dit": "Stil der Punkte",
+  "s_output_style_dit_summary": "Ändern zu was du willst. Leer lassen für standard",
+  "s_output_style_dah": "Stil der Striche",
+  "s_output_style_dah_summary": "Ändern zu was du willst. Leer lassen für standard",
+
+
+
+
+
+  "s_a_lang": "Sprache",
+
+  "s_a_capital_en": "Automatische Großschreibung",
+  "s_a_capital_en_on": "Automatische Großschreibung angewendet",
+  "s_a_capital_en_off": "Manuell untere option anwenden",
+
+  "s_a_capital_en_upper": "Alle großschreiben?",
+  "s_a_capital_en_upper_off": "Ergebnisse werden nicht großgeschrieben",
+
+  "s_a_assemble_kr": "Phoneme zusammensetzen (kr)",
+  "s_a_assemble_kr_on": "Bsp) 안녕?",
+  "s_a_assemble_kr_off": "Bsp) ㅇㅏㄴㄴㅕㅇ?",
+
+  "s_a_hira_jp": "Hiragana (Japanisch)",
+  "s_a_hira_jp_on": "Ergebnisse werden hiragana ",
+  "s_a_hira_jp_off": "Ergebnisse werden katakana",
+
+  "s_dev": "Entwickler",
+  "s_dev_ver": "Version",
+  "s_dev_ver_history": "Updateverlauf",
+  "s_dev_license": "Open Source Lizenz",
+  "s_dev_license_summary": "Lizenzdetails für Open Source Software",
+
+
+
+  "s_etc_contributor": "Beitragende",
+  "s_etc_contributor_summary": "Eine Liste derer, die mit dieser App geholfen haben, einschließlich der Übersetzungen",
+
+  "s_etc": "ETC",
+  "s_etc_rate": "Bewerte diese App",
+  "s_etc_share": "Teile diese App",
+  "s_a_capital_en_upper_on": "Ergebnisse werden großgeschrieben",
+
+  "s_etc_donation": "Spenden (entfernt die Werbung)",
+  "s_etc_donation_ads": "Entfernt die Werbung",
+  "s_etc_donation_summary": "Dies heilt die HP des Entwicklers",
+  "s_etc_donation_00": "$0.9\t\t\t\tMÜSLI RIEGEL",
+  "s_etc_donation_01": "$1.9\t\t\t\tENERGY DRINK",
+  "s_etc_donation_02": "$4.9\t\t\t\tKAFFEE",
+  "s_etc_donation_03": "$9.9\t\t\t\tPIZZA",
+  "s_etc_donation_thanks": "Danke für die Spende!",
+
+
+  "quest_pokemon_title": "Wilder ENTWICKLER erscheint!",
+
+  "quest_pokemon_message": "Was wird BENUTZER tun?\n\n(HINWEIS: ENTWICKLER ist schäbig gekleidet, hustet durch seine Krankheit und programmiert vor einem 14-Zoll Monitor. Es scheint ein bisschen Hilfe zu gebrauchen.)",
+  "quest_pokemon_message_effect": "Es ist sehr effektiv!",
+  "quest_pokemon_choice_1": "▸ BEWERTEN",
+  "quest_pokemon_choice_2": "▸ TEILEN",
+  "quest_pokemon_choice_3": "▸ SPENDEN",
+  "quest_pokemon_choice_4": "▸ WERBUNG",
+  "quest_pokemon_cancel": "BENUTZER dreht sich von ENTWICKLERs Gesicht weg. Er verschwindet gemeinsam mit WERBUNG&#8230; in den Schatten",
+  "quest_pokemon_cancel_0": "BENUTZER dreht sich von ENTWICKLER's Gesicht weg.",
+  "quest_pokemon_cancel_1": "Ich weiß nicht wieso, aber ENTWICKLER hat dich von dort gegrüßt.",
+
+
+
+
+
+
+
+
+
+  "q_poke_000": "ENTWICKLER",
+
+  "q_poke_001": "Trauriger Frosch",
+
+
+
+
+
+
+
+
+
+  "quest_survival": "Überlebensinstinkt",
+
+  "quest_survival_title": "Lara's Tagebücher",
+  "quest_survival_direction_e": "E",
+  "quest_survival_direction_w": "W",
+  "quest_survival_direction_s": "S",
+  "quest_survival_direction_n": "N",
+  "quest_survival_msg_skip": "Überspringen",
+  "quest_survival_msg_next": "Nächstes",
+  "quest_survival_msg_prev": "Vorheriges",
+  "quest_survival_msg_pre_0": "Vor einem Monat: \n...hab angefangen das legendäre alte Königreich Yamatai mit meinen Freunden aufzusuchen...",
+  "quest_survival_msg_pre_1": "Vor einer Woche: \n...wurde von einem riesigen Sturm während der Reise getroffen und bin zu einer einsamen Insel abgetrieben...",
+  "quest_survival_msg_pre_2": "Vor einer Woche: \n...wurde von den Solarii und wilden Tieren auf der Insel bedroht...",
+  "quest_survival_msg_pre_3": "Vor ein paar Tagen: \n...muss Kollegen finden und so schnell es geht von der Insel fliehen.\nOder ich schlachte jeden Fanatiker hier und komme einfacher raus...",
+  "quest_survival_msg_pre_4": "Heute: \n...hab das Dorf der Fanatiker verwüstet.\nOh, ich kann einen Motor im *nördlichen Himmel* hören. Ist das ein Rettungshelikopter?",
+  "quest_survival_msg_pre_5": "Nun, schick ein Notsignal zum Helikopter!",
+  "quest_survival_msg_virgin0": "Der Helikopter ist aus unbekannten Gründen abgestürzt.",
+  "quest_survival_msg_virgin1": "Aber deine Überlebensinstinkte sind sensibler denn je geworden.",
+  "quest_survival_msg_virgin2": "Du hast nachts das gleiche Sehvermögen wie am Tag, und kannst sogar die Richtungen hören.",
+
+
+  "title_is": "TITEL",
+  "title_donor": "SPENDER",
+  "title_donor_summary": "Danke für deine Unterstützung",
+  "title_survivor": "ÜBERLEBENDER",
+  "title_survivor_summary": "Du hast auf der Insel überlebt",
+  "quest_survival_menu_3dCompass": "3D Kompass",
+  "quest_survival_menu_showIntro": "Intro nochmal anzeigen",
+  "quest_survival_menu_showValues": "Sensorenwerte anzeigen",
+  "quest_survival_menu_onFlash": "Beim Blitz am Anfang",
+  "quest_survival_menu_addToHome": "Zum Startbildschirm hinzufügen",
+  "quest_survival_menu_getApp": "Hol die eigenständige App",
+  "quest_survival_menu_getParent": "Hol die größere App",
+  "quest_survival_menu_openApp": "Öffne die eigenständige App",
+  "quest_survival_menu_openParent": "Öffne die größere App"}

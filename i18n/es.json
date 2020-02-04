@@ -1,0 +1,219 @@
+{
+  "app_name": "Código Morse",
+  "app_name_full": "M³ Translator",
+  "app_promotion": "Posibilidad de Morse ⇄ Inglés, Coreano, Japonés, etc.",
+  "morse": "Código Morse",
+
+
+  "action_settings": "Configuración",
+  "action_sound": "Sonido",
+  "action_flash": "Flash",
+  "action_vibration": "Vibración",
+
+
+
+  "translate_hint": "Ingreso de texto",
+  "analyze_hint": "Ingreso de código Morse",
+  "bt": "Botón",
+  "bt_t": "Traducir texto a código Morse",
+  "bt_a": "Analizar código Morse a texto",
+  "bt_del": "Borrar",
+  "bt_voice": "Decir texto",
+
+  "input_error__stt_unavailable": "ERROR: El Reconocimiento de Voz no está disponible",
+
+
+  "output_other_maybe": "¿Tal vez?",
+
+
+  "a_kr": "Coreano",
+  "a_en": "Inglés",
+  "a_jp": "Japonés",
+  "a_ru": "Ruso",
+  "a_gr": "Griego",
+  "a_he": "Hebreo",
+  "a_ar": "Árabe",
+  "a_pr": "Persa",
+
+
+  "a_capital": "Mayúsculas(es)",
+
+  "output_massage": "Texto de salida",
+  "output_error__translate_to_morse": "(ERROR: Trate de traducir el código morse desde Código Morse.)",
+  "output_play_repeat": "Repetir audio",
+
+
+
+  "bt_copy": "Copiar al portapapeles",
+  "bt_copied": "Copiado",
+
+  "output_error__tts_lang": "ERROR: El lenguaje no es compatible con el TTS (sintetizador de voz) de su teléfono",
+
+  "output_more": "Más",
+  "output_more_share": "Compartir",
+
+
+
+
+  "noti_text": "Pulse para regresar o deslice para detener",
+
+  "key_space": "ESPACIO",
+
+
+  "quit_check": "Pulse atrás de nuevo para salir",
+
+
+
+  "s": "Configuración",
+
+
+  "s_locale_default": "Por defecto",
+  "s_locale_notyet": "Debe reiniciar la aplicación para que se aplique por completo.",
+  "s_locale_contributor": "Tradutor: Gabriel Czyz",
+
+  "s_t": "Traducir",
+  "s_t_full": "Traducir (Letras → Morse)",
+
+  "s_t_speak": "Reproducción del sonido",
+  "s_t_speak_summary": "Seleccionar la duración y el tipo de sonido",
+
+  "s_t_speak_length": "Duración del sonido",
+  "s_t_speak_length_summary": "Seleccione la duración del sonido",
+
+  "s_t_beep": "Sonido beep (pitido)",
+
+
+
+
+
+
+
+
+  "s_a": "Analizar",
+  "s_a_full": "Analizar (Morse → Letras)",
+
+  "s_a_input": "Entrada",
+  "s_a_input_volume": "Ingreso por botones de volumen",
+
+
+  "s_a_input_volume_on": "Du magst es wohl hardcore",
+  "s_a_input_volume_off": "Los botones de volumen no se utilizan como método de entrada.",
+  "s_a_input_volume_dialog": "Mit den Lautstärketasten eingeben?\nDu kannst das jederzeit in den Einstellungen ändern.",
+
+  "s_output": "Salida",
+  "s_output_style_dit": "Estilo de los puntos",
+  "s_output_style_dit_summary": "Cámbielo por lo que quiera. Deje en blanco para restablecer",
+  "s_output_style_dah": "Estilo de los guiones",
+  "s_output_style_dah_summary": "Cámbielo por lo que quiera. Deje en blanco para restablecer",
+
+
+
+
+
+  "s_a_lang": "Lenguaje",
+
+
+
+
+
+
+
+
+
+  "s_a_hira_jp": "Hiragana (Japonés)",
+  "s_a_hira_jp_on": "Los resultados del análisis se convertirán a hiragana",
+  "s_a_hira_jp_off": "Los resultados del análisis se convertirán a katakana",
+
+  "s_dev": "Desarrollador",
+  "s_dev_ver": "Versión",
+  "s_dev_ver_history": "Historial de actualizaciones",
+
+  "s_dev_license_summary": "Detalles de la licencia para software open source",
+
+
+
+  "s_etc_contributor": "Contribuyentes",
+  "s_etc_contributor_summary": "Una lista de los que ayudaron a la app, incluyendo las traducciones",
+
+
+  "s_etc_rate": "Calificar la App",
+  "s_etc_share": "Compartir la App",
+  "s_a_capital_en_upper_on": "Ergebnisse werden großgeschrieben",
+
+  "s_etc_donation": "Donar (Elimina las Ads)",
+  "s_etc_donation_ads": "Entfernt die Werbung",
+  "s_etc_donation_summary": "Esto restaurara los HP del desarrollador",
+  "s_etc_donation_00": "$0.9\t\t\t\tBARRA ENERGÉTICA",
+  "s_etc_donation_01": "$1.9\t\t\t\tBEBIDA ENERGÉTICA",
+  "s_etc_donation_02": "$4.9\t\t\t\tCAFÉ",
+  "s_etc_donation_03": "$9.9\t\t\t\tPIZZA",
+  "s_etc_donation_thanks": "¡Gracias por la donación!",
+
+
+  "quest_pokemon_title": "Wilder ENTWICKLER erscheint!",
+
+  "quest_pokemon_message": "Was wird BENUTZER tun?\n\n(HINWEIS: ENTWICKLER ist schäbig gekleidet, hustet durch seine Krankheit und programmiert vor einem 14-Zoll Monitor. Es scheint ein bisschen Hilfe zu gebrauchen.)",
+  "quest_pokemon_message_effect": "Es ist sehr effektiv!",
+  "quest_pokemon_choice_1": "▸ BEWERTEN",
+  "quest_pokemon_choice_2": "▸ TEILEN",
+  "quest_pokemon_choice_3": "▸ SPENDEN",
+  "quest_pokemon_choice_4": "▸ WERBUNG",
+  "quest_pokemon_cancel": "BENUTZER dreht sich von ENTWICKLERs Gesicht weg. Er verschwindet gemeinsam mit WERBUNG&#8230; in den Schatten",
+  "quest_pokemon_cancel_0": "BENUTZER dreht sich von ENTWICKLER's Gesicht weg.",
+  "quest_pokemon_cancel_1": "Ich weiß nicht wieso, aber ENTWICKLER hat dich von dort gegrüßt.",
+
+
+
+
+
+
+
+
+
+  "q_poke_000": "ENTWICKLER",
+
+  "q_poke_001": "Trauriger Frosch",
+
+
+
+
+
+
+
+
+
+  "quest_survival": "Überlebensinstinkt",
+
+  "quest_survival_title": "Lara's Tagebücher",
+  "quest_survival_direction_e": "E",
+  "quest_survival_direction_w": "W",
+  "quest_survival_direction_s": "S",
+  "quest_survival_direction_n": "N",
+  "quest_survival_msg_skip": "Überspringen",
+  "quest_survival_msg_next": "Nächstes",
+  "quest_survival_msg_prev": "Vorheriges",
+  "quest_survival_msg_pre_0": "Vor einem Monat: \n...hab angefangen das legendäre alte Königreich Yamatai mit meinen Freunden aufzusuchen...",
+  "quest_survival_msg_pre_1": "Vor einer Woche: \n...wurde von einem riesigen Sturm während der Reise getroffen und bin zu einer einsamen Insel abgetrieben...",
+  "quest_survival_msg_pre_2": "Vor einer Woche: \n...wurde von den Solarii und wilden Tieren auf der Insel bedroht...",
+  "quest_survival_msg_pre_3": "Vor ein paar Tagen: \n...muss Kollegen finden und so schnell es geht von der Insel fliehen.\nOder ich schlachte jeden Fanatiker hier und komme einfacher raus...",
+  "quest_survival_msg_pre_4": "Heute: \n...hab das Dorf der Fanatiker verwüstet.\nOh, ich kann einen Motor im *nördlichen Himmel* hören. Ist das ein Rettungshelikopter?",
+  "quest_survival_msg_pre_5": "Nun, schick ein Notsignal zum Helikopter!",
+  "quest_survival_msg_virgin0": "Der Helikopter ist aus unbekannten Gründen abgestürzt.",
+  "quest_survival_msg_virgin1": "Aber deine Überlebensinstinkte sind sensibler denn je geworden.",
+  "quest_survival_msg_virgin2": "Du hast nachts das gleiche Sehvermögen wie am Tag, und kannst sogar die Richtungen hören.",
+
+
+  "title_is": "TITEL",
+  "title_donor": "DONANTE",
+  "title_donor_summary": "Gracias por tu apoyo",
+  "title_survivor": "SOBREVIVIENTE",
+  "title_survivor_summary": "Has sobrevivido en la Isla",
+  "quest_survival_menu_3dCompass": "3D Kompass",
+  "quest_survival_menu_showIntro": "Intro nochmal anzeigen",
+  "quest_survival_menu_showValues": "Sensorenwerte anzeigen",
+  "quest_survival_menu_onFlash": "Beim Blitz am Anfang",
+  "quest_survival_menu_addToHome": "Zum Startbildschirm hinzufügen",
+  "quest_survival_menu_getApp": "Hol die eigenständige App",
+  "quest_survival_menu_getParent": "Hol die größere App",
+  "quest_survival_menu_openApp": "Öffne die eigenständige App",
+  "quest_survival_menu_openParent": "Öffne die größere App"}

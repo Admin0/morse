@@ -268,6 +268,8 @@ function tranlyze(type) {
       $('#output_textarea').html('<span class="placeholder">' + $.i18n('card__output_0', $.i18n('morse')) + '</span>')
     else if (m.type.mode == TRANSLATE_MODE && m.type.code == CODE_BRAILLE)
       $('#output_textarea').html('<span class="placeholder">' + $.i18n('card__output_0', $.i18n('braille')) + '</span>')
+    else if (m.type.mode == ANALYZE_MODE)
+      $('#output_textarea').html('<span class="placeholder">' + $.i18n('card__output_1', $('.lang_box.code .card_header.selected').text()) + '</span>')
   }
 
   if (m.type.mode == ANALYZE_MODE && m.type.code == CODE_BRAILLE) { // 점자 해석일 때도 입력창 클릭하면 편집가능
@@ -277,7 +279,7 @@ function tranlyze(type) {
         $('#input_textarea').attr("readonly", false);
       }, 10);
     });
-    $('#input_textarea').on("focusout, blur", function(){
+    $('#input_textarea').on("focusout, blur", function() {
       $('#input_textarea').attr("readonly", true);
     })
   }
@@ -297,7 +299,7 @@ function initialize() {
   });
 
   $('#re_anaylze').on('change', function() {
-    $('#input_textarea').val($('#output_textarea').text());
+    if ($('#input_textarea').val() != "") {$('#input_textarea').val($('#output_textarea').text());}
     m.toggle.mode();
     tranlyze(m.type.mode);
   });

@@ -311,6 +311,7 @@
   "card__input_textarea_placeholder_0": " If you input the English, numbers, and etc.",
   "card__input_textarea_placeholder_1": " Input the $1.",
   "card__output_0": "Then, the $1 will be output here.",
+  "card__output_1": "Then, the $1 message will be output here.",
   "lang_ar": "Arabic",
   "lang_auto": "Auto detect",
   "lang_en": "English",
@@ -319,9 +320,12 @@
   "lang_ja": "Japanese",
   "lang_ko": "Korean",
   "lang_morse": "Morse Code",
+  "lang_pl": "Polish ",
   "lang_pr": "Persian",
   "lang_ru": "Russian",
   "lang_th": "Thai",
+  "lang_zh-CN": "Chinese (Simplified)",
+  "lang_zh-TW": "Chinese (Traditional)",
 
   "message_0": "Calling all. This is our last cry before our eternal silence.",
   "message_0_source": "French Navy ceased using Morse code on January 31, 1997, the final transmitted message",
@@ -403,6 +407,6 @@
   "translator": "translator",
 
   "history": "History",
-  "history_i": "Logged $1 times",
+  "history_i": "Logged %s times",
   "history_clear": "Clear logs"
 }

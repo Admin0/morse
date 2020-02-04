@@ -1,5 +1,7 @@
 $.i18n().load({
   'en': 'i18n/en.json',
+  'de': 'i18n/de.json',
+  'es': 'i18n/es.json',
   'ko': 'i18n/ko.json',
   'ja': 'i18n/ja.json',
   'pl': 'i18n/pl.json',
