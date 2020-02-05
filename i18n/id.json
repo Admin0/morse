@@ -1,0 +1,185 @@
+{
+  "app_name": "Kode Morse",
+  "app_name_full": "M³ Translator",
+  "app_promotion": "Memungkinkan untuk mengubah bahasa Inggris, Korea, Jepang, dll untuk menjadi morse.",
+  "morse": "Kode Morse",
+
+
+  "action_settings": "Pengaturan",
+  "action_sound": "Suara",
+  "action_flash": "Cahaya",
+  "action_vibration": "Getaran",
+  "action_one_button": "Mode 1 tombol",
+
+
+  "translate_hint": "Masukkan teks",
+  "analyze_hint": "Masukkan kode morse",
+  "bt": "Tombol",
+  "bt_t": "Terjemahkan teks menjadi kode Morse",
+  "bt_a": "Analisis kode Morse menjadi teks",
+  "bt_del": "Hapus",
+  "bt_voice": "Bicara untuk teks",
+
+  "input_error__stt_unavailable": "ERROR: SpeechRecognizer tidak tersedia",
+
+
+  "output_other_maybe": "Mungkin?",
+
+  "a_option": "Pengaturan analisis",
+  "a_kr": "Korea",
+  "a_en": "Inggris",
+  "a_jp": "Jepang",
+  "a_ru": "Rusia",
+  "a_gr": "Yunani",
+  "a_he": "Yahudi",
+  "a_ar": "Arab",
+  "a_pr": "Persia",
+  "a_no": "Nomor",
+
+  "a_capital": "Upper case(id)",
+
+  "output_massage": "Teks keluaran",
+  "output_error__translate_to_morse": "ERROR: Mencoba menerjemahkan kode morse dari kode morse.",
+  "output_play_repeat": "Ulangi",
+  "bt_speak": "Mulai %s",
+  "bt_speak_loading": "Memuat %s",
+  "bt_speak_stop": "Keluar %s",
+  "bt_copy": "Salin ke papan ketik",
+  "bt_copied": "Tersalin",
+
+  "output_error__tts_lang": "ERROR: Bahasa tidak mendukung TTS di teleponmu",
+
+  "output_more": "Lainnya",
+  "output_more_share": "Bagikan",
+  "output_more_re": "Re %s",
+
+
+  "noti_running": "sedang berjalan...",
+  "noti_text": "Tekan untuk kembali, atau geser untuk berhenti",
+
+  "key_space": "SPASI",
+
+
+  "quit_check": "Tekan kembali lagi untuk keluar",
+
+
+
+  "s": "Pengaturan",
+
+  "s_locale": "Lokalisasi aplikasi",
+  "s_locale_default": "Default",
+  "s_locale_notyet": "Kau harus merestart app untuk terpakai penuh",
+  "s_locale_contributor": "Dimas "
+  DeimosBTG " Firmansyah",
+
+  "s_t": "Terjemahkan",
+  "s_t_full": "Terjemahkan(Kata → Morse)",
+
+  "s_t_speak": "Mainkan suara",
+  "s_t_speak_summary": "Pilih panjang dan macamnya suara",
+
+  "s_t_speak_length": "Panjang suara",
+  "s_t_speak_length_summary": "Pilih panjangnya suara",
+
+  "s_t_beep": "Bunyi beep",
+  "s_t_beep_sound_00": "Berita mendatang",
+  "s_t_beep_sound_01": "Master tutorial",
+
+
+
+
+
+
+
+
+
+  "s_a_input_volume_on": "Kau adalah salah satu yang menikmati hardcore",
+  "s_a_input_volume_off": "Tombol volume tidak digunakan untuk input.",
+  "s_a_input_volume_dialog": "Menggunakan tombol volume untuk input?\nKau harus mengubah di pengaturan, kapanpun kamu mau.",
+
+  "s_output": "Keluaran",
+  "s_output_style_dit": "Gaya titik",
+  "s_output_style_dit_summary": "Ubah ke apapun kau mau. Kosongkan untuk reset",
+  "s_output_style_dah": "Gaya Strip",
+  "s_output_style_dah_summary": "Ubah ke apapun kau mau. Kosongkan untuk reset",
+
+
+
+
+
+  "s_a_lang": "Bahasa",
+
+  "s_a_capital_en": "Kapltalisasi otomatis",
+  "s_a_capital_en_on": "Aktif",
+  "s_a_capital_en_off": "Mati",
+
+  "s_a_capital_en_upper": "Kapital semua?",
+  "s_a_capital_en_upper_off": "Mati",
+
+
+
+
+
+  "s_a_hira_jp": "Hiragana (Jepang)",
+  "s_a_hira_jp_on": "Aktif",
+  "s_a_hira_jp_off": "Mati",
+
+  "s_dev": "Pengembang",
+  "s_dev_ver": "Versi",
+  "s_dev_ver_history": "Riwayat update",
+
+
+
+
+
+  "s_etc_contributor": "Kontributor",
+  "s_etc_contributor_summary": "Daftar orang yang membantu aplikasi ini, termasuk terjemahan",
+
+  "s_etc": "DLL",
+  "s_etc_rate": "Beri peringkat",
+  "s_etc_share": "Bagikan aplikasi",
+  "s_a_capital_en_upper_on": "Aktif",
+
+  "s_etc_donation": "Dukungan (Hilangkan Iklan)",
+  "s_etc_donation_ads": "Hilangkan Iklan",
+
+
+
+
+
+  "s_etc_donation_thanks": "Terima kasih untuk dukungan anda!",
+
+
+
+
+
+
+  "quest_pokemon_choice_1": "BERI PERINGKAT",
+  "quest_pokemon_choice_2": "BAGIKAN",
+  "quest_pokemon_choice_3": "DONASI",
+  "quest_pokemon_choice_4": "LIHAT IKLAN",
+
+
+
+
+
+
+
+
+
+  "q_poke_000": "PENGMBANG",
+
+
+
+
+
+
+
+
+
+  "title_is": "JUDUL",
+  "title_donor": "DONASI",
+  "title_donor_summary": "Terima kasih untuk partisipasimu",
+  "title_survivor": "SURVIVOR",
+  "title_survivor_summary": "Kau sedang bertahan hidup di pulau"
+}

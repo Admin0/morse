@@ -1,0 +1,223 @@
+{
+  "app_name": "Código Morse",
+  "app_name_full": "M³ Tradutor",
+  "app_promotion": "Tradutor de Morse para idiomas, e vice-versa.",
+  "morse": "Código Morse",
+
+
+  "action_settings": "Configurações",
+  "action_sound": "Som",
+  "action_flash": "Flash",
+  "action_vibration": "Vibração",
+  "action_one_button": "Modificação de botão",
+
+
+  "translate_hint": "Texto",
+  "analyze_hint": "Código Morse",
+  "bt": "Botão",
+  "bt_t": "Texto para código Morse",
+  "bt_a": "Código Morse para texto",
+  "bt_del": "Remover",
+  "bt_voice": "Escrita por fala",
+
+  "input_error__stt_unavailable": "ERRO: o SpeechRecognizer está indisponível",
+
+
+  "output_other_maybe": "Talvez?",
+
+  "a_option": "Opções de análise",
+  "a_kr": "Coreano",
+  "a_en": "Inglês",
+  "a_jp": "Japonês",
+  "a_ru": "Russo",
+  "a_gr": "Grego",
+  "a_he": "Hebraico",
+  "a_ar": "Árabe",
+  "a_pr": "Persa",
+  "a_no": "Numerais",
+
+  "a_capital": "Letra inicial maiúscula",
+
+  "output_massage": "texto traduzido",
+  "output_error__translate_to_morse": "(ERRO: usando Morse para traduzir para Morse.)",
+  "output_play_repeat": "Repetir",
+  "bt_speak": "Reproduzir %s",
+  "bt_speak_loading": "Carregando %s",
+  "bt_speak_stop": "Terminando %s",
+  "bt_copy": "Copiar para área de transferência",
+  "bt_copied": "Copiado",
+
+  "output_error__tts_lang": "ERRO: o idioma não é compatível com o TTS do seu celular",
+
+  "output_more": "Mais",
+  "output_more_share": "Compartilhar",
+  "output_more_re": "%s novamente",
+
+
+  "noti_running": "está em execução…",
+  "noti_text": "Toque para retornar, deslize para parar",
+
+  "key_space": "ESPAÇO",
+  "a_assemble": "Juntar fonemas (kr)",
+
+  "quit_check": "Pressione Voltar novamente para sair",
+
+
+
+  "s": "Configurações",
+
+  "s_locale": "Idioma do app",
+  "s_locale_default": "Padrão",
+  "s_locale_notyet": "Reinicie o aplicativo para obter melhores resultados.",
+  "s_locale_contributor": "Traduzir: Eduardo Loeffel Noce Gobi",
+
+  "s_t": "Traduzir",
+  "s_t_full": "Traduzir (Letras → Morse)",
+
+  "s_t_speak": "Reproduzir som",
+  "s_t_speak_summary": "Selecione a duração e o tipo do som",
+
+  "s_t_speak_length": "Duração do som",
+  "s_t_speak_length_summary": "Selecione a duração do som",
+
+  "s_t_beep": "Som de bip",
+  "s_t_beep_sound_00": "Notícias fresquinhas",
+  "s_t_beep_sound_01": "Mestre dos tutoriais",
+  "s_t_beep_sound_02": "Transformada de Fourier",
+  "s_t_beep_sound_03": "Chamada não atendida",
+  "s_t_beep_sound_04": "Conexão discada",
+  "s_t_beep_sound_05": "SELVA!!1!",
+  "s_t_beep_sound_06": "Desliga isso aí e vai brincar lá fora",
+
+  "s_a": "Analizar",
+  "s_a_full": "Analizar (Morse → Letters)",
+
+  "s_a_input": "Entrada",
+  "s_a_input_volume": "Inserção pelas teclas de volume",
+
+
+  "s_a_input_volume_on": "Você é um(a) daqueles que gostam de hardcore",
+  "s_a_input_volume_off": "As teclas de volume não são usadas para digitar.",
+  "s_a_input_volume_dialog": "Usando as teclas de volume para digitar?\nSempre que quiser, pode modificar isso nas Configurações.",
+
+  "s_output": "Saída",
+  "s_output_style_dit": "Estilo dos pontos",
+  "s_output_style_dit_summary": "Qualquer caractere serve. Deixe em branco para redefinir",
+  "s_output_style_dah": "Estilo dos traços",
+  "s_output_style_dah_summary": "Qualquer caractere serve. Deixe em branco para redefinir",
+
+
+
+
+
+  "s_a_lang": "Idioma",
+
+  "s_a_capital_en": "Capitalização automática",
+  "s_a_capital_en_on": "Capitalização automática aplicada",
+  "s_a_capital_en_off": "Aplique manualmente a opção abaixo",
+
+  "s_a_capital_en_upper": "Capitalizar tudo?",
+  "s_a_capital_en_upper_off": "Os resultados das análises não se tornarão capitalizados",
+
+  "s_a_assemble_kr": "Juntar fonemas (kr)",
+  "s_a_assemble_kr_on": "Ex.: 안녕",
+  "s_a_assemble_kr_off": "Ex.: ㅇㅏㄴㄴㅕㅇ",
+
+  "s_a_hira_jp": "Hiragana (jp)",
+  "s_a_hira_jp_on": "Os resultados das análises serão convertidos para hiragana",
+  "s_a_hira_jp_off": "Os resultados das análises não serão convertidos para hiragana",
+
+  "s_dev": "Desenvolvedor",
+  "s_dev_ver": "versão",
+  "s_dev_ver_history": "Histórico de atualizações",
+  "s_dev_license": "Licenças de código aberto",
+  "s_dev_license_summary": "Detalhe das licenças de softwares de código aberto",
+
+
+
+  "s_etc_contributor": "Colaboradores",
+  "s_etc_contributor_summary": "Uma lista com aqueles que ajudaram o desenvolvimento do app, incluindo os tradutores",
+
+  "s_etc": "ETC",
+  "s_etc_rate": "Avaliar",
+  "s_etc_share": "Compartilhar",
+  "s_a_capital_en_upper_on": "Os resultados das análises se tornarão capitalizados",
+
+  "s_etc_donation": "Doar (Remove os Anúncios)",
+
+  "s_etc_donation_summary": "Isso irá restaurar o HP do desenvolvedor",
+  "s_etc_donation_00": "US$0.9\t\t\t\tBARRA DE ENERGIA",
+  "s_etc_donation_01": "US$1.9\t\t\t\tENERGY DRINK",
+  "s_etc_donation_02": "US$4.9\t\t\t\t(QUERO) CAFÉ(!)",
+  "s_etc_donation_03": "$9.9\t\t\t\tPIZZA",
+  "s_etc_donation_thanks": "Muito obrigado!",
+
+
+  "quest_pokemon_title": "Wild DESENVOLVEDOR appeared!",
+
+  "quest_pokemon_message": "What will USUÁRIO(A) do?\n\n(NOTA: DESENVOLVEDOR está com roupas de mendigo, com uma tosse braba, e está escrevendo a partir de um monitor de 14 polegadas. Parece precisar de ajuda.)",
+  "quest_pokemon_message_effect": "It's super effective!",
+  "quest_pokemon_choice_1": "▸ AVALIAR",
+  "quest_pokemon_choice_2": "▸ COMPARTILHAR",
+  "quest_pokemon_choice_3": "▸ DOAR",
+  "quest_pokemon_choice_4": "▸ VER ANÚNCIO",
+  "quest_pokemon_cancel": "USUÁRIO(A) turned away from DESENVOLVEDOR's face. He disappeared into shadow with ANÚNCIO&#8230;",
+  "quest_pokemon_cancel_0": "USUÁRIO(A) deu às costas para DESENVOLVEDOR.",
+  "quest_pokemon_cancel_1": "Não sei por que, mas DESENVOLVEDOR deu uma cumprimentada.",
+
+
+
+
+
+
+
+
+
+  "q_poke_000": "DESENVOLVEDOR",
+
+  "q_poke_001": "pepe triste",
+
+
+
+
+
+
+
+
+
+  "quest_survival": "Survival Instinct",
+
+  "quest_survival_title": "Anotações da Lara",
+  "quest_survival_direction_e": "E",
+  "quest_survival_direction_w": "O",
+  "quest_survival_direction_s": "S",
+  "quest_survival_direction_n": "N",
+  "quest_survival_msg_skip": "Pular",
+  "quest_survival_msg_next": "Próxima",
+  "quest_survival_msg_prev": "Anterior",
+  "quest_survival_msg_pre_0": "Há um mês: \n…começo a procura pelo lendário reino de Yamatai com alguns colegas…",
+  "quest_survival_msg_pre_1": "Há uma semana: \n…deparo-me com uma forte tempestade durante a viagem e vou parar numa ilha isolada…",
+  "quest_survival_msg_pre_2": "Há uma semana: \n…sou ameaçada pelos Solarii e pelos animais selvagens da ilha…",
+  "quest_survival_msg_pre_3": "Há alguns dias: \n…devo encontrar meus colegas e escapar da ilha o mais rápido possível.\nOu posso também aniquilar todo fanático que eu encontrar pela frente e sair com facilidade…",
+  "quest_survival_msg_pre_4": "Hoje: \n…estou destruindo as vilas deles.\nHmm, posso ouvir um som de motor no céu ao norte. O que poderia ser além de um helicóptero de resgate?",
+  "quest_survival_msg_pre_5": "Que tal fazer um sinal de socorro para o helicóptero?",
+  "quest_survival_msg_virgin0": "O helicóptero foi ao chão por uma força sobrenatural.",
+  "quest_survival_msg_virgin1": "Olhe pelo lado bom: os seus instintos de sobrevivência tornaram-se mais aguçados do que nunca!",
+  "quest_survival_msg_virgin2": "Você obteve visão noturna, e agora pode saber para qual direção está indo.",
+
+
+  "title_is": "TÍTULO",
+  "title_donor": "DOADOR(A)",
+  "title_donor_summary": "Obrigado pelo apoio",
+  "title_survivor": "SOBREVIVENTE",
+  "title_survivor_summary": "Você sobreviveu à Ilha",
+  "quest_survival_menu_3dCompass": "Bússola 3D",
+  "quest_survival_menu_showIntro": "Mostrar introdução de novo",
+  "quest_survival_menu_showValues": "Mostrar os valores do sensor",
+  "quest_survival_menu_onFlash": "Flash no início",
+  "quest_survival_menu_addToHome": "Adicionar à Home",
+  "quest_survival_menu_getApp": "Obter o app standalone",
+  "quest_survival_menu_getParent": "Obter o app pai",
+  "quest_survival_menu_openApp": "Abrir o app standalone",
+  "quest_survival_menu_openParent": "Abrir o app pai"
+}

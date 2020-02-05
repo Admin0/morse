@@ -1,0 +1,71 @@
+{
+  "app_name": "Mors Kodu",
+  "app_name_full": "M³ Çevirici",
+  "app_promotion": "Mors ⇄ Türkçe",
+  "morse": "Mors",
+
+
+  "action_settings": "Ayarlar",
+  "action_sound": "Ses",
+  "action_flash": "Flaş",
+  "action_vibration": "Titreşim",
+  "action_one_button": "Tek Düğme Modu",
+
+
+  "translate_hint": "Metni gir",
+  "analyze_hint": "Mors kodunu gir",
+  "bt": "Düğme",
+  "bt_t": "Çevir",
+  "bt_a": "Mors Kodunu Çöz",
+  "bt_del": "Sil",
+  "bt_voice": "Konuşmadan Metne",
+
+  "input_error__stt_unavailable": "HATA: Ses Tanımlama Kullanılamaz",
+
+
+  "output_other_maybe": "belki?",
+
+  "a_option": "Çözme Ayarları",
+  "a_kr": "Korece",
+  "a_en": "İngilizce",
+  "a_jp": "Japonca",
+  "a_ru": "Rusça",
+  "a_gr": "Yunanca",
+  "a_he": "İbranice",
+  "a_ar": "Arapça",
+  "a_pr": "Farsça",
+  "a_no": "Sayı",
+
+  "a_capital": "Büyük Harf",
+
+  "output_massage": "Çıkış metni",
+  "output_error__translate_to_morse": "HATA: Mors kodundan çevirmeyi deneyin.",
+  "output_play_repeat": "Tekrar oynat",
+  "bt_speak": "Oynat",
+  "bt_speak_loading": "Yüklaniyor",
+  "bt_speak_stop": "Dur",
+  "bt_copy": "Panodan Kopyala",
+  "bt_copied": "Kopyalandı",
+
+  "output_error__tts_lang": "HATA: Telefonunuz bu dildeki TTS i desteklemiyor.",
+
+  "output_more": "Daha",
+  "output_more_share": "Paylaş",
+  "output_more_re": "Tekrar",
+
+
+  "noti_running": "çalışıyor",
+  "noti_text": "Tekrar a dokun şa da Dura bas",
+
+  "key_space": "BOŞLUK",
+
+
+
+
+
+
+
+
+
+  "s_locale_contributor": "Çeviren: Erhan Kara"
+}

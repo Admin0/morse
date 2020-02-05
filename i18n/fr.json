@@ -1,0 +1,159 @@
+{
+  "app_name": "Morse Code",
+  "app_name_full": "M³ Traducteur",
+  "app_promotion": "Possibilité de Morse ⇄ Français",
+  "morse": "Morse",
+
+
+  "action_settings": "Options",
+  "action_sound": "Son",
+  "action_flash": "Flash",
+  "action_vibration": "Vibration",
+  "action_one_button": "Bouton mod",
+
+
+  "translate_hint": "Texte entré",
+  "analyze_hint": "Morse entré",
+  "bt": "Bouton",
+  "bt_t": "Traduire le texte en code Morse",
+  "bt_a": "Analyse du Morse en texte",
+  "bt_del": "Supprimer",
+  "bt_voice": "Voix vers écriture",
+
+
+
+
+  "output_other_maybe": "Peut-être ?",
+
+  "a_option": "Option d'analyse",
+  "a_kr": "Korean",
+  "a_en": "Anglais",
+  "a_jp": "Japonnais",
+  "a_ru": "Rusee",
+  "a_gr": "Grecque",
+  "a_he": "Hébreux",
+  "a_ar": "Arabe",
+  "a_pr": "Persan",
+  "a_no": "Nombre",
+
+  "a_capital": "Haut de casse",
+
+  "output_massage": "Message traduit",
+  "output_error__translate_to_morse": "ERREUR: tentative de traduire du morse en morse",
+  "output_play_repeat": "Jouer en boucle",
+  "bt_speak": "Jouer le %s",
+  "bt_speak_loading": "Chargement du %s",
+  "bt_speak_stop": "Quitter le %s",
+  "bt_copy": "Copier dans le presse papier",
+  "bt_copied": "Copié",
+
+  "output_error__tts_lang": "ERREUR: Ce language n'est pas supporté en TTS sur votre téléphone",
+
+  "output_more": "Plus",
+  "output_more_share": "Partager",
+  "output_more_re": "Re %s",
+
+
+  "noti_running": "En marche...",
+  "noti_text": "Appuyez pour revenir, ou glisser pour arrêter",
+
+  "key_space": "ESPACE",
+
+
+  "quit_check": "Appuyer encore une fois pour quitter",
+
+
+
+  "s": "Options",
+
+  "s_locale": "Application locale",
+  "s_locale_default": "Défaut",
+  "s_locale_notyet": "Vous devez redémarrer l'application pour l'appliquer",
+  "s_locale_contributor": "Traducteurs: Arthur Perrin",
+
+  "s_t": "Traduire",
+  "s_t_full": "Traduire (Lettres → Morse)",
+
+  "s_t_speak": "Jouer un son",
+  "s_t_speak_summary": "Sélectionnez une durée et une sorte de son",
+
+  "s_t_speak_length": "Durée du son",
+  "s_t_speak_length_summary": "Sélectionnez la durée du son",
+
+  "s_t_beep": "Son Beep",
+  "s_t_beep_sound_00": "News entrante",
+  "s_t_beep_sound_01": "Maître de tutoriel",
+  "s_t_beep_sound_02": "Transfomation de Fourier",
+  "s_t_beep_sound_03": "Voix non répondant",
+  "s_t_beep_sound_04": "Plug pour internet",
+  "s_t_beep_sound_05": "JE VOUS VEUX! POUR L'US ARMY",
+  "s_t_beep_sound_06": "Éteint la télé et va dehors",
+
+  "s_a": "Analyse",
+  "s_a_full": "Analyse (Morse → Lettres)",
+
+  "s_a_input": "Entré",
+
+
+
+
+
+
+
+
+
+  "s_a_lang": "Langue",
+
+  "s_a_capital_en": "Capitalisation automatique",
+  "s_a_capital_en_on": "Appliquer la capitalisation automatique",
+  "s_a_capital_en_off": "Appliquer manuellement pour les options en dessous",
+
+  "s_a_capital_en_upper": "Capitaliser tout ?",
+  "s_a_capital_en_upper_off": "L'analyse des resultats ne sera pas capitalisé ",
+
+
+
+
+
+
+  "s_a_hira_jp_on": "L'analyse des resultats sera en hiragana",
+  "s_a_hira_jp_off": "L'analyse des resultats sera en katakana",
+
+  "s_dev": "Développeur",
+  "s_dev_ver": "version",
+  "s_dev_ver_history": "Mettre à jour l'histoire",
+  "s_dev_license": "License open source",
+  "s_dev_license_summary": "Details de la micense pour ouvrir le logiciel open source",
+
+
+
+
+
+
+  "s_etc": "Etc",
+  "s_etc_rate": "Noter cet app",
+  "s_etc_share": "Partager cet app",
+
+
+  "s_etc_donation": "Contribuer (enlever les pubs)",
+
+  "s_etc_donation_summary": "Ceci donnera à manger aux devs's HP",
+  "s_etc_donation_00": "$0.9\t\t\t\tBAR D'ÉNERGIE",
+  "s_etc_donation_01": "$1.9\t\t\t\tBOISSON ÉNERGISANTE",
+  "s_etc_donation_02": "$4.9\t\t\t\CAFÉ",
+  "s_etc_donation_03": "$9.9\t\t\t\tPIZZA",
+  "s_etc_donation_thanks": "Merci d'avoir contribué",
+
+
+  "quest_pokemon_title": "Un DÉVELOPPEUR sauvage apparaît!",
+
+  "quest_pokemon_message": "Que va faire l'UTILISATEUR?\n\n (NOTE: DÉVELOPPEUR est habiller en habit minable, il a de la toux et il code sur un ecran de 14 pouces. Il semble avoir besoin d'aide. )",
+  "quest_pokemon_message_effect": "C'est super efficace",
+  "quest_pokemon_choice_1": "▸ NOTER",
+  "quest_pokemon_choice_2": "▸ PARTAGER",
+  "quest_pokemon_choice_3": "▸ CONTRIBUER",
+  "quest_pokemon_choice_4": "▸ VOIR UNE PUB",
+  "quest_pokemon_cancel": "L'UTILISATEUR fuit le visage du DÉVELOPPEUR. Il disparaît dans l'ombre avec PUBLICITÉ&#8230;",
+  "quest_pokemon_cancel_0": "UTILISATEUR s'enfuit juste du visage du développeur.",
+  "quest_pokemon_cancel_1": "Je ne sais pas pourquoi, mais DÉVELOPPEUR ne vous accueille pas ici"
+}

@@ -1,0 +1,186 @@
+{
+  "app_name": "شفرة مورس",
+  "app_name_full": "مترجم M³",
+  "app_promotion": "إمكانية تحويل شفرة مورس ⇄ الانجليزية ، الكورية ، اليابانية ، الخ .",
+  "morse": "شفرة مورس",
+
+
+  "action_settings": "الاعدادات ",
+  "action_sound": "الصوت",
+  "action_flash": "الفلاش",
+  "action_vibration": "الاهتزاز",
+  "action_one_button": "طريقة الزر الواحد",
+
+
+  "translate_hint": "أدخل النص",
+  "analyze_hint": "أدخل شفرة مورس",
+  "bt": "الزر",
+  "bt_t": "ترجم النص إلى  شفرة مورس",
+  "bt_a": "فك شفرة مورس الى نص",
+  "bt_del": "إلغاء ",
+  "bt_voice": "تحدث لكتابة نص",
+
+  "input_error__stt_unavailable": "خطأ : التعرف على الصوت غير متاح",
+
+
+  "output_other_maybe": "هل تقصد ؟",
+
+  "a_option": "خيارات التشفير",
+  "a_kr": "الكورية",
+  "a_en": "الإنجليزية ",
+  "a_jp": "اليابانية",
+  "a_ru": "الروسية",
+  "a_gr": "اليونانية",
+  "a_he": "العبرية",
+  "a_ar": "العربية",
+  "a_pr": "الفارسية",
+  "a_no": "الرقم",
+
+
+
+  "output_massage": "النص المترجم",
+  "output_error__translate_to_morse": "(خطأ : محاولة ترجمة شفرة مورس من شفرة مورس.)",
+  "output_play_repeat": "إعادة تشغيل",
+
+  "bt_speak_loading": "0",
+
+  "bt_copy": "انسخ الى الحافظة",
+  "bt_copied": "تم النسخ",
+
+  "output_more": "أكثر ",
+  "output_more_share": "شارك",
+
+
+
+  "noti_running": "قيد التشغيل ....",
+  "noti_text": "المس للعودة ، أو حرك للإيقاف",
+
+  "key_space": "مسافة",
+  "a_assemble": "تجميع الصوتيات (الكورية)",
+
+  "quit_check": "اضغط مجددا للخروج",
+
+
+
+  "s": "الاعدادات",
+
+  "s_locale": "لغة التطبيق",
+
+  "s_locale_notyet": "يجب إعادة تشغيل التطبيق لتفعيل التغيرات",
+  "s_locale_contributor": "المترجم: مصطفى قمر لا يمكن يموت",
+
+  "s_t": "ترجم",
+  "s_t_full": "ترجم ( حروف ← مورس )",
+
+  "s_t_speak": "شغل الصوت",
+  "s_t_speak_summary": "حدد مدة و نوع الصوت ",
+
+  "s_t_speak_length": "مدة الصوت",
+  "s_t_speak_length_summary": "حدد مدة الصوت",
+
+
+
+
+
+
+
+
+
+  "s_a": "فك التشفير",
+  "s_a_full": "فك ( مورس← حروف ) ",
+
+  "s_a_input": "الإدخال ",
+  "s_a_input_volume": "الادخال عن طريق مفتاح التحكم بدرجة الصوت",
+
+
+  "s_a_input_volume_on": "انت ممن يستمتعون بالطريقة الصعبة !",
+  "s_a_input_volume_off": "مفتاح التحكم بالصوت لا يستخدم للادخال",
+
+  "s_output": "النص المترجم",
+  "s_output_style_dit": "شكل النقاط .",
+  "s_output_style_dit_summary": "غير ما تريد ، اعد الضبط للشكل الخالى .",
+  "s_output_style_dah": "شكل الشرطات -",
+  "s_output_style_dah_summary": "غير ما تريد ، اعد الضبط للشكل الخالى .",
+
+
+
+
+
+  "s_a_lang": "اللغة",
+
+
+
+
+
+
+
+
+  "s_a_assemble_kr": "تجميع الصوتيات (الكورية )",
+
+
+
+
+
+
+
+  "s_dev": "المطور ",
+  "s_dev_ver": "الإصدار ",
+  "s_dev_ver_history": "سجل تحديث الاصدارات",
+  "s_dev_license": "الرخصة مفتوحة المصدر",
+  "s_dev_license_summary": "تفاصيل الرخصة للتطبيقات مفتوحة المصدر",
+
+
+
+  "s_etc_contributor": "المساهمون",
+  "s_etc_contributor_summary": "قائمة بمن ساعدوا فى تطوير التطبيق ، تتضمن المترجمين .",
+
+  "s_etc": "الخ",
+  "s_etc_rate": "قيم هذا التطبيق",
+  "s_etc_share": "شارك التطبيق",
+
+
+  "s_etc_donation": "تبرع (ازالة الاعلانات)",
+
+  "s_etc_donation_summary": "تبرعك سيساعد المطور على تجديد انتاجيته .",
+  "s_etc_donation_00": "0.9$ = لوح طاقة",
+  "s_etc_donation_01": "1.9$ = مشروب طاقة",
+  "s_etc_donation_02": "4.9$ = كوب قهوة",
+  "s_etc_donation_03": "9.9$ = بيتزا",
+  "s_etc_donation_thanks": "شكراً جزيلاً لتبرعك !",
+
+
+  "quest_pokemon_title": "لقد ظهر المطور المتوحش !",
+
+  "quest_pokemon_message": "ماذا سيفعل المستخدم ؟  ، ( ملاحظة : المطور يرتدى ملابس رثة ، يسعل من الاعياء ، يبرمج امام شاشة 14-بوصة . يبدو كمن يحتاج لمساعدة. )",
+  "quest_pokemon_message_effect": "انها فعالة للغاية !",
+  "quest_pokemon_choice_1": "ضع تقييمك ",
+  "quest_pokemon_choice_2": "شارك",
+  "quest_pokemon_choice_3": "تبرع",
+  "quest_pokemon_choice_4": "شاعد اعلان",
+
+  "quest_pokemon_cancel_0": "لقد هرب المستخدم حالا من المطور !",
+
+
+
+
+
+
+
+
+
+  "q_poke_000": "المطور",
+
+  "q_poke_001": "الضفدع الحزين",
+
+
+
+
+
+
+
+
+
+  "title_is": "العنوان",
+  "title_donor": "المتربع",
+  "title_donor_summary": "شكراً جزيلاً لمساندتك !"
+}

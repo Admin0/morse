@@ -1,0 +1,87 @@
+{
+  "app_name": "Mã Morse",
+  "app_name_full": "Dịch M³",
+
+  "morse": "Mã Morse",
+
+
+  "action_settings": "Cài đặt",
+  "action_sound": "Âm thanh",
+  "action_flash": "Đèn",
+  "action_vibration": "Rung",
+  "action_one_button": "Chế độ 1 nút bấm",
+
+
+  "translate_hint": "Nhập chữ",
+  "analyze_hint": "Nhập mã Morse",
+  "bt": "Nút",
+  "bt_t": "Dịch chữ sang mã Morse",
+  "bt_a": "Phân tích mã Morse thành chữ",
+  "bt_del": "Xoá",
+  "bt_voice": "Giọng nói sang văn bản",
+
+  "input_error__stt_unavailable": "LỖI: SpeechRecognizer không thể hoạt động",
+
+
+  "output_other_maybe": "Có thể?",
+
+  "a_option": "Phân tích",
+  "a_kr": "Tiếng Hàn",
+  "a_en": "Tiếng Anh",
+  "a_jp": "Tiếng Nhật",
+  "a_ru": "Tiếng Nga",
+
+
+
+
+  "a_no": "Số",
+
+
+
+  "output_massage": "Văn bản đầu ra",
+
+  "output_play_repeat": "Lặp lại",
+
+  "bt_speak_loading": "Đang tải",
+  "bt_speak_stop": "Thoái",
+  "bt_copy": "Đã sao chép vào bộ nhớ tạm",
+  "bt_copied": "Đã sao chép",
+
+  "output_error__tts_lang": "Ngôn ngữ không hỗ trợ cho TTS của điện thoại bạn",
+
+  "output_more": "Còn nữa",
+  "output_more_share": "Chia sẻ",
+
+
+
+  "noti_running": "Đang chạy",
+  "noti_text": "Bấm để quay lại, hoặc vuốt để dừng",
+
+  "key_space": "Khoảng cách",
+
+
+  "quit_check": "Bấm nút trở về lần nữa để thoát",
+
+
+
+  "s": "Cài đặt",
+
+  "s_locale": "Vị trí app",
+  "s_locale_default": "Mặc định",
+
+  "s_locale_contributor": "Huỳnh_Anh_Kiệt",
+
+  "s_t": "Dịch",
+
+
+  "s_t_speak": "Ân thanh"
+
+
+
+
+
+
+
+
+
+}
