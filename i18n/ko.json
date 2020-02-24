@@ -314,16 +314,25 @@
   "card__output_1": "여기에 해석된 $1가 출력됩니다.",
   "lang_ar": "아랍어",
   "lang_auto": "자동 감지",
+  "lang_de": "독일어",
   "lang_en": "영어",
+  "lang_es": "스페인어",
+  "lang_fa": "페르시아어",
+  "lang_fr": "프랑스어",
   "lang_gr": "그리스어",
   "lang_he": "히브리어",
+  "lang_id": "인도네시아어",
   "lang_ja": "일본어",
   "lang_ko": "한국어",
   "lang_morse": "모스 부호",
   "lang_pl": "폴란드어",
   "lang_pr": "페르시아어",
+  "lang_pt-BR": "포르투갈어 (브라질)",
   "lang_ru": "러시아어",
   "lang_th": "태국어",
+  "lang_tr": "터키어",
+  "lang_uk": "우크라이나어",
+  "lang_vi": "베트남어",
   "lang_zh-CN": "중국어 (간체)",
   "lang_zh-TW": "중국어 (번체)",
 
@@ -408,5 +417,4 @@
 
   "history": "기록",
   "history_i": "번역 %s개",
-  "history_clear": "기록 지우기"
-}
+  "history_clear": "기록 지우기"}

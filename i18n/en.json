@@ -314,16 +314,25 @@
   "card__output_1": "Then, the $1 message will be output here.",
   "lang_ar": "Arabic",
   "lang_auto": "Auto detect",
+  "lang_de": "German",
   "lang_en": "English",
+  "lang_es": "Spanish",
+  "lang_fa": "Persian",
+  "lang_fr": "French",
   "lang_gr": "Greek",
   "lang_he": "Hebrew",
+  "lang_id": "Indonesian",
   "lang_ja": "Japanese",
   "lang_ko": "Korean",
   "lang_morse": "Morse Code",
   "lang_pl": "Polish ",
   "lang_pr": "Persian",
+  "lang_pt-BR": "Portuguese (Brazilian)",
   "lang_ru": "Russian",
   "lang_th": "Thai",
+  "lang_tr": "Turkish",
+  "lang_uk": "Ukrainian",
+  "lang_vi": "Vietnamese",
   "lang_zh-CN": "Chinese (Simplified)",
   "lang_zh-TW": "Chinese (Traditional)",
 
@@ -408,5 +417,4 @@
 
   "history": "History",
   "history_i": "Logged %s times",
-  "history_clear": "Clear logs"
-}
+  "history_clear": "Clear logs"}

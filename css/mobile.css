@@ -29,6 +29,7 @@
     box-shadow: none;
     border-bottom: 1px solid #ddd;
     padding: 4px 0;
+    z-index: 31;
   }
 
   .contents {

@@ -57,7 +57,7 @@
     z-index: 32;
     overflow-x: hidden;
     overflow-y: scroll;
-    column-count: 1;
+    columns: auto;
   }
 }
 
