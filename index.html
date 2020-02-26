@@ -37,7 +37,7 @@
 		<h1><span id="title"><span data-i18n='app_name_full'>#morse</span><span class="hide_mobile"></span></span></h1>
 	</header>
 
-	<div id="ad_top" class="da_top">
+	<div class="ad_top">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- 반응형 -->
 		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8175591114279139" data-ad-slot="6064236981" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -49,21 +49,21 @@
 	<section id="index" class="contents">
 		<div id="card_header">
 			<div class="lang_box code">
-				<div id="" class="card_header selected auto"><span data-i18n='lang_auto'>AUTO</span><span class="detected"></span></div>
-				<div id="" class="card_header en" data-i18n='a_en'>EN</div>
-				<div id="" class="card_header ko" data-i18n='a_kr'>KO</div>
-				<div id="" class="card_header ja" data-i18n='a_jp'>JA</div>
-				<div id="" class="card_header ru" data-i18n='a_ru'>RU</div>
-				<div id="" class="card_header gr" data-i18n='a_gr'>GR</div>
-				<div id="" class="card_header th" data-i18n='a_th'>TH</div>
-				<div id="" class="card_header he" data-i18n='a_he'>HE</div>
-				<div id="" class="card_header ar" data-i18n='a_ar'>AR</div>
-				<div id="" class="card_header pr" data-i18n='a_pr'>PR</div>
+				<div id="card_header__auto" class="card_header selected auto"><span data-i18n='lang_auto'>AUTO</span><span class="detected"></span></div>
+				<div id="card_header__en" class="card_header en" data-i18n='a_en'>EN</div>
+				<div id="card_header__ko" class="card_header ko" data-i18n='a_kr'>KO</div>
+				<div id="card_header__ja" class="card_header ja" data-i18n='a_jp'>JA</div>
+				<div id="card_header__ru" class="card_header ru" data-i18n='a_ru'>RU</div>
+				<div id="card_header__gr" class="card_header gr" data-i18n='a_gr'>GR</div>
+				<div id="card_header__th" class="card_header th" data-i18n='a_th'>TH</div>
+				<div id="card_header__he" class="card_header he" data-i18n='a_he'>HE</div>
+				<div id="card_header__ar" class="card_header ar" data-i18n='a_ar'>AR</div>
+				<div id="card_header__pr" class="card_header pr" data-i18n='a_pr'>PR</div>
 				<label id="lang_list" class="" for="ck_lang_list"><input type="checkbox" id="ck_lang_list"><i class="material-icons">keyboard_arrow_down</i></label>
 			</div>
 			<div class="lang_box lang">
-				<div id="" class="card_header selected morse" data-i18n='lang_morse'>MORSE CODE</div>
-				<div id="" class="card_header braille" data-i18n='braille'>BRAILLE</div>
+				<div id="card_header__morse" class="card_header selected morse" data-i18n='lang_morse'>MORSE CODE</div>
+				<div id="card_header__braille" class="card_header braille" data-i18n='braille'>BRAILLE</div>
 			</div>
 			<label id="re_anaylze" class="" for="ch_swap"><input type="checkbox" id="ch_swap" onclick="m.history.push();"><i class="material-icons"> swap_horiz </i></label>
 
@@ -91,12 +91,12 @@
 
 		<div id="card_body">
 			<div id="input">
-				<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+				<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
 				<!-- <input type="button" id="input_toggle" value="☎"> -->
 				<div id="input_del" onclick="clear();m.history.push();" class="hide"><i class="material-icons"> close </i></div>
 			</div>
 
-			<div id="ad_top" class="mobile">
+			<div class="ad_top mobile">
 				<script type="text/javascript">
 					google_ad_client = "ca-pub-8175591114279139";
 					google_ad_slot = "9681951651";
@@ -120,15 +120,15 @@
 		</div>
 		<div id="card_lang">
 			<!-- <div id="" class="card_lang selected auto" data-i18n='lang_auto'>AUTO</div> -->
-			<div id="" class="card_lang en morse braille" data-i18n='a_en'>EN</div>
-			<div id="" class="card_lang ko morse braille" data-i18n='a_kr'>KO</div>
-			<div id="" class="card_lang ja morse braille" data-i18n='a_jp'>JA</div>
-			<div id="" class="card_lang ru morse" data-i18n='a_ru'>RU</div>
-			<div id="" class="card_lang gr morse" data-i18n='a_gr'>GR</div>
-			<div id="" class="card_lang th morse" data-i18n='a_th'>TH</div>
-			<div id="" class="card_lang he morse" data-i18n='a_he'>HE</div>
-			<div id="" class="card_lang ar morse" data-i18n='a_ar'>AR</div>
-			<div id="" class="card_lang pr morse" data-i18n='a_pr'>PR</div>
+			<div id="card_lang__en" class="card_lang en morse braille" data-i18n='a_en'>EN</div>
+			<div id="card_lang__ko" class="card_lang ko morse braille" data-i18n='a_kr'>KO</div>
+			<div id="card_lang__ja" class="card_lang ja morse braille" data-i18n='a_jp'>JA</div>
+			<div id="card_lang__ru" class="card_lang ru morse" data-i18n='a_ru'>RU</div>
+			<div id="card_lang__gr" class="card_lang gr morse" data-i18n='a_gr'>GR</div>
+			<div id="card_lang__th" class="card_lang th morse" data-i18n='a_th'>TH</div>
+			<div id="card_lang__he" class="card_lang he morse" data-i18n='a_he'>HE</div>
+			<div id="card_lang__ar" class="card_lang ar morse" data-i18n='a_ar'>AR</div>
+			<div id="card_lang__pr" class="card_lang pr morse" data-i18n='a_pr'>PR</div>
 		</div>
 
 		<!-- <div id="feadback"><a href="//blog.jinh.kr/guestbook">feadback</a></div> -->
@@ -180,7 +180,7 @@
 
 	<div id="nav_bg" onclick="$('nav, #nav_bg, #info, #license, #setting').removeClass('on');"></div>
 
-	<dl id="setting">
+	<div id="setting">
 		<div class="header">
 			<i class="material-icons" onclick="$('#setting, #setting_bg').removeClass('on');">arrow_back</i><span>설정</span>
 		</div>
@@ -230,14 +230,14 @@
 			<dd class="on">답이 가려졌습니다. 마우스 커서를 올리면 보입니다.</dd>
 			<dd class="off">답이 항상 보입니다.</dd>
 		</div> -->
-	</dl>
+	</div>
 
 	<section id="message" class="hide">
 		<span class='quote'>MESSAGE</span>
 		<span class='source'></span>
 	</section>
 
-	<div id="ad_bottom">
+	<div class="ad_bottom">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- 반응형 -->
 		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8175591114279139" data-ad-slot="6064236981" data-ad-format="auto" data-full-width-responsive="true"></ins>

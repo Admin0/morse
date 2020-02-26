@@ -444,7 +444,7 @@ body.analyze #card_header .lang_box.code {
 }
 footer {
   /* position: fixed; */
-  margin-top: 3em;
+  margin: 3em 0;
   bottom: 0;
   width: 100%;
   text-align: center;

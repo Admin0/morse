@@ -399,6 +399,7 @@
   "nav__oldver2": "Try to the Old ver.(v2)",
   "nav__review": "Leave a Review",
   "nav__update": "Update Log",
+  "nav__translate": "Help translate",
   "notice_check": "I don't want to see the guide screen.",
   "notice_donate": "Or... maybe you can donate a little for me.",
   "notice_to_android": "Morsecode on Google Play!",
@@ -417,4 +418,11 @@
 
   "history": "History",
   "history_i": "Logged %s times",
-  "history_clear": "Clear logs"}
+  "history_clear": "Clear logs"
+
+
+
+
+
+
+}

@@ -7,7 +7,7 @@ jQuery(function($) {
         position = $(this).scrollLeft();
       position += direction > 0 ? -amount : amount;
       $(this).scrollLeft(position);
-    })
+    });
   };
 });
 

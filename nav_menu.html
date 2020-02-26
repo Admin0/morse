@@ -1,25 +1,38 @@
 <!-- <h2 id="" class=""><a href="">메뉴</a></h2> -->
 
-<h3 class="item" title="리뷰 남기기">
-  <a href="https://chrome.google.com/webstore/detail/%EB%AA%A8%EC%8A%A4-%EB%B6%80%ED%98%B8morse-code/cobccnllippnmgibbgdnkdaljjpcppjl" target="_blank">
-    <i class="material-icons">create</i><span id="i18n_checker"  data-i18n="nav__review">#morse</span>
+
+<h3 class="item morse" name="morse">
+  <a onclick="m.toggle.code(CODE_MORSE);$('nav, #nav_bg').removeClass('on');">
+    <i class="material-icons"> swap_horiz </i><span data-i18n="morse">CODE_MORSE</span>
   </a>
 </h3>
 
-<h3 id="translate" class="item opensource_license" name="opensource_license" title="오픈소스 라이선스">
+<h3 class="item braille" name="braille">
+  <a onclick="m.toggle.code(CODE_BRAILLE);$('nav, #nav_bg').removeClass('on');">
+    <i class="material-icons"> swap_horiz </i><span data-i18n="braille">CODE_BRAILLE</span>
+  </a>
+</h3>
+
+<h3 class="item">
+  <a href="https://chrome.google.com/webstore/detail/%EB%AA%A8%EC%8A%A4-%EB%B6%80%ED%98%B8morse-code/cobccnllippnmgibbgdnkdaljjpcppjl" target="_blank">
+    <i class="material-icons">create</i><span id="i18n_checker" data-i18n="nav__review">#morse</span>
+  </a>
+</h3>
+
+<h3 id="translate" class="item opensource_license" name="opensource_license">
   <a href="/morse/i18n/help.txt" download>
-    <i class="material-icons">translate</i><span>Help translate</span>
+    <i class="material-icons">translate</i><span data-i18n="nav__translate">Help translate</span>
   </a>
 </h3>
 
 <hr>
 
-<h3 id="opensource_license" class="item opensource_license" name="opensource_license" title="오픈소스 라이선스">
+<h3 id="opensource_license" class="item opensource_license" name="opensource_license">
   <a onclick="$('nav, .contents.sub').removeClass('on');$('#license, #nav_bg').addClass('on');" href="#opensource_license">
     <i class="material-icons">favorite</i><span data-i18n="nav__license">LICENSE</span>
   </a>
 </h3>
-<h3 id="update_log" class="item update_log" name="update_log" title="업데이트 기록">
+<h3 id="update_log" class="item update_log" name="update_log">
   <a onclick="$('nav, .contents.sub').removeClass('on');$('#info, #nav_bg').addClass('on');" href="#update_log">
     <i class="material-icons">update</i><span data-i18n="nav__update">UPDATE</span>
   </a>
@@ -27,13 +40,13 @@
 
 <hr>
 
-<h3 id="opensource_license" class="item opensource_license" name="opensource_license" title="오픈소스 라이선스">
+<h3 id="opensource_license" class="item opensource_license" name="opensource_license">
   <a href="//play.google.com/store/apps/details?id=com.morsecode.translator.jinh">
     <i class="material-icons">android</i><span data-i18n="notice_to_android">안드로이드 버전 사용하기</span>
   </a>
 </h3>
 
-<h3 id="opensource_license" class="item opensource_license" name="opensource_license" title="오픈소스 라이선스">
+<h3 id="opensource_license" class="item opensource_license" name="opensource_license">
   <a href="/morse/v2">
     <i class="material-icons">looks_two</i><span data-i18n="nav__oldver2">구버전(v2) 사용하기</span>
   </a>

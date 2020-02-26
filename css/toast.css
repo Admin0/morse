@@ -49,7 +49,7 @@
 
 #toast.off {
   opacity: 0;
-  visibility: none;
+  visibility: unset;
   animation-name: snackbar_off;
   animation-duration: .3s;
   z-index: 0;
