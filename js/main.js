@@ -145,6 +145,7 @@ const m = {
             $('.pr').addClass('selected');
           } else {
             $('.en').addClass('selected');
+            m.type.lang = LANG_EN;
           }
         }
       } else if (m.type.mode == ANALYZE_MODE) {
