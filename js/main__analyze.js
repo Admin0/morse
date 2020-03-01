@@ -271,6 +271,10 @@ function analyze_b(lang) {
       .replace(/ᇁ$/g, ". ")
       .replace(/ᄉᇀ/g, "\'")
       .replace(/ᇂᆺ/g, "\'")
+      .replace(/ᇀ\s/g, "?")
+      .replace(/ᇀ$/g, "?")
+      .replace(/ᆿ\s/g, "!")
+      .replace(/ᆿ$/g, "!")
       .replace(/🔢ᄒ/g, "0") // 숫자
       .replace(/🔢ᄀ/g, "1")
       .replace(/🔢ᄇ/g, "2")

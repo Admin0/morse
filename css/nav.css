@@ -510,7 +510,7 @@ nav .braille {
 /* ------------------------------------------------------------------- */
 /* ***** mobile ***** */
 /* ------------------------------------------------------------------- */
-@media handheld, only screen and (max-device-width:480px), only screen and (max-device-width:320px), screen and (max-width:1080px) {
+@media handheld, only screen and (max-width: 1080px) {
   nav {
     z-index: 35;
     box-shadow: none;
@@ -552,9 +552,6 @@ nav .braille {
   #setting .setting_title:nth-of-type(2) {
     border-top: none;
   }
-}
-
-@media handheld, only screen and (max-width: 1080px) {
 
   #setting .header,
   .contents.sub .header {
