@@ -5,6 +5,7 @@ $.i18n().load({
   'fa': 'i18n/fa.json',
   'fr': 'i18n/fr.json',
   'id': 'i18n/id.json',
+  'it': 'i18n/it.json',
   'ko': 'i18n/ko.json',
   'ja': 'i18n/ja.json',
   'pl': 'i18n/pl.json',

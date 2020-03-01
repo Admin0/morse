@@ -1,0 +1,241 @@
+{
+  "app_name": "Codice Morse",
+  "app_name_full": "Traduttore M³",
+  "app_promotion": "Possibile da Morse a Inglese, Coreano, Giapponese eccetera...",
+  "morse": "Codice Morse",
+
+
+  "action_settings": "Impostazioni",
+  "action_sound": "Suono",
+  "action_flash": "Flash",
+  "action_vibration": "Vibrazione",
+  "action_one_button": "Modalità a un pulsante",
+
+
+  "translate_hint": "Input Testo",
+  "analyze_hint": "Input Codice Morse",
+  "bt": "Pulsante",
+  "bt_t": "Traduci testo in codice Morse",
+  "bt_a": "Analizza Codice Morse a testo",
+  "bt_del": "Cancella",
+  "bt_voice": "Parla per digitare",
+
+  "input_error__stt_unavailable": "Errore: Speech recognized non è disponibile",
+
+
+  "output_other_maybe": "0",
+
+  "a_option": "Analizza opzioni",
+  "a_kr": "Coreano",
+  "a_en": "Inglese",
+  "a_jp": "Giapponese",
+  "a_ru": "Russo",
+  "a_gr": "Greco",
+  "a_he": "Ebreo",
+  "a_ar": "Arabo",
+  "a_pr": "Persiano",
+  "a_no": "Numero",
+
+  "a_capital": "Maiuscola",
+
+  "output_massage": "Output messaggio",
+  "output_error__translate_to_morse": "Errore: Prova a tradurre codice Morse dal codice Morse.",
+  "output_play_repeat": "Ripeti",
+  "bt_speak": "Riproduci %s",
+  "bt_speak_loading": "Caricamento %s",
+  "bt_speak_stop": "Esci da %s",
+  "bt_copy": "Copia",
+  "bt_copied": "Copiato",
+
+  "output_error__tts_lang": "Errore: Lingua non supportata dal TTS del tuo telefono.",
+
+  "output_more": "Altro",
+  "output_more_share": "Condividi",
+  "output_more_re": "Re %s",
+
+
+  "noti_running": "è in esecuzione...",
+  "noti_text": "Clicca per ritornare, o scorri per fermare.",
+
+  "key_space": "SPAZIO",
+  "a_assemble": "Assembla fonemi (KR)",
+
+  "quit_check": "Premi di nuovo indietro per uscire",
+
+
+
+  "s": "Impostazioni",
+
+  "s_locale": "App locale",
+  "s_locale_default": "Default",
+  "s_locale_notyet": "Devi riavviare l'app per applicare i cambiamenti.",
+  "s_locale_contributor": "Damiano Ragozzino",
+
+  "s_t": "Traduci",
+  "s_t_full": "Traduci (Lettere → Morse)",
+
+  "s_t_speak": "Riproduci suono",
+  "s_t_speak_summary": "Seleziona lunghezza suono e tipo",
+
+  "s_t_speak_length": "Lunghezza suono",
+  "s_t_speak_length_summary": "Seleziona lunghezza suono",
+
+  "s_t_beep": "Suono Beep",
+  "s_t_beep_sound_00": "Novità in arrivo",
+  "s_t_beep_sound_01": "Maestro dei tutorial",
+  "s_t_beep_sound_02": "Trasformata di Fourier",
+  "s_t_beep_sound_03": "Telefono occupato",
+  "s_t_beep_sound_04": "Attaccare internet",
+  "s_t_beep_sound_05": "VOGLIO TE! PER L'ARMATA US",
+  "s_t_beep_sound_06": "Spegni la TV e vai fuori",
+
+  "s_a": "Analizza",
+  "s_a_full": "Analizza (Morse → Lettere)",
+
+  "s_a_input": "Input",
+  "s_a_input_volume": "Input con tasto volume",
+
+
+  "s_a_input_volume_on": "Sei quello a cui piacciono le cose difficili.",
+  "s_a_input_volume_off": "I tasti del volume non sono usati per l'input.",
+  "s_a_input_volume_dialog": "Usare i tasti del volume per l'input?/nPuoi cambiarlo nelle impostazioni quando vuoi.",
+
+  "s_output": "Output",
+  "s_output_style_dit": "Stile dei punti",
+  "s_output_style_dit_summary": "Cambialo con ciò che vuoi. Vuoto per reset",
+  "s_output_style_dah": "Stile dei trattini",
+  "s_output_style_dah_summary": "Cambialo con ciò che vuoi. Vuoto per reset",
+
+
+
+
+
+  "s_a_lang": "Lingua",
+
+  "s_a_capital_en": "Maiuscola automatica",
+  "s_a_capital_en_on": "Applicata maiuscola automatica",
+  "s_a_capital_en_off": "Applica manualmente all'impostazione sottostante",
+
+  "s_a_capital_en_upper": "Tutto il testo in maiuscolo?",
+  "s_a_capital_en_upper_off": "I risultati non verranno impostati in maiuscolo",
+
+  "s_a_assemble_kr": "Assembla fonemi (KR)",
+  "s_a_assemble_kr_on": "Es.: 안녕?",
+  "s_a_assemble_kr_off": "Es.: ㅇㅏㄴㄴㅕㅇ?",
+
+  "s_a_hira_jp": "Hiragana (Giapponese)",
+  "s_a_hira_jp_on": "I risultati delle analisi diventeranno in Hiragana",
+  "s_a_hira_jp_off": "I risultati delle analisi diventeranno in katakana",
+
+  "s_dev": "Sviluppatore",
+  "s_dev_ver": "Versione",
+  "s_dev_ver_history": "Cronologia aggiornamenti",
+  "s_dev_license": "Licenze Open Source",
+  "s_dev_license_summary": "Dettagli licenze per software open source",
+
+
+
+  "s_etc_contributor": "Contributori",
+  "s_etc_contributor_summary": "Una lista di quelli che hanno aiutato questa app, incluse le traduzioni",
+
+  "s_etc": "Ecc.",
+  "s_etc_rate": "Valuta questa app",
+  "s_etc_share": "Condividi questa app",
+  "s_a_capital_en_upper_on": "0",
+
+  "s_etc_donation": "Dona (Rimuovi gli annunci)",
+
+  "s_etc_donation_summary": "Questo ristorerà gli HP dello sviluppatore.",
+  "s_etc_donation_00": "$0.9\t\t\t\tBARRETTA ENERGETICA",
+  "s_etc_donation_01": "$1.9\t\t\t\tBEVANDA ENERGETICA",
+  "s_etc_donation_02": "$4.9\t\t\t\tCAFFE",
+  "s_etc_donation_03": "$9.9\t\t\t\tPIZZA",
+  "s_etc_donation_thanks": "Grazie della donazione!",
+
+
+  "quest_pokemon_title": "Appare SVILUPPATORE selvatico!",
+
+  "quest_pokemon_message": "Cosa farà USER?\n\n(NOTA: SVILUPPATORE è vestito con abiti trasandati, tossendo dalla malattia, e programmando su un monitor da 14 pollici. Sembra necessiti di un caldo aiuto.)",
+  "quest_pokemon_message_effect": "È superefficace!",
+  "quest_pokemon_choice_1": "▸VALUTA",
+  "quest_pokemon_choice_2": "▸CONDIVIDI",
+  "quest_pokemon_choice_3": "▸DONA",
+  "quest_pokemon_choice_4": "▸GUARDA AD",
+  "quest_pokemon_cancel": "USER se ne va via da SVILUPPATORE. Scompare nel nulla portando con sé ANNUNCIO&#8230;",
+  "quest_pokemon_cancel_0": "USER va via da SVILUPPATORE.",
+  "quest_pokemon_cancel_1": "Non so perché, ma SVILUPPATORE ha salutato di qui.",
+
+
+
+
+
+
+
+
+
+  "q_poke_000": "SVILUPPATORE",
+
+  "q_poke_001": "Rana triste",
+
+  "q_poke_002": "Doge",
+
+  "q_poke_003": "Troll Face",
+
+  "q_poke_004": "Pedo Bear",
+
+  "q_poke_005": "AirChang",
+
+  "q_poke_006": "Gaejuk il cane",
+
+  "q_poke_007": "bkub",
+
+  "q_poke_008": "Piccione",
+
+  "q_poke_009": "Il polpo è morto..--;",
+
+  "q_poke_010": "Sprouts Guy",
+
+
+
+
+
+
+
+
+
+  "quest_survival": "Istinto di Sopravvivenza",
+
+  "quest_survival_title": "Giornali di Lara",
+  "quest_survival_direction_e": "E",
+  "quest_survival_direction_w": "O",
+  "quest_survival_direction_s": "S",
+  "quest_survival_direction_n": "N",
+  "quest_survival_msg_skip": "Salta",
+  "quest_survival_msg_next": "Successivo",
+  "quest_survival_msg_prev": "Precedente",
+  "quest_survival_msg_pre_0": "Un mese fa: \n... cominciai a navigare per trovare un leggendario antico regno chiamato Yamatai, con i miei amici...",
+  "quest_survival_msg_pre_1": "Una settimana fa: \n...incontrai l'enorme tempesta durante il viaggio e finii su un'isola deserta..",
+  "quest_survival_msg_pre_2": "Una settimana fa: \n...fui minacciata dai Solarium e le bestie dell'isola...",
+  "quest_survival_msg_pre_3": "Pochi giorni fa: \n... Devo trovare i miei colleghi e scappare dall'isola il prima possibile.\nO sarebbe meglio sgozzare ogni fanatico e andarmene con facilità...",
+  "quest_survival_msg_pre_4": "Oggi:\n... abbiamo distrutto i villaggi zeloti quanto più possibile.\nOh, posso sentire suoni di un motore al *cielo del nord*. È un elicottero di soccorso?",
+  "quest_survival_msg_pre_5": "Bene, invia un segnale verso l'elicottero!",
+  "quest_survival_msg_virgin0": "L'elicottero si è schiantato grazie ad una forza sconosciuta.",
+  "quest_survival_msg_virgin1": "Comunque, i tuoi istinti si affinano più che mai.",
+  "quest_survival_msg_virgin2": "Hai ottenuto una vista Chiara come il giorno, e puoi anche individuare le direzioni.",
+
+
+  "title_is": "TITOLO",
+  "title_donor": "DONATORE",
+  "title_donor_summary": "Grazie del tuo supporto",
+  "title_survivor": "SOPRAVVISSUTO",
+  "title_survivor_summary": "Sei sopravvissuto sull'isola",
+  "quest_survival_menu_3dCompass": "Bussola 3D",
+  "quest_survival_menu_showIntro": "Mostra di nuovo intro",
+  "quest_survival_menu_showValues": "Mostra valori sensori",
+  "quest_survival_menu_onFlash": "Al flash alla partenza",
+  "quest_survival_menu_addToHome": "Aggiungi alla Home",
+  "quest_survival_menu_getApp": "Ottieni l'app standalone",
+  "quest_survival_menu_getParent": "Ottieni app genitrice",
+  "quest_survival_menu_openApp": "Apri app standalone",
+  "quest_survival_menu_openParent": "Apri app genitrice"
+}
