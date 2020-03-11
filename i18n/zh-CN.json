@@ -41,9 +41,9 @@
   "output_massage": "输出文字",
   "output_error__translate_to_morse": "(错误: 尝试将摩斯电码翻译为摩斯电码)",
   "output_play_repeat": "重播",
-  "bt_speak": "播放 %s",
-  "bt_speak_loading": "载入 %s",
-  "bt_speak_stop": "停止 %s",
+  "bt_speak": "播放 $1",
+  "bt_speak_loading": "载入 $1",
+  "bt_speak_stop": "停止 $1",
   "bt_copy": "复制到剪切板",
   "bt_copied": "已复制",
 
@@ -51,7 +51,7 @@
 
   "output_more": "更多",
   "output_more_share": "分享",
-  "output_more_re": "分享 %s",
+  "output_more_re": "分享 $1",
 
 
   "noti_running": "正在执行...",
@@ -165,7 +165,7 @@
   "quest_pokemon_cancel_0": "哦不~开发者需要你的支持！",
   "quest_pokemon_cancel_1": "哦不~开发者需要你的支持！",
 
-  "q_poke_000_title": "野生的%s粗现了！",
+  "q_poke_000_title": "野生的$1粗现了！",
 
 
 

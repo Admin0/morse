@@ -41,9 +41,9 @@
   "output_massage": "출력 문자열",
   "output_error__translate_to_morse": "(오류: 모스 부호를 다시 모스 부호로 변환하려고 시도했습니다.)",
   "output_play_repeat": "반복 재생",
-  "bt_speak": "%s 재생 시작",
-  "bt_speak_loading": "%s 재생을 준비합니다",
-  "bt_speak_stop": "%s 재생 끝",
+  "bt_speak": "$1 재생 시작",
+  "bt_speak_loading": "$1 재생을 준비합니다",
+  "bt_speak_stop": "$1 재생 끝",
   "bt_copy": "클립보드로 복사합니다",
   "bt_copied": "복사되었습니다",
 
@@ -51,7 +51,7 @@
 
   "output_more": "더 보기",
   "output_more_share": "공유하기",
-  "output_more_re": "재%s",
+  "output_more_re": "재$1",
 
 
   "noti_running": "재생 중…",
@@ -165,13 +165,13 @@
   "quest_pokemon_cancel_0": "개발자을(를) 못 본 척 했다",
   "quest_pokemon_cancel_1": "왠지 개발자이(가) 이쪽으로 큰절을 하고있다&#8230; 뭐지?",
 
-  "q_poke_000_title": "앗! 야생의 %s이(가) 나타났다!",
+  "q_poke_000_title": "앗! 야생의 $1이(가) 나타났다!",
 
   "q_poke_appeared": "발견",
   "q_poke_defeated": "줘팸",
   "q_poke_wantsBattle": "%S을(를) 공격했다! (%d회 줘팸)",
   "q_poke_endBattle": "줘팸했습니다! (%d회)",
-  "q_poke_cancelBattle": "야생 %s은(는) 도망쳤다!",
+  "q_poke_cancelBattle": "야생 $1은(는) 도망쳤다!",
 
   "q_poke_rarecandy": "평범한 사탕",
   "q_poke_use_item": "%S을 사용한다",
@@ -322,6 +322,7 @@
   "lang_gr": "그리스어",
   "lang_he": "히브리어",
   "lang_id": "인도네시아어",
+  "lang_it": "이탈리아어",
   "lang_ja": "일본어",
   "lang_ko": "한국어",
   "lang_morse": "모스 부호",
@@ -399,6 +400,7 @@
   "nav__oldver2": "구버전(v2) 사용하기",
   "nav__review": "리뷰 남기기",
   "nav__update": "업데이트 기록",
+  "nav__translate": "번역 도와주기",
   "notice_check": "안내 화면을 더 이상 보지 않습니다.",
   "notice_donate": "...아니면 조금 기부해주셔도 되는데요.",
   "notice_to_android": "안드로이드에서 만나보세요!",
@@ -416,5 +418,5 @@
   "translator": "번역기",
 
   "history": "기록",
-  "history_i": "번역 %s개",
+  "history_i": "번역 $1개",
   "history_clear": "기록 지우기"}

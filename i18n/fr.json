@@ -41,9 +41,9 @@
   "output_massage": "Message traduit",
   "output_error__translate_to_morse": "ERREUR: tentative de traduire du morse en morse",
   "output_play_repeat": "Jouer en boucle",
-  "bt_speak": "Jouer le %s",
-  "bt_speak_loading": "Chargement du %s",
-  "bt_speak_stop": "Quitter le %s",
+  "bt_speak": "Jouer le $1",
+  "bt_speak_loading": "Chargement du $1",
+  "bt_speak_stop": "Quitter le $1",
   "bt_copy": "Copier dans le presse papier",
   "bt_copied": "Copié",
 
@@ -51,7 +51,7 @@
 
   "output_more": "Plus",
   "output_more_share": "Partager",
-  "output_more_re": "Re %s",
+  "output_more_re": "Re $1",
 
 
   "noti_running": "En marche...",

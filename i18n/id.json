@@ -41,9 +41,9 @@
   "output_massage": "Teks keluaran",
   "output_error__translate_to_morse": "ERROR: Mencoba menerjemahkan kode morse dari kode morse.",
   "output_play_repeat": "Ulangi",
-  "bt_speak": "Mulai %s",
-  "bt_speak_loading": "Memuat %s",
-  "bt_speak_stop": "Keluar %s",
+  "bt_speak": "Mulai $1",
+  "bt_speak_loading": "Memuat $1",
+  "bt_speak_stop": "Keluar $1",
   "bt_copy": "Salin ke papan ketik",
   "bt_copied": "Tersalin",
 
@@ -51,7 +51,7 @@
 
   "output_more": "Lainnya",
   "output_more_share": "Bagikan",
-  "output_more_re": "Re %s",
+  "output_more_re": "Re $1",
 
 
   "noti_running": "sedang berjalan...",

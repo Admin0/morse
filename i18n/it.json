@@ -41,9 +41,9 @@
   "output_massage": "Output messaggio",
   "output_error__translate_to_morse": "Errore: Prova a tradurre codice Morse dal codice Morse.",
   "output_play_repeat": "Ripeti",
-  "bt_speak": "Riproduci %s",
-  "bt_speak_loading": "Caricamento %s",
-  "bt_speak_stop": "Esci da %s",
+  "bt_speak": "Riproduci $1",
+  "bt_speak_loading": "Caricamento $1",
+  "bt_speak_stop": "Esci da $1",
   "bt_copy": "Copia",
   "bt_copied": "Copiato",
 
@@ -51,7 +51,7 @@
 
   "output_more": "Altro",
   "output_more_share": "Condividi",
-  "output_more_re": "Re %s",
+  "output_more_re": "Re $1",
 
 
   "noti_running": "è in esecuzione...",

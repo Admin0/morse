@@ -41,9 +41,9 @@
   "output_massage": "texto traduzido",
   "output_error__translate_to_morse": "(ERRO: usando Morse para traduzir para Morse.)",
   "output_play_repeat": "Repetir",
-  "bt_speak": "Reproduzir %s",
-  "bt_speak_loading": "Carregando %s",
-  "bt_speak_stop": "Terminando %s",
+  "bt_speak": "Reproduzir $1",
+  "bt_speak_loading": "Carregando $1",
+  "bt_speak_stop": "Terminando $1",
   "bt_copy": "Copiar para área de transferência",
   "bt_copied": "Copiado",
 
@@ -51,7 +51,7 @@
 
   "output_more": "Mais",
   "output_more_share": "Compartilhar",
-  "output_more_re": "%s novamente",
+  "output_more_re": "$1 novamente",
 
 
   "noti_running": "está em execução…",

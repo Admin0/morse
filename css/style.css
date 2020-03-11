@@ -390,6 +390,19 @@ body.analyze #card_header .lang_box.code {
   right: 2em;
 }
 
+#output_menu span {
+  cursor: pointer;
+}
+
+#output_menu span:not(:last-child) {
+  margin-right: 1em;
+}
+
+body.braille #output_menu span.play,
+body.analyze #output_menu span.play {
+  display: none;
+}
+
 #output_menu i:hover {
   color: #00C853;
 }
@@ -435,13 +448,16 @@ body.analyze #card_header .lang_box.code {
   margin: auto;
   color: #555;
 }
-.description.on{
+
+.description.on {
   display: block;
 }
+
 .description small {
   font-size: 14px;
   /* font-weight: normal; */
 }
+
 footer {
   /* position: fixed; */
   margin: 3em 0;
@@ -697,10 +713,6 @@ input[type="radio"]:checked+label.button_between {
   background: #ddd;
   color: #1a73e8;
   padding: .5em .75em;
-}
-
-.copy {
-  cursor: pointer;
 }
 
 .material-icons {

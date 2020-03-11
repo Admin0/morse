@@ -41,9 +41,9 @@
   "output_massage": "Ausgabetext",
   "output_error__translate_to_morse": "(FEHLER: Du versuchst, Morse zu Morse zu übersetzen.)",
   "output_play_repeat": "Abspielen wiederholen",
-  "bt_speak": "%s abspielen",
-  "bt_speak_loading": "%s lädt",
-  "bt_speak_stop": "%s beenden",
+  "bt_speak": "$1 abspielen",
+  "bt_speak_loading": "$1 lädt",
+  "bt_speak_stop": "$1 beenden",
   "bt_copy": "In Zwischenablage kopieren",
   "bt_copied": "Kopiert",
 
@@ -51,7 +51,7 @@
 
   "output_more": "Mehr",
   "output_more_share": "Teilen",
-  "output_more_re": "Re %s",
+  "output_more_re": "Re $1",
 
 
   "noti_running": "läuft...",

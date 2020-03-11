@@ -41,9 +41,9 @@
   "output_massage": "Вихідний текст",
   "output_error__translate_to_morse": "ПОМИЛКА: Ви намагаєтеся кодувати код Морзе в код Морзе.",
   "output_play_repeat": "Програти ще раз",
-  "bt_speak": "Гра %s",
-  "bt_speak_loading": "Завантаження %s",
-  "bt_speak_stop": "Стоп %s",
+  "bt_speak": "Гра $1",
+  "bt_speak_loading": "Завантаження $1",
+  "bt_speak_stop": "Стоп $1",
   "bt_copy": "Копіювати в буфер",
   "bt_copied": "Зкопійовано",
 
@@ -51,7 +51,7 @@
 
   "output_more": "Ще",
   "output_more_share": "Пошерити",
-  "output_more_re": "Зворотній %s",
+  "output_more_re": "Зворотній $1",
 
 
   "noti_running": "В процесі...",

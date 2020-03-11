@@ -41,9 +41,9 @@
   "output_massage": "輸出文字",
   "output_error__translate_to_morse": "(錯誤： 嘗試翻譯摩斯密碼至摩斯密碼。)",
   "output_play_repeat": "重複播放",
-  "bt_speak": "播放 %s",
-  "bt_speak_loading": "載入 %s",
-  "bt_speak_stop": "結束%s",
+  "bt_speak": "播放 $1",
+  "bt_speak_loading": "載入 $1",
+  "bt_speak_stop": "結束$1",
   "bt_copy": "複製到剪貼版",
   "bt_copied": "複製",
 
@@ -51,7 +51,7 @@
 
   "output_more": "更多",
   "output_more_share": "分享",
-  "output_more_re": "重新 %s",
+  "output_more_re": "重新 $1",
 
 
   "noti_running": "正在執行...",
@@ -165,7 +165,7 @@
   "quest_pokemon_cancel_0": "使用者 拒絕了 開發者 的面子。",
   "quest_pokemon_cancel_1": "怎麼說來 開發者 也用這種方法打招呼啊。為了什麼呢？",
 
-  "q_poke_000_title": "野生的 %s 出現了！",
+  "q_poke_000_title": "野生的 $1 出現了！",
 
 
 

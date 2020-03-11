@@ -41,9 +41,9 @@
   "output_massage": "Tekst wyjściowy",
   "output_error__translate_to_morse": "Błąd: Spróbuj przetłumaczyć kod Morse'a z kodu Morse'a",
   "output_play_repeat": "Odtwórz ponownie",
-  "bt_speak": "%s jest odtwarzany",
-  "bt_speak_loading": "%s jest ładowany",
-  "bt_speak_stop": "Opuszczono %s",
+  "bt_speak": "$1 jest odtwarzany",
+  "bt_speak_loading": "$1 jest ładowany",
+  "bt_speak_stop": "Opuszczono $1",
   "bt_copy": "Skopiuj do schowka",
   "bt_copied": "Skopiowano",
 

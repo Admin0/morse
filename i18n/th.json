@@ -41,9 +41,9 @@
   "output_massage": "ข้อความที่ถูกแปล",
   "output_error__translate_to_morse": "ผิดพลาด: ลองแปลรหัสมอร์สเป็นมอร์ส",
   "output_play_repeat": "เล่นซ้ำ",
-  "bt_speak": "เล่น%s",
-  "bt_speak_loading": "กำลังโหลด %s",
-  "bt_speak_stop": "ออกจาก %s",
+  "bt_speak": "เล่น$1",
+  "bt_speak_loading": "กำลังโหลด $1",
+  "bt_speak_stop": "ออกจาก $1",
   "bt_copy": "คัดลอก",
   "bt_copied": "คัดลอกแล้ว",
 
@@ -51,7 +51,7 @@
 
 
   "output_more_share": "แบ่งปัน",
-  "output_more_re": "%s ใหม่",
+  "output_more_re": "$1 ใหม่",
 
 
 

@@ -41,9 +41,9 @@
   "output_massage": "出力文字列",
   "output_error__translate_to_morse": "(エラー:モールス符号を再びモス符号に変換しようと試みました。)",
   "output_play_repeat": "リピート再生",
-  "bt_speak": "%sを再生します",
-  "bt_speak_loading": "%sの再生を準備します",
-  "bt_speak_stop": "%sの出力を終了します",
+  "bt_speak": "$1を再生します",
+  "bt_speak_loading": "$1の再生を準備します",
+  "bt_speak_stop": "$1の出力を終了します",
   "bt_copy": "クリップボードにコピーします",
   "bt_copied": "コピーされました",
 
@@ -51,7 +51,7 @@
 
   "output_more": "もっと見る",
   "output_more_share": "共有する",
-  "output_more_re": "再%s",
+  "output_more_re": "再$1",
 
 
   "noti_running": "再生中…",
@@ -165,13 +165,13 @@
   "quest_pokemon_cancel_0": "開発者を 見ぬふりした",
   "quest_pokemon_cancel_1": "なぜか 開発者が こちらに お辞儀をしている... 何？",
 
-  "q_poke_000_title": "あ! やせいの %sが とびだしてきた!",
+  "q_poke_000_title": "あ! やせいの $1が とびだしてきた!",
 
   "q_poke_appeared": "はっけん",
   "q_poke_defeated": "なぐる",
-  "q_poke_wantsBattle": "%Sが しょうぶを かけてきた！（%dかいなぐる）",
+  "q_poke_wantsBattle": "$1が しょうぶを かけてきた！（%dかいなぐる）",
   "q_poke_endBattle": "なぐりしました！（%dかい）",
-  "q_poke_cancelBattle": "やせいの %Sが にげた！",
+  "q_poke_cancelBattle": "やせいの $1が にげた！",
 
 
 

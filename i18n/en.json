@@ -41,9 +41,9 @@
   "output_massage": "Output text",
   "output_error__translate_to_morse": "(ERROR: Try to translate morse code from morse code.)",
   "output_play_repeat": "Repeat play",
-  "bt_speak": "Play the %s",
-  "bt_speak_loading": "Loading the %s",
-  "bt_speak_stop": "Quit the %s",
+  "bt_speak": "Play the $1",
+  "bt_speak_loading": "Loading the $1",
+  "bt_speak_stop": "Quit the $1",
   "bt_copy": "Copy to clipboard",
   "bt_copied": "Copied",
 
@@ -51,7 +51,7 @@
 
   "output_more": "More",
   "output_more_share": "Share",
-  "output_more_re": "Re %s",
+  "output_more_re": "Re $1",
 
 
   "noti_running": "is running…",
@@ -165,7 +165,7 @@
   "quest_pokemon_cancel_0": "USER just turn away from DEVELOPER's face.",
   "quest_pokemon_cancel_1": "I don't know why, but DEVELOPER has greeted over here.",
 
-  "q_poke_000_title": "Wild %s appeared!",
+  "q_poke_000_title": "Wild $1 appeared!",
 
   "q_poke_appeared": "APPEARED",
   "q_poke_defeated": "DEFEATED",
@@ -322,6 +322,7 @@
   "lang_gr": "Greek",
   "lang_he": "Hebrew",
   "lang_id": "Indonesian",
+  "lang_it": "Italian",
   "lang_ja": "Japanese",
   "lang_ko": "Korean",
   "lang_morse": "Morse Code",
@@ -417,12 +418,6 @@
   "translator": "translator",
 
   "history": "History",
-  "history_i": "Logged %s times",
+  "history_i": "Logged $1 times",
   "history_clear": "Clear logs"
-
-
-
-
-
-
 }

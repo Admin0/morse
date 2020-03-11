@@ -237,6 +237,55 @@ const m = {
     }
 
   },
+  play: function() {
+    let time_origin = 150;
+    let time = time_origin;
+    let i = 0;
+    let dit = $('#s_output_style_dit .input').text();
+    let dah = $('#s_output_style_dah .input').text();
+    let code; // 점인지 선인지
+    let text = $('#output_textarea').text();
+
+    toast($.i18n('bt_speak', $.i18n('morse')), "play_arrow");
+
+    function engine() {
+
+      // sound
+      var context = new AudioContext();
+      var o = context.createOscillator();
+      o.type = "sine";
+      o.frequency.value = 830.0;
+      o.connect(context.destination);
+      // o.start();
+
+      // key check
+      code = text.substring(i, i + 1);
+      if (code == dit) {
+        time = time_origin;
+        o.start(0);
+        o.stop(context.currentTime + time / 1000)
+      } else if (code == dah) {
+        time = time_origin * 2;
+        o.start(0);
+        o.stop(context.currentTime + time / 1000)
+      } else if (code == "　") {
+        time = time_origin * 2;
+      } else {
+        time = time_origin;
+      }
+      // console.log(code + " " + time);
+
+      if (i < text.length) {
+        setTimeout(function() {
+          engine();
+        }, time);
+      } else {
+        toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
+      }
+      i++;
+    }
+    engine();
+  },
   test: function() {
     console.log('hello');
     return this;
@@ -300,7 +349,9 @@ function initialize() {
   });
 
   $('#re_anaylze').on('change', function() {
-    if ($('#input_textarea').val() != "") {$('#input_textarea').val($('#output_textarea').text());}
+    if ($('#input_textarea').val() != "") {
+      $('#input_textarea').val($('#output_textarea').text());
+    }
     m.toggle.mode();
     tranlyze(m.type.mode);
   });
