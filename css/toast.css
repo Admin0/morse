@@ -93,6 +93,7 @@
 
   #toast.off {
     bottom: -56px;
+    opacity: 1;
     animation-name: snackbar_off;
     animation-duration: .3s;
   }

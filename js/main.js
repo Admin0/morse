@@ -23,7 +23,8 @@ const m = {
   type: {
     code: CODE_MORSE,
     lang: LANG_AUTO,
-    mode: TRANSLATE_MODE
+    mode: TRANSLATE_MODE,
+    isPlay: false
   },
   toggle: {
     code: function(code) {
@@ -238,53 +239,64 @@ const m = {
 
   },
   play: function() {
-    let time_origin = 150;
+    let time_origin = $('#s_t_speak_length .input').text();
     let time = time_origin;
-    let i = 0;
+    let position = 0;
     let dit = $('#s_output_style_dit .input').text();
     let dah = $('#s_output_style_dah .input').text();
     let code; // 점인지 선인지
     let text = $('#output_textarea').text();
 
-    toast($.i18n('bt_speak', $.i18n('morse')), "play_arrow");
+
+    // sound
+    var audio = new AudioContext();
+    var o = audio.createOscillator();
+    o.type = "sine";
+    o.frequency.value = $('#s_t_beep .input').text();
+    o.start();
+
 
     function engine() {
+      if (m.type.isPlay) {
+        code = text.substring(position, position + 1);
+        if (code == dit) {
+          time = time_origin;
+          o.connect(audio.destination);
+        } else if (code == dah) {
+          time = time_origin * 2;
+          o.connect(audio.destination);
+        } else if (code == "　") {
+          time = time_origin * 2;
+        } else {
+          time = time_origin;
+        }
 
-      // sound
-      var context = new AudioContext();
-      var o = context.createOscillator();
-      o.type = "sine";
-      o.frequency.value = 830.0;
-      o.connect(context.destination);
-      // o.start();
+        // console.log(code + " " + time);
 
-      // key check
-      code = text.substring(i, i + 1);
-      if (code == dit) {
-        time = time_origin;
-        o.start(0);
-        o.stop(context.currentTime + time / 1000)
-      } else if (code == dah) {
-        time = time_origin * 2;
-        o.start(0);
-        o.stop(context.currentTime + time / 1000)
-      } else if (code == "　") {
-        time = time_origin * 2;
-      } else {
-        time = time_origin;
+        if (position < text.length) {
+          setTimeout(function() {
+            if (code == dit || code == dah) o.disconnect(audio.destination);
+            engine();
+          }, time);
+        } else {
+          m.type.isPlay = false;
+          o.stop(0);
+          toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
+          $('#output_menu .play i').text('play_arrow');
+        }
+        position++;
       }
-      // console.log(code + " " + time);
-
-      if (i < text.length) {
-        setTimeout(function() {
-          engine();
-        }, time);
-      } else {
-        toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
-      }
-      i++;
     }
-    engine();
+    if (m.type.isPlay) {
+      m.type.isPlay = false;
+      toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
+      $('#output_menu .play i').text('play_arrow');
+    } else {
+      m.type.isPlay = true;
+      engine();
+      toast($.i18n('bt_speak', $.i18n('morse')), "play_arrow");
+      $('#output_menu .play i').text('stop');
+    }
   },
   test: function() {
     console.log('hello');
