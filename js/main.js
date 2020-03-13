@@ -33,6 +33,8 @@ const m = {
   },
   toggle: {
     code: function(code) {
+      m.play(false);
+
       if (code == CODE_MORSE) {
         m.type.code = CODE_MORSE;
       } else if (code == CODE_BRAILLE) {
@@ -70,6 +72,8 @@ const m = {
       }
     },
     lang: function(target) {
+      m.play(false);
+
       var lang = LANG_EN;
       $('.lang_box.code .card_header, .card_lang').removeClass('selected');
       if ($(target).hasClass('auto')) {
@@ -116,6 +120,8 @@ const m = {
       m.type.lang = lang;
     },
     mode: function() {
+      m.play(false);
+
       keyboard_shortcuts(SHORTCUT_RESET);
       if (m.type.mode == TRANSLATE_MODE) {
         m.type.mode = ANALYZE_MODE;
@@ -254,7 +260,7 @@ const m = {
     }
 
   },
-  play: function() {
+  play: function(true_mean_i_wanna_play) {
     let time_origin = $('#s_t_speak_length .input').text();
     let time = time_origin;
     let position = 0;
@@ -267,6 +273,10 @@ const m = {
     let vibration_type = 'shake';
     let flash_type = 'flash';
 
+
+    // text pre-decoration
+    $('#output_textarea').html('<span>' + text.split("").join('</span><span>') + '</span>');
+
     // sound
     var audio = new AudioContext();
     var o = audio.createOscillator();
@@ -275,6 +285,7 @@ const m = {
     o.start();
 
     function engine() {
+      let isSoundOn = m.type.play.sound; // 시간차로 발생하는 오류 때문에 변수 하나 생성.
       if (m.type.play.isOn) {
         code = text.substring(position, position + 1);
         if (code == dit || code == dah) {
@@ -287,7 +298,7 @@ const m = {
             vibration_type = 'shake-hard';
             flash_type = 'flash-hard'
           }
-          if (m.type.play.sound) o.connect(audio.destination);
+          if (isSoundOn) o.connect(audio.destination);
           if (m.type.play.vibration) {
             if (document.body.offsetWidth > 1280 && !is_mobile) {
               index.addClass(vibration_type);
@@ -303,29 +314,36 @@ const m = {
           time = time_origin;
         }
 
+        // text decoration
+        $('#output_textarea > span:nth(' + ((position - 1) < 0 ? "" : (position - 1)) + ')').addClass('on');
+        $('#output_textarea > span:nth(' + position + ')').addClass('on');
+        $('#output_textarea > span:nth(' + (position + 1) + ')').addClass('on');
+
         // console.log(code + " " + time);
 
         if (position < text.length) {
           setTimeout(function() {
             if (code == dit || code == dah) {
-              if (m.type.play.sound) o.disconnect(audio.destination);
+              if (isSoundOn) o.disconnect(audio.destination);
               index.removeClass('shake shake-hard shake-vertical');
-              if (m.type.play.flash) flash.removeClass('flash flash-hard');
+              flash.removeClass('flash flash-hard');
             }
+            $('#output_textarea > span').removeClass('on');
             engine();
           }, time);
         } else {
           m.type.play.isOn = false;
           // if (m.type.play.sound) o.stop(0);
+          $('#output_textarea > span').removeClass('on');
           toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
           $('#output_menu .play i').text('play_arrow');
         }
         position++;
       }
     }
-    if (m.type.play.isOn) {
+    if (m.type.play.isOn || (true_mean_i_wanna_play != undefined && !true_mean_i_wanna_play)) {
+      if (m.type.play.isOn) toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
       m.type.play.isOn = false;
-      toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
       $('#output_menu .play i').text('play_arrow');
     } else {
       m.type.play.isOn = true;
@@ -344,6 +362,9 @@ const m = {
 }
 
 function tranlyze(type) {
+
+  m.play(false);
+
   if (m.type.code == CODE_MORSE) {
     if (type == TRANSLATE_MODE) {
       translate($('#s_output_style_dit .input').text(), $('#s_output_style_dah .input').text());

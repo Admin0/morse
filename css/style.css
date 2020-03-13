@@ -401,11 +401,20 @@ body.analyze #card_header .lang_box.code {
   line-height: 1.5;
   white-space: pre-wrap;
   text-overflow: ellipsis;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .translate #output_textarea {
   font-weight: bold;
+}
+
+#output_textarea>span {
+  overflow: visible;
+}
+
+#output_textarea>span.on {
+  background: #ffeb3b;
+  color: #f44336;
 }
 
 #output.on {
