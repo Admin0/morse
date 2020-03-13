@@ -97,16 +97,25 @@ header .actionbar .item {
   cursor: pointer;
   color: #00C853;
 }
+
 body.analyze header .actionbar .item {
   color: #4284f3;
 }
 
 header .actionbar .item.disabled {
-  color: #aaa;
+  color: #aaa !important;
 }
 
 body:not(.braille) header .actionbar .item.morse {
   display: inline-block;
+}
+
+#index.flash {
+  box-shadow: 0 11px 21px #00c853;
+}
+
+#index.flash-hard {
+  box-shadow: 0 11px 21px #00e676;
 }
 
 body.fold header {
@@ -330,7 +339,7 @@ body.analyze #card_header .lang_box.code {
   min-height: 300px;
   padding: 0;
   font-family: 'Lato', 'Noto Sans KR', sans-serif;
-  background: #fff;
+  background: transparent;
   border: none;
   overflow: hidden;
   resize: none;

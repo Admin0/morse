@@ -28,7 +28,7 @@ const m = {
       isOn: false,
       sound: true,
       vibration: true,
-      flash: true
+      flash: false
     }
   },
   toggle: {
@@ -175,7 +175,7 @@ const m = {
     set: function(standalone) {
       for (var i = 0; i < 50; i++) {
         if (typeof window.localStorage["history_input_" + i] !== "undefined") {
-          $("#history").append("<div class='item'><div class='i'>" + window.localStorage["history_input_" + i] + "</div><div class='o'>" + window.localStorage["history_output_" + i] + "</div></div>");
+          $("#history").append("<div class='item' onclick='m.history.recall(" + i + ");'><div class='i'>" + window.localStorage["history_input_" + i] + "</div><div class='o'>" + window.localStorage["history_output_" + i] + "</div></div>");
         } else {
           break;
         }
@@ -206,6 +206,17 @@ const m = {
         this.reset();
         this.set();
       }
+    },
+    recall: function(position) {
+
+      $('#input_textarea').val(window.localStorage["history_input_" + position]);
+      tranlyze(m.type.mode);
+
+      // scrolling
+      $('html, body').animate({
+        scrollTop: $('#input').offset().top - event.pageY + pageYOffset + $('#input').height() / 2
+      }, 500);
+      console.log(position);
     }
   },
   input: {
@@ -252,6 +263,9 @@ const m = {
     let code; // 점인지 선인지
     let text = $('#output_textarea').text();
     let index = $('#index');
+    let flash = $('#index');
+    let vibration_type = 'shake';
+    let flash_type = 'flash';
 
     // sound
     var audio = new AudioContext();
@@ -263,26 +277,26 @@ const m = {
     function engine() {
       if (m.type.play.isOn) {
         code = text.substring(position, position + 1);
-        if (code == dit) {
-          time = time_origin;
+        if (code == dit || code == dah) {
+          if (code == dit) {
+            time = time_origin;
+            vibration_type = 'shake';
+            flash_type = 'flash'
+          } else {
+            time = time_origin * 2;
+            vibration_type = 'shake-hard';
+            flash_type = 'flash-hard'
+          }
           if (m.type.play.sound) o.connect(audio.destination);
           if (m.type.play.vibration) {
             if (document.body.offsetWidth > 1280 && !is_mobile) {
-              index.addClass('shake');
+              index.addClass(vibration_type);
             } else {
+              index.addClass('shake-vertical');
               window.navigator.vibrate(time);
             }
           }
-        } else if (code == dah) {
-          time = time_origin * 2;
-          if (m.type.play.sound) o.connect(audio.destination);
-          if (m.type.play.vibration) {
-            if (document.body.offsetWidth > 1280 && !is_mobile) {
-              index.addClass('shake-hard');
-            } else {
-              window.navigator.vibrate(time);
-            }
-          }
+          if (m.type.play.flash) flash.addClass(flash_type);
         } else if (code == "　") {
           time = time_origin * 2;
         } else {
@@ -295,13 +309,14 @@ const m = {
           setTimeout(function() {
             if (code == dit || code == dah) {
               if (m.type.play.sound) o.disconnect(audio.destination);
-              if (document.body.offsetWidth > 1280 || !is_mobile) index.removeClass('shake shake-hard');
+              index.removeClass('shake shake-hard shake-vertical');
+              if (m.type.play.flash) flash.removeClass('flash flash-hard');
             }
             engine();
           }, time);
         } else {
           m.type.play.isOn = false;
-          if (m.type.play.sound) o.stop(0);
+          // if (m.type.play.sound) o.stop(0);
           toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
           $('#output_menu .play i').text('play_arrow');
         }
@@ -314,9 +329,11 @@ const m = {
       $('#output_menu .play i').text('play_arrow');
     } else {
       m.type.play.isOn = true;
-      engine();
-      toast($.i18n('bt_speak', $.i18n('morse')), "play_arrow");
-      $('#output_menu .play i').text('stop');
+      setTimeout(function() {
+        engine();
+        toast($.i18n('bt_speak', $.i18n('morse')), "play_arrow");
+        $('#output_menu .play i').text('stop');
+      }, time);
     }
   },
   test: function() {
