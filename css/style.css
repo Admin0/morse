@@ -85,6 +85,30 @@ header h1 {
   font-weight: normal;
 }
 
+header .actionbar {
+  display: inline-block;
+  float: right;
+  margin: 6px 0;
+}
+
+header .actionbar .item {
+  display: none;
+  padding: 6px;
+  cursor: pointer;
+  color: #00C853;
+}
+body.analyze header .actionbar .item {
+  color: #4284f3;
+}
+
+header .actionbar .item.disabled {
+  color: #aaa;
+}
+
+body:not(.braille) header .actionbar .item.morse {
+  display: inline-block;
+}
+
 body.fold header {
   padding-left: 68px;
   width: calc(100% - 68px);

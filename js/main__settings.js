@@ -83,6 +83,32 @@ function setting() {
     }
   });
 
+  // header > action bar
+  $('.actionbar .item').on('click', function() {
+    $(this).toggleClass('disabled');
+    if ($(this).hasClass('sound')) {
+      if (m.type.play.sound) {
+        m.type.play.sound = false;
+      } else {
+        m.type.play.sound = true
+      }
+    }
+    if ($(this).hasClass('vibration')) {
+      if (m.type.play.vibration) {
+        m.type.play.vibration = false;
+      } else {
+        m.type.play.vibration = true
+      }
+    }
+    if ($(this).hasClass('flash')) {
+      if (m.type.play.flash) {
+        m.type.play.flash = false;
+      } else {
+        m.type.play.flash = true
+      }
+    }
+  })
+
 }
 
 $(document).ready(function() {

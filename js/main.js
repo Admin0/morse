@@ -24,7 +24,12 @@ const m = {
     code: CODE_MORSE,
     lang: LANG_AUTO,
     mode: TRANSLATE_MODE,
-    isPlay: false
+    play: {
+      isOn: false,
+      sound: true,
+      vibration: true,
+      flash: true
+    }
   },
   toggle: {
     code: function(code) {
@@ -246,7 +251,7 @@ const m = {
     let dah = $('#s_output_style_dah .input').text();
     let code; // 점인지 선인지
     let text = $('#output_textarea').text();
-
+    let index = $('#index');
 
     // sound
     var audio = new AudioContext();
@@ -255,16 +260,29 @@ const m = {
     o.frequency.value = $('#s_t_beep .input').text();
     o.start();
 
-
     function engine() {
-      if (m.type.isPlay) {
+      if (m.type.play.isOn) {
         code = text.substring(position, position + 1);
         if (code == dit) {
           time = time_origin;
-          o.connect(audio.destination);
+          if (m.type.play.sound) o.connect(audio.destination);
+          if (m.type.play.vibration) {
+            if (document.body.offsetWidth > 1280 && !is_mobile) {
+              index.addClass('shake');
+            } else {
+              window.navigator.vibrate(time);
+            }
+          }
         } else if (code == dah) {
           time = time_origin * 2;
-          o.connect(audio.destination);
+          if (m.type.play.sound) o.connect(audio.destination);
+          if (m.type.play.vibration) {
+            if (document.body.offsetWidth > 1280 && !is_mobile) {
+              index.addClass('shake-hard');
+            } else {
+              window.navigator.vibrate(time);
+            }
+          }
         } else if (code == "　") {
           time = time_origin * 2;
         } else {
@@ -275,24 +293,27 @@ const m = {
 
         if (position < text.length) {
           setTimeout(function() {
-            if (code == dit || code == dah) o.disconnect(audio.destination);
+            if (code == dit || code == dah) {
+              if (m.type.play.sound) o.disconnect(audio.destination);
+              if (document.body.offsetWidth > 1280 || !is_mobile) index.removeClass('shake shake-hard');
+            }
             engine();
           }, time);
         } else {
-          m.type.isPlay = false;
-          o.stop(0);
+          m.type.play.isOn = false;
+          if (m.type.play.sound) o.stop(0);
           toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
           $('#output_menu .play i').text('play_arrow');
         }
         position++;
       }
     }
-    if (m.type.isPlay) {
-      m.type.isPlay = false;
+    if (m.type.play.isOn) {
+      m.type.play.isOn = false;
       toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
       $('#output_menu .play i').text('play_arrow');
     } else {
-      m.type.isPlay = true;
+      m.type.play.isOn = true;
       engine();
       toast($.i18n('bt_speak', $.i18n('morse')), "play_arrow");
       $('#output_menu .play i').text('stop');
