@@ -504,6 +504,7 @@ $(function() {
   initialize_langDropDown();
   url_check();
   ft_icon();
+  codebook();
   detect_input();
   title_tooltip();
   load_modules();

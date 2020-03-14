@@ -324,7 +324,9 @@
   "lang_id": "Indonesian",
   "lang_it": "Italian",
   "lang_ja": "Japanese",
+  "lang_jp": "Japanese",
   "lang_ko": "Korean",
+  "lang_kr": "Korean",
   "lang_morse": "Morse Code",
   "lang_pl": "Polish ",
   "lang_pr": "Persian",
@@ -336,6 +338,7 @@
   "lang_vi": "Vietnamese",
   "lang_zh-CN": "Chinese (Simplified)",
   "lang_zh-TW": "Chinese (Traditional)",
+  "lang_nm": "Numbers, etc.",
 
   "message_0": "Calling all. This is our last cry before our eternal silence.",
   "message_0_source": "French Navy ceased using Morse code on January 31, 1997, the final transmitted message",

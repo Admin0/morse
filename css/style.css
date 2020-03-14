@@ -5,10 +5,10 @@
 @import url('ad.css');
 @import url('animate.css');
 @import url('nav.css');
-@import url('module.css');
+@import url('content.css');
+@import url('content_bottom.css');
 @import url('toast.css');
 @import url('card_lang.css');
-@import url('history.css');
 @import url('key.css');
 
 ::selection {

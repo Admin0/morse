@@ -141,7 +141,42 @@ function ft_icon() {
         $('#history_wrap').addClass('on')
       }
     } else if ($(this).hasClass('code')) {
-      toast("Coming soon.")
+      if ($(this).hasClass('on')) {
+        $(this).removeClass('on');
+        $('.codebook').removeClass('on')
+      } else {
+        $(this).addClass('on');
+        $('.codebook').insertAfter($('#ft-section'));
+        $('.codebook').addClass('on')
+      }
     }
   })
+}
+
+function codebook() {
+  let list = "";
+  list += '<div class="morse">';
+  for (var j = 0; j < Object.keys(m.tranlyze.key).length; j++) {
+    list += '<div class="title">' + $.i18n('lang_' + Object.keys(m.tranlyze.key)[j]) + '</div>';
+    for (var k = 0; k < m.tranlyze.key[Object.keys(m.tranlyze.key)[j]].length; k++) {
+      list += '<div class="code_wrap">';
+      list += '<span class="letter">' + m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0] + "</span>";
+      list += '<span class="code">' + m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][1].split("").join(" ") + "</span>";
+      list += '</div>';
+    }
+  }
+  list += '</div><div class="braille">';
+  for (var l = 0; l < Object.keys(m.tranlyze.key_b).length; l++) {
+    list += '<div class="title">' + $.i18n('lang_' + Object.keys(m.tranlyze.key_b)[l]) + '</div>';
+    for (var n = 0; n < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[l]].length; n++) {
+      list += '<div class="code_wrap">';
+      list += '<span class="letter">' + m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[l]][n][0] + "</span>";
+      list += '<span class="code">' + m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[l]][n][1].split("").join(" ") + "</span>";
+      list += '</div>';
+    }
+  }
+  list += '</div>';
+
+  $('.codebook').html(list);
+
 }

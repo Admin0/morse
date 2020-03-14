@@ -1,3 +1,4 @@
+/* braille keyboard */
 section.key {
   text-align: center;
 }
@@ -42,6 +43,7 @@ body.analyze.braille .key .braille {
   content: "radio_button_checked";
   color: #f44336;
 }
+
 .key .braille button,
 .key .braille input[type="button"] {
   background: #f44336;
@@ -51,14 +53,18 @@ body.analyze.braille .key .braille {
 .key .braille input[type="button"]:hover {
   background: #e57373;
 }
+
 @media handheld, only screen and (max-width: 600px) {
-body.analyze footer{margin-bottom: 150px;}
+  body.analyze footer {
+    margin-bottom: 150px;
+  }
 
   section.key {
     position: fixed;
     width: 100%;
     bottom: 0;
-    background: #fff;box-shadow: 0 -2px 6px 0 rgba(60, 64, 67, .15);
+    background: #fff;
+    box-shadow: 0 -2px 6px 0 rgba(60, 64, 67, .15);
     z-index: 31;
   }
 }

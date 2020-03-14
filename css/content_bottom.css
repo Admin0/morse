@@ -174,3 +174,63 @@ body.braille .ft-icon.on .material-icons {
     width: 60px;
   }
 }
+
+/* code book */
+.codebook {
+  margin: 3.5em auto 4em;
+  max-width: 1280px;
+  width: 100%;
+  background: #fff;
+  /* box-shadow: 0 5px 11px rgba(0, 0, 0, .2); */
+  border-radius: .5em;
+  border: 1px solid #dadce0;
+  transition: .3s;
+  position: relative;
+  display: none;
+}
+
+.codebook.on {
+  display: block;
+}
+
+.codebook .braille,
+.codebook .morse {
+  flex-flow: wrap;
+  display: flex;
+}
+
+.codebook div.title {
+  font-weight: bold;
+  text-transform: uppercase;
+  flex: 100%;
+  padding: 1em;
+  border: 1px solid silver;
+  border-width: 0 1px 1px 0;
+}
+
+.codebook div.code_wrap {
+  display: inline-block;
+  min-width: 150px;
+  padding: 1em;
+  flex: auto;
+  border: 1px solid silver;
+  border-width: 0 1px 1px 0;
+}
+
+.codebook div.code_wrap:nth-of-type(2n+1) {
+  background: #fafafa;
+}
+
+.codebook span.letter {
+  margin-right: .5em;
+}
+
+.codebook span.code {
+  font-weight: bold;
+  font-family: 'Lato', 'Noto Sans KR', sans-serif;
+}
+
+body:not(.braille) .codebook .braille,
+body.braille .codebook .morse {
+  display: none;
+}
