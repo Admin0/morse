@@ -234,3 +234,9 @@ body:not(.braille) .codebook .braille,
 body.braille .codebook .morse {
   display: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .codebook div.code_wrap {
+    min-width: 100px;
+  }
+}
