@@ -177,18 +177,27 @@ function translate_b() {
 
     for (var j = 0; j < Object.keys(m.tranlyze.key_b).length; j++) {
       for (var k = 0; k < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]].length; k++) {
-        if (input[i] == m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][0]) {
 
-          if (Object.keys(m.tranlyze.key_b)[j] == "kr") {
-            // console.log(Object.keys(m.tranlyze.key_b)[j]);
-            // console.log(input[i - 1]);
-            if (input[i].match(/[ᄀ-ᄄᄆ-ᄊᄌᄍᄏ-ᄒ]/) != null && input[i + 1] == "ᅡ" && input[i + 3] != "ᄋ") {
+        if (Object.keys(m.tranlyze.key_b)[j] == "kr") { // 한글 예외 항목
+          if (input[i] == m.tranlyze.key_b.kr[k][0][0]) { 
+            if (m.tranlyze.key_b.kr[k][0].length == 3 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2]) {  // 한글 약자 ("것")
+              input[i] = m.tranlyze.key_b.kr[k][1];
               input[i + 1] = "";
+              input[i + 2] = "";
+              break;
+            } else if (m.tranlyze.key_b.kr[k][0].length == 2 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1]) { // 한글 약자 (음소조합까지만 구현)
+              console.log(input);
+              input[i] = m.tranlyze.key_b.kr[k][1];
+              input[i + 1] = "";
+              break;
             }
+          } else if (input[i].match(/[ᄂ-ᄄᄆ-ᄇᄊᄌᄍᄏ-ᄒ]/) != null && input[i + 1] == "ᅡ" && input[i + 3] != "ᄋ") { // 모음 ㅏ 붙을때 생략
+            input[i + 1] = "";
           }
+        }
 
+        if (input[i] == m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][0]) {
           input[i] = m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]][k][1]; // main translation
-
           m.tranlyze.t.lang.count[Object.keys(m.tranlyze.key_b)[j]]++; // add counter
           break;
         }

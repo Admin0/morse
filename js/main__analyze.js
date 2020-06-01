@@ -328,7 +328,7 @@ function analyze_b(lang) {
     .replace(/\/\/\//g, '\n')
     .replace(/\//g, " ");
 
-  if (lang == LANG_KO) assemble()
+  if (lang == LANG_KO) assemble();
 
   if (lang == LANG_JA) {
     output = improve_jp(output);
