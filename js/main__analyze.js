@@ -249,19 +249,32 @@ function analyze_b(lang) {
   // text = text.replace(/1|－|-|ㅡ/g, "–");
   // text = text.replace(/0|ㆍ|\.|\*|`|'/g, "·");
 
+  if (lang == LANG_KO) pre_assemble(LANG_KO);
+  if (lang == LANG_EN) pre_assemble(LANG_EN);
   var input = text.split('');
 
-  function analyze_sub(key_set) {
-    var v = input;
-    for (var i = 0; i < v.length; i++) {
+  function analyze_sub(key_set, input) {
+    // var v = input;
+    for (var i = 0; i < input.length; i++) {
       for (var j = 0; j < key_set.length; j++) {
-        if (v[i] == key_set[j][1]) {
-          v[i] = key_set[j][0];
+        if (input[i] == key_set[j][1]) {
+          input[i] = key_set[j][0];
           break;
         }
       }
     }
-    return v;
+    return input;
+  }
+
+
+  function pre_assemble(lang) {
+    if (lang == LANG_EN) {
+      // text = text.replace(/A-Z/g, analyze_sub(m.tranlyze.key_b.en, "$1"));
+    } else if (lang == LANG_KO) {
+      text = text.replace(/([\s⠀]⠴|^⠴)(\S*)⠲/g, function(v) { // 한글 와중에 영어  todo
+        return analyze_sub(m.tranlyze.key_b.en, v.substring(1, v.length - 1).split('')).join("");
+      });
+    }
   }
 
   function assemble() {
@@ -279,16 +292,16 @@ function analyze_b(lang) {
       .replace(/([ᅣᅪᅮᅯ])\(붙임\)ᅢ/g, "$1애") // ㅑ, ㅘ, ㅜ, ㅝ 뒤에 '애'가 올 때는 붙임표
       .replace(/([ᄀ-ᄒ])\(붙임\)/g, "$1ᅡ")
       .replace(/ᄑᆻ$/g, "폐") // 팠 폐
-      .replace(/\(숫자\)ᄒ/g, "0") // 숫자
-      .replace(/\(숫자\)ᄀ/g, "1")
-      .replace(/\(숫자\)ᄇ/g, "2")
-      .replace(/\(숫자\)ᄂ/g, "3")
-      .replace(/\(숫자\)ㅍ/g, "4")
-      .replace(/\(숫자\)ᄆ/g, "5")
-      .replace(/\(숫자\)ᄏ/g, "6")
-      .replace(/\(숫자\)ᄋ/g, "7")
-      .replace(/\(숫자\)ᅮ/g, "8")
-      .replace(/\(숫자\)ᄃ/g, "9")
+      .replace(/\(num\)ᄒ/g, "0") // 숫자
+      .replace(/\(num\)ᄀ/g, "1")
+      .replace(/\(num\)ᄇ/g, "2")
+      .replace(/\(num\)ᄂ/g, "3")
+      .replace(/\(num\)ㅍ/g, "4")
+      .replace(/\(num\)ᄆ/g, "5")
+      .replace(/\(num\)ᄏ/g, "6")
+      .replace(/\(num\)ᄋ/g, "7")
+      .replace(/\(num\)ᅮ/g, "8")
+      .replace(/\(num\)ᄃ/g, "9")
       .replace(/ᅮᅢ/g, "ᅱ") // 이중모음
       .replace(/ᅣᅢ/g, "ᅤ")
       .replace(/ᅯᅢ/g, "ᅰ")
@@ -318,23 +331,29 @@ function analyze_b(lang) {
       .replace(/([^ᄀ-ᄒ])(?=[ᅡ-ᅵ])/g, "$1ᄋ") // 초성 없는거에 ㅇ 붙임 // .replace(/(?<=[^ᄀ-ᄒ])([ᅡ-ᅵ])/g, "ᄋ$1")
       .replace(/(^[ᅡ-ᅵ])/g, "ᄋ$1") // 중성 먼저 시작하면 ㅇ 붙임
       .replace(/([ᄉᄊᄌᄍᄎ])ᅧ/g, "$1ᅥ") // 경우에 따라 ㅕ, ㅓ 변환
-      .replace(/([ᅡ-ᅵ])ᅨ/g, "$1ᆻ"); // 쌍시옷 받침 약자
+      .replace(/([ᅡ-ᅵ])ᅨ/g, "$1ᆻ") // 쌍시옷 받침 약자
+      .replace(/\(cap\)\(cap\)([a-z]*)(?=\s)/g, function(v) { // 영어
+        return v.substring(10, v.length).toUpperCase(); // 영어 대문자 전체
+      }).replace(/\(cap\)(.)/g, function(v) {
+        return v.slice(-1).toUpperCase(); // 영어 대문자
+      }); // 영어 대문자
   }
 
   if (lang == LANG_KO) {
-    input = analyze_sub(m.tranlyze.key_b.kr);
+    input = analyze_sub(m.tranlyze.key_b.kr, input);
   } else if (lang == LANG_EN) {
-    input = analyze_sub(m.tranlyze.key_b.en);
+    input = analyze_sub(m.tranlyze.key_b.en, input);
   } else if (lang == LANG_JA) {
-    input = analyze_sub(m.tranlyze.key_b.jp);
+    input = analyze_sub(m.tranlyze.key_b.jp, input);
   }
-  input = analyze_sub(m.tranlyze.key_b.nm);
+  input = analyze_sub(m.tranlyze.key_b.nm, input);
 
   output = input.join("")
     .replace(/\/\/\//g, '\n')
     .replace(/\//g, " ");
 
-  if (lang == LANG_KO) assemble();
+  // if (lang == LANG_KO) assemble();
+  assemble();
 
   if (lang == LANG_JA) {
     output = improve_jp(output);
