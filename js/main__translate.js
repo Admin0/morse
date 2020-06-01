@@ -179,20 +179,25 @@ function translate_b() {
       for (var k = 0; k < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]].length; k++) {
 
         if (Object.keys(m.tranlyze.key_b)[j] == "kr") { // 한글 예외 항목
-          if (input[i] == m.tranlyze.key_b.kr[k][0][0]) { 
-            if (m.tranlyze.key_b.kr[k][0].length == 3 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2]) {  // 한글 약자 ("것")
+          // console.log(input);
+          if (input[i] == m.tranlyze.key_b.kr[k][0][0]) {
+            if (m.tranlyze.key_b.kr[k][0].length == 3 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2]) { // 한글 약자 ("것")
               input[i] = m.tranlyze.key_b.kr[k][1];
               input[i + 1] = "";
               input[i + 2] = "";
               break;
             } else if (m.tranlyze.key_b.kr[k][0].length == 2 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1]) { // 한글 약자 (음소조합까지만 구현)
-              console.log(input);
               input[i] = m.tranlyze.key_b.kr[k][1];
               input[i + 1] = "";
               break;
             }
-          } else if (input[i].match(/[ᄂ-ᄄᄆ-ᄇᄊᄌᄍᄏ-ᄒ]/) != null && input[i + 1] == "ᅡ" && input[i + 3] != "ᄋ") { // 모음 ㅏ 붙을때 생략
-            input[i + 1] = "";
+          } else if (input[i].match(/[ᅡ-ᅵ]/) != null && input[i + 1] == "" && input[i + 2] == "ᄋ" && input[i + 3] == "ᅨ") { // 모음 뒤에 ㅖ 올 때 붙임표. 붙임표를 넣지 않으면 ㅆ 받침과 헷갈릴 수 있기 때문이다.
+            input[i + 1] = "⠤";
+          } else if (input[i].match(/[ᅣᅪᅮᅯ]/) != null && input[i + 1] == "" && input[i + 2] == "ᄋ" && input[i + 3] == "ᅢ") { // 모음 ㅑ, ㅘ, ㅜ, ㅝ 뒤에 '애'가 올 때 붙임표. 붙임표를 넣지 않으면 ㅒ/ㅙ/ㅟ/ㅞ와 헷갈릴 수 있기 때문이다.
+            input[i + 1] = "⠤";
+          } else if (input[i].match(/[ᄂ-ᄄᄆ-ᄇᄊᄌᄍᄏ-ᄒ]/) != null && input[i + 1] == "ᅡ" && input[i + 3] != "ᄋ") { // 모음 ㅏ 붙을 때 생략. '나', '다', '마', '바', '자', '카', '타', '파', '하' 다음에 모음이 올 경우는 혼동의 우려가 있으므로 약자로 쓰지 않는다.
+            if (input[i] != "ᄑ" || input[i + 1] != "ᅡ" || input[i + 2] != "ᆻ") // '팠'을 쓸 때는 ㅏ를 생략하지 않는다. ㅏ를 생략하면 '폐'로 잘못 읽을 수 있기 때문이다.
+              input[i + 1] = "";
           }
         }
 
