@@ -1,7 +1,7 @@
 .ad_top {
   margin: calc(1em - 64px) auto 0;
   text-align: center;
-  /* min-height: 280px; */
+  min-height: 280px;
   transition: 0.5s;
 }
 
