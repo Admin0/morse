@@ -12,9 +12,9 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css">
 	<link rel="manifest" href="manifest.json">
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.i18n.js"></script>
-	<script src="js/jquery.i18n.messagestore.js"></script>
+	<script src="js/jquery.js" defer></script>
+	<script src="js/jquery.i18n.js" defer></script>
+	<script src="js/jquery.i18n.messagestore.js" defer></script>
 	<script src="js/jquery__inputposition.js" defer></script>
 	<script src="js/kakaolink.js" async></script>
 	<script src="js/main__initialize.js" defer></script>
@@ -24,7 +24,7 @@
 	<script src="js/main__analyze.js" defer></script>
 	<script src="js/main__keys.js" defer></script>
 	<script src="js/sub__tooltip.js" defer></script>
-	<script src="js/sub__clipboard.min.js" async></script>
+	<script src="js/sub__clipboard.min.js" defer></script>
 	<script src="js/sub__i18n.js" defer></script>
 	<script src="js/sub__scroll.js" async></script>
 	<script src="js/sub__shortcut.js" async></script>
@@ -391,10 +391,7 @@
 
 	<footer>
 		<p class="copyright">
-			© 2013 -
-			<script>
-				document.write(new Date().getFullYear());
-			</script> JinH</p>
+			© 2013 - <span id="year"></span> JinH</p>
 	</footer>
 
 	<script>
