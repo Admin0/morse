@@ -1,6 +1,6 @@
 /*******************************************
  * MORSE CODE ANALYZER                     *
- * Original Code by JinH(jinh.tistory.com) *
+ * Original Code by JinH (https://jinh.kr) *
  *******************************************/
 
 function analyze(lang, dit, dah) {
@@ -10,17 +10,17 @@ function analyze(lang, dit, dah) {
   var space_char = new RegExp($('#space_char').text(), 'g');
   // var space_string = new RegExp($('#space_string').text() + '|\n|\r', 'g');
   var space_string = new RegExp($('#space_string').text(), 'g');
-  text = text.replace(/\n|\r/g, "_///_"); //줄바꿈
-  text = text.replace(space_string, "_/_"); //문자열공백
-  text = text.replace(space_char, "_"); //문자사이공백
+  text = text.replace(/\n|\r/g, ""); //줄바꿈      _///_
+  text = text.replace(space_string, ""); //문자열공백   _/_
+  text = text.replace(space_char, ""); //문자사이공백  _
   text = text.replace(/\s/g, ""); //공백 제거
   text = text
-    .replace(/1|－|-|ㅡ/g, "–")
+    .replace(/1|－|-|ㅡ|_/g, "–")
     .replace(new RegExp(dah, 'g'), "–")
     .replace(/0|ㆍ|\.|\*|`|'/g, "·")
     .replace(new RegExp(dit, 'g'), "·");
 
-  var input = text.split('_');
+  var input = text.split('');
 
   function analyze_sub(key_set) {
     var v = input;
@@ -172,8 +172,8 @@ function analyze(lang, dit, dah) {
   }
 
   output = output
-    .replace(/\/\/\//g, '\n')
-    .replace(/\//g, " ");
+    .replace(//g, '\n')
+    .replace(//g, " ");
 
   return output;
 }
@@ -242,7 +242,7 @@ function analyze_b(lang) {
   var space_char = new RegExp($('#space_char').text(), 'g');
   // var space_string = new RegExp($('#space_string').text() + '|\n|\r', 'g');
   var space_string = new RegExp($('#space_string').text(), 'g');
-  text = text.replace(/\n|\r/g, "_///_"); //줄바꿈
+  text = text.replace(/\n|\r/g, ""); //줄바꿈
   // text = text.replace(space_string, "_/_"); //문자열공백
   // text = text.replace(space_char, "_"); //문자사이공백
   // text = text.replace(/\s/g, ""); //공백 제거
@@ -273,8 +273,13 @@ function analyze_b(lang) {
     } else if (lang == LANG_KO) {
       text = text.replace(/([\s⠀]⠴|^⠴)(\S*)⠲/g, function(v) { // 한글 와중에 영어  todo
         return analyze_sub(m.tranlyze.key_b.en, v.substring(1, v.length - 1).split('')).join("");
-      });
+      })
+      .replace(/⠐⠂/g, ":"); // 한글 문장부호
     }
+    //문장부호
+    text = text
+      .replace(/⠦⠄/g, "(")
+      .replace(/⠠⠴/g, ")");
   }
 
   function assemble() {
@@ -282,6 +287,8 @@ function analyze_b(lang) {
       .replace(/⠀/g, " ") // 문장부호
       .replace(/ᇁ\s/g, ". ")
       .replace(/ᇁ$/g, ". ")
+      .replace(/ᄅ\s/g, ", ")
+      .replace(/ᄅ$/g, ", ")
       .replace(/ᄉᇀ/g, "\'")
       .replace(/ᇂᆺ/g, "\'")
       .replace(/ᇀ\s/g, "?")
@@ -349,8 +356,7 @@ function analyze_b(lang) {
   input = analyze_sub(m.tranlyze.key_b.nm, input);
 
   output = input.join("")
-    .replace(/\/\/\//g, '\n')
-    .replace(/\//g, " ");
+    .replace(//g, '\n');
 
   // if (lang == LANG_KO) assemble();
   assemble();

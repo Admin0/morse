@@ -114,8 +114,9 @@ function translate(dit, dah) {
     output = output + input[i] + '　';
   }
 
-  output = output.split("·").join(dit + " ");
-  output = output.split("–").join(dah + " ");
+  output = output.replace(/(?!　)(.)/g, "$1 ");
+  // output = output.split("·").join(dit + " ");
+  // output = output.split("–").join(dah + " ");
 
   m.tranlyze.t.lang.count.get();
   $(".lang_box.code .detected").text(" - " + $.i18n("lang_" + m.tranlyze.t.lang.val));
