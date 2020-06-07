@@ -5,32 +5,31 @@
 	<title data-i18n="app_name_full">#morse #braille</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Miraculous Mighty Morse code translator. #모스_부호 #morse #점자 #브라유 #braille">
-	<meta name="google-site-verification" content="_D3_W4589GIbhr8GHlw8CIY3fMaeZxr23F4FP9u-9bM">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="description" content="Miraculous Mighty Morse code translator. #모스_부호 #morse #점자 #브라유 #braille">
 	<meta name="theme-color" content="#00c853">
+	<meta name="google-site-verification" content="_D3_W4589GIbhr8GHlw8CIY3fMaeZxr23F4FP9u-9bM">
 	<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="image/favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon" href="image/icon_b.webp">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width: 1280px)">
 	<link rel="manifest" href="manifest.json">
-	<script src="js/jquery.js" defer></script>
-	<script src="js/jquery.i18n.js" defer></script>
-	<script src="js/jquery.i18n.messagestore.js" defer></script>
-	<script src="js/jquery__inputposition.js" defer></script>
-	<script src="js/kakaolink.js" async></script>
-	<script src="js/main__initialize.js" defer></script>
-	<script src="js/main__settings.js" defer></script>
-	<script src="js/main.js" defer></script>
-	<script src="js/main__translate.js" defer></script>
-	<script src="js/main__analyze.js" defer></script>
-	<script src="js/main__keys.js" defer></script>
-	<script src="js/sub__tooltip.js" defer></script>
-	<script src="js/sub__clipboard.min.js" defer></script>
-	<script src="js/sub__i18n.js" defer></script>
-	<script src="js/sub__scroll.js" defer></script>
-	<script src="js/sub__shortcut.js" async></script>
+	<!-- <script src="js/jquery.js" defer></script> -->
+	<script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script defer src="js/jquery.i18n.js"></script>
+	<script defer src="js/jquery.i18n.messagestore.js"></script>
+	<script defer src="js/jquery__inputposition.js"></script>
+	<script src="js/main__initialize.js"></script>
+	<script defer src="js/main__settings.js"></script>
+	<script defer src="js/main.js"></script>
+	<script defer src="js/main__translate.js"></script>
+	<script defer src="js/main__analyze.js"></script>
+	<script defer src="js/main__keys.js"></script>
+	<script defer src="js/sub__tooltip.js"></script>
+	<script defer src="js/sub__clipboard.min.js"></script>
+	<script defer src="js/sub__i18n.js"></script>
+	<script defer src="js/sub__scroll.js"></script>
+	<script async src="js/sub__shortcut.js"></script>
 	<!-- adsense -->
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
@@ -170,7 +169,7 @@
 		<div id='nav'>
 			<div id='nav_header'>
 				<div id="to_github" class="" onclick="console_event('q');">
-					<img src="image/icon.webp" alt="" style="width:24px; margin: 0 12px -6px 0;"><span data-i18n="app_name_full">#morse</span>
+					<img src="image/icon.webp" alt="" style="width:24px; margin-right: 12px;"><span data-i18n="app_name_full">#morse</span>
 				</div>
 				<div id="setting_bt">
 					<i class="material-icons">settings</i>
@@ -210,7 +209,7 @@
 		<div class="setting_title" data-i18n="s_etc">OTHERS</div>
 		<div class="setting_item" id="s_locale">
 			<i class="material-icons">language</i> <dt data-i18n="s_locale">LOCALE</dt>
-			<select onchange="i18n.set(this.options[this.selectedIndex].value);">
+			<select class="input" onchange="i18n.set(this.options[this.selectedIndex].value);">
 				<option value="default" data-i18n="s_locale_default">DEFAULT</option>
 				<option value="en" data-i18n="lang_en">EN</option>
 				<option value="de" data-i18n="lang_de">DE</option>

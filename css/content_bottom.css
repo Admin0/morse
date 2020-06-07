@@ -96,6 +96,7 @@
 
 .ft-icon .material-icons {
   margin-right: 0;
+  flex: auto;
 }
 
 body.translate .ft-icon.on {
@@ -117,6 +118,8 @@ body.braille .ft-icon.on {
   background-size: 32px;
   border: 1px solid rgba(0, 0, 0, .12);
   border-radius: 50%;
+  align-items: center;
+  display: flex;
 }
 
 .ft-icon.on .ft-icon-img {

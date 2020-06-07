@@ -68,6 +68,8 @@ nav a {
   color: rgba(0, 0, 0, .54);
   position: relative;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 nav i {
@@ -174,12 +176,13 @@ nav.fold #nav_header {
   padding: 0 8px 0 22px;
   line-height: 64px;
   color: rgba(0, 0, 0, 0.54);
-  display: inline-block;
+  display: flex;
+  align-items: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   /* width: calc(100% - 82px); */
-  width: calc(100%);
+  /* width: calc(100%); */
 }
 
 #to_github i {
@@ -248,7 +251,9 @@ dl#setting {
 }
 
 #setting i {
-  line-height: .75;
+  margin-right: .5em;
+  height: 22px;
+  vertical-align: text-bottom;
 }
 
 #setting input[checked]+dt {
@@ -291,10 +296,6 @@ dl#setting {
   visibility: visible;
   opacity: 1;
   right: -12px;
-}
-
-#setting .material-icons {
-  margin-right: .5em;
 }
 
 nav.fold #nav_header {

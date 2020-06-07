@@ -284,6 +284,11 @@ const m = {
     o.frequency.value = $('#s_t_beep .input').text();
     o.start();
 
+
+    // flash
+
+
+
     function engine() {
       let isSoundOn = m.type.play.sound; // 시간차로 발생하는 오류 때문에 변수 하나 생성.
       if (m.type.play.isOn) {
