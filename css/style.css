@@ -596,7 +596,7 @@ footer {
   padding: 2px 5px;
   display: inline-block;
   min-width: 3em;
-  /* position: relative; */
+  position: relative;
   /* line-height: 20px; */
 }
 
@@ -609,7 +609,7 @@ footer {
   top: 0;
   left: 0;
   content: '';
-  height: 20px;
+  height: calc(100% - 3px);
   width: 100%;
   border-bottom: solid 3px #4284f3;
   animation: border-grow .15s cubic-bezier(0.4, 0, 0.4, 1) 0s;
@@ -694,6 +694,18 @@ input[type="radio"]:checked+label {
   padding: calc(.5em - 2px) calc(.75em - 2px) calc(.5em - 2px) calc(.5em - 2px);
   border: 3px solid #d2e3fc;
   font-weight: bold;
+}
+
+input[disabled]+label::before,
+input[disabled]+label::before {
+  color: #aaa !important;
+}
+
+input[disabled]+label,
+input[disabled]+label {
+  color: #aaa !important;
+  border-color: #eee !important;
+  background-color: #eee !important;
 }
 
 button,

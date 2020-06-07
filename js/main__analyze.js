@@ -21,6 +21,8 @@ function analyze(lang, dit, dah) {
     .replace(new RegExp(dit, 'g'), "·");
 
   var input = text.split('');
+  // console.log("space_string: " + space_string);
+  // console.log("space_char  : " + space_char);
 
   function analyze_sub(key_set) {
     var v = input;
@@ -157,7 +159,9 @@ function analyze(lang, dit, dah) {
   // for (var i = 0; i < input.length; i++) {
   //   output = output + input[i] + '';
   // }
-  output = input.join("");
+  output = input.join("")
+      .replace(//g, '\n')
+      .replace(//g, " ");
 
   if (lang == LANG_KO && $('#kr_assemble').prop("checked")) {
     assemble_kr();
@@ -168,14 +172,32 @@ function analyze(lang, dit, dah) {
     output = assemble_jp(output);
   }
   if (lang == LANG_EN) {
-    output = $('#en_capital').prop("checked") ? output.toUpperCase() : output.toLowerCase();
+    if ($('#en_capital_auto').prop("checked")) {
+      output = capital_en(output);
+    } else {
+      output = $('#en_capital').prop("checked") ? output.toUpperCase() : output.toLowerCase();
+    }
   }
 
-  output = output
-    .replace(//g, '\n')
-    .replace(//g, " ");
-
   return output;
+}
+
+function capital_en(i) {
+  let o = i
+    .replace(/\b(i)\b/g, "I") // 1인칭
+    .replace(/(\b[Tt]he\s)(.)/g, function($0, $1, $2) { // 대명사
+      console.log("대명사: the " + $2.toUpperCase());
+      return $0.replace($2, $2.toUpperCase());
+    })
+    .replace(/(^.|\n.)/g, function($0, $1) { // 앞자리
+      console.log("앞자리: " + $1.toUpperCase());
+      return $0.replace($1, $1.toUpperCase());
+    })
+    .replace(/(\.\s+)(.)/g, function($0, $1, $2) { // 문장의 처음
+      console.log("문장의 처음: . " + $2.toUpperCase());
+      return $0.replace($2, $2.toUpperCase());
+    })
+  return o;
 }
 
 function hiragana_jp(input) {
@@ -272,9 +294,9 @@ function analyze_b(lang) {
       // text = text.replace(/A-Z/g, analyze_sub(m.tranlyze.key_b.en, "$1"));
     } else if (lang == LANG_KO) {
       text = text.replace(/([\s⠀]⠴|^⠴)(\S*)⠲/g, function(v) { // 한글 와중에 영어  todo
-        return analyze_sub(m.tranlyze.key_b.en, v.substring(1, v.length - 1).split('')).join("");
-      })
-      .replace(/⠐⠂/g, ":"); // 한글 문장부호
+          return analyze_sub(m.tranlyze.key_b.en, v.substring(1, v.length - 1).split('')).join("");
+        })
+        .replace(/⠐⠂/g, ":"); // 한글 문장부호
     }
     //문장부호
     text = text

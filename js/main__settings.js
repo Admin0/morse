@@ -107,7 +107,7 @@ function setting() {
         m.type.play.flash = true
       }
     }
-  })
+  });
 
 }
 

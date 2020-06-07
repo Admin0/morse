@@ -87,13 +87,23 @@
 				<label for="space_2" class="button button_last">
 					<span data-i18n="op_space_manual">MANUAL_SET</span>
 					(<span data-i18n="op_space_long">LONG_SPACE</span>:
-					<span class="input" contenteditable="true" id="space_string">　　　</span>,
+					<span class="input" contenteditable="true" id="space_string" style="line-height: 20px;">　　　</span>,
 					<span data-i18n="op_space_short">SHORT_SPACE</span>:
-					<span class="input" contenteditable="true" id="space_char"> 　</span>)
+					<span class="input" contenteditable="true" id="space_char" style="line-height: 20px;">　</span>)
 				</label>
 			</form>
-			<input id="kr_assemble" type="checkbox" checked /><label class="button" for="kr_assemble"><span data-i18n="a_assemble">ASSEMBLE (KR)</span></label>
-			<input id="en_capital" type="checkbox" checked /><label class="button" for="en_capital"><span data-i18n="a_capital">CAPITAL (EN)</span></label>
+			<form style="display: inline-block;">
+				<label class="button button_first title"><span data-i18n="lang_ko">KR</span></label>
+				<input id="kr_assemble" type="checkbox" checked /><label class="button button_last" for="kr_assemble"><span data-i18n="a_assemble">ASSEMBLE</span></label>
+			</form>
+			<form style="display: inline-block;">
+				<label class="button button_first title"><span data-i18n="lang_en">EN</span></label>
+				<input id="en_capital_auto" type="checkbox" checked />
+				<label class="button button_between" for="en_capital_auto" onclick="$('#en_capital').attr('disabled', !$('#en_capital_auto')[0].checked);">
+					<span data-i18n="s_a_capital_en">AUTO_CAP.</span>
+				</label>
+				<input id="en_capital" type="checkbox" checked disabled /><label class="button button_last" for="en_capital"><span data-i18n="a_capital">CAPITAL</span></label>
+			</form>
 		</div>
 
 		<div id="card_body">
