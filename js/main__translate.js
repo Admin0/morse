@@ -9,8 +9,24 @@ m.tranlyze.t = {
       kr: 0,
       en: 0,
       jp: 0,
+      morse: 0,
+      braille: 0,
       get: function() {
-        if (this.kr > this.en && this.kr > this.jp) {
+        if (this.morse > this.en && this.morse > this.jp && this.morse > this.kr) {
+          m.tranlyze.t.lang.val = "morse";
+          if (this.morse >= 10 && this.morse / (this.en + this.jp + this.kr + 1) >= 3) {
+            console.log("de");
+            m.toggle.mode();
+            // tranlyze(m.type.mode);
+          }
+        } else if (this.braille > this.en && this.braille > this.jp && this.braille > this.kr) {
+          m.tranlyze.t.lang.val = "braille";
+          if (this.braille >= 10 && this.braille / (this.en + this.jp + this.kr + 1) >= 3) {
+            m.toggle.code(CODE_BRAILLE);
+            m.toggle.mode();
+            // tranlyze(m.type.mode);
+          }
+        } else if (this.kr > this.en && this.kr > this.jp) {
           m.tranlyze.t.lang.val = "ko";
           m.type.lang = LANG_KO;
         } else if (this.jp > this.en && this.jp > this.kr) {
@@ -25,6 +41,8 @@ m.tranlyze.t = {
         this.kr = 0;
         this.jp = 0;
         this.en = 0;
+        this.morse = 0;
+        this.braille = 0;
       }
     }
   }
@@ -74,11 +92,6 @@ var hangulToJaso = function(text) {
   return v;
 };
 
-///////////////////////////////////////////////
-// 한글 및 로마자 그리고 기타등등 모스부호 변환 //
-// Orignal Code by JinH(jinh.kr)             //
-///////////////////////////////////////////////
-
 function translate(dit, dah) {
 
   var input = hangulToJaso($('#input_textarea').val());
@@ -90,6 +103,7 @@ function translate(dit, dah) {
   m.tranlyze.t.lang.count.reset();
   for (var i = 0; i < v.length; i++) {
 
+    // 일본어 번환
     if (input[i].charCodeAt() >= 0xFF01 && input[i].charCodeAt() <= 0xFF5E) { // "FF01:！" ~ "FF5E:～"에 속한 글자면 반각기호로
       input[i] = String.fromCharCode(input[i].charCodeAt() - 0xFEE0);
     } else if (input[i].charCodeAt() >= 0x0041 && input[i].charCodeAt() <= 0x005D) { // "FF41:A" ~ "005D:]"에 속한 글자면 소문자로
@@ -98,15 +112,31 @@ function translate(dit, dah) {
       input[i] = String.fromCharCode(input[i].charCodeAt() + 0x0060);
     }
 
+    // morse2morse check
+    if (input[i].match(/[·–1－\-ㅡ_0ㆍ\.\*`']/) != null) {
+      m.tranlyze.t.lang.count.morse++;
+      // console.log(input[i]);
+    }
+    // braille2morse check
+    if (input[i].match(/[⠁-⣿]/) != null) {
+      m.tranlyze.t.lang.count.braille++;
+      // console.log(input[i]);
+    }
+
+    // 언어 인식
     for (var j = 0; j < Object.keys(m.tranlyze.key).length; j++) {
       for (var k = 0; k < m.tranlyze.key[Object.keys(m.tranlyze.key)[j]].length; k++) {
         if (input[i] == m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0]) {
           input[i] = m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][1];
           m.tranlyze.t.lang.count[Object.keys(m.tranlyze.key)[j]]++;
+          // console.log(m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0]); // a
+          // console.log(input[i]); // ·–
+          // console.log(Object.keys(m.tranlyze.key)[j]); // en
           break;
         }
       }
     }
+    console.log(m.tranlyze.t.lang.count);
   }
 
   var output = '';
@@ -123,6 +153,13 @@ function translate(dit, dah) {
 
   $('#output_textarea').text(output);
 }
+
+
+
+///////////////////////////////////////////////
+// 한글, 영어, 일어 <--> 점자 변환              //
+// Orignal Code by JinH(jinh.kr)             //
+///////////////////////////////////////////////
 
 var hangulToJaso_b = function(text) {
   function iSound(a) {

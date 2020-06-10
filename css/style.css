@@ -91,7 +91,6 @@ header h1 {
 header .actionbar {
   display: inline-block;
   float: right;
-  margin: 6px 0;
 }
 
 header .actionbar .item {
