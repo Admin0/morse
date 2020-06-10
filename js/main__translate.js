@@ -17,6 +17,7 @@ m.tranlyze.t = {
           if (this.morse >= 10 && this.morse / (this.en + this.jp + this.kr + 1) >= 3) {
             console.log("de");
             m.toggle.mode();
+            toast($.i18n('output_error__translate_to_morse'), "autorenew");
             // tranlyze(m.type.mode);
           }
         } else if (this.braille > this.en && this.braille > this.jp && this.braille > this.kr) {
