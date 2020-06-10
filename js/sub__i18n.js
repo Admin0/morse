@@ -20,6 +20,8 @@ $.i18n().load({
   'zh-TW': 'i18n/zh-TW.json'
 });
 
+let wait_until = 0;
+
 const i18n = {
   set: function(nation_code) {
 
@@ -47,9 +49,10 @@ const i18n = {
     $("meta[name='description']").attr("content", $.i18n('app_promotion') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
 
     // module(ex nav.html) 안에 있는 요소 중 하나를 체크해야함.
-    if ($('#i18n_checker').text() == '#morse' || $('#i18n_checker').length == 0) {
+    if (($('#i18n_checker').text() == '#morse' || $('#i18n_checker').length == 0) && wait_until <= 10) {
       setTimeout(function() {
-        console.log('ERROR: i18n was not activated because DOM is not ready.');
+        console.log('ERROR: i18n was not activated because DOM is not ready. (retry: ' + wait_until + ")");
+        wait_until++;
         i18n.set();
       }, 100);
     } else {
