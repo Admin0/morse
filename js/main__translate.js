@@ -182,7 +182,14 @@ function translate_b() {
         if (Object.keys(m.tranlyze.key_b)[j] == "kr") { // 한글 예외 항목
           // console.log(input);
           if (input[i] == m.tranlyze.key_b.kr[k][0][0]) {
-            if (m.tranlyze.key_b.kr[k][0].length == 3 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2]) { // 한글 약자 ("것")
+            if (input[i].match(/[ᄉᄊᄌᄍᄎ]/) && input[i + 3] != "ᆼ") { // ["성", "⠠⠻"], ["썽", "⠠⠠⠻"], ["정", "⠨⠻"], ["쩡", "⠠⠨⠻"], ["청", "⠰⠻"],
+              if (input[i + 1] == "ᅥ") {
+                input[i + 1] = "⠻";
+                input[i + 2] = "";
+              } else if (input[i + 1] == "ᅧ") {
+                input[i + 1] = "⠱";
+              }
+            } else if (m.tranlyze.key_b.kr[k][0].length == 3 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2]) { // 한글 약자 ("것")
               input[i] = m.tranlyze.key_b.kr[k][1];
               input[i + 1] = "";
               input[i + 2] = "";

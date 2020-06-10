@@ -186,16 +186,16 @@ function capital_en(i) {
   let o = i
     .replace(/\b(i)\b/g, "I") // 1인칭
     .replace(/(\b[Tt]he\s)(.)/g, function($0, $1, $2) { // 대명사
-      console.log("대명사: the " + $2.toUpperCase());
+      // console.log("대명사: the " + $2.toUpperCase());
       return $0.replace($2, $2.toUpperCase());
     })
-    .replace(/(^.|\n.)/g, function($0, $1) { // 앞자리
-      console.log("앞자리: " + $1.toUpperCase());
-      return $0.replace($1, $1.toUpperCase());
+    .replace(/(^.|\n.)/g, function($1) { // 앞자리
+      // console.log("앞자리: " + $1.toUpperCase());
+      return $1.toUpperCase();
     })
-    .replace(/(\.\s+)(.)/g, function($0, $1, $2) { // 문장의 처음
-      console.log("문장의 처음: . " + $2.toUpperCase());
-      return $0.replace($2, $2.toUpperCase());
+    .replace(/(\.\s+)(.)/g, function($1) { // 문장의 처음
+      // console.log("문장의 처음: . " + $2.toUpperCase());
+      return $1.toUpperCase();
     })
   return o;
 }
@@ -296,6 +296,7 @@ function analyze_b(lang) {
       text = text.replace(/([\s⠀]⠴|^⠴)(\S*)⠲/g, function(v) { // 한글 와중에 영어  todo
           return analyze_sub(m.tranlyze.key_b.en, v.substring(1, v.length - 1).split('')).join("");
         })
+        .replace(/([⠠⠨⠰])⠻/g, "$1ᅥᆼ") // ㅅㅆㅈㅉㅊ 뒤에 ㅕㅇ, ㅓㅇ 변환
         .replace(/⠐⠂/g, ":"); // 한글 문장부호
     }
     //문장부호
@@ -359,7 +360,6 @@ function analyze_b(lang) {
       .replace(/([ᄀ-ᄒ])((?=[^ᅡ-ᅵ])|$)/g, "$1ᅡ") // ㅏ 생략된거 복원 [ᄀ-ᄒ](?!\w)
       .replace(/([^ᄀ-ᄒ])(?=[ᅡ-ᅵ])/g, "$1ᄋ") // 초성 없는거에 ㅇ 붙임 // .replace(/(?<=[^ᄀ-ᄒ])([ᅡ-ᅵ])/g, "ᄋ$1")
       .replace(/(^[ᅡ-ᅵ])/g, "ᄋ$1") // 중성 먼저 시작하면 ㅇ 붙임
-      .replace(/([ᄉᄊᄌᄍᄎ])ᅧ/g, "$1ᅥ") // 경우에 따라 ㅕ, ㅓ 변환
       .replace(/([ᅡ-ᅵ])ᅨ/g, "$1ᆻ") // 쌍시옷 받침 약자
       .replace(/\(cap\)\(cap\)([a-z]*)(?=\s)/g, function(v) { // 영어
         return v.substring(10, v.length).toUpperCase(); // 영어 대문자 전체
