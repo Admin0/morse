@@ -479,7 +479,9 @@ function detect_input() {
 function load_modules() {
   $("#info").load("info.html");
   $("#license").load("license.html");
-  $("#nav_menu").load("nav_menu.html");
+  $("#nav_menu").load("nav_menu.html", function() {
+    i18n.set();
+  });
 }
 
 function initialize_langDropDown() {

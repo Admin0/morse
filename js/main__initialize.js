@@ -1,3 +1,11 @@
+const time = {
+  log: function(msg) {
+    console.log(msg + ' (' + (-time.start + Date.now()) + ' ms)');
+  }
+};
+time.start = Date.now();
+time.log('init.js delay');
+
 const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 function url_check() {

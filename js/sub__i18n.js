@@ -1,3 +1,5 @@
+time.log('i18n start.');
+
 $.i18n().load({
   'en': 'i18n/en.json',
   'de': 'i18n/de.json',
@@ -49,15 +51,18 @@ const i18n = {
     $("meta[name='description']").attr("content", $.i18n('app_promotion') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
 
     // module(ex nav.html) 안에 있는 요소 중 하나를 체크해야함.
-    if (($('#i18n_checker').text() == '#morse' || $('#i18n_checker').length == 0) && wait_until <= 10) {
-      setTimeout(function() {
-        console.log('ERROR: i18n was not activated because DOM is not ready. (retry: ' + wait_until + ")");
-        wait_until++;
-        i18n.set();
-      }, 100);
-    } else {
-      console.log('i18n was activated.');
-    }
+    // if (($('#i18n_checker').text() == '#morse' || $('#i18n_checker').length == 0) && wait_until <= 10) {
+    //   setTimeout(function() {
+    //     console.log('ERROR: i18n was not activated because DOM is not ready. (retry: ' + wait_until + ")");
+    //     wait_until++;
+    //     i18n.set();
+    //   }, 100);
+    // } else {
+    //   console.log('i18n was activated.');
+    // }
+
+    time.log('i18n was activated.');
+
   },
   message: { // 메세지 로딩을 위해 추가로 만든 코드
     list: {
@@ -113,7 +118,3 @@ const i18n = {
     }
   }
 }
-
-$(document).ready(function() {
-  i18n.set();
-});
