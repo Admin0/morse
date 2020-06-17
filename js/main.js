@@ -476,13 +476,13 @@ function detect_input() {
 
 }
 
-function load_modules() {
-  $("#info").load("info.html");
-  $("#license").load("license.html");
-  $("#nav_menu").load("nav_menu.html", function() {
-    i18n.set();
-  });
-}
+// function load_modules() {
+//   $("#info").load("info.html");
+//   $("#license").load("license.html");
+//   $("#nav_menu").load("nav_menu.html", function() {
+//     i18n.set();
+//   });
+// }
 
 function initialize_langDropDown() {
   $('#lang_list').on('click', function() {
@@ -514,7 +514,7 @@ $(function() {
   codebook();
   detect_input();
   title_tooltip();
-  load_modules();
+  // load_modules();
 
   $('#input_textarea').focus();
 
@@ -526,6 +526,19 @@ $(function() {
     e.clearSelection();
   });
 
+});
+
+// document.addEventListener('DOMContentLoaded', (event) => {
+//     i18n.set();
+// });
+
+// $(document).ready(function() {
+//   i18n.set();
+// });
+
+$(window).on('load', function() {
+  i18n.set();
+  $("#splash").addClass("off");
 });
 
 document.getElementById("year").innerHTML = new Date().getFullYear();

@@ -18,9 +18,8 @@
 	<script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script defer src="js/jquery.i18n.js"></script>
 	<script defer src="js/jquery.i18n.messagestore.js"></script>
-	<script defer src="js/sub__i18n.js"></script>
 	<script defer src="js/jquery__inputposition.js"></script>
-	<script src="js/main__initialize.js"></script>
+	<script defer src="js/main__initialize.js"></script>
 	<script defer src="js/main__settings.js"></script>
 	<script defer src="js/main.js"></script>
 	<script defer src="js/main__translate.js"></script>
@@ -30,6 +29,7 @@
 	<script defer src="js/sub__clipboard.min.js"></script>
 	<script defer src="js/sub__scroll.js"></script>
 	<script async src="js/sub__shortcut.js"></script>
+	<script defer src="js/sub__i18n.js"></script>
 	<!-- adsense -->
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
@@ -108,7 +108,7 @@
 
 		<div id="card_body">
 			<div id="input">
-				<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="한글, 영어, 숫자 및 문자를 입력하세요." oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+				<textarea id="input_textarea" rows="1" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder=" If you input the English, numbers, and etc." oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
 				<!-- <input type="button" id="input_toggle" value="☎"> -->
 				<div id="input_del" onclick="clear();m.history.push();" class="hide"><i class="material-icons"> close </i></div>
 			</div>
@@ -187,10 +187,65 @@
 				</div>
 			</div>
 			<!-- <div id="nav_item_list"></div> -->
-			<div id="nav_menu"></div>
+			<div id="nav_menu">
+				<h3 class="item morse" name="morse">
+					<a onclick="m.toggle.code(CODE_MORSE);$('nav, #nav_bg').removeClass('on');">
+						<i class="material-icons"> swap_horiz </i><span data-i18n="morse">CODE_MORSE</span>
+					</a>
+				</h3>
+
+				<h3 class="item braille" name="braille">
+					<a onclick="m.toggle.code(CODE_BRAILLE);$('nav, #nav_bg').removeClass('on');">
+						<i class="material-icons"> swap_horiz </i><span data-i18n="braille">CODE_BRAILLE</span>
+					</a>
+				</h3>
+
+				<h3 class="item">
+					<a rel="noopener" href="//chrome.google.com/webstore/detail/%EB%AA%A8%EC%8A%A4-%EB%B6%80%ED%98%B8morse-code/cobccnllippnmgibbgdnkdaljjpcppjl" target="_blank">
+						<i class="material-icons">create</i><span id="i18n_checker" data-i18n="nav__review">#morse</span>
+					</a>
+				</h3>
+
+				<h3 id="translate" class="item translate" name="translate">
+					<a href="/morse/i18n/help.txt" download>
+						<i class="material-icons">translate</i><span data-i18n="nav__translate">Help translate</span>
+					</a>
+				</h3>
+
+				<hr>
+
+				<h3 id="opensource_license" class="item opensource_license" name="opensource_license">
+					<a onclick="$('#license').load('license.html'); $('nav, .contents.sub').removeClass('on');$('#license, #nav_bg').addClass('on');" href="#opensource_license">
+						<i class="material-icons">favorite</i><span data-i18n="nav__license">LICENSE</span>
+					</a>
+				</h3>
+				<h3 id="update_log" class="item update_log" name="update_log">
+					<a onclick="$('#info').load('info.html'); $('nav, .contents.sub').removeClass('on');$('#info, #nav_bg').addClass('on');" href="#update_log">
+						<i class="material-icons">update</i><span data-i18n="nav__update">UPDATE</span>
+					</a>
+				</h3>
+
+				<hr>
+
+				<h3 id="android_app" class="item android_app" name="android_app">
+					<a rel="noopener" href="//play.google.com/store/apps/details?id=com.morsecode.translator.jinh">
+						<i class="material-icons">android</i><span data-i18n="notice_to_android">안드로이드 버전 사용하기</span>
+					</a>
+				</h3>
+
+				<h3 id="oldver2" class="item oldver2" name="oldver2">
+					<a href="/morse/v2">
+						<i class="material-icons">looks_two</i><span data-i18n="nav__oldver2">구버전(v2) 사용하기</span>
+					</a>
+				</h3>
+			</div>
 		</div>
 		<!-- <div id='nav_footer'><i class='material-icons'>chevron_left</i></div> -->
 	</nav>
+
+	<div id="splash">
+		<img src="image\icon.webp" alt="logo">
+	</div>
 
 	<div id="nav_bg" onclick="$('nav, #nav_bg, #info, #license, #setting').removeClass('on');"></div>
 
@@ -403,16 +458,6 @@
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39552694-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-39552694-1');
-	</script>
 
 </body>
 

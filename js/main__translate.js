@@ -137,7 +137,7 @@ function translate(dit, dah) {
         }
       }
     }
-    console.log(m.tranlyze.t.lang.count);
+    // console.log(m.tranlyze.t.lang.count);
   }
 
   var output = '';

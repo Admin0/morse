@@ -1,6 +1,6 @@
 time.log('i18n start.');
 
-$.i18n().load({
+$.i18n().load({ //todo 언어에 맞게 원하는 언어만 불러오는 기능 추가
   'en': 'i18n/en.json',
   'de': 'i18n/de.json',
   'es': 'i18n/es.json',
@@ -22,13 +22,12 @@ $.i18n().load({
   'zh-TW': 'i18n/zh-TW.json'
 });
 
-let wait_until = 0;
-
+// let wait_until = 0;
 const i18n = {
   set: function(nation_code) {
 
     if (nation_code != null) { // 언어 설정
-      $.i18n().locale = nation_code;
+      $.i18n().locale = (nation_code == "default") ? $.i18n().options.locale : nation_code;
       i18n.message.set(true, m.type.code);
     } else {
       i18n.message.set(false, m.type.code);
@@ -61,7 +60,7 @@ const i18n = {
     //   console.log('i18n was activated.');
     // }
 
-    time.log('i18n was activated.');
+    time.log('i18n was activated. code: ' + $.i18n().locale);
 
   },
   message: { // 메세지 로딩을 위해 추가로 만든 코드
@@ -118,3 +117,4 @@ const i18n = {
     }
   }
 }
+time.log('i18n done.');

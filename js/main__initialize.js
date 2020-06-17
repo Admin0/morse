@@ -8,38 +8,44 @@ time.log('init.js delay');
 
 const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
+// GoogleAnalyticsObject
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag('js', new Date());
+// end of google analytics
+
 function url_check() {
 
   if (window.location.href.substring(window.location.href.length - 8, window.location.href.length) != window.location.pathname.substring(window.location.pathname.length - 8, window.location.pathname.length)) {
-    setTimeout(function() {
-      var target_pre = window.location.href.substring(window.location.href.indexOf("#") + 1);
-      var target = (target_pre.substring(0, target_pre.length));
-      if (target == "b") {
-        history.replaceState(null, null, "../braille/");
-        $('.lang_box.lang .card_header').removeClass('selected');
-        m.type.code = CODE_BRAILLE;
-        window.localStorage.type_code = CODE_BRAILLE;
-        $('body').addClass('braille');
-        $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
-        $('.card_header.braille').addClass('selected');
-        i18n.message.set(true, CODE_BRAILLE);
-        console.log("#braille ACTIVATE");
-      }
+    // setTimeout(function() {
+    var target_pre = window.location.href.substring(window.location.href.indexOf("#") + 1);
+    var target = (target_pre.substring(0, target_pre.length));
+    if (target == "b") {
+      history.replaceState(null, null, "../braille/");
+      $('.lang_box.lang .card_header').removeClass('selected');
+      m.type.code = CODE_BRAILLE;
+      window.localStorage.type_code = CODE_BRAILLE;
+      $('body').addClass('braille');
+      $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
+      $('.card_header.braille').addClass('selected');
+      i18n.message.set(true, CODE_BRAILLE);
+      console.log("#braille ACTIVATE");
 
-      // GoogleAnalyticsObject
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      gtag('js', new Date());
+      // GoogleAnalyticsObject  -->  /braille/
       gtag('config', 'UA-39552694-1', {
-        // 'page_title': $.i18n('braille'),
         'page_path': '/braille/'
       });
 
-    }, 0)
+    } else {
+      // GoogleAnalyticsObject  -->  /morse/
+      gtag('js', new Date());
+      gtag('config', 'UA-39552694-1');
+    }
+
+    // }, 0)
   } else {
     // console_event(",.");
   }
@@ -165,7 +171,7 @@ function codebook() {
   let list = "";
   list += '<div class="morse">';
   for (var j = 0; j < Object.keys(m.tranlyze.key).length; j++) {
-    list += '<div class="title">' + $.i18n('lang_' + Object.keys(m.tranlyze.key)[j]) + '</div>';
+    list += '<div class="title" data-i18n="' + 'lang_' + Object.keys(m.tranlyze.key)[j] + '"> ' + Object.keys(m.tranlyze.key)[j] + ' </div>';
     for (var k = 0; k < m.tranlyze.key[Object.keys(m.tranlyze.key)[j]].length; k++) {
       list += '<div class="code_wrap">';
       list += '<span class="letter">' + m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0] + "</span>";
