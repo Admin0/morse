@@ -3,8 +3,9 @@ const time = {
     console.log(msg + ' (' + (-time.start + Date.now()) + ' ms)');
   }
 };
+
 time.start = Date.now();
-time.log('init.js delay');
+time.log('main__init.js load start');
 
 const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -25,8 +26,8 @@ function url_check() {
     var target = (target_pre.substring(0, target_pre.length));
     if (target == "b") {
       history.replaceState(null, null, "../braille/");
-      $('.lang_box.lang .card_header').removeClass('selected');
       m.type.code = CODE_BRAILLE;
+      $('.lang_box.lang .card_header').removeClass('selected');
       window.localStorage.type_code = CODE_BRAILLE;
       $('body').addClass('braille');
       $('link[rel="icon"]').attr('href', "image/favicon_b.ico");

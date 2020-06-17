@@ -14,6 +14,8 @@
   left: 1em;
   z-index: 40;
   border-radius: 3px;
+  display: flex;
+  align-items: center;
 }
 
 #toast i.material-icons {
@@ -53,8 +55,6 @@
   animation-name: snackbar_off;
   animation-duration: .3s;
   z-index: 0;
-  display: flex;
-  align-items: center;
 }
 
 @media only screen and (max-width: 600px) {

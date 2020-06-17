@@ -215,12 +215,12 @@
 				<hr>
 
 				<h3 id="opensource_license" class="item opensource_license" name="opensource_license">
-					<a onclick="$('#license').load('license.html'); $('nav, .contents.sub').removeClass('on');$('#license, #nav_bg').addClass('on');" href="#opensource_license">
+					<a onclick="if($('#license').text()=='')$('#license').load('../morse/license.html'); $('nav, .contents.sub').removeClass('on');$('#license, #nav_bg').addClass('on');">
 						<i class="material-icons">favorite</i><span data-i18n="nav__license">LICENSE</span>
 					</a>
 				</h3>
 				<h3 id="update_log" class="item update_log" name="update_log">
-					<a onclick="$('#info').load('info.html'); $('nav, .contents.sub').removeClass('on');$('#info, #nav_bg').addClass('on');" href="#update_log">
+					<a onclick="if($('#info').text()=='')$('#info').load('../morse/info.html'); $('nav, .contents.sub').removeClass('on');$('#info, #nav_bg').addClass('on');">
 						<i class="material-icons">update</i><span data-i18n="nav__update">UPDATE</span>
 					</a>
 				</h3>
@@ -245,6 +245,7 @@
 
 	<div id="splash">
 		<img src="image\icon.webp" alt="logo">
+		<img src="image\icon_b.webp" alt="logo">
 	</div>
 
 	<div id="nav_bg" onclick="$('nav, #nav_bg, #info, #license, #setting').removeClass('on');"></div>

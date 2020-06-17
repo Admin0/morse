@@ -1,6 +1,6 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&family=Noto+Sans+JP&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&family=Noto+Sans+JP&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Material+Icons');
 @import url('ad.css');
@@ -203,7 +203,7 @@ body.fold header {
 }
 
 #card_header .lang_box {
-  display: inline-block;
+  display: flex;
   width: 50%;
   position: absolute;
   overflow: hidden;
@@ -232,7 +232,8 @@ body.analyze #card_header .lang_box.code {
 #re_anaylze, #lang_list {
   cursor: pointer;
   border-radius: 25px;
-  width: 48px;
+  width: 24px;
+  padding: 12px;
   position: absolute;
   left: calc(50% - 24px);
 }
@@ -240,11 +241,6 @@ body.analyze #card_header .lang_box.code {
 #re_anaylze input+i, #lang_list input+i {
   transition: 0.25s;
   transform: rotate(0);
-}
-
-#re_anaylze input+i {
-  vertical-align: unset;
-  padding: 12px;
 }
 
 #re_anaylze input:checked+i, #lang_list input:checked+i {
@@ -260,11 +256,10 @@ body.analyze #card_header .lang_box.code {
 }
 
 #lang_list {
-  line-height: 48px;
   display: inline-block;
-  margin-left: 1em;
+  /* margin-left: 1em; */
   position: static;
-  vertical-align: middle;
+  text-align: center;
 }
 
 .card_header {

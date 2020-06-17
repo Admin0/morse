@@ -530,10 +530,12 @@ $(function() {
 
 // document.addEventListener('DOMContentLoaded', (event) => {
 //     i18n.set();
+//     $("#splash").addClass("off");
 // });
 
 // $(document).ready(function() {
 //   i18n.set();
+//   $("#splash").addClass("off");
 // });
 
 $(window).on('load', function() {

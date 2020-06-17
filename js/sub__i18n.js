@@ -1,25 +1,7 @@
-time.log('i18n start.');
+time.log('sub__i18n.js load start.');
 
-$.i18n().load({ //todo 언어에 맞게 원하는 언어만 불러오는 기능 추가
-  'en': 'i18n/en.json',
-  'de': 'i18n/de.json',
-  'es': 'i18n/es.json',
-  'fa': 'i18n/fa.json',
-  'fr': 'i18n/fr.json',
-  'id': 'i18n/id.json',
-  'it': 'i18n/it.json',
-  'ko': 'i18n/ko.json',
-  'ja': 'i18n/ja.json',
-  'pl': 'i18n/pl.json',
-  'pt-BR': 'i18n/pt-BR.json',
-  'ru': 'i18n/ru.json',
-  'th': 'i18n/th.json',
-  'tr': 'i18n/tr.json',
-  'uk': 'i18n/uk.json',
-  'uk': 'i18n/uk.json',
-  'vi': 'i18n/vi.json',
-  'zh-CN': 'i18n/zh-CN.json',
-  'zh-TW': 'i18n/zh-TW.json'
+$.i18n().load({ // 처음엔 영어만 불러온다.
+  'en': 'i18n/en.json'
 });
 
 // let wait_until = 0;
@@ -33,34 +15,41 @@ const i18n = {
       i18n.message.set(false, m.type.code);
     }
 
-    $('.description').removeClass('on');
-    $('.description.' + $.i18n().locale.substring(0, 2)).addClass('on');
-    if ($('.description.on').length == 0) $('.description.en').addClass('on');
+    let l = $.i18n().locale;
+    if ($.i18n().messageStore.messages[l] == undefined) { // load가 되지 않았을 경우만 불러오기.
+      $.i18n().load({
+        [l]: "../morse/i18n/" + l + ".json"
+      }).done(function() {
+        subset();
+      });
+    } else {
+      subset();
+    }
 
-    $('html').attr('lang', $.i18n().locale);
 
-    $('[data-i18n]').i18n();
+    function subset() {
 
-    if (m.type.code == CODE_MORSE)
-      $('#output_textarea .placeholder').text($.i18n('card__output_0', $.i18n('morse')));
-    else if (m.type.code == CODE_BRAILLE)
-      $('#output_textarea .placeholder').text($.i18n('card__output_0', $.i18n('braille')));
+      $('.description').removeClass('on');
+      $('.description.' + $.i18n().locale.substring(0, 2)).addClass('on');
+      if ($('.description.on').length == 0) $('.description.en').addClass('on');
 
-    $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
-    $("meta[name='description']").attr("content", $.i18n('app_promotion') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
+      $('html').attr('lang', $.i18n().locale);
 
-    // module(ex nav.html) 안에 있는 요소 중 하나를 체크해야함.
-    // if (($('#i18n_checker').text() == '#morse' || $('#i18n_checker').length == 0) && wait_until <= 10) {
-    //   setTimeout(function() {
-    //     console.log('ERROR: i18n was not activated because DOM is not ready. (retry: ' + wait_until + ")");
-    //     wait_until++;
-    //     i18n.set();
-    //   }, 100);
-    // } else {
-    //   console.log('i18n was activated.');
-    // }
+      $('[data-i18n]').i18n();
 
-    time.log('i18n was activated. code: ' + $.i18n().locale);
+      if (m.type.code == CODE_MORSE)
+        $('#output_textarea .placeholder').text($.i18n('card__output_0', $.i18n('morse')));
+      else if (m.type.code == CODE_BRAILLE)
+        $('#output_textarea .placeholder').text($.i18n('card__output_0', $.i18n('braille')));
+
+      $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
+      $("meta[name='description']").attr("content", $.i18n('app_promotion') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
+
+      time.log('i18n was activated. code: ' + $.i18n().locale);
+    }
+
+
+    // time.log('i18n was activated. code: ' + $.i18n().locale);
 
   },
   message: { // 메세지 로딩을 위해 추가로 만든 코드
@@ -117,4 +106,4 @@ const i18n = {
     }
   }
 }
-time.log('i18n done.');
+time.log('sub__i18n.js load done.');

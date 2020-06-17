@@ -17,11 +17,11 @@
     "notifications"
   ],
   "icons": [{
-    "src": "image/favicon.ico",
+    "src": "../morse/image/favicon.ico",
     "type": "image/ico",
     "sizes": "16x16"
   }, {
-    "src": "image/icon.webp",
+    "src": "../morse/image/icon.webp",
     "type": "image/webp",
     "sizes": "512x512"
   }],
