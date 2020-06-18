@@ -314,6 +314,18 @@ body.analyze #card_header .lang_box.code {
   cursor: not-allowed;
 }
 
+.lang_box.code .detected {
+  display: none;
+}
+
+.lang_box.code .detected.on {
+  display: initial;
+}
+
+.lang_box.code .detected::before {
+  content: " - ";
+}
+
 #card_body {
   width: 100%;
   position: relative;

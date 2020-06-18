@@ -33,10 +33,13 @@ m.tranlyze.t = {
         } else if (this.jp > this.en && this.jp > this.kr) {
           m.tranlyze.t.lang.val = "ja";
           m.type.lang = LANG_JA;
+        } else if (this.en == 0) {
+          m.tranlyze.t.lang.val = "";
         } else {
           m.tranlyze.t.lang.val = "en";
           m.type.lang = LANG_EN;
         }
+        // console.log(this); // 감지 언어 로그
       },
       reset: function() {
         this.kr = 0;
@@ -149,11 +152,15 @@ function translate(dit, dah) {
   // output = output.split("·").join(dit + " ");
   // output = output.split("–").join(dah + " ");
 
-  $(".lang_box.code .detected").text(" - " + $.i18n("lang_" + m.tranlyze.t.lang.val));
-
   $('#output_textarea').text(output);
 
-  m.tranlyze.t.lang.count.get();  // 이건 결과 출력 다음에 와야한다. 일단은.
+  m.tranlyze.t.lang.count.get(); // 언어 인식 코드인데, 결과 출력 다음에 와야한다. 일단은.
+  if (!!m.tranlyze.t.lang.val) {
+    $(".lang_box.code .detected").attr("data-i18n", "lang_" + m.tranlyze.t.lang.val).text($.i18n("lang_" + m.tranlyze.t.lang.val)).addClass("on");
+  } else {
+    $(".lang_box.code .detected").removeClass("on");
+  }
+
 }
 
 
@@ -262,6 +269,9 @@ function translate_b() {
 
   // 언어 인식
   m.tranlyze.t.lang.count.get();
-  $(".lang_box.code .detected").text(" - " + $.i18n("lang_" + m.tranlyze.t.lang.val));
-  // console.log(m.tranlyze.t.lang.val);
+  if (!!m.tranlyze.t.lang.val) {
+    $(".lang_box.code .detected").attr("data-i18n", "lang_" + m.tranlyze.t.lang.val).text($.i18n("lang_" + m.tranlyze.t.lang.val)).addClass("on");
+  } else {
+    $(".lang_box.code .detected").removeClass("on");
+  }
 }

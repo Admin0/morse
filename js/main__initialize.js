@@ -41,10 +41,10 @@ function url_check() {
   }
   let search = location.search;
   if (!!search) {
-    $(window).on('load', function() {
+    // $(window).on('load', function() {
       $('#input_textarea').val(decodeURI(search.substring(1, search.length)));
       tranlyze(m.type.mode);
-    });
+    // });
   }
 }
 
