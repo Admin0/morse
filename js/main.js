@@ -538,9 +538,9 @@ $(function() {
 //   $("#splash").addClass("off");
 // });
 
-$(window).on('load', function() {
-  i18n.set();
-  $("#splash").addClass("off");
-});
+// $(window).on('load', function() {
+//   i18n.set();
+//   $("#splash").addClass("off");
+// });
 
 document.getElementById("year").innerHTML = new Date().getFullYear();

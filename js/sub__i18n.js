@@ -10,9 +10,6 @@ const i18n = {
 
     if (nation_code != null) { // 언어 설정
       $.i18n().locale = (nation_code == "default") ? $.i18n().options.locale : nation_code;
-      i18n.message.set(true, m.type.code);
-    } else {
-      i18n.message.set(false, m.type.code);
     }
 
     let l = $.i18n().locale;
@@ -25,7 +22,6 @@ const i18n = {
     } else {
       subset();
     }
-
 
     function subset() {
 
@@ -44,6 +40,8 @@ const i18n = {
 
       $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
       $("meta[name='description']").attr("content", $.i18n('app_promotion') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
+
+      i18n.message.set(false, m.type.code);
 
       time.log('i18n was activated. code: ' + $.i18n().locale);
     }
@@ -107,3 +105,6 @@ const i18n = {
   }
 }
 time.log('sub__i18n.js load done.');
+
+i18n.set();
+$("#splash").addClass("off");
