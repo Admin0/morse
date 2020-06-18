@@ -257,7 +257,6 @@ body.analyze #card_header .lang_box.code {
 
 #lang_list {
   display: inline-block;
-  /* margin-left: 1em; */
   position: static;
   text-align: center;
 }

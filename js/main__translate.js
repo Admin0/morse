@@ -15,17 +15,17 @@ m.tranlyze.t = {
         if (this.morse > this.en && this.morse > this.jp && this.morse > this.kr) {
           m.tranlyze.t.lang.val = "morse";
           if (this.morse >= 10 && this.morse / (this.en + this.jp + this.kr + 1) >= 3) {
-            console.log("de");
+            console.log("ERROR: morse2morse");
             m.toggle.mode();
+            tranlyze(ANALYZE_MODE);
             toast($.i18n('output_error__translate_to_morse'), "autorenew");
-            // tranlyze(m.type.mode);
           }
         } else if (this.braille > this.en && this.braille > this.jp && this.braille > this.kr) {
           m.tranlyze.t.lang.val = "braille";
           if (this.braille >= 10 && this.braille / (this.en + this.jp + this.kr + 1) >= 3) {
             m.toggle.code(CODE_BRAILLE);
+            tranlyze(ANALYZE_MODE);
             m.toggle.mode();
-            // tranlyze(m.type.mode);
           }
         } else if (this.kr > this.en && this.kr > this.jp) {
           m.tranlyze.t.lang.val = "ko";
@@ -149,10 +149,11 @@ function translate(dit, dah) {
   // output = output.split("·").join(dit + " ");
   // output = output.split("–").join(dah + " ");
 
-  m.tranlyze.t.lang.count.get();
   $(".lang_box.code .detected").text(" - " + $.i18n("lang_" + m.tranlyze.t.lang.val));
 
   $('#output_textarea').text(output);
+
+  m.tranlyze.t.lang.count.get();  // 이건 결과 출력 다음에 와야한다. 일단은.
 }
 
 
@@ -256,11 +257,11 @@ function translate_b() {
     }
   }
 
+  // 결과 출력
+  $('#output_textarea').text(input.join(""));
+
   // 언어 인식
   m.tranlyze.t.lang.count.get();
   $(".lang_box.code .detected").text(" - " + $.i18n("lang_" + m.tranlyze.t.lang.val));
   // console.log(m.tranlyze.t.lang.val);
-
-  // 결과 출력
-  $('#output_textarea').text(input.join(""));
 }

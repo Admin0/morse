@@ -56,7 +56,8 @@
   }
 
   #lang_list {
-    float: right;
+    position: absolute;
+    left: calc(100% - 48px);
   }
 
   #card_body {

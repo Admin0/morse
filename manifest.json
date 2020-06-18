@@ -23,14 +23,14 @@
   }, {
     "src": "../morse/image/icon.webp",
     "type": "image/webp",
-    "sizes": "512x512"
+    "sizes": "192x192"
   }],
   "start_url": "index.html",
-  "background_color": "#4284f3",
+  "background_color": "#00c853",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/morse/",
-  "theme_color": "#4284f3"
+  "theme_color": "#00c853"
   ,
   "related_applications": [
     {

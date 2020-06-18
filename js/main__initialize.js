@@ -7,7 +7,10 @@ const time = {
 time.start = Date.now();
 time.log('main__init.js load start');
 
-const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const is_ie = navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1); // ie check
+const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); // mobile check
+
+if (is_ie) location.replace('/morse/v3'); // if ie
 
 // GoogleAnalyticsObject
 window.dataLayer = window.dataLayer || [];
@@ -16,16 +19,16 @@ function gtag() {
   dataLayer.push(arguments);
 }
 gtag('js', new Date());
+gtag('config', 'UA-39552694-1');
 // end of google analytics
 
 function url_check() {
-
-  if (window.location.href.substring(window.location.href.length - 8, window.location.href.length) != window.location.pathname.substring(window.location.pathname.length - 8, window.location.pathname.length)) {
-    // setTimeout(function() {
-    var target_pre = window.location.href.substring(window.location.href.indexOf("#") + 1);
-    var target = (target_pre.substring(0, target_pre.length));
-    if (target == "b") {
-      history.replaceState(null, null, "../braille/");
+  let hash = location.hash;
+  if (!!hash) {
+    let is_b = (hash.substring(0, 2) == "#b");
+    let search_b = (hash.length > 2) ? hash.substring(2, hash.length) : "";
+    if (is_b) {
+      history.replaceState(null, null, "../braille/" + search_b);
       m.type.code = CODE_BRAILLE;
       $('.lang_box.lang .card_header').removeClass('selected');
       window.localStorage.type_code = CODE_BRAILLE;
@@ -34,21 +37,14 @@ function url_check() {
       $('.card_header.braille').addClass('selected');
       i18n.message.set(true, CODE_BRAILLE);
       console.log("#braille ACTIVATE");
-
-      // GoogleAnalyticsObject  -->  /braille/
-      gtag('config', 'UA-39552694-1', {
-        'page_path': '/braille/'
-      });
-
-    } else {
-      // GoogleAnalyticsObject  -->  /morse/
-      gtag('js', new Date());
-      gtag('config', 'UA-39552694-1');
     }
-
-    // }, 0)
-  } else {
-    // console_event(",.");
+  }
+  let search = location.search;
+  if (!!search) {
+    $(window).on('load', function() {
+      $('#input_textarea').val(decodeURI(search.substring(1, search.length)));
+      tranlyze(m.type.mode);
+    });
   }
 }
 

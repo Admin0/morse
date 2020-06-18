@@ -44,6 +44,7 @@ const i18n = {
       i18n.message.set(false, m.type.code);
 
       time.log('i18n was activated. code: ' + $.i18n().locale);
+      $("#splash").addClass("off");
     }
 
 
@@ -107,4 +108,3 @@ const i18n = {
 time.log('sub__i18n.js load done.');
 
 i18n.set();
-$("#splash").addClass("off");
