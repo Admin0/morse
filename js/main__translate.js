@@ -16,6 +16,7 @@ m.tranlyze.t = {
           m.tranlyze.t.lang.val = "morse";
           if (this.morse >= 10 && this.morse / (this.en + this.jp + this.kr + 1) >= 3) {
             console.log("ERROR: morse2morse");
+            m.toggle.code(CODE_MORSE);
             m.toggle.mode();
             tranlyze(ANALYZE_MODE);
             toast($.i18n('output_error__translate_to_morse'), "autorenew");
@@ -24,8 +25,8 @@ m.tranlyze.t = {
           m.tranlyze.t.lang.val = "braille";
           if (this.braille >= 10 && this.braille / (this.en + this.jp + this.kr + 1) >= 3) {
             m.toggle.code(CODE_BRAILLE);
-            tranlyze(ANALYZE_MODE);
             m.toggle.mode();
+            tranlyze(ANALYZE_MODE);
           }
         } else if (this.kr > this.en && this.kr > this.jp) {
           m.tranlyze.t.lang.val = "ko";
@@ -47,6 +48,16 @@ m.tranlyze.t = {
         this.en = 0;
         this.morse = 0;
         this.braille = 0;
+      },
+      m2m: function(char) {
+        if (char.match(/[·–1－\-ㅡ_0ㆍ\.\*`']/) != null) { // morse2morse check
+          this.morse++;
+          // console.log(input[i]);
+        }
+        if (char.match(/[⠁-⣿]/) != null) { // braille2morse check
+          this.braille++;
+          // console.log(input[i]);
+        }
       }
     }
   }
@@ -116,16 +127,7 @@ function translate(dit, dah) {
       input[i] = String.fromCharCode(input[i].charCodeAt() + 0x0060);
     }
 
-    // morse2morse check
-    if (input[i].match(/[·–1－\-ㅡ_0ㆍ\.\*`']/) != null) {
-      m.tranlyze.t.lang.count.morse++;
-      // console.log(input[i]);
-    }
-    // braille2morse check
-    if (input[i].match(/[⠁-⣿]/) != null) {
-      m.tranlyze.t.lang.count.braille++;
-      // console.log(input[i]);
-    }
+    m.tranlyze.t.lang.count.m2m(input[i]); // morse2morse check
 
     // 언어 인식
     for (var j = 0; j < Object.keys(m.tranlyze.key).length; j++) {
@@ -221,6 +223,9 @@ function translate_b() {
     } else if (input[i].charCodeAt() >= 0x3041 && input[i].charCodeAt() <= 0x3096) { // "3041:ぁ" ~ "3096:ゖ"에 속한 글자면 가타카나로
       input[i] = String.fromCharCode(input[i].charCodeAt() + 0x0060);
     }
+
+
+    m.tranlyze.t.lang.count.m2m(input[i]); // morse2morse check
 
     for (var j = 0; j < Object.keys(m.tranlyze.key_b).length; j++) {
       for (var k = 0; k < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]].length; k++) {

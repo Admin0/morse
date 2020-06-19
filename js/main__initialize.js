@@ -175,6 +175,7 @@ function ft_icon() {
 
 function codebook() {
   let list = "";
+  list += '<div class="title" data-i18n="codebook">codebook</div>';
   list += '<div class="morse">';
   for (var j = 0; j < Object.keys(m.tranlyze.key).length; j++) {
     list += '<div class="title" data-i18n="' + 'lang_' + Object.keys(m.tranlyze.key)[j] + '"> ' + Object.keys(m.tranlyze.key)[j] + ' </div>';

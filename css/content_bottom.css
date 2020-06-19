@@ -23,6 +23,7 @@
 
 #history_wrap .title {
   font-size: 20px;
+  font-weight: bold;
 }
 
 #history_wrap .item {
@@ -190,6 +191,7 @@ body.braille .ft-icon.on .material-icons {
   transition: .3s;
   position: relative;
   display: none;
+  font-size: 14px;
 }
 
 .codebook.on {
@@ -207,21 +209,33 @@ body.braille .ft-icon.on .material-icons {
   text-transform: uppercase;
   flex: 100%;
   padding: 1em;
-  border: 1px solid silver;
-  border-width: 0 1px 1px 0;
+  border-top: 1px solid #dadce0;
+}
+
+.codebook>div.title {
+  font-size: 20px;
+  border: none;
 }
 
 .codebook div.code_wrap {
   display: inline-block;
-  min-width: 150px;
+  min-width: 100px;
   padding: 1em;
   flex: auto;
-  border: 1px solid silver;
-  border-width: 0 1px 1px 0;
+  border-top: 1px solid #dadce0;
+  transition: .125s box-shadow;
+  /* border-right: 1px solid #dadce0; */
+}
+
+.codebook div.code_wrap:hover {
+  z-index: 1;
+  border: 1px solid #dadce0;
+  margin: 0 -1px -1px -1px;
+  box-shadow: 0 5px 11px rgba(0, 0, 0, .2);
 }
 
 .codebook div.code_wrap:nth-of-type(2n+1) {
-  background: #fafafa;
+  background: #f7f7f7;
 }
 
 .codebook span.letter {
@@ -240,6 +254,6 @@ body.braille .codebook .morse {
 
 @media only screen and (max-width: 600px) {
   .codebook div.code_wrap {
-    min-width: 100px;
+    min-width: 50px;
   }
 }
