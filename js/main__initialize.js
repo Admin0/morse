@@ -36,14 +36,23 @@ function url_check() {
       $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
       $('.card_header.braille').addClass('selected');
       i18n.message.set(true, CODE_BRAILLE);
+
+      gtag('config', 'UA-39552694-1', {
+        'page_path': '/braille/'
+      });
+
       console.log("#braille ACTIVATE");
     }
   }
   let search = location.search;
   if (!!search) {
     // $(window).on('load', function() {
-      $('#input_textarea').val(decodeURI(search.substring(1, search.length)));
-      tranlyze(m.type.mode);
+    $('#input_textarea').val(decodeURI(search.substring(1, search.length)));
+    tranlyze(m.type.mode);
+
+    gtag('config', 'UA-39552694-1', {
+      'page_path': '/morse/'
+    });
     // });
   }
 }

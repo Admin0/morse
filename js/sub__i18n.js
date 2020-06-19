@@ -43,6 +43,10 @@ const i18n = {
 
       i18n.message.set(false, m.type.code);
 
+      gtag('config', 'UA-39552694-1', {
+        'page_title': $.i18n('app_name_full')
+      });
+
       time.log('i18n was activated. code: ' + $.i18n().locale);
       $("#splash").addClass("off");
     }

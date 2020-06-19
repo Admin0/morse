@@ -786,7 +786,7 @@ div#splash {
   top: 0;
   background: #fff;
   text-align: center;
-  z-index: 6;
+  z-index: 99;
   opacity: 1;
 }
 
