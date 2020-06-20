@@ -179,6 +179,7 @@ function analyze(lang, dit, dah) {
     }
   }
 
+  $(".lang_box.code .detected").text("").removeClass("on");
   return output;
 }
 
@@ -389,6 +390,6 @@ function analyze_b(lang) {
     output = assemble_jp(output);
   }
 
-  $(".lang_box.code .detected").text("");
+  $(".lang_box.code .detected").text("").removeClass("on");
   return output;
 }

@@ -1,4 +1,4 @@
-time.log('sub__i18n.js load start.');
+// time.log('sub__i18n.js load start.');
 
 $.i18n().load({ // 처음엔 영어만 불러온다.
   'en': 'i18n/en.json'
@@ -47,7 +47,7 @@ const i18n = {
         'page_title': $.i18n('app_name_full')
       });
 
-      time.log('i18n was activated. code: ' + $.i18n().locale);
+      // time.log('i18n was activated. code: ' + $.i18n().locale);
       $("#splash").addClass("off");
     }
 
@@ -109,6 +109,6 @@ const i18n = {
     }
   }
 }
-time.log('sub__i18n.js load done.');
+// time.log('sub__i18n.js load done.');
 
 i18n.set();

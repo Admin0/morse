@@ -70,16 +70,6 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1280px) {
-  #history_wrap {
-    box-shadow: none;
-    border: none;
-    border-radius: 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-  }
-}
-
 #ft-section {
   text-align: center;
   margin-top: 4em;
@@ -250,6 +240,21 @@ body.braille .ft-icon.on .material-icons {
 body:not(.braille) .codebook .braille,
 body.braille .codebook .morse {
   display: none;
+}
+
+@media only screen and (max-width: 1280px) {
+  #history_wrap {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .codebook {
+    border-radius: 0;
+    border-width: 1px 0;
+  }
 }
 
 @media only screen and (max-width: 600px) {

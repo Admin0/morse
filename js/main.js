@@ -55,8 +55,8 @@ const m = {
       if (m.type.code == CODE_BRAILLE) {
         $('body').addClass('braille');
         $('.lang_box .braille').addClass('selected');
-        $('link[rel="shortcut icon"]').attr('href', "image/favicon_b.ico");
-        $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
+        $('link[rel="shortcut icon"], link[rel="icon"]').attr('href', "image/favicon_b.ico");
+        $("#to_github>img").attr('src', "image/icon_b.webp");
         // history.pushState(null, null, "../braille/");
       }
       $('#input_textarea').attr("readonly", false); // 키보드 팝업 방지의 방지
@@ -237,7 +237,12 @@ const m = {
           $("#input_textarea").val(t);
         }
       },
-      delAll: function() {},
+      delAll: function() {
+        $('#input_textarea').val('');
+        tranlyze(m.type.mode);
+        $('#input_textarea').focus();
+        console.log('all cleared');
+      },
       braille: function(dot) {
         if (dot == undefined) {
           var t = $("#input_textarea").val();
@@ -397,31 +402,12 @@ function tranlyze(type) {
     else if (m.type.mode == ANALYZE_MODE)
       $('#output_textarea').html('<span class="placeholder">' + $.i18n('card__output_1', $('.lang_box.code .card_header.selected').text()) + '</span>')
   }
-
-  if (m.type.mode == ANALYZE_MODE && m.type.code == CODE_BRAILLE) { // 점자 해석일 때도 입력창 클릭하면 편집가능
-    $('#input_textarea').on("focus, click", function() {
-      console.log('good!');
-      setTimeout(function() {
-        $('#input_textarea').attr("readonly", false);
-      }, 10);
-    });
-    $('#input_textarea').on("focusout, blur", function() {
-      $('#input_textarea').attr("readonly", true);
-    })
-  }
 }
 
 function initialize() {
 
-  function clear() {
-    $('#input_textarea').val('');
-    tranlyze(m.type.mode);
-    $('#input_textarea').focus();
-    console.log('all cleared');
-  }
-
   $('#input_del').on('click', function() {
-    clear();
+    m.input.key.delAll();
   });
 
   $('#re_anaylze').on('change', function() {
@@ -460,6 +446,22 @@ function initialize() {
   });
 
   m.history.set(true);
+
+  // 점자 해석일 때도 입력창 클릭하면 편집가능
+  $('#input_textarea').on("focus, click", function() {
+    if (m.type.mode == ANALYZE_MODE && m.type.code == CODE_BRAILLE) {
+      // console.log('b.anal. but will change textarea. (focus)');
+      setTimeout(function() {
+        $('#input_textarea').attr("readonly", false);
+      }, 10);
+    }
+  });
+  $('#input_textarea').on("focusout, blur", function() {
+    if (m.type.mode == ANALYZE_MODE && m.type.code == CODE_BRAILLE) {
+      $('#input_textarea').attr("readonly", true);
+      // console.log('b.anal. but will change textarea. (blur)');
+    }
+  })
 }
 
 function detect_input() {

@@ -153,16 +153,16 @@
 			<div class="braille">
 				<table class="">
 					<tr>
-						<td><input type="checkbox" id="key_b_1"><label for="key_b_1"></label></td>
-						<td><input type="checkbox" id="key_b_4"><label for="key_b_4"></label></td>
+						<td><input type="checkbox" id="key_b_1"><label for="key_b_1" onmouseover="if (!is_mobile) key_b_1.checked = key_b_1.checked?false:true"></label></td>
+						<td><input type="checkbox" id="key_b_4"><label for="key_b_4" onmouseover="if (!is_mobile) key_b_4.checked = key_b_4.checked?false:true"></label></td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="key_b_2"><label for="key_b_2"></label></td>
-						<td><input type="checkbox" id="key_b_5"><label for="key_b_5"></label></td>
+						<td><input type="checkbox" id="key_b_2"><label for="key_b_2" onmouseover="if (!is_mobile) key_b_2.checked = key_b_2.checked?false:true"></label></td>
+						<td><input type="checkbox" id="key_b_5"><label for="key_b_5" onmouseover="if (!is_mobile) key_b_5.checked = key_b_5.checked?false:true"></label></td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="key_b_3"><label for="key_b_3"></label></td>
-						<td><input type="checkbox" id="key_b_6"><label for="key_b_6"></label></td>
+						<td><input type="checkbox" id="key_b_3"><label for="key_b_3" onmouseover="if (!is_mobile) key_b_3.checked = key_b_3.checked?false:true"></label></td>
+						<td><input type="checkbox" id="key_b_6"><label for="key_b_6" onmouseover="if (!is_mobile) key_b_6.checked = key_b_6.checked?false:true"></label></td>
 					</tr>
 				</table>
 				<button type="button" name="ipnut" onclick="m.input.key.braille();" style="margin-top:.5em;"><i class="material-icons">keyboard_return</i></button>
@@ -353,7 +353,7 @@
 	<!-- 검색엔진이 모든 언어로 검색을 할 수 있게 i18n 말고 이런식으로 만들어줍니다. -->
 	<section class="description en en-US on">
 
-		<h1>M³ Translator <small>#morse code #braille</small></h1>
+		<h1 class="title">M³ Translator <small class="tag">#morse code #braille</small></h1>
 
 		<p>Look! This is the Morse code!</p>
 		<p>Miraculous Mighty Morse code translator + analyzer! (or Braille)</p>
@@ -384,7 +384,7 @@
 	</section>
 	<section class="description ko ko-KR on">
 
-		<h1>기만의 번역기 <small>#모스_부호 #점자 #브라유</small></h1>
+		<h1 class="title">기만의 번역기 <small class="tag">#모스_부호 #점자 #브라유</small></h1>
 
 		<p>모스 부호 ⇄ 한글 해석 가능!</p>
 		<p>기적의 만능 모스 부호 변환기 + 해석기!</p>
@@ -418,7 +418,7 @@
 	</section>
 	<section class="description ja ja-JP on">
 
-		<h1>モモ·トランスレーター <small>#モールス符号 #点字</small></h1>
+		<h1 class="title">モモ·トランスレーター <small class="tag">#モールス符号 #点字</small></h1>
 
 		<p>見よ。 これがモールス符号だ！</p>
 		<p>奇跡の万能モールス符号変換器+解析機！</p>

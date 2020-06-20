@@ -5,7 +5,7 @@ const time = {
 };
 
 time.start = Date.now();
-time.log('main__init.js load start');
+// time.log('main__init.js load start');
 
 const is_ie = navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1); // ie check
 const is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); // mobile check
