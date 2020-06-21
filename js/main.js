@@ -15,6 +15,11 @@ const LANG_PR = 7;
 const LANG_KO = 8;
 const LANG_TH = 9;
 
+const MORSE_DIT = 0;
+const MORSE_DAH = 1;
+const MORSE_SPACE = 3;
+
+
 const m = {
   tranlyze: {
     key: {},
@@ -271,7 +276,7 @@ const m = {
     let position = 0;
     let dit = $('#s_output_style_dit .input').text();
     let dah = $('#s_output_style_dah .input').text();
-    let code; // 점인지 선인지
+    let code, code0, code1; // 점인지 선인지
     let text = $('#output_textarea').text();
     let index = $('#index');
     let flash = $('#index');
@@ -295,15 +300,22 @@ const m = {
 
 
     function engine() {
+      let dot_type = MORSE_DIT; // dit = 0, dah = 1
       let isSoundOn = m.type.play.sound; // 시간차로 발생하는 오류 때문에 변수 하나 생성.
       if (m.type.play.isOn) {
         code = text.substring(position, position + 1);
-        if (code == dit || code == dah) {
-          if (code == dit) {
+        code0 = text.substring(position, position + dit.length);
+        code1 = text.substring(position, position + dah.length);
+        if (code0 == dit || code1 == dah) {
+          if (code0 == dit) {
+            dot_type = MORSE_DIT;
+            text_deco(dit.length);
             time = time_origin;
             vibration_type = 'shake';
             flash_type = 'flash'
           } else {
+            dot_type = MORSE_DAH;
+            text_deco(dah.length);
             time = time_origin * 2;
             vibration_type = 'shake-hard';
             flash_type = 'flash-hard'
@@ -320,20 +332,25 @@ const m = {
           if (m.type.play.flash) flash.addClass(flash_type);
         } else if (code == "　") {
           time = time_origin * 2;
+          dot_type = MORSE_SPACE;
+          text_deco(1);
         } else {
           time = time_origin;
+          dot_type = MORSE_SPACE;
+          text_deco(1);
         }
 
-        // text decoration
-        $('#output_textarea > span:nth(' + ((position - 1) < 0 ? "" : (position - 1)) + ')').addClass('on');
-        $('#output_textarea > span:nth(' + position + ')').addClass('on');
-        $('#output_textarea > span:nth(' + (position + 1) + ')').addClass('on');
+        function text_deco(length) { // text decoration
+          $('#output_textarea > span:nth-child(n+' + ((position - 1) < 0 ? 0 : position) + '):nth-child(-n+' + (position + length + 1) + ')').addClass('on');
+          // console.log('len.: ' + length);
+
+        }
 
         // console.log(code + " " + time);
 
         if (position < text.length) {
           setTimeout(function() {
-            if (code == dit || code == dah) {
+            if (code0 == dit || code1 == dah) {
               if (isSoundOn) o.disconnect(audio.destination);
               index.removeClass('shake shake-hard shake-vertical');
               flash.removeClass('flash flash-hard');
@@ -348,7 +365,13 @@ const m = {
           toast($.i18n('bt_speak_stop', $.i18n('morse')), "stop");
           $('#output_menu .play i').text('play_arrow');
         }
-        position++;
+        position = position + ((dot_type == 0) ? dit.length : ((dot_type == 1) ? dah.length : 1));
+        // console.log({
+        //   'dot_type': dot_type,
+        //   'dit l.': dit.length,
+        //   'dah l.': dah.length,
+        //   'pos.': position
+        // });
       }
     }
     if (m.type.play.isOn || (true_mean_i_wanna_play != undefined && !true_mean_i_wanna_play)) {
@@ -375,11 +398,14 @@ function tranlyze(type) {
 
   m.play(false);
 
+  let dit = $('#s_output_style_dit .input').text();
+  let dah = $('#s_output_style_dah .input').text();
+
   if (m.type.code == CODE_MORSE) {
     if (type == TRANSLATE_MODE) {
-      translate($('#s_output_style_dit .input').text(), $('#s_output_style_dah .input').text());
+      translate(dit, dah);
     } else if (type == ANALYZE_MODE) {
-      $('#output_textarea').text(analyze(m.type.lang, $('#s_output_style_dit .input').text(), $('#s_output_style_dah .input').text()));
+      $('#output_textarea').text(analyze(m.type.lang, dit, dah));
     }
   } else if (m.type.code == CODE_BRAILLE) {
     if (type == TRANSLATE_MODE) {

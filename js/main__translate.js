@@ -133,7 +133,7 @@ function translate(dit, dah) {
     for (var j = 0; j < Object.keys(m.tranlyze.key).length; j++) {
       for (var k = 0; k < m.tranlyze.key[Object.keys(m.tranlyze.key)[j]].length; k++) {
         if (input[i] == m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0]) {
-          input[i] = m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][1];
+          input[i] = m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][1].replace(/·/g, dit + " ").replace(/–/g, dah + " ");
           m.tranlyze.t.lang.count[Object.keys(m.tranlyze.key)[j]]++;
           // console.log(m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0]); // a
           // console.log(input[i]); // ·–
@@ -150,7 +150,10 @@ function translate(dit, dah) {
     output = output + input[i] + '　';
   }
 
-  output = output.replace(/(?!　)(.)/g, "$1 ");
+  // output = output
+  // .replace(/(?!　)(.)/g, "$1 ")
+  // .replace(/·/g, dit + " ")
+  // .replace(/–/g, dah);
   // output = output.split("·").join(dit + " ");
   // output = output.split("–").join(dah + " ");
 
