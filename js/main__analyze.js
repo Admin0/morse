@@ -337,10 +337,10 @@ function analyze_b(lang) {
       .replace(/ᅣᅢ/g, "ᅤ")
       .replace(/ᅯᅢ/g, "ᅰ")
       .replace(/ᅪᅢ/g, "ᅫ")
-      .replace(/ᄉᄀ/g, "ᄁ") // 된소리 초성
+      .replace(/ᄉᄉ/g, "ᄊ") // 된소리 초성 / 쌍시옷이 제일 앞에 있어야 함.
+      .replace(/ᄉᄀ/g, "ᄁ")
       .replace(/ᄉᄃ/g, "ᄄ")
       .replace(/ᄉᄇ/g, "ᄈ")
-      .replace(/ᄉᄉ/g, "ᄊ")
       .replace(/ᄉᄌ/g, "ᄍ")
       .replace(/ᆨᆨ/g, "ᆩ") // 받침 조합
       .replace(/ᆨᆺ/g, "ᆪ")
