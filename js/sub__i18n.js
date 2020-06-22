@@ -86,8 +86,7 @@ const i18n = {
               this.list.quote.m[i] = m;
               this.list.source.m[i] = s;
             } else {
-              console.log('m: ' + m);
-              console.log('message_' + i + " was breaked.");
+              // console.log('message_' + i + " was breaked.");
               break;
             }
           }
@@ -108,7 +107,7 @@ const i18n = {
               this.list.quote.b[i] = m;
               this.list.source.b[i] = s;
             } else {
-              console.log('messageb_' + i + " was breaked.");
+              // console.log('messageb_' + i + " was breaked.");
               break;
             }
           }

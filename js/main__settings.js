@@ -27,24 +27,26 @@ function setting() {
     $("#setting input[checked]").next().next().next(".off").addClass("hide");
     $("#setting input:not([checked])").next().next(".on").addClass("hide");
 
-    function css_option() {
-      for (var i = 0; i < arguments.length; i++) {
-        if (localStorage[arguments[i]] == "true") {
-          $('body').addClass(arguments[i]);
-        } else {
-          $('body').removeClass(arguments[i]);
-        }
-      }
-    }
-    // 개별 적용
-    css_option("general__dark", "answer__serif", "answer__quiz");
+    // function css_option() {
+    //   for (var i = 0; i < arguments.length; i++) {
+    //     if (localStorage[arguments[i]] == "true") {
+    //       $('body').addClass(arguments[i]);
+    //     } else {
+    //       $('body').removeClass(arguments[i]);
+    //     }
+    //   }
+    // }
+    // // 개별 적용
+    // css_option("general__dark", "answer__serif", "answer__quiz");
+    //
+    // if (localStorage.general__dark == "true") {
+    //   $("meta[name='theme-color']").attr("content", "rgba(50, 54, 57, 1)");
+    // } else {
+    //   $("meta[name='theme-color']").attr("content", "#ffffff");
+    // }
 
-    if (localStorage.general__dark == "true") {
-      $("meta[name='theme-color']").attr("content", "rgba(50, 54, 57, 1)");
-    } else {
-      $("meta[name='theme-color']").attr("content", "#ffffff");
-    }
-
+    $("#s_output_style_dit span.input").text(localStorage.dit || $("#s_output_style_dit span.input").text());
+    $("#s_output_style_dah span.input").text(localStorage.dah || $("#s_output_style_dah span.input").text());
   }
   check_setting();
 
@@ -62,22 +64,34 @@ function setting() {
     check_setting();
   });
 
-  $("#setting > .setting_item.auto_save").on("click", function() {
-    // console.log($(this).hasClass("disabled"));
-    if (!$(this).hasClass("disabled")) {
-      var i = $("#setting > .setting_item").index(this);
-      if (localStorage[item[i]] == "true") {
-        localStorage[item[i]] = "false"
-      } else {
-        localStorage[item[i]] = "true"
-      }
-      // toast("설정이 저장되었습니다.", "save");
-
-      // filter();
-      // columns();
-      check_setting();
-    }
+  $("#setting > .setting_item.auto_save span.input").on("input", function() { // checkbox
+    let i = $("#s_output_style_dit span.input").text();
+    let a = $("#s_output_style_dah span.input").text();
+    localStorage.dit = (i == "") ? "·" : i;
+    localStorage.dah = (a == "") ? "–" : a;
+    
+    // console.log({
+    //   "i": localStorage.dit,
+    //   "a": localStorage.dah
+    // });
   });
+
+  // $("#setting > .setting_item.auto_save").on("click", function() { // checkbox
+  //   // console.log($(this).hasClass("disabled"));
+  //   if (!$(this).hasClass("disabled")) {
+  //     var i = $("#setting > .setting_item").index(this);
+  //     if (localStorage[item[i]] == "true") {
+  //       localStorage[item[i]] = "false"
+  //     } else {
+  //       localStorage[item[i]] = "true"
+  //     }
+  //     // toast("설정이 저장되었습니다.", "save");
+  //
+  //     // filter();
+  //     // columns();
+  //     check_setting();
+  //   }
+  // });
 
   // header > action bar
   $('.actionbar .item').on('click', function() {
