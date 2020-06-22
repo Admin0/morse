@@ -35,13 +35,13 @@ function url_check() {
       $('body').addClass('braille');
       $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
       $('.card_header.braille').addClass('selected');
-      i18n.message.set(true, CODE_BRAILLE);
 
       gtag('config', 'UA-39552694-1', {
         'page_path': '/braille/'
       });
 
       console.log("#braille ACTIVATE");
+      i18n.message.set(true, CODE_BRAILLE);
     }
   }
   let search = location.search;
@@ -138,6 +138,7 @@ function keyboard_shortcuts(type) {
 }
 
 function ft_icon() {
+  if (is_mobile) $('.code, .codebook').removeClass('on');
   $('.ft-icon').on('click', function() {
     if ($(this).hasClass('info')) {
       if ($(this).hasClass('on')) {
