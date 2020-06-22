@@ -29,7 +29,7 @@ const i18n = {
       $('.description.' + $.i18n().locale.substring(0, 2)).addClass('on');
       if ($('.description.on').length == 0) $('.description.en').addClass('on');
 
-      $('html').attr('lang', $.i18n().locale);
+      $('html').attr('lang', $.i18n().locale.substring(0, 2));
 
       $('[data-i18n]').i18n();
 
