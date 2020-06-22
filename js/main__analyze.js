@@ -355,7 +355,7 @@ function analyze_b(lang) {
       .replace(/ᆯᇂ/g, "ᆶ")
       .replace(/ᆸᆺ/g, "ᆹ")
       .replace(/ᆺᆺ/g, "ᆻ")
-      .replace(/ᆨ에/g, "그런데") // 약자 todo
+      .replace(/ᆨ어/g, "그런데") // 약자 todo
       .replace(/⠸[어예]/g, "것")
       .replace(/([ᅡ-ᅵ])ᅨ/g, "$1ᆻ")
       .replace(/([ᄀ-ᄒ])((?=[^ᅡ-ᅵ])|$)/g, "$1ᅡ") // ㅏ 생략된거 복원 [ᄀ-ᄒ](?!\w)

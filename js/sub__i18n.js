@@ -18,19 +18,19 @@ const i18n = {
       $.i18n().load({
         [l]: "../morse/i18n/" + l + ".json"
       }).done(function() {
-        subset();
+        subset(l);
       });
     } else {
-      subset();
+      subset(l);
     }
 
-    function subset() {
+    function subset(locale) {
 
       $('.description').removeClass('on');
-      $('.description.' + $.i18n().locale.substring(0, 2)).addClass('on');
+      $('.description.' + locale).addClass('on');
       if ($('.description.on').length == 0) $('.description.en').addClass('on');
 
-      $('html').attr('lang', $.i18n().locale);
+      $('html').attr('lang', locale);
 
       $('[data-i18n]').i18n();
 
@@ -74,34 +74,38 @@ const i18n = {
     set: function(reset, code) {
       if ($('#message .quote').text() == "MESSAGE" || reset) {
         if (code === undefined || code == CODE_MORSE) {
+          // if (this.list.quote.m.length == 0) {
           for (var i = 0; i < 99; i++) {
             var m = $.i18n('message_' + i);
             var s = $.i18n('message_' + i + '_source');
             if (m != 'message_' + i) {
-              // console.log('ddd: ' + i);
+              console.log('ddd: ' + i);
               this.list.quote.m[i] = m;
               this.list.source.m[i] = s;
             } else {
               break;
             }
           }
-          this.i.m = this.i.m || Math.floor(Math.random() * (this.list.quote.m.length));
+          // }
+          this.i.m = reset ? Math.floor(Math.random() * (this.list.quote.m.length)) : this.i.m || Math.floor(Math.random() * (this.list.quote.m.length));
           $('#message .quote').html(this.list.quote.m[this.i.m])
           $('#message .source').html(this.list.source.m[this.i.m])
           $('#message').removeClass('hide');
         } else if (code == CODE_BRAILLE) {
+          // if (this.list.quote.b.length == 0) {
           for (var i = 0; i < 99; i++) {
             var m = $.i18n('messagb_' + i);
             var s = $.i18n('messagb_' + i + '_source');
             if (m != 'messagb_' + i) {
-              // console.log('ddd: ' + i);
+              console.log('ddd: ' + i);
               this.list.quote.b[i] = m;
               this.list.source.b[i] = s;
             } else {
               break;
             }
           }
-          this.i.b = this.i.b || Math.floor(Math.random() * (this.list.quote.b.length));
+          // }
+          this.i.b = reset ? Math.floor(Math.random() * (this.list.quote.b.length)) : this.i.b || Math.floor(Math.random() * (this.list.quote.b.length));
           $('#message .quote').html(this.list.quote.b[this.i.b])
           $('#message .source').html(this.list.source.b[this.i.b])
           $('#message').removeClass('hide');

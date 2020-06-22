@@ -181,6 +181,7 @@ function codebook() {
   for (var j = 0; j < Object.keys(m.tranlyze.key).length; j++) {
     list += '<div class="title" data-i18n="' + 'lang_' + Object.keys(m.tranlyze.key)[j] + '"> ' + Object.keys(m.tranlyze.key)[j] + ' </div>';
     for (var k = 0; k < m.tranlyze.key[Object.keys(m.tranlyze.key)[j]].length; k++) {
+      if (m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0] == "␃") break;
       list += '<div class="code_wrap">';
       list += '<span class="letter">' + m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][0] + "</span>";
       list += '<span class="code">' + m.tranlyze.key[Object.keys(m.tranlyze.key)[j]][k][1].split("").join(" ") + "</span>";
@@ -189,7 +190,7 @@ function codebook() {
   }
   list += '</div><div class="braille">';
   for (var l = 0; l < Object.keys(m.tranlyze.key_b).length; l++) {
-    list += '<div class="title">' + $.i18n('lang_' + Object.keys(m.tranlyze.key_b)[l]) + '</div>';
+    list += '<div class="title" data-i18n="' + 'lang_' + Object.keys(m.tranlyze.key_b)[j] + '"> ' + Object.keys(m.tranlyze.key_b)[l] + '</div>';
     for (var n = 0; n < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[l]].length; n++) {
       list += '<div class="code_wrap">';
       list += '<span class="letter">' + m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[l]][n][0] + "</span>";
