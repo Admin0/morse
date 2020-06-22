@@ -14,16 +14,11 @@ const i18n = {
 
     let l = $.i18n().locale;
     if ($.i18n().messageStore.messages[l] == undefined) { // load가 되지 않았을 경우만 불러오기.
+      l = !!(l == "zh-CN" | "zh-TW" | "pt-BR") ? l : l.substring(0, 2); // 경우의 수 빼고 앞에 두글자만 끊음.
       $.i18n().load({
         [l]: "../morse/i18n/" + l + ".json"
       }).done(function() {
         subset();
-      }).fail(function() {
-        $.i18n().load({
-          [l.substring(0, 2)]: "../morse/i18n/" + l.substring(0, 2) + ".json"
-        }).done(function() {
-          subset();
-        })
       });
     } else {
       subset();
