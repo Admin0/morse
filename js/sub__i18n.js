@@ -20,7 +20,7 @@ const i18n = {
         subset();
       }).fail(function() {
         $.i18n().load({
-          [l]: "../morse/i18n/" + l.substring(0, 2) + ".json"
+          [l.substring(0, 2)]: "../morse/i18n/" + l.substring(0, 2) + ".json"
         }).done(function() {
           subset();
         })
