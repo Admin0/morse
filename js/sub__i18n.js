@@ -42,7 +42,7 @@ const i18n = {
       $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
       $("meta[name='description']").attr("content", $.i18n('app_promotion') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
 
-      i18n.message.set(false, m.type.code);
+      i18n.message.set(m.type.code, m.type.lang, false);
 
       gtag('config', 'UA-39552694-1', {
         'page_title': $.i18n('app_name_full')
@@ -71,46 +71,54 @@ const i18n = {
       m: null,
       b: null
     },
-    set: function(reset, code) {
-      if ($('#message .quote').text() == "MESSAGE" || reset) {
-        if (code === undefined || code == CODE_MORSE) {
-          // if (this.list.quote.m.length == 0) {
+    lang: 0,
+    set: function(code, lang, reset) { // m or b, language, want new string?
+      // if ($('#message .quote').text() == "MESSAGE" || reset) {
+      if (code === undefined || code == CODE_MORSE) { // morse
+        if (this.list.quote.m.length == 0 || this.lang != lang) { // 리스트가 없을 때 || 언어가 다를 때
+          this.lang = lang;
           for (var i = 0; i < 99; i++) {
             var m = $.i18n('message_' + i);
             var s = $.i18n('message_' + i + '_source');
             if (m != 'message_' + i) {
-              console.log('ddd: ' + i);
+              // console.log('message_' + i);
+              // time.log('message_' + i);
               this.list.quote.m[i] = m;
               this.list.source.m[i] = s;
             } else {
+              console.log('m: ' + m);
+              console.log('message_' + i + " was breaked.");
               break;
             }
           }
-          // }
-          this.i.m = reset ? Math.floor(Math.random() * (this.list.quote.m.length)) : this.i.m || Math.floor(Math.random() * (this.list.quote.m.length));
-          $('#message .quote').html(this.list.quote.m[this.i.m])
-          $('#message .source').html(this.list.source.m[this.i.m])
-          $('#message').removeClass('hide');
-        } else if (code == CODE_BRAILLE) {
-          // if (this.list.quote.b.length == 0) {
+        }
+        this.i.m = reset ? Math.floor(Math.random() * (this.list.quote.m.length)) : this.i.m || Math.floor(Math.random() * (this.list.quote.m.length));
+        $('#message .quote').html(this.list.quote.m[this.i.m])
+        $('#message .source').html(this.list.source.m[this.i.m])
+        $('#message').removeClass('hide');
+
+      } else if (code == CODE_BRAILLE) { // braille
+        if (this.list.quote.b.length == 0 || this.lang != lang) {
+          this.lang = lang;
           for (var i = 0; i < 99; i++) {
             var m = $.i18n('messagb_' + i);
             var s = $.i18n('messagb_' + i + '_source');
             if (m != 'messagb_' + i) {
-              console.log('ddd: ' + i);
+              // console.log('messageb_' + i);
               this.list.quote.b[i] = m;
               this.list.source.b[i] = s;
             } else {
+              console.log('messageb_' + i + " was breaked.");
               break;
             }
           }
-          // }
-          this.i.b = reset ? Math.floor(Math.random() * (this.list.quote.b.length)) : this.i.b || Math.floor(Math.random() * (this.list.quote.b.length));
-          $('#message .quote').html(this.list.quote.b[this.i.b])
-          $('#message .source').html(this.list.source.b[this.i.b])
-          $('#message').removeClass('hide');
         }
+        this.i.b = reset ? Math.floor(Math.random() * (this.list.quote.b.length)) : this.i.b || Math.floor(Math.random() * (this.list.quote.b.length));
+        $('#message .quote').html(this.list.quote.b[this.i.b])
+        $('#message .source').html(this.list.source.b[this.i.b])
+        $('#message').removeClass('hide');
       }
+      // }
     }
   }
 }

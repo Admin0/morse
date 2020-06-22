@@ -41,7 +41,7 @@ function url_check() {
       });
 
       console.log("#braille ACTIVATE");
-      i18n.message.set(true, CODE_BRAILLE);
+      i18n.message.set(CODE_BRAILLE, m.type.lang, true);
     }
   }
   let search = location.search;
@@ -190,8 +190,9 @@ function codebook() {
   }
   list += '</div><div class="braille">';
   for (var l = 0; l < Object.keys(m.tranlyze.key_b).length; l++) {
-    list += '<div class="title" data-i18n="' + 'lang_' + Object.keys(m.tranlyze.key_b)[j] + '"> ' + Object.keys(m.tranlyze.key_b)[l] + '</div>';
+    list += '<div class="title" data-i18n="' + 'lang_' + Object.keys(m.tranlyze.key_b)[l] + '"> ' + Object.keys(m.tranlyze.key_b)[l] + '</div>';
     for (var n = 0; n < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[l]].length; n++) {
+      if (m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[l]][n][0] == "␃") break;
       list += '<div class="code_wrap">';
       list += '<span class="letter">' + m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[l]][n][0] + "</span>";
       list += '<span class="code">' + m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[l]][n][1].split("").join(" ") + "</span>";

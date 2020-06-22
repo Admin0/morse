@@ -47,7 +47,7 @@ const m = {
       }
 
       keyboard_shortcuts(SHORTCUT_RESET);
-      i18n.message.set(true, m.type.code);
+      i18n.message.set(m.type.code, m.type.lang, true);
 
       $('.lang_box.lang .card_header').removeClass('selected');
       if (m.type.code == CODE_MORSE) {
