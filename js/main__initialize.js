@@ -28,7 +28,7 @@ function url_check() {
     let is_b = (hash.substring(0, 2) == "#b");
     let search_b = (hash.length > 2) ? hash.substring(2, hash.length) : "";
     if (is_b) {
-      history.replaceState(null, null, "../braille/" + search_b);
+      history.replaceState(null, null, "../braille/");
       m.type.code = CODE_BRAILLE;
       $('.lang_box.lang .card_header').removeClass('selected');
       window.localStorage.type_code = CODE_BRAILLE;
@@ -47,6 +47,7 @@ function url_check() {
   let search = location.search;
   if (!!search) {
     // $(window).on('load', function() {
+    history.replaceState(null, null, "../morse/");
     $('#input_textarea').val(decodeURI(search.substring(1, search.length)));
     tranlyze(m.type.mode);
 

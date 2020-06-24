@@ -398,8 +398,8 @@ function tranlyze(type) {
 
   m.play(false);
 
-  let dit = $('#s_output_style_dit .input').text();
-  let dah = $('#s_output_style_dah .input').text();
+  let dit = localStorage.dit;
+  let dah = localStorage.dah;
 
   if (m.type.code == CODE_MORSE) {
     if (type == TRANSLATE_MODE) {

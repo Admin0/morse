@@ -64,12 +64,19 @@ function setting() {
     check_setting();
   });
 
+  localStorage.dit = localStorage.dit || $("#s_output_style_dit span.input").text();
+  localStorage.dah = localStorage.dah || $("#s_output_style_dah span.input").text();
+
   $("#setting > .setting_item.auto_save span.input").on("input", function() { // checkbox
     let i = $("#s_output_style_dit span.input").text();
     let a = $("#s_output_style_dah span.input").text();
     localStorage.dit = (i == "") ? "·" : i;
     localStorage.dah = (a == "") ? "–" : a;
-    
+
+    if (m.type.code == CODE_MORSE && m.type.mode == TRANSLATE_MODE) {
+      tranlyze(TRANSLATE_MODE);
+    }
+
     // console.log({
     //   "i": localStorage.dit,
     //   "a": localStorage.dah
