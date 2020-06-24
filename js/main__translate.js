@@ -237,7 +237,7 @@ function translate_b() {
           // console.log(input);
           if (input[i] == m.tranlyze.key_b.kr[k][0][0]) {
             if (input[i].match(/[ᄉᄊᄌᄍᄎ]/) && input[i + 2] == "ᆼ") { // ["성", "⠠⠻"], ["썽", "⠠⠠⠻"], ["정", "⠨⠻"], ["쩡", "⠠⠨⠻"], ["청", "⠰⠻"],
-              console.log("세 글자 약자: "+input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
+              // console.log("세 글자 약자: "+input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
               if (input[i + 1] == "ᅥ") {
                 input[i + 1] = "⠻";
                 input[i + 2] = "";
@@ -245,13 +245,13 @@ function translate_b() {
                 input[i + 1] = "⠱";
               }
             } else if (m.tranlyze.key_b.kr[k][0].length == 3 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2]) { // 한글 약자 ("것")
-              console.log("세 글자 약자: "+input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
+              // console.log("세 글자 약자: "+input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
               input[i] = m.tranlyze.key_b.kr[k][1];
               input[i + 1] = "";
               input[i + 2] = "";
               break;
             } else if (m.tranlyze.key_b.kr[k][0].length == 2 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1]) { // 한글 약자 (음소조합까지만 구현)
-              console.log("두 글자 약자: "+input[i] + '/' + input[i + 1]);
+              // console.log("두 글자 약자: "+input[i] + '/' + input[i + 1]);
               input[i] = m.tranlyze.key_b.kr[k][1];
               input[i + 1] = "";
               break;
