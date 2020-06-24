@@ -175,7 +175,7 @@ function translate(dit, dah) {
 // Orignal Code by JinH(jinh.kr)             //
 ///////////////////////////////////////////////
 
-var hangulToJaso_b = function(text) {
+var hangulToJaso_b = function(text) { // 조합형 음소 유니코드로 쪼갠다 종성이 없어도 ""를 포함한 3개로 쪼개짐.
   function iSound(a) {
     var r = ((a - parseInt('0xac00', 16)) / 28) / 21;
     var t = String.fromCharCode(r + parseInt('0x1100', 16));
@@ -236,7 +236,8 @@ function translate_b() {
         if (Object.keys(m.tranlyze.key_b)[j] == "kr") { // 한글 예외 항목
           // console.log(input);
           if (input[i] == m.tranlyze.key_b.kr[k][0][0]) {
-            if (input[i].match(/[ᄉᄊᄌᄍᄎ]/) && input[i + 3] != "ᆼ") { // ["성", "⠠⠻"], ["썽", "⠠⠠⠻"], ["정", "⠨⠻"], ["쩡", "⠠⠨⠻"], ["청", "⠰⠻"],
+            if (input[i].match(/[ᄉᄊᄌᄍᄎ]/) && input[i + 2] == "ᆼ") { // ["성", "⠠⠻"], ["썽", "⠠⠠⠻"], ["정", "⠨⠻"], ["쩡", "⠠⠨⠻"], ["청", "⠰⠻"],
+              console.log("세 글자 약자: "+input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
               if (input[i + 1] == "ᅥ") {
                 input[i + 1] = "⠻";
                 input[i + 2] = "";
@@ -244,11 +245,13 @@ function translate_b() {
                 input[i + 1] = "⠱";
               }
             } else if (m.tranlyze.key_b.kr[k][0].length == 3 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2]) { // 한글 약자 ("것")
+              console.log("세 글자 약자: "+input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
               input[i] = m.tranlyze.key_b.kr[k][1];
               input[i + 1] = "";
               input[i + 2] = "";
               break;
             } else if (m.tranlyze.key_b.kr[k][0].length == 2 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1]) { // 한글 약자 (음소조합까지만 구현)
+              console.log("두 글자 약자: "+input[i] + '/' + input[i + 1]);
               input[i] = m.tranlyze.key_b.kr[k][1];
               input[i + 1] = "";
               break;
