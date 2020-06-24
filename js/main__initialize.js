@@ -28,8 +28,7 @@ function url_check() {
     let is_b = (hash.substring(0, 2) == "#b");
     let search_b = (hash.length > 2) ? hash.substring(2, hash.length) : "";
     if (is_b) {
-      history.replaceState(null, null, "../braille/");
-      m.type.code = CODE_BRAILLE;
+      history.replaceState(null, null, "../braille/" + search_b);
       $('.lang_box.lang .card_header').removeClass('selected');
       window.localStorage.type_code = CODE_BRAILLE;
       $('body').addClass('braille');
@@ -44,16 +43,12 @@ function url_check() {
       i18n.message.set(CODE_BRAILLE, m.type.lang, true);
     }
   }
-  let search = location.search;
+  let search = location.search.substring(1, location.search.length);
   if (!!search) {
     // $(window).on('load', function() {
-    history.replaceState(null, null, "../morse/");
-    $('#input_textarea').val(decodeURI(search.substring(1, search.length)));
+    history.replaceState(null, null, location.pathname);
+    $('#input_textarea').val(decodeURI(search));
     tranlyze(m.type.mode);
-
-    gtag('config', 'UA-39552694-1', {
-      'page_path': '/morse/'
-    });
     // });
   }
 }
