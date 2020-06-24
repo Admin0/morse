@@ -29,8 +29,10 @@ function url_check() {
     let search_b = (hash.length > 2) ? hash.substring(2, hash.length) : "";
     if (is_b) {
       history.replaceState(null, null, "../braille/" + search_b);
+
+      m.type.code = CODE_BRAILLE;
+
       $('.lang_box.lang .card_header').removeClass('selected');
-      window.localStorage.type_code = CODE_BRAILLE;
       $('body').addClass('braille');
       $('link[rel="icon"]').attr('href', "image/favicon_b.ico");
       $('.card_header.braille').addClass('selected');
