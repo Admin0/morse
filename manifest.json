@@ -26,11 +26,11 @@
     "sizes": "192x192"
   }],
   "start_url": "index.html",
-  "background_color": "#00c853",
+  "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/morse/",
-  "theme_color": "#00c853"
+  "theme_color": "#ffffff"
   ,
   "related_applications": [
     {

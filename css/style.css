@@ -407,10 +407,11 @@ body.analyze #card_header .lang_box.code {
   line-height: 1.5;
   white-space: pre-wrap;
   text-overflow: ellipsis;
+  word-break: break-word;
   /* overflow: hidden; */
 }
 
-.translate #output_textarea {
+.translate:not(.braille) #output_textarea {
   font-weight: bold;
 }
 
