@@ -352,10 +352,6 @@ body.analyze #card_header .lang_box.code {
   font-size: 1.25em;
 }
 
-.analyze #input_textarea {
-  /* font-weight: bold; */
-}
-
 #input_textarea::selection,
 #output_textarea::selection {
   color: #fff;
@@ -409,6 +405,10 @@ body.analyze #card_header .lang_box.code {
   text-overflow: ellipsis;
   word-break: break-word;
   /* overflow: hidden; */
+}
+
+.analyze:not(.braille) #input_textarea {
+  font-weight: bold;
 }
 
 .translate:not(.braille) #output_textarea {

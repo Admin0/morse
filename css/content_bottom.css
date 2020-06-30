@@ -232,7 +232,7 @@ body.braille .ft-icon.on .material-icons {
   margin-right: .5em;
 }
 
-.codebook span.code {
+body:not(.braille) .codebook span.code {
   font-weight: bold;
   font-family: 'Lato', 'Noto Sans KR', sans-serif;
 }
