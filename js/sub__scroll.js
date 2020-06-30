@@ -14,3 +14,16 @@ jQuery(function($) {
 $(document).ready(function() {
   if (!is_mobile) {$('.contents.sub').hScroll(120);}
 });
+
+function scroll_style(is_true) {
+  if (is_true) {
+    $('header').addClass('shadow-bottom');
+  } else {
+    $('header').removeClass('shadow-bottom');
+  }
+}
+
+$(window).scroll(function() { // #main_item shadow for mobile
+  // scroll_style($('#main_item').offset().top < pageYOffset);
+  scroll_style(pageYOffset > 0);
+});

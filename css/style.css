@@ -776,6 +776,40 @@ input[type="radio"]:checked+label.button_between {
   padding: .5em .75em;
 }
 
+.disabled,
+.disabled a {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.hide {
+  display: none !important;
+  margin: 0 !important;
+}
+
+.shadow-right {
+  box-shadow: 2px 0 6px 0 rgba(60, 64, 67, .15);
+}
+
+.shadow-top {
+  box-shadow: 0 -2px 6px 0 rgba(60, 64, 67, .15);
+}
+
+.shadow-bottom {
+  box-shadow: 0 2px 6px 0 rgba(60, 64, 67, .15);
+}
+
+.shadow-top-inset {
+  box-shadow: inset 0 7px 6px -5px rgba(60, 64, 67, .15);
+}
+
+.shadow-bottom-inset {
+  box-shadow: inset 0 -7px 6px -5px rgba(60, 64, 67, .15);
+}
+
+.shadow-top-inset.shadow-bottom-inset {
+  box-shadow: inset 0 7px 6px -5px rgba(60, 64, 67, .15), inset 0 -7px 6px -5px rgba(60, 64, 67, .15);
+}
+
 /* ------------------------------------------------------------------- */
 /* ***** splash ***** */
 /* ------------------------------------------------------------------- */

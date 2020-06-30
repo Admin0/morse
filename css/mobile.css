@@ -64,6 +64,11 @@
     display: block;
   }
 
+  .analyze:not(.braille) #card_option {
+    height: 100px;
+    overflow-y: scroll;
+  }
+
   #input {
     width: calc(100% - 4em);
     padding: 1em 3em 1em 1em;
