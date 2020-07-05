@@ -42,7 +42,6 @@ const i18n = {
         $('#output_textarea .placeholder').text($.i18n('card__output_0', $.i18n('braille')));
 
       $('#input_textarea').attr('placeholder', $.i18n('card__input_textarea_placeholder_0'));
-      $("meta[name='description']").attr("content", $.i18n('app_promotion') + ' ' + $.i18n('translator') + ' + ' + $.i18n('analyzer'));
 
       i18n.message.set(m.type.code, m.type.lang, false);
 
