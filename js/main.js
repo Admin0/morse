@@ -191,10 +191,12 @@ const m = {
           break;
         }
       }
-      $("#history_wrap .info").text($.i18n("history_i", $("#history .item").length));
-      if (standalone) {
-        console.log("history was loaded.");
-      }
+      $("#history_wrap .info").text($.i18n("history_i", i));
+      $(document).ready(function() {
+        if (standalone) {
+          console.log("history was loaded: " + i + " ea");
+        }
+      });
     },
     reset: function() {
       $("#history").html("");

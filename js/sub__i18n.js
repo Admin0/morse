@@ -31,6 +31,8 @@ const i18n = {
       if ($('.description.on').length == 0) $('.description.en').addClass('on');
 
       $('html').attr('lang', locale);
+      $('[property="og:title"]').attr('content', $.i18n('app_name_full'));
+      $('[property="og:description"]').attr('content', $.i18n('app_promotion'));
 
       $('[data-i18n]').i18n();
 
