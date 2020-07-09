@@ -53,7 +53,7 @@ function toast(msg, icon, time) {
 
   $('#toast').remove();
   $('body').append('<div id="toast" class="shadow"><i class="material-icons">' + icon + '</i>' + msg + '</div>');
-  $('#toast').addClass("on").removeClass("off");
+  $('#toast').css("left", "calc(1em + " + $("nav").css("width") + " + " + $("nav").css("left") + ")").addClass("on").removeClass("off");
 
   setTimeout(function() {
     $("#toast").addClass("off").removeClass("on", function() {

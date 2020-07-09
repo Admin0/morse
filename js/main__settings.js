@@ -1,9 +1,7 @@
 function setting() {
 
   var item = [
-    "general__dark",
-    "answer__serif", "answer__quiz",
-    // "cccv", "cccv__style", "cccv__to_here",
+    "s_braille_en_grade2",
     "dev__login"
   ];
 
@@ -67,7 +65,7 @@ function setting() {
   localStorage.dit = localStorage.dit || $("#s_output_style_dit span.input").text();
   localStorage.dah = localStorage.dah || $("#s_output_style_dah span.input").text();
 
-  $("#setting > .setting_item.auto_save span.input").on("input", function() { // checkbox
+  $("#setting .setting_item.auto_save span.input").on("input", function() { // checkbox
     let i = $("#s_output_style_dit span.input").text();
     let a = $("#s_output_style_dah span.input").text();
     localStorage.dit = (i == "") ? "·" : i;
@@ -83,22 +81,22 @@ function setting() {
     // });
   });
 
-  // $("#setting > .setting_item.auto_save").on("click", function() { // checkbox
-  //   // console.log($(this).hasClass("disabled"));
-  //   if (!$(this).hasClass("disabled")) {
-  //     var i = $("#setting > .setting_item").index(this);
-  //     if (localStorage[item[i]] == "true") {
-  //       localStorage[item[i]] = "false"
-  //     } else {
-  //       localStorage[item[i]] = "true"
-  //     }
-  //     // toast("설정이 저장되었습니다.", "save");
-  //
-  //     // filter();
-  //     // columns();
-  //     check_setting();
-  //   }
-  // });
+  $("#setting .setting_item.auto_save").on("click", function() { // checkbox
+    // console.log($(this).hasClass("disabled"));
+    if (!$(this).hasClass("disabled")) {
+      var i = $(this).attr("id");
+      console.log(i);
+      if (localStorage[i] == "true") {
+        localStorage[i] = "false"
+      } else {
+        localStorage[i] = "true"
+      }
+      toast("설정이 저장되었습니다.", "save");
+
+      tranlyze(m.type.mode);
+      check_setting();
+    }
+  });
 
   // header > action bar
   $('.actionbar .item').on('click', function() {

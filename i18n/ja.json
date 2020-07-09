@@ -142,6 +142,7 @@
   "s_etc_rate": "アプリを評価する",
   "s_etc_share": "アプリを共有する",
   "s_a_capital_en_upper_on": "解析結果を大文字で表示します",
+  "s_info": "情報",
 
   "s_etc_donation": "寄付する（広告を削除する）",
   "s_etc_donation_ads": "広告を削除する",
@@ -151,6 +152,10 @@
   "s_etc_donation_02": "$4.9\t\t\t\tコーヒー",
   "s_etc_donation_03": "$9.9\t\t\t\tフライドチキン",
   "s_etc_donation_thanks": "寄付していただきありがとうございます！",
+
+  "s_braille_en_grade2": "Grade 2 点字（英語）",
+  "s_braille_en_grade2_on": "英語の点字翻訳に grade 2を適用します",
+  "s_braille_en_grade2_off": "英語の点字翻訳に grade 1を適用します",
 
 
   "quest_pokemon_title": "あ! やせいの カイハツシャが とびだしてきた!",
@@ -342,7 +347,7 @@
 
   "message_0": "受信者全員のお知らせ これは永遠の沈黙に先立つ最後の歓声。",
   "message_0_source": "フランス海軍の1997年1月31日、最後のモールス符号のメッセージだ",
-  "message_1": " · · · · 　· ·  <br>  – · · – 　– – – ",
+  "message_1": " · · · · 　· · 　/　 – · · – 　– – – ",
   "message_1_source": "モールス（映画）",
   "message_2": " · · · 　– 　· – 　– · – – ",
   "message_2_source": "インターステラー (映画)",

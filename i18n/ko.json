@@ -142,6 +142,7 @@
   "s_etc_rate": "앱 평가하기",
   "s_etc_share": "앱 공유하기",
   "s_a_capital_en_upper_on": "해석 결과를 대문자로 표시합니다",
+  "s_info": "정보",
 
   "s_etc_donation": "기부하기 (광고 제거)",
   "s_etc_donation_ads": "광고 제거",
@@ -151,6 +152,10 @@
   "s_etc_donation_02": "₩5,000\t\t\t\t커피",
   "s_etc_donation_03": "₩10,000\t\t\t치킨",
   "s_etc_donation_thanks": "기부해 주셔서 고맙습니다!",
+
+  "s_braille_en_grade2": "Grade 2 점자 (영어)",
+  "s_braille_en_grade2_on": "영어 점자 번역에 grade 2를 적용합니다",
+  "s_braille_en_grade2_off": "영어 점자 번역에 grade 1를 적용합니다",
 
 
   "quest_pokemon_title": "앗! 야생의 개발자이(가) 나타났다!",
@@ -342,7 +347,7 @@
 
   "message_0": "수신자 전원에게 알림. 이것은 영원한 침묵에 앞선 우리의 마지막 함성.",
   "message_0_source": "프랑스 해군의 1997년 1월 31일 마지막 모스 부호 메시지",
-  "message_1": " · · · · 　· · </span> <br> <span class='quote'> – · · – 　– – – ",
+  "message_1": " · · · · 　· · 　/　 – · · – 　– – – ",
   "message_1_source": "렛미인 (영화)",
   "message_2": " · · · 　– 　· – 　– · – –",
   "message_2_source": "인터스텔라 (영화)",

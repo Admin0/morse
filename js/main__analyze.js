@@ -160,8 +160,8 @@ function analyze(lang, dit, dah) {
   //   output = output + input[i] + '';
   // }
   output = input.join("")
-      .replace(//g, '\n')
-      .replace(//g, " ");
+    .replace(//g, '\n')
+    .replace(//g, " ");
 
   if (lang == LANG_KO && $('#kr_assemble').prop("checked")) {
     assemble_kr();
@@ -266,11 +266,6 @@ function analyze_b(lang) {
   // var space_string = new RegExp($('#space_string').text() + '|\n|\r', 'g');
   var space_string = new RegExp($('#space_string').text(), 'g');
   text = text.replace(/\n|\r/g, ""); //줄바꿈
-  // text = text.replace(space_string, "_/_"); //문자열공백
-  // text = text.replace(space_char, "_"); //문자사이공백
-  // text = text.replace(/\s/g, ""); //공백 제거
-  // text = text.replace(/1|－|-|ㅡ/g, "–");
-  // text = text.replace(/0|ㆍ|\.|\*|`|'/g, "·");
 
   if (lang == LANG_KO) pre_assemble(LANG_KO);
   if (lang == LANG_EN) pre_assemble(LANG_EN);
@@ -280,7 +275,14 @@ function analyze_b(lang) {
     // var v = input;
     for (var i = 0; i < input.length; i++) {
       for (var j = 0; j < key_set.length; j++) {
-        if (input[i] == key_set[j][1]) {
+        if (key_set[j][1].length == 2) {
+          // console.log([input[i], key_set[j][0], key_set[j][1]]);
+          if (input[i] == key_set[j][1][0] && input[i + 1] == key_set[j][1][1]) { // di- analyze
+            input[i] = key_set[j][0];
+            input[i + 1] = "";
+            break;
+          }
+        } else if (input[i] == key_set[j][1]) { // main analyze
           input[i] = key_set[j][0];
           break;
         }
@@ -294,10 +296,10 @@ function analyze_b(lang) {
     if (lang == LANG_EN) {
       // text = text.replace(/A-Z/g, analyze_sub(m.tranlyze.key_b.en, "$1"));
     } else if (lang == LANG_KO) {
-      text = text.replace(/([\s⠀]⠴|^⠴)(\S*)⠲/g, function(v) { // 한글 와중에 영어  todo
-          return analyze_sub(m.tranlyze.key_b.en, v.substring(1, v.length - 1).split('')).join("");
-        })
-        .replace(/([⠠⠨⠰])⠻/g, "$1ᅥᆼ") // ㅅㅆㅈㅉㅊ 뒤에 ㅕㅇ, ㅓㅇ 변환
+      // text = text.replace(/([\s⠀]⠴|^⠴)(\S*)⠲/g, function(v) { // 한글 와중에 영어  todo
+      //   return analyze_sub(m.tranlyze.key_b.en, v.substring(1, v.length - 1).split('')).join("");
+      // })
+      text = text.replace(/([⠠⠨⠰])⠻/g, "$1ᅥᆼ") // ㅅㅆㅈㅉㅊ 뒤에 ㅕㅇ, ㅓㅇ 변환
         .replace(/⠐⠂/g, ":"); // 한글 문장부호
     }
     //문장부호
@@ -322,7 +324,7 @@ function analyze_b(lang) {
       .replace(/([ᅡ-ᅵ])\(붙임\)ᅨ/g, "$1예") // 모음 뒤에 '예'가 올 때는 붙임표
       .replace(/([ᅣᅪᅮᅯ])\(붙임\)ᅢ/g, "$1애") // ㅑ, ㅘ, ㅜ, ㅝ 뒤에 '애'가 올 때는 붙임표
       .replace(/([ᄀ-ᄒ])\(붙임\)/g, "$1ᅡ")
-      .replace(/ᄑᆻ$/g, "폐") // 팠 폐
+      .replace(/ᄑᆻ/g, "폐") // 팠 폐
       .replace(/\(num\)ᄒ/g, "0") // 숫자
       .replace(/\(num\)ᄀ/g, "1")
       .replace(/\(num\)ᄇ/g, "2")
@@ -337,31 +339,31 @@ function analyze_b(lang) {
       .replace(/ᅣᅢ/g, "ᅤ")
       .replace(/ᅯᅢ/g, "ᅰ")
       .replace(/ᅪᅢ/g, "ᅫ")
-      .replace(/ᄉᄉ/g, "ᄊ") // 된소리 초성 / 쌍시옷이 제일 앞에 있어야 함.
-      .replace(/ᄉᄀ/g, "ᄁ")
-      .replace(/ᄉᄃ/g, "ᄄ")
-      .replace(/ᄉᄇ/g, "ᄈ")
-      .replace(/ᄉᄌ/g, "ᄍ")
-      .replace(/ᆨᆨ/g, "ᆩ") // 받침 조합
-      .replace(/ᆨᆺ/g, "ᆪ")
-      .replace(/ᆫᆽ/g, "ᆬ")
-      .replace(/ᆫᇂ/g, "ᆭ")
-      .replace(/ᆯᆨ/g, "ᆰ")
-      .replace(/ᆯᆷ/g, "ᆱ")
-      .replace(/ᆯᆸ/g, "ᆲ")
-      .replace(/ᆯᆺ/g, "ᆳ")
-      .replace(/ᆯᇀ/g, "ᆴ")
-      .replace(/ᆯᇁ/g, "ᆵ")
-      .replace(/ᆯᇂ/g, "ᆶ")
-      .replace(/ᆸᆺ/g, "ᆹ")
-      .replace(/ᆺᆺ/g, "ᆻ")
-      .replace(/ᆨ어/g, "그런데") // 약자 todo
-      .replace(/⠸[어예]/g, "것")
-      .replace(/([ᅡ-ᅵ])ᅨ/g, "$1ᆻ")
+      // .replace(/ᄉᄉ/g, "ᄊ") // 된소리 초성 / 쌍시옷이 제일 앞에 있어야 함.
+      // .replace(/ᄉᄀ/g, "ᄁ")
+      // .replace(/ᄉᄃ/g, "ᄄ")
+      // .replace(/ᄉᄇ/g, "ᄈ")
+      // .replace(/ᄉᄌ/g, "ᄍ")
+      // .replace(/ᆨᆨ/g, "ᆩ") // 받침 조합
+      // .replace(/ᆨᆺ/g, "ᆪ")
+      // .replace(/ᆫᆽ/g, "ᆬ")
+      // .replace(/ᆫᇂ/g, "ᆭ")
+      // .replace(/ᆯᆨ/g, "ᆰ")
+      // .replace(/ᆯᆷ/g, "ᆱ")
+      // .replace(/ᆯᆸ/g, "ᆲ")
+      // .replace(/ᆯᆺ/g, "ᆳ")
+      // .replace(/ᆯᇀ/g, "ᆴ")
+      // .replace(/ᆯᇁ/g, "ᆵ")
+      // .replace(/ᆯᇂ/g, "ᆶ")
+      // .replace(/ᆸᆺ/g, "ᆹ")
+      // .replace(/ᆺᆺ/g, "ᆻ")
+      // .replace(/ᆨ어/g, "그런데") // 약자 todo
+      // .replace(/⠸[어예]/g, "것")
+      // .replace(/⠸ᆻ/g, "것")
+      .replace(/([ᅡ-ᅵ])ᅨ/g, "$1ᆻ") // 쌍시옷 받침 약자
       .replace(/([ᄀ-ᄒ])((?=[^ᅡ-ᅵ])|$)/g, "$1ᅡ") // ㅏ 생략된거 복원 [ᄀ-ᄒ](?!\w)
       .replace(/([^ᄀ-ᄒ])(?=[ᅡ-ᅵ])/g, "$1ᄋ") // 초성 없는거에 ㅇ 붙임 // .replace(/(?<=[^ᄀ-ᄒ])([ᅡ-ᅵ])/g, "ᄋ$1")
       .replace(/(^[ᅡ-ᅵ])/g, "ᄋ$1") // 중성 먼저 시작하면 ㅇ 붙임
-      .replace(/([ᅡ-ᅵ])ᅨ/g, "$1ᆻ") // 쌍시옷 받침 약자
       .replace(/\(cap\)\(cap\)([a-z]*)(?=\s)/g, function(v) { // 영어
         return v.substring(10, v.length).toUpperCase(); // 영어 대문자 전체
       }).replace(/\(cap\)(.)/g, function(v) {
@@ -372,6 +374,7 @@ function analyze_b(lang) {
   if (lang == LANG_KO) {
     input = analyze_sub(m.tranlyze.key_b.kr, input);
   } else if (lang == LANG_EN) {
+    if (localStorage.s_braille_en_grade2 == "true") input = analyze_sub(m.tranlyze.key_b.en2, input);
     input = analyze_sub(m.tranlyze.key_b.en, input);
   } else if (lang == LANG_JA) {
     input = analyze_sub(m.tranlyze.key_b.jp, input);

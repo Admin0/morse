@@ -542,6 +542,7 @@ $(function() {
   url_check();
   ft_icon();
   codebook();
+  grade2trim();
   detect_input();
   title_tooltip();
   // load_modules();

@@ -202,3 +202,18 @@ function codebook() {
   $('.codebook').html(list);
 
 }
+
+function grade2trim() { //must after codebook()
+  let en2temp = m.tranlyze.key_b.en2;
+  for (var k = 0; k < m.tranlyze.key_b.en2.length; k++) {
+    if (en2temp[k][0][0] == "-") {
+      if (en2temp[k][0][3] == "-") {
+        en2temp[k][0] = en2temp[k][0].substring(1, 3);
+      } else {
+        en2temp[k][0] = en2temp[k][0].substring(1, en2temp[k][0].length);
+      }
+    } else if (en2temp[k][0][3] == "-") { // com-
+      en2temp[k][0] = en2temp[k][0].substring(0, 3);
+    }
+  }
+}

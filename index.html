@@ -259,23 +259,32 @@
 		<div class="header">
 			<i class="material-icons" onclick="$('#setting, #setting_bg').removeClass('on');">arrow_back</i><span>설정</span>
 		</div>
-		<div class="setting_title" data-i18n="s_output">OUTPUT</div>
-		<div class="setting_item auto_save" id="s_output_style_dit">
-			<i class="material-icons">more_horiz</i> <dt data-i18n="s_output_style_dit">DIT</dt> <span class="input" contenteditable="true">·</span>
-			<dd data-i18n="s_output_style_dit_summary">DIT_SUMMARY</dd>
+		<div class="morse">
+			<div class="setting_title" data-i18n="s_output">OUTPUT</div>
+			<div class="setting_item" id="s_output_style_dit">
+				<i class="material-icons">more_horiz</i> <dt data-i18n="s_output_style_dit">DIT</dt> <span class="input" contenteditable="true">·</span>
+				<dd data-i18n="s_output_style_dit_summary">DIT_SUMMARY</dd>
+			</div>
+			<div class="setting_item" id="s_output_style_dah">
+				<i class="material-icons">remove</i> <dt data-i18n="s_output_style_dah">DAH</dt> <span class="input" contenteditable="true">–</span>
+				<dd data-i18n="s_output_style_dah_summary">DAH_SUMMARY</dd>
+			</div>
+			<div class="setting_title" data-i18n="s_t_speak">SPEAK</div>
+			<div class="setting_item" id="s_t_beep">
+				<i class="material-icons">graphic_eq</i> <dt data-i18n="s_t_beep">BEEP</dt> <span class="input" contenteditable="true">830</span> Hz
+				<dd data-i18n="s_t_speak_summary">DAH_SUMMARY</dd>
+			</div>
+			<div class="setting_item" id="s_t_speak_length">
+				<i class="material-icons">space_bar</i> <dt data-i18n="s_t_speak_length">BEEP LENGTH</dt> <span class="input" contenteditable="true">150</span> ms
+				<dd data-i18n="s_t_speak_length_summary">DAH_SUMMARY</dd>
+			</div>
 		</div>
-		<div class="setting_item auto_save" id="s_output_style_dah">
-			<i class="material-icons">remove</i> <dt data-i18n="s_output_style_dah">DAH</dt> <span class="input" contenteditable="true">–</span>
-			<dd data-i18n="s_output_style_dah_summary">DAH_SUMMARY</dd>
-		</div>
-		<div class="setting_title" data-i18n="s_t_speak">SPEAK</div>
-		<div class="setting_item" id="s_t_beep">
-			<i class="material-icons">graphic_eq</i> <dt data-i18n="s_t_beep">BEEP</dt> <span class="input" contenteditable="true">830</span> Hz
-			<dd data-i18n="s_t_speak_summary">DAH_SUMMARY</dd>
-		</div>
-		<div class="setting_item" id="s_t_speak_length">
-			<i class="material-icons">space_bar</i> <dt data-i18n="s_t_speak_length">BEEP LENGTH</dt> <span class="input" contenteditable="true">150</span> ms
-			<dd data-i18n="s_t_speak_length_summary">DAH_SUMMARY</dd>
+		<div class="braille">
+			<div class="setting_item auto_save" id="s_braille_en_grade2">
+				<input type="checkbox"> <dt data-i18n="s_braille_en_grade2">GRADE2</dt>
+				<dd class="on" data-i18n="s_braille_en_grade2_on">GRADE2_ON</dd>
+				<dd class="off" data-i18n="s_braille_en_grade2_off">GRADE2_OFF</dd>
+			</div>
 		</div>
 		<div class="setting_title" data-i18n="s_etc">OTHERS</div>
 		<div class="setting_item" id="s_locale">

@@ -179,7 +179,6 @@ var hangulToJaso_b = function(text) { // 조합형 음소 유니코드로 쪼갠
   function iSound(a) {
     var r = ((a - parseInt('0xac00', 16)) / 28) / 21;
     var t = String.fromCharCode(r + parseInt('0x1100', 16));
-    // if (t == "ᄋ" || t == "ㅇ") t = ""; // 점자체계에선 ㅇ을 생략한다. key 모음에서 처리했다.
     return t;
   }
 
@@ -205,7 +204,7 @@ var hangulToJaso_b = function(text) { // 조합형 음소 유니코드로 쪼갠
     if (chars[i] >= 0xAC00 && chars[i] <= 0xD7A3) {
       v.push(iSound(chars[i]));
       v.push(mSound(chars[i]));
-      v.push(tSound(chars[i]));
+      if (tSound(chars[i]) != "") v.push(tSound(chars[i]));
     } else {
       v.push(String.fromCharCode(chars[i]));
     }
@@ -227,23 +226,73 @@ function translate_b() {
       input[i] = String.fromCharCode(input[i].charCodeAt() + 0x0060);
     }
 
-
     m.tranlyze.t.lang.count.m2m(input[i]); // morse2morse check
 
     for (var j = 0; j < Object.keys(m.tranlyze.key_b).length; j++) {
       for (var k = 0; k < m.tranlyze.key_b[Object.keys(m.tranlyze.key_b)[j]].length; k++) {
+        if (Object.keys(m.tranlyze.key_b)[j] == "en2") {
+          if (localStorage.s_braille_en_grade2 != "true") {
+            break;
+          } else if (input[i] == m.tranlyze.key_b.en2[k][0][0]) {
+            // console.log([input[i], input[i] == m.tranlyze.key_b.en2[k][0][0]]);
+            if (m.tranlyze.key_b.en2[k][0].length == 4 && input[i + 1] == m.tranlyze.key_b.en2[k][0][1] && input[i + 2] == m.tranlyze.key_b.en2[k][0][2] && input[i + 3] == m.tranlyze.key_b.en2[k][0][3]) { // grade2 tetra-
+              // console.log(["네 글자 약자: ", input[i], input[i + 1], input[i + 2], input[i + 3]]);
+              input[i] = m.tranlyze.key_b.en2[k][1];
+              input[i + 1] = "";
+              input[i + 2] = "";
+              input[i + 3] = "";
+              break;
+            } else if (m.tranlyze.key_b.en2[k][0].length == 3 && input[i + 1] == m.tranlyze.key_b.en2[k][0][1] && input[i + 2] == m.tranlyze.key_b.en2[k][0][2]) { // grade2 tri-
+              // console.log(["세 글자 약자: ", input[i], input[i + 1], input[i + 2]]);
+              input[i] = m.tranlyze.key_b.en2[k][1];
+              input[i + 1] = "";
+              input[i + 2] = "";
+              break;
+            } else if (m.tranlyze.key_b.en2[k][0].length == 2 && input[i + 1] == m.tranlyze.key_b.en2[k][0][1]) { // grade2 di-
+              // console.log(["두 글자 약자: ", input[i], input[i + 1]]);
+              input[i] = m.tranlyze.key_b.en2[k][1];
+              input[i + 1] = "";
+              break;
+            }
+          }
+        } else if (Object.keys(m.tranlyze.key_b)[j] == "en") {
 
-        if (Object.keys(m.tranlyze.key_b)[j] == "kr") { // 한글 예외 항목
+        } else if (Object.keys(m.tranlyze.key_b)[j] == "kr") { // 한글 예외 항목
           // console.log(input);
           if (input[i] == m.tranlyze.key_b.kr[k][0][0]) {
-            if (input[i].match(/[ᄉᄊᄌᄍᄎ]/) && input[i + 2] == "ᆼ") { // ["성", "⠠⠻"], ["썽", "⠠⠠⠻"], ["정", "⠨⠻"], ["쩡", "⠠⠨⠻"], ["청", "⠰⠻"],
-              // console.log("세 글자 약자: "+input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
-              if (input[i + 1] == "ᅥ") {
-                input[i + 1] = "⠻";
-                input[i + 2] = "";
-              } else if (input[i + 1] == "ᅧ") {
-                input[i + 1] = "⠱";
-              }
+            if (m.tranlyze.key_b.kr[k][0].length == 8 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2] && input[i + 3] == m.tranlyze.key_b.kr[k][0][3] && input[i + 4] == m.tranlyze.key_b.kr[k][0][4] && input[i + 5] == m.tranlyze.key_b.kr[k][0][5] && input[i + 6] == m.tranlyze.key_b.kr[k][0][6] && input[i + 7] == m.tranlyze.key_b.kr[k][0][7]) { // 한글약자 8글자(그러므로) 등
+              // console.log("여덟 글자 약자: " + input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
+              input[i] = m.tranlyze.key_b.kr[k][1];
+              input[i + 1] = "";
+              input[i + 2] = "";
+              input[i + 3] = "";
+              input[i + 4] = "";
+              input[i + 5] = "";
+              input[i + 6] = "";
+              input[i + 7] = "";
+              break;
+            } else if (m.tranlyze.key_b.kr[k][0].length == 7 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2] && input[i + 3] == m.tranlyze.key_b.kr[k][0][3] && input[i + 4] == m.tranlyze.key_b.kr[k][0][4] && input[i + 5] == m.tranlyze.key_b.kr[k][0][5] && input[i + 6] == m.tranlyze.key_b.kr[k][0][6]) { // 한글약자 7글자(그런데 등)
+              // console.log("일곱 글자 약자: " + input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
+              input[i] = m.tranlyze.key_b.kr[k][1];
+              input[i + 1] = "";
+              input[i + 2] = "";
+              input[i + 3] = "";
+              input[i + 4] = "";
+              input[i + 5] = "";
+              input[i + 6] = "";
+              break;
+            } else if (m.tranlyze.key_b.kr[k][0].length == 6 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2] && input[i + 3] == m.tranlyze.key_b.kr[k][0][3] && input[i + 4] == m.tranlyze.key_b.kr[k][0][4] && input[i + 5] == m.tranlyze.key_b.kr[k][0][5]) { // 한글약자  6글자(그래서) 등
+              // console.log([m.tranlyze.key_b.kr[k][0], input[i], input[i + 1], input[i + 2], input[i + 3], input[i + 4], input[i + 5], input[i + 6], input[i + 7], input[i + 8]]);
+              // console.log(input);
+              input[i] = m.tranlyze.key_b.kr[k][1];
+              input[i + 1] = "";
+              input[i + 2] = "";
+              input[i + 1] = "";
+              input[i + 2] = "";
+              input[i + 3] = "";
+              input[i + 4] = "";
+              input[i + 5] = "";
+              break;
             } else if (m.tranlyze.key_b.kr[k][0].length == 3 && input[i + 1] == m.tranlyze.key_b.kr[k][0][1] && input[i + 2] == m.tranlyze.key_b.kr[k][0][2]) { // 한글 약자 ("것")
               // console.log("세 글자 약자: "+input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
               input[i] = m.tranlyze.key_b.kr[k][1];
@@ -255,14 +304,26 @@ function translate_b() {
               input[i] = m.tranlyze.key_b.kr[k][1];
               input[i + 1] = "";
               break;
+            } else if (input[i].match(/[ᄉᄊᄌᄍᄎ]/) && input[i + 2] == "ᆼ") { // ["성", "⠠⠻"], ["썽", "⠠⠠⠻"], ["정", "⠨⠻"], ["쩡", "⠠⠨⠻"], ["청", "⠰⠻"],
+              // console.log("세 글자 약자: "+input[i] + '/' + input[i + 1] + '/' + input[i + 2]);
+              if (input[i + 1] == "ᅥ") {
+                input[i + 1] = "⠻";
+                input[i + 2] = "";
+              } else if (input[i + 1] == "ᅧ") {
+                input[i + 1] = "⠱";
+              }
             }
           } else if (input[i].match(/[ᅡ-ᅵ]/) != null && input[i + 1] == "" && input[i + 2] == "ᄋ" && input[i + 3] == "ᅨ") { // 모음 뒤에 ㅖ 올 때 붙임표. 붙임표를 넣지 않으면 ㅆ 받침과 헷갈릴 수 있기 때문이다.
+            console.log("모음 뒤에 ㅖ: " + input[i] + '/' + input[i + 1]);
             input[i + 1] = "⠤";
           } else if (input[i].match(/[ᅣᅪᅮᅯ]/) != null && input[i + 1] == "" && input[i + 2] == "ᄋ" && input[i + 3] == "ᅢ") { // 모음 ㅑ, ㅘ, ㅜ, ㅝ 뒤에 '애'가 올 때 붙임표. 붙임표를 넣지 않으면 ㅒ/ㅙ/ㅟ/ㅞ와 헷갈릴 수 있기 때문이다.
+            console.log("ㅑㅘㅜㅝ 뒤에 애: " + input[i] + '/' + input[i + 1]);
             input[i + 1] = "⠤";
           } else if (input[i].match(/[ᄂ-ᄄᄆ-ᄇᄊᄌᄍᄏ-ᄒ]/) != null && input[i + 1] == "ᅡ" && input[i + 3] != "ᄋ") { // 모음 ㅏ 붙을 때 생략. '나', '다', '마', '바', '자', '카', '타', '파', '하' 다음에 모음이 올 경우는 혼동의 우려가 있으므로 약자로 쓰지 않는다.
             if (input[i] != "ᄑ" || input[i + 1] != "ᅡ" || input[i + 2] != "ᆻ") // '팠'을 쓸 때는 ㅏ를 생략하지 않는다. ㅏ를 생략하면 '폐'로 잘못 읽을 수 있기 때문이다.
               input[i + 1] = "";
+          } else if (input[i].match(/[ᄋ]/)) { // 초성 ㅇ 생략.
+            input[i] = "";
           }
         }
 

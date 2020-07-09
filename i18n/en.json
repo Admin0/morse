@@ -142,6 +142,7 @@
   "s_etc_rate": "Rate this app",
   "s_etc_share": "Share this app",
   "s_a_capital_en_upper_on": "Analyze results are will become capitalized",
+  "s_info": "Info",
 
   "s_etc_donation": "Donate (Remove the Ads)",
   "s_etc_donation_ads": "Remove the Ads",
@@ -151,6 +152,10 @@
   "s_etc_donation_02": "$4.9\t\t\t\tCOFFEE",
   "s_etc_donation_03": "$9.9\t\t\t\tPIZZA",
   "s_etc_donation_thanks": "Thanks for donate!",
+
+  "s_braille_en_grade2": "Grade 2 Braille (en)",
+  "s_braille_en_grade2_on": "Apply grade 2 to English Braille translation",
+  "s_braille_en_grade2_off": "Apply grade 1 to English Braille translation",
 
 
   "quest_pokemon_title": "Wild DEVELOPER appeared!",
@@ -342,7 +347,7 @@
 
   "message_0": "Calling all. This is our last cry before our eternal silence.",
   "message_0_source": "French Navy ceased using Morse code on January 31, 1997, the final transmitted message",
-  "message_1": " · · · · 　· ·  <br>  – · · – 　– – – ",
+  "message_1": " · · · · 　· · 　/　 – · · – 　– – – ",
   "message_1_source": "Let Me In (film)",
   "message_2": " · · · 　– 　· – 　– · – – ",
   "message_2_source": "Interstellar (film)",
