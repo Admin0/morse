@@ -75,10 +75,10 @@ function setting() {
       tranlyze(TRANSLATE_MODE);
     }
 
-    // console.log({
-    //   "i": localStorage.dit,
-    //   "a": localStorage.dah
-    // });
+    console.log({
+      "i": localStorage.dit,
+      "a": localStorage.dah
+    });
   });
 
   $("#setting .setting_item.auto_save").on("click", function() { // checkbox
@@ -91,7 +91,7 @@ function setting() {
       } else {
         localStorage[i] = "true"
       }
-      toast("설정이 저장되었습니다.", "save");
+      // toast("설정이 저장되었습니다.", "save");
 
       tranlyze(m.type.mode);
       check_setting();
