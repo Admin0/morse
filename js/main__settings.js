@@ -75,10 +75,10 @@ function setting() {
       tranlyze(TRANSLATE_MODE);
     }
 
-    console.log({
-      "i": localStorage.dit,
-      "a": localStorage.dah
-    });
+    // console.log({
+    //   "i": localStorage.dit,
+    //   "a": localStorage.dah
+    // });
   });
 
   $("#setting .setting_item.auto_save").on("click", function() { // checkbox
