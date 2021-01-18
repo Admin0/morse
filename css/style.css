@@ -509,7 +509,7 @@ body.analyze #output_menu span.play {
 
 footer {
   /* position: fixed; */
-  margin: 3em 0;
+  padding-bottom: 2.5em;
   bottom: 0;
   width: 100%;
   text-align: center;
