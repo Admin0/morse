@@ -214,7 +214,12 @@ var hangulToJaso_b = function(text) { // 조합형 음소 유니코드로 쪼갠
 
 function translate_b() {
 
-  var input = hangulToJaso_b($('#input_textarea').val());
+  var input = $('#input_textarea').val();
+  input = input
+    .replace(/(\d+)/g, '⠼$1')
+    .replace(/([×○]+)/g, '⠸$1⠇');
+  input = hangulToJaso_b(input);
+
   m.tranlyze.t.lang.count.reset();
   for (var i = 0; i < v.length; i++) {
 
