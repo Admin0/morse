@@ -293,11 +293,17 @@ const m = {
     var AudioContext = window.AudioContext || window.webkitAudioContext || false; // Default || Safari and old versions of Chrome
     let audio, o;
     if (AudioContext) {
-      audio = new AudioContext();
-      o = audio.createOscillator();
-      o.type = "sine";
-      o.frequency.value = $('#s_t_beep .input').text();
-      o.start();
+      try {
+        audio = new AudioContext();
+        o = audio.createOscillator();
+        o.type = "sine";
+        o.frequency.value = $('#s_t_beep .input').text();
+        o.start();
+      } catch (e) {
+
+      } finally {
+
+      }
     } else {
       m.type.play.sound = false;
     }
