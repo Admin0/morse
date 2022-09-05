@@ -290,12 +290,17 @@ const m = {
     $('#output_textarea').html('<span>' + text.split("").join('</span><span>') + '</span>');
 
     // sound
-    var audio = new AudioContext();
-    var o = audio.createOscillator();
-    o.type = "sine";
-    o.frequency.value = $('#s_t_beep .input').text();
-    o.start();
-
+    var AudioContext = window.AudioContext || window.webkitAudioContext || false; // Default || Safari and old versions of Chrome
+    let audio, o;
+    if (AudioContext) {
+      audio = new AudioContext();
+      o = audio.createOscillator();
+      o.type = "sine";
+      o.frequency.value = $('#s_t_beep .input').text();
+      o.start();
+    } else {
+      m.type.play.sound = false;
+    }
 
     // flash
 
