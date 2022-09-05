@@ -236,6 +236,7 @@ body.analyze #card_header .lang_box.code {
   padding: 12px;
   position: absolute;
   left: calc(50% - 24px);
+  background: rgba(255, 255, 255, .8);
 }
 
 #re_anaylze input+i, #lang_list input+i {
