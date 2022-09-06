@@ -340,7 +340,7 @@ const m = {
               index.addClass(vibration_type);
             } else {
               index.addClass('shake-vertical');
-              window.navigator.vibrate(time);
+              if (window.navigator.vibrate) window.navigator.vibrate(time); // safari doesn't support it
             }
           }
           if (m.type.play.flash) flash.addClass(flash_type);
