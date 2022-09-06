@@ -236,7 +236,6 @@ body.analyze #card_header .lang_box.code {
   padding: 12px;
   position: absolute;
   left: calc(50% - 24px);
-  background: rgba(255, 255, 255, .8);
 }
 
 #re_anaylze input+i, #lang_list input+i {
@@ -276,6 +275,9 @@ body.analyze #card_header .lang_box.code {
 .card_header.selected {
   color: #00C853;
   font-weight: bold;
+  max-width: calc(50vw - 48px);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .analyze .card_header.selected {
@@ -744,6 +746,7 @@ input[type="button"]:hover {
   border: 1px solid #ddd;
   border-radius: .5em;
   line-height: 24px;
+  white-space: nowrap;
 }
 
 .button_first {

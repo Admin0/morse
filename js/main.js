@@ -290,6 +290,7 @@ const m = {
     $('#output_textarea').html('<span>' + text.split("").join('</span><span>') + '</span>');
 
     // sound
+    // todo fix for safari
     var AudioContext = window.AudioContext || window.webkitAudioContext || false; // Default || Safari and old versions of Chrome
     let audio, o;
     if (AudioContext) {
