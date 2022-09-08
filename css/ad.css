@@ -10,6 +10,7 @@
   margin: auto;
   width: 100%;
   min-height: 0;
+  max-height: 180px;
 }
 
 .ad_bottom {
